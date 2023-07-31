@@ -1,0 +1,44 @@
+<div id="buildPreview">
+  <div class="build-preview">
+    <div class="width"></div>
+    <div class="height"></div>
+    <div class="descr">
+        Some test
+    </div>
+  </div>
+</div>
+
+<style>
+  #buildPreview {
+    display: none;
+  }
+  .build-preview {
+    z-index: -100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .build-preview .descr {
+    position: absolute;
+  }
+
+  .build-preview .height {
+    border-top: 1px solid var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-bg-secondary);
+
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  .build-preview .width {
+    border-left: 1px solid var(--color-bg-secondary);
+    border-right: 1px solid var(--color-bg-secondary);
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+</style>

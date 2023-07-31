@@ -1,0 +1,20 @@
+:root {
+    --color-primary: #FF5748;
+    --color-primary-dim: #FF8D83;
+}
+
+body[data-theme="light"] {
+    --color-bg: #EDF2F4;
+    --color-bg-secondary: #C2D3D9;
+    --color-middle: #8D99AE;
+    --color-front-secondary: #4C5075;
+    --color-front: #2B2D42;
+}
+
+body[data-theme="dark"] {
+    --color-bg: #2B2D42;
+    --color-bg-secondary: #4C5075;
+    --color-middle: #8D99AE;
+    --color-front-secondary: #C2D3D9;
+    --color-front: #EDF2F4;
+}

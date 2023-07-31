@@ -10,7 +10,7 @@ import Card from "../components/Card.astro";
     </button>
 
     <header class="container" data-animated="font color animations">
-      <h1 class="main-title animate-build">
+      <h1 class="main-title animate-build building">
         <span>Nicolas</span>
         <span class="last-name">De gheselle</span>
       </h1>
@@ -26,25 +26,25 @@ import Card from "../components/Card.astro";
       <div class="row">
         <div class="one-third column">
           <Card title="Simplicity">
-            Embracing simplicity in projects is challenging but rewarding. Efficiency is key; achieving more with less is my priority.
+            Embracing simplicity in projects is challenging but rewarding.
+            Efficiency is key; achieving more with less is my priority.
           </Card>
         </div>
         <div class="one-third column">
           <Card title="needs">
-            Distinguishing between needs and wants. Striving to meet needs while being mindful of wants.
+            Distinguishing between needs and wants. Striving to meet needs while
+            being mindful of wants.
           </Card>
         </div>
-        <div class="one-third column ">
+        <div class="one-third column">
           <Card title="efforts">
-            Diligently defining problems and solutions. Embracing multiple attempts for optimal results.
+            Diligently defining problems and solutions. Embracing multiple
+            attempts for optimal results.
           </Card>
         </div>
       </div>
     </section>
   </main>
-
-  <template> </template>
-
   <script>
     document.getElementById("changeTheme").addEventListener("click", () => {
       document.body.dataset.theme =
@@ -54,11 +54,52 @@ import Card from "../components/Card.astro";
     function animateBuild() {
       const elements = document.querySelectorAll(".animate-build");
       elements.forEach((element) => {
+        const { clonedElement, resizeObserver } = cloneBuildPreview(element);
+
+        // Cleanup
+        element.addEventListener("building-end", () => {
+          resizeObserver.disconnect();
+          clonedElement.remove();
+        });
+
+        // After timer of 10s trigger event building-end on element
+        setTimeout(() => {
+          element.dispatchEvent(new Event("building-end"));
+        }, 10000);
+
         // Add lines around it
         // Add overlay
         // Add different classes
       });
     }
+
+    function cloneBuildPreview(target)
+    {
+      const buildPreviewElement = document.getElementById("buildPreview");
+      const clonedElement = buildPreviewElement.children[0].cloneNode(true);
+
+      // Handle resize
+      const resizeObserver = new ResizeObserver(entries => {
+        const targetRect = entries[0].target.getBoundingClientRect();
+        const widthElement = clonedElement.querySelector('.width');
+        const heightElement = clonedElement.querySelector('.height');
+        const descrElement = clonedElement.querySelector('.descr');
+
+        widthElement.style.width = `${targetRect.width + 1}px`;
+        widthElement.style.left = `${targetRect.left - 1}px`;
+        heightElement.style.height = `${targetRect.height + 1}px`;
+        heightElement.style.top = `${targetRect.top - 1}px`;
+
+        descrElement.style.top = `${targetRect.top + targetRect.height}px`;
+        descrElement.style.left = `${targetRect.left}px`;
+      });
+
+      resizeObserver.observe(target);
+      document.body.appendChild(clonedElement);
+      return { clonedElement, resizeObserver };
+    }
+
+    animateBuild();
   </script>
 
   <style>
