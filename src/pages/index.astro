@@ -20,7 +20,7 @@ import Card from "../components/Card.astro";
       <p>
         I am a software engineer. Focusing on creating efficient, maintainable,
         comprehensive but most importantly simple software. Always interested in
-        learning new things and improving my skills.
+        learning new things and improve my skills.
       </p>
       <h2>How?</h2>
       <div class="row">
@@ -51,7 +51,7 @@ import Card from "../components/Card.astro";
         document.body.dataset.theme === "light" ? "dark" : "light";
     });
 
-    function animateBuild() {
+    function zoomOnBuild() {
       const elements = document.querySelectorAll(".animate-build");
       elements.forEach((element) => {
         const { clonedElement, resizeObserver } = cloneBuildPreview(element);
@@ -73,17 +73,16 @@ import Card from "../components/Card.astro";
       });
     }
 
-    function cloneBuildPreview(target)
-    {
+    function cloneBuildPreview(target) {
       const buildPreviewElement = document.getElementById("buildPreview");
       const clonedElement = buildPreviewElement.children[0].cloneNode(true);
 
       // Handle resize
-      const resizeObserver = new ResizeObserver(entries => {
+      const resizeObserver = new ResizeObserver((entries) => {
         const targetRect = entries[0].target.getBoundingClientRect();
-        const widthElement = clonedElement.querySelector('.width');
-        const heightElement = clonedElement.querySelector('.height');
-        const descrElement = clonedElement.querySelector('.descr');
+        const widthElement = clonedElement.querySelector(".width");
+        const heightElement = clonedElement.querySelector(".height");
+        const descrElement = clonedElement.querySelector(".descr");
 
         widthElement.style.width = `${targetRect.width + 1}px`;
         widthElement.style.left = `${targetRect.left - 1}px`;
@@ -98,15 +97,38 @@ import Card from "../components/Card.astro";
       document.body.appendChild(clonedElement);
       return { clonedElement, resizeObserver };
     }
-
-    animateBuild();
+    zoomOnBuild();
   </script>
+</Layout>
 
-  <style>
-    #changeTheme {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
+<style>
+  #changeTheme {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .main-title {
+    transition: 0.3s;
+  }
+  .main-title * {
+    transition: 0.3s;
+  }
+  .main-title .last-name {
+    display: block;
+  }
+</style>
+
+<template id="customStylesTemplate">
+  <style is:inline>
+    .main-title {
+      font-family: "Teko", sans-serif;
+      font-weight: 700;
+      font-size: 10rem;
+    }
+    .main-title .last-name {
+      color: var(--color-primary);
     }
   </style>
-</Layout>
+</template>
+<style id="customStylesContainer" is:inline></style>

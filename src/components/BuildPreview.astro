@@ -1,44 +1,104 @@
-<div id="buildPreview">
-  <div class="build-preview">
-    <div class="width"></div>
-    <div class="height"></div>
-    <div class="descr">
-        Some test
-    </div>
-  </div>
-</div>
+<div id="svgBackground"></div>
+<div id="codingCss" class="building-css"></div>
+
+<script>
+  import { SVG } from '@svgdotjs/svg.js'
+  let canvas;
+  let lines = {
+    left: null,
+    right: null,
+    top: null,
+    bottom: null,
+  };
+
+  function createBackground()
+  {
+    canvas = SVG().addTo('#svgBackground');
+    lines.left = canvas.line(0, 0, 0, 0).stroke({ width: 1 });
+    lines.right = canvas.line(0, 0, 0, 0).stroke({ width: 1 });
+    lines.top = canvas.line(0, 0, 0, 0).stroke({ width: 1 });
+    lines.bottom = canvas.line(0, 0, 0, 0).stroke({ width: 1 });
+  }
+
+  function animateBuild() {
+    var intervalId = window.setInterval(function () {
+      const haveBuildRemaining = buildStyle();
+      if (!haveBuildRemaining) {
+        clearInterval(intervalId);
+      }
+    }, 1000);
+  }
+
+  function buildStyle() {
+    const template = document.getElementById("customStylesTemplate");
+    const container = document.getElementById("customStylesContainer");
+
+    const templateHTML = template.content.children[0].innerHTML.split("\n");
+
+    const actualCss = container.innerHTML.split("\n").length;
+    if (templateHTML.length <= actualCss) return false;
+
+    const newCss = templateHTML.slice(0, actualCss + 1);
+    addCssCoding(newCss[newCss.length - 1]);
+    container.innerHTML = newCss.join("\n") + "}";
+    return true;
+  }
+
+  function addCssCoding(line) {
+    const container = document.getElementById("codingCss");
+    const span = document.createElement("span");
+
+    if (line.includes(";")) {
+      span.classList.add("ml-4");
+    }
+    span.innerHTML = line;
+    container.append(span);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    createBackground();
+    animateBuild();
+  });
+</script>
 
 <style>
-  #buildPreview {
-    display: none;
-  }
-  .build-preview {
-    z-index: -100;
-    position: absolute;
+  #svgBackground {
+    position: fixed;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
-  }
-
-  .build-preview .descr {
-    position: absolute;
-  }
-
-  .build-preview .height {
-    border-top: 1px solid var(--color-bg-secondary);
-    border-bottom: 1px solid var(--color-bg-secondary);
-
-    position: absolute;
     left: 0;
-    right: 0;
   }
-  .build-preview .width {
-    border-left: 1px solid var(--color-bg-secondary);
-    border-right: 1px solid var(--color-bg-secondary);
 
+  #svgBackground svg {
+    height: 100%;
+    width: 100%;
+  }
+</style>
+
+<style is:global>
+  .building-css {
+    width: 25%;
+    height: 40rem;
     position: absolute;
-    top: 0;
-    bottom: 0;
+    color: var(--color-bg-secondary);
+    top: 1.5rem;
+    left: 1.5rem;
+    font-family: Courier, sans-serif;
+  }
+  .building-css span {
+    display: block;
+    animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
 </style>
