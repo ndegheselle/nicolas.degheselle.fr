@@ -1,4 +1,51 @@
+---
+  import Timeline from "./WorkExperience/Timeline.svelte";
 
-<section>
-    <h2>Work experience</h2>
-  </section>
+  const workExperience = [
+    {
+      startingDate: new Date("2019-09-01"),
+      endingDate: new Date("2020-02-01"),
+      internship: true,
+      company: "Company 1",
+      description: "",
+    },
+  ];
+  const gridWorkExperience: any[] = convertToGrid(workExperience);
+
+  function monthDiff(d1, d2) {
+    var months;
+    months = (d2.getFullYear() - d1.getFullYear()) * 12;
+    months -= d1.getMonth();
+    months += d2.getMonth();
+    return months <= 0 ? 0 : months;
+  }
+
+  function convertToGrid(_workExperience) : any[] {
+    
+    let previousExperience = null;
+    const grid = [];
+
+    function addExperience(experience, startDate, endingDate)
+    {
+      const gap = {
+          duration: monthDiff(startDate, endingDate),
+          workExperience: experience,
+        };
+        grid.push(gap)
+    }
+
+    for (let experience of _workExperience) {
+
+      // add a new grid element based on previous
+      if (previousExperience) {
+        addExperience(null, previousExperience.endingDate, experience.startingDate);
+      }
+      addExperience(experience, experience.startingDate, experience.endingDate);
+      previousExperience = experience;
+    }
+
+    return grid;
+  }
+---
+
+<Timeline experiences={gridWorkExperience}/>
