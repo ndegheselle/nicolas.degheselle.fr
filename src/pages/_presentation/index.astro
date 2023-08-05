@@ -1,25 +1,34 @@
 ---
+import TitleSeparator from "../../components/TitleSeparator.astro";
 import DynamicBuildBacakground from "./DynamicBuildBackground.astro";
 ---
 
 <DynamicBuildBacakground />
 
 <section class="container presentation-container">
-  <h1 class="main-title animate-build building">
+  <h1 class="main-title">
+    <span class="background-text giant-title">NDG</span>
     <span>Nicolas</span>
     <span class="last-name">De gheselle</span>
   </h1>
 
-  <h2>Who?</h2>
-  <p>
-    I am a software engineer. Focusing on creating efficient, maintainable,
-    comprehensive but most importantly simple software. Always interested in
-    learning new things and improve my skills.
-  </p>
+  <div class="grid">
+    <div class="col is-auto">
+      <h2 class="giant-title">Who</h2><h2 class="title-complement">Is that ?</h2>
+    </div>
+    <div class="col">
 
-  <h2>How?</h2>
-  <div class="row">
-    <div class="one-third column">
+  <div class="card">
+    <p>
+      I am a software engineer. Focusing on creating efficient, maintainable,
+      comprehensive but most importantly simple software. Always interested in
+      learning new things and improve my skills.
+    </p>
+  </div>
+    </div>
+  </div>
+  <div class="grid with-gap">
+    <div class="col">
       <div class="card">
         <h3>Simplicity</h3>
         <p>
@@ -28,7 +37,7 @@ import DynamicBuildBacakground from "./DynamicBuildBackground.astro";
         </p>
       </div>
     </div>
-    <div class="one-third column">
+    <div class="col">
       <div class="card">
         <h3>needs</h3>
         <p>
@@ -37,7 +46,7 @@ import DynamicBuildBacakground from "./DynamicBuildBackground.astro";
         </p>
       </div>
     </div>
-    <div class="one-third column">
+    <div class="col">
       <div class="card">
         <h3>efforts</h3>
         <p>
@@ -47,6 +56,7 @@ import DynamicBuildBacakground from "./DynamicBuildBackground.astro";
       </div>
     </div>
   </div>
+  <hr />
 </section>
 
 <style>
@@ -54,7 +64,54 @@ import DynamicBuildBacakground from "./DynamicBuildBackground.astro";
     min-height: 100vh;
   }
 
-  .main-titlek,
+  .giant-title {
+    
+    display: inline-block;
+    text-transform: uppercase;
+    color: var(--color-bg-secondary);
+    /*
+    font-size: 30rem;
+    line-height: 25rem;
+    height: 20rem;
+    letter-spacing: -1.8rem;*/
+    user-select: none;
+  }
+
+  .title-complement{
+    
+    display: inline-block;
+    transform: rotate(90deg);
+    user-select: none;
+    transform-origin: bottom left;
+    color: var(--color-bg-secondary);
+    margin-bottom: 0;
+    /*
+    font-size: 6rem;
+    height: 6.5rem;
+    margin-top: -4rem;*/
+  }
+
+  .background-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  .main-title {
+    text-align: center;
+    font-family: "Teko", sans-serif;
+    font-weight: 700;
+    /*font-size: 10rem;*/
+  }
+  .main-title .last-name {
+    color: var(--color-primary);
+  }
+
+  .main-title {
+    position: relative;
+  }
   .main-title * {
     transition: 0.3s;
   }

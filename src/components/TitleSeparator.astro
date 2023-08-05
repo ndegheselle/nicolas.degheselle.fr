@@ -1,0 +1,24 @@
+<div class="title-separator">
+  <hr />
+  <h2 class="title">
+    <slot />
+  </h2>
+  <hr />
+</div>
+
+<style>
+  .title-separator {
+    margin: 3rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+  }
+  .title-separator .title {
+    margin: 0 1rem;
+  }
+  .title-separator > * {
+    margin: 0;
+  }
+  .title-separator hr {
+    width: 100%;
+  }
+</style>

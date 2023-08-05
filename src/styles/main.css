@@ -1,0 +1,32 @@
+body {
+    background-color: var(--color-bg);
+    font-family: Ubuntu, sans-serif;
+    color: var(--color-front);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Teko", sans-serif;
+    color: var(--color-front-secondary);
+}
+
+p {
+    margin-bottom: 0;
+}
+
+hr {
+    border: none;
+    border-top: 0.2rem dotted var(--color-bg-secondary);
+  }
+
+.card {
+    text-align: center;
+    background-color: var(--color-bg-secondary);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 0.1rem dotted var(--color-middle);
+}
