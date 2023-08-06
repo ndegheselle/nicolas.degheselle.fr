@@ -1,47 +1,87 @@
 .container {
-    max-width: 1200px; /* Adjust the max-width as needed */
-    margin: 0 auto;
-    padding: 0 15px;
-  }
+  position: relative;
+  max-width: 1200px;
+  /* Adjust the max-width as needed */
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
-  /* Grid class - 12 columns */
-  .grid {
-    display: flex;
-    flex-wrap: wrap;
-  }
+/* Grid class - 12 columns */
+.grid {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  .grid.with-gap .col{
-    padding: 0.4rem;
-  }
+.grid.with-gap .col {
+  padding: 0.4rem;
+}
 
-  .grid.with-gap .col:first-child{
-    padding-left: 0;
-  }
-  .grid.with-gap .col:last-child{
-    padding-right: 0;
-  }
+.grid.with-gap .col:first-child {
+  padding-left: 0;
+}
 
-  /* Auto sizing column class */
-  .col {
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
-  }
+.grid.with-gap .col:last-child {
+  padding-right: 0;
+}
 
-  .col.is-auto {
-    flex: 0 0 auto;
-  }
+/* Auto sizing column class */
+.col {
+  display: flex;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
 
-  /* Column class for specified sizes */
-  .col.is-1 { flex: 0 0 8.333333%; }
-  .col.is-2 { flex: 0 0 16.666667%; }
-  .col.is-3 { flex: 0 0 25%; }
-  .col.is-4 { flex: 0 0 33.333333%; }
-  .col.is-5 { flex: 0 0 41.666667%; }
-  .col.is-6 { flex: 0 0 50%; }
-  .col.is-7 { flex: 0 0 58.333333%; }
-  .col.is-8 { flex: 0 0 66.666667%; }
-  .col.is-9 { flex: 0 0 75%; }
-  .col.is-10 { flex: 0 0 83.333333%; }
-  .col.is-11 { flex: 0 0 91.666667%; }
-  .col.is-12 { flex: 0 0 100%; }
+.col.is-auto {
+  flex: 0 0 auto;
+}
+
+/* Column class for specified sizes */
+.col.is-1 {
+  flex: 0 0 8.333333%;
+}
+
+.col.is-2 {
+  flex: 0 0 16.666667%;
+}
+
+.col.is-3 {
+  flex: 0 0 25%;
+}
+
+.col.is-4 {
+  flex: 0 0 33.333333%;
+}
+
+.col.is-5 {
+  flex: 0 0 41.666667%;
+}
+
+.col.is-6 {
+  flex: 0 0 50%;
+}
+
+.col.is-7 {
+  flex: 0 0 58.333333%;
+}
+
+.col.is-8 {
+  flex: 0 0 66.666667%;
+}
+
+.col.is-9 {
+  flex: 0 0 75%;
+}
+
+.col.is-10 {
+  flex: 0 0 83.333333%;
+}
+
+.col.is-11 {
+  flex: 0 0 91.666667%;
+}
+
+.col.is-12 {
+  flex: 0 0 100%;
+}
