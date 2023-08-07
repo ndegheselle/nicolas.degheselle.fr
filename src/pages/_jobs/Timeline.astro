@@ -1,0 +1,42 @@
+---
+const { timelineJobs } = Astro.props;
+---
+
+<script>
+    import { SVG } from "@svgdotjs/svg.js";
+
+    let rect;
+    function createBackground()
+    {
+        let canvas = SVG().addTo('.svg-container');
+        canvas.size('100%', '5rem').viewbox(0, 0, 100, 10);
+        canvas.line(0, 5, 100, 5).stroke({ width: 1 }).stroke('red');
+        rect = canvas.circle(10, 10).fill('red').move(45, 0);
+    }
+
+    createBackground();
+
+    document.querySelectorAll('.move').forEach((button) => {
+        button.addEventListener('click', () => {
+            rect.animate(300).move(10,0);
+        });
+    });
+
+</script>
+
+<div class="svg-container">
+
+</div>
+
+- Gradiant on the left and right side
+- 0-0-0 with lines beings drawn dynamically (check how to animate color)
+- Show text on bottom to display (time, date, title (company, internship), description)
+
+<button class="move">Test</button>
+
+<style>
+    .svg-container {
+        width: 100%;
+        max-height: 5rem;
+    }
+</style>

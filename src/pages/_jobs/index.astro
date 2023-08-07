@@ -1,5 +1,5 @@
 ---
-  import Timeline from "./Timeline.svelte";
+  import Timeline from "./Timeline.astro";
   import { convertToGrid, getDurationText } from "./utils";
   import jobs from "../../content/jobs.json";
   
@@ -9,5 +9,5 @@
 <section class="container">
   <h2>Jobs</h2>
   <span>{ getDurationText(totalDuration)}</span>
-  <Timeline timelineJobs={timelineJobs} totalDuration={totalDuration} client:idle/>
+  <Timeline timelineJobs={timelineJobs}/>
 </section>

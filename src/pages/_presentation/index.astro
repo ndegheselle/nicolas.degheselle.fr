@@ -13,7 +13,7 @@ import DynamicBuildBacakground from "./DynamicBuildBackground.astro";
     </h1>
   </section>
 
-<section class="container presentation-container">
+<section class="container">
   <hr />
   <div class="grid">
     <div class="col is-auto title-complement-container">
@@ -65,9 +65,6 @@ import DynamicBuildBacakground from "./DynamicBuildBackground.astro";
 <style>
   hr {
     margin: 3rem 0;
-  }
-  .presentation-container {
-    min-height: 100vh;
   }
 
   .title-complement-container {
@@ -124,7 +121,9 @@ import DynamicBuildBacakground from "./DynamicBuildBackground.astro";
     line-height: 0.7;
   }
   .main-title .last-name {
-    color: var(--color-primary);
+    background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dim));
+    background-clip: text;
+    color: transparent;
   }
   .main-title * {
     transition: 0.3s;
