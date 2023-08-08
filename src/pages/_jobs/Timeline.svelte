@@ -1,62 +1,44 @@
 <script lang="ts">
-    import { getDurationText } from "./utils";
-
-    let selectedJob: any = null;
-    let jobDuration: number = 0;
-
-    function selectJob(job: any, duration: number) {
-        if (selectedJob === job) return;
-
-        selectedJob = job;
-        jobDuration = duration;
-    }
-
+    let hide = false;
     export let timelineJobs: any[] = [];
-    export let totalDuration: number = 0;
 </script>
 
-<div class="timeline">
-    {#each timelineJobs as timeline}
-        <a
-            on:mouseenter={() => selectJob(timeline?.job, timeline.duration)}
-            class:internship={timeline.job && timeline.job.isInternship}
-            class:job={timeline.job && !timeline.job.isInternship}
-            class="experience"
-            style="width:{(timeline.duration / totalDuration) * 100}%"
-        />
-    {/each}
+<div class="grid is-centered with-gap">
+    <div class="col is-auto">
+        <h1 class="giant-title">6</h1>
+        <div class="title-complement">
+            <h2>years</h2>
+            <h2>7 months</h2>
+        </div>
+    </div>
+    <div class="col is-4 description" class:hide={hide} on:click={() => hide = true}>
+        <div class="card">
+            <h4>Boup</h4>
+            <p>
+                lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+            </p>
+        </div>
+    </div>
 </div>
 
-<section class="job-description" class:active={selectedJob}>
-    {#if selectedJob}
-    <div>
-        <h3>{selectedJob.company}</h3>
-        <span>{getDurationText(jobDuration)}</span>
-    </div>
-    <p>{selectedJob.description}</p>
-    {/if}
-</section>
-
 <style>
-    .timeline {
-        display: flex;
-    }
-
-    .experience {
-        display: block;
-        height: 20px;
-        background: var(--color-bg-secondary);
-    }
-    .experience.internship {
-        background: var(--color-primary-dim);
-    }
-    .experience.job {
-        background: var(--color-primary);
-    }
-
-    .job-description {
-        transition: 0.3s;
-        height: 0;
+    .description {
         overflow: hidden;
+        transition: 0.3s;
+        background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dim));
+        background-clip: text;
+        color: transparent;
+    }
+    .description.hide {
+        flex: 0 0 0;
+    }
+
+    .title-complement {
+        margin-left: 1rem;       
+    }
+    .title-complement > h2 {
+        color: var(--color-bg-secondary);
+        margin: 0;
     }
 </style>

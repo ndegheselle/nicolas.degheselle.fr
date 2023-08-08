@@ -3,40 +3,68 @@ const { timelineJobs } = Astro.props;
 ---
 
 <script>
-    import { SVG } from "@svgdotjs/svg.js";
+  import { SVG } from "@svgdotjs/svg.js";
 
-    let rect;
-    function createBackground()
-    {
-        let canvas = SVG().addTo('.svg-container');
-        canvas.size('100%', '5rem').viewbox(0, 0, 100, 10);
-        canvas.line(0, 5, 100, 5).stroke({ width: 1 }).stroke('red');
-        rect = canvas.circle(10, 10).fill('red').move(45, 0);
-    }
+  let canvas;
+  let background;
+  let texts = {
+    main: null,
+    top: null,
+    bot: null,
+  };
+  function createBackground() {
+    canvas = SVG().addTo(".svg-container");
+    canvas.size("25rem", "15rem").viewbox(0, 0, 25, 15);
 
-    createBackground();
+    const rect = canvas.rect(35, 15).fill("#000");
+    texts.main = canvas.text("7").font({ size: 25, fill: "#fff" }).move(0, -10);
+    texts.top = canvas.text("1").font({ size: 6, fill: "#fff" }).move(15, 1);
+    texts.bot = canvas.text("1").font({ size: 6, fill: "#fff" }).move(15, 6);
 
-    document.querySelectorAll('.move').forEach((button) => {
-        button.addEventListener('click', () => {
-            rect.animate(300).move(10,0);
-        });
+    const group = canvas.group();
+    group.add(rect);
+    group.add(texts.main);
+    group.add(texts.top);
+    group.add(texts.bot);
+
+    let gradient = canvas.gradient("linear", function (add) {
+      add.stop(0, "var(--color-bg-secondary)");
+      add.stop(0.5, "var(--color-bg-secondary)");
+      add.stop(0.5, "var(--color-primary-dim)");
+      add.stop(1, "var(--color-primary)");
     });
+    gradient.from(0, 0).to(0, 1);
 
+    canvas.add(group);
+    background = canvas.rect(35, 30).fill(gradient).move(0, -15);
+    background.maskWith(group);
+  }
+
+  function animate(percent) {
+    console.log("animate");
+    background.animate().move(0, percent * 15 - 15);
+  }
+
+  function updateText(main, top, bot) {
+    texts.main.text(main);
+    texts.top.text(top);
+    texts.bot.text(bot);
+  }
+
+  createBackground();
+  updateText("8", "years", "7 months");
 </script>
 
-<div class="svg-container">
+<div class="svg-container"></div>
 
-</div>
-
-- Gradiant on the left and right side
-- 0-0-0 with lines beings drawn dynamically (check how to animate color)
-- Show text on bottom to display (time, date, title (company, internship), description)
-
-<button class="move">Test</button>
-
-<style>
-    .svg-container {
-        width: 100%;
-        max-height: 5rem;
-    }
+<style is:global>
+  .svg-container {
+    width: 100%;
+    max-height: 5rem;
+  }
+  svg text {
+    font-weight: bold;
+    font-family: "Teko", sans-serif;
+    line-height: 0.8;
+  }
 </style>

@@ -17,7 +17,7 @@ import DynamicBuildBacakground from "./DynamicBuildBackground.astro";
   <hr />
   <div class="grid">
     <div class="col is-auto title-complement-container">
-      <h2 class="giant-title">Who</h2><h3 class="title-complement">
+      <h2 class="giant-title">Who</h2><h3 class="title-complement rotate">
         Is that?
       </h3>
     </div>
@@ -70,43 +70,6 @@ import DynamicBuildBacakground from "./DynamicBuildBackground.astro";
   .title-complement-container {
     margin-right: -4rem;;
   }
-
-  .giant-title {
-    display: inline-block;
-    text-transform: uppercase;
-    color: var(--color-bg-secondary);
-    font-size: 15rem;
-    line-height: 12rem;
-    height: 10rem;
-    letter-spacing: -0.8rem;
-    user-select: none;
-    margin: 0;
-  }
-  .giant-title.revert-background {
-    color: var(--color-bg);
-  }
-  
-  .giant-title.in-background {
-    position: absolute;
-  }
-  .giant-title.is-centered {
-    letter-spacing: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .title-complement {
-    display: inline-block;
-    transform: rotate(90deg);
-    user-select: none;
-    transform-origin: bottom left;
-    color: var(--color-bg-secondary);
-    margin-bottom: 0;
-    font-size: 2.5rem;
-    height: 3rem;
-    margin-top: -3rem;
-  }
-
 
   .main-title {
     background-color: var(--color-bg-secondary);

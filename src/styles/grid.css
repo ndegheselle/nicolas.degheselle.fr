@@ -13,6 +13,10 @@
   flex-wrap: wrap;
 }
 
+.grid.is-centered {
+  justify-content: center;
+}
+
 .grid.with-gap .col {
   padding: 0.4rem;
 }
