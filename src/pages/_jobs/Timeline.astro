@@ -12,14 +12,17 @@ const { timelineJobs } = Astro.props;
     top: null,
     bot: null,
   };
+  let size = {x: 150, y: 100};
+
   function createBackground() {
     canvas = SVG().addTo(".svg-container");
-    canvas.size("25rem", "15rem").viewbox(0, 0, 25, 15);
+    canvas.size("15rem", "10rem").viewbox(0, 0, size.x, size.y);
 
-    const rect = canvas.rect(35, 15).fill("#000");
-    texts.main = canvas.text("7").font({ size: 25, fill: "#fff" }).move(0, -10);
-    texts.top = canvas.text("1").font({ size: 6, fill: "#fff" }).move(15, 1);
-    texts.bot = canvas.text("1").font({ size: 6, fill: "#fff" }).move(15, 6);
+    console.log("createBackground", size);
+    const rect = canvas.rect(size.x, size.y).fill("#000");
+    texts.main = canvas.text("7").font({ size: size.y, fill: "#fff" }).move(0, 0);
+    texts.top = canvas.text("1").font({ size: size.y / 4, fill: "#fff" }).move(size.x / 3, size.y / 3);
+    texts.bot = canvas.text("1").font({ size: size.y / 4, fill: "#fff" }).move(size.x / 3, size.y / 1.8);
 
     const group = canvas.group();
     group.add(rect);
@@ -36,7 +39,7 @@ const { timelineJobs } = Astro.props;
     gradient.from(0, 0).to(0, 1);
 
     canvas.add(group);
-    background = canvas.rect(35, 30).fill(gradient).move(0, -15);
+    background = canvas.rect(size.x, size.y * 2).fill(gradient).move(0, -size.y/2);
     background.maskWith(group);
   }
 
@@ -52,7 +55,7 @@ const { timelineJobs } = Astro.props;
   }
 
   createBackground();
-  updateText("8", "years", "7 months");
+  updateText("2", "years", "10 months");
 </script>
 
 <div class="svg-container"></div>
