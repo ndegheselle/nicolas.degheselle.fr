@@ -1,44 +1,45 @@
-<script lang="ts">
-    let hide = false;
-    export let timelineJobs: any[] = [];
+<script>
+
 </script>
 
 <div class="grid is-centered with-gap">
-    <div class="col is-auto">
-        <h1 class="giant-title">6</h1>
-        <div class="title-complement">
-            <h2>years</h2>
-            <h2>7 months</h2>
-        </div>
-    </div>
-    <div class="col is-4 description" class:hide={hide} on:click={() => hide = true}>
-        <div class="card">
-            <h4>Boup</h4>
-            <p>
-                lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
-            </p>
-        </div>
-    </div>
+  <div class="col is-auto">
+      <div class="svg-container"></div>
+  </div>
+  <div class="col is-4 description">
+    <h2 class="title-complement">
+      of practical experience
+    </h2>
+  </div>
 </div>
 
 <style>
-    .description {
-        overflow: hidden;
-        transition: 0.3s;
-        background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dim));
-        background-clip: text;
-        color: transparent;
-    }
-    .description.hide {
-        flex: 0 0 0;
-    }
+  .description {
+      overflow: hidden;
+      transition: 0.3s;
+      max-height: 15rem;
+      align-items: center;
+  }
+  .description.hide {
+      flex: 0 0 0;
+  }
 
-    .title-complement {
-        margin-left: 1rem;       
-    }
-    .title-complement > h2 {
-        color: var(--color-bg-secondary);
-        margin: 0;
-    }
+  .title-complement {
+      margin-left: 1rem;       
+  }
+  .title-complement > h2 {
+      color: var(--color-bg-secondary);
+      margin: 0;
+  }
+</style>
+
+<style is:global>
+  .svg-container {
+    width: 100%;
+  }
+  svg text {
+    font-weight: bold;
+    font-family: "Teko", sans-serif;
+    line-height: 0.8;
+  }
 </style>
