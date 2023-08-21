@@ -1,11 +1,9 @@
 ---
-  import Timeline from "./Timeline.astro";
-  import { convertToGrid, getDurationText } from "./utils";
+  import Jobs from "./Jobs.svelte";
   import jobs from "../../content/jobs.json";
-  
-  const [timelineJobs, totalDuration] = convertToGrid(jobs);
+  // Display date as text with ramping up animation
+  // add total on the side in background
+  // option to hide interneship
 ---
 
-<section class="container">
-  <Timeline timelineJobs={timelineJobs} />
-</section>
+<Jobs jobs={jobs}/>

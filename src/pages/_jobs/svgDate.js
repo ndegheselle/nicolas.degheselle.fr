@@ -9,7 +9,7 @@ let texts = {
 };
 let size = {x: 150, y: 100};
 
-function createBackground() {
+export function createBackground() {
   canvas = SVG().addTo(".svg-container");
   canvas.size("15rem", "10rem").viewbox(0, 0, size.x, size.y);
 
@@ -38,16 +38,15 @@ function createBackground() {
   background.maskWith(group);
 }
 
-function animate(percent) {
-  console.log("animate");
+export function animate(percent) {
   background.animate().move(0, percent * 15 - 15);
 }
 
-function updateText(main, top, bot) {
+export function updateText(main, top, bot) {
   texts.main.text(main);
   texts.top.text(top);
   texts.bot.text(bot);
 }
 
-  createBackground();
-  updateText("2", "years", "10 months");
+createBackground();
+updateText("2", "years", "10 months");

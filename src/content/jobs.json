@@ -5,5 +5,12 @@
       "isInternship": true,
       "company": "Company 1",
       "description": ""
+    },
+
+    {
+      "startingDate": "2022-05-05",
+      "endingDate": null,
+      "company": "Company 1",
+      "description": ""
     }
 ]
