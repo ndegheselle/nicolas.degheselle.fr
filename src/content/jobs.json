@@ -4,13 +4,13 @@
       "endingDate": "2020-02-01",
       "isInternship": true,
       "company": "Company 1",
-      "description": ""
+      "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
 
     {
       "startingDate": "2022-05-05",
       "endingDate": null,
-      "company": "Company 1",
-      "description": ""
+      "company": "Company 2",
+      "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
 ]
