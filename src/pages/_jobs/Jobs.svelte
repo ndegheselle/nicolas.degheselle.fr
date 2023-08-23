@@ -109,6 +109,7 @@
     .timeline {
         flex-wrap: nowrap;
         overflow-x: auto;
+        min-height: 6rem;
     }
 
     .timeline-container {
