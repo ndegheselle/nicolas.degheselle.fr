@@ -1,24 +1,62 @@
 <script>
   // Create the books
   // How to do the bookshelf?
+
+  // Tested it
+  // Used in a complete project
+  // Used in seleveral projects
 </script>
 
+<span class="know">
+  C++
+</span>
+
+<span class="know some">
+  C++
+</span>
+
+<span class="know a-lot">
+  C++
+</span>
+
 <div class="grid">
-  <span class="book"></span>
-  <span class="book"></span>
-  <span class="book"></span>
-  <span class="book"></span>
-  <span class="book"></span>
-  <span class="book"></span>
-  <span class="book"></span>
-  <span class="book"></span>
-  <span class="book"></span>
+  <div class="col bookshelf">
+    <span class="book"> C++ et d'autres choses</span>
+    <span class="book"></span>
+    <span class="book"></span>
+    <span class="book"></span>
+  </div>
+  <div class="col bookshelf">
+    <span class="book"></span>
+    <span class="book"></span>
+    <span class="book"></span>
+  </div>
 </div>
 
 <style>
+
+  .know {
+    border: 0.3rem solid var(--color-bg-secondary);
+    border-radius: 0.2rem;
+    padding: 0.2rem 0.5rem;
+  }
+  .know.some {
+    border-color: var(--color-primary-dim);
+  }
+  .know.a-lot {
+    border-color: var(--color-primary);
+  }
+
+  .bookshelf {
+    background-color: burlywood;
+    border: 0.5rem solid chocolate;
+    height: 150px;
+    align-items: end;
+  }
+
   .book {
     display: block;
-    width: 200px;
+    width: 50px;
     height: 100px;
     background-color: red;
   }

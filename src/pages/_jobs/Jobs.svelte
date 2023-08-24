@@ -46,7 +46,7 @@
         if (lines[lines.length - 1].isJob)
             lines[lines.length - 1].isFirstOrLast = true;
 
-        console.log("paujreazo");
+        selectJob(_jobs[_jobs.length - 1]);
         return lines;
     }
 
@@ -54,6 +54,7 @@
         if (_job == null) return;
         selectedJob = _job;
     }
+
     function formatDate(timestamp)
     {
         return new Date(timestamp).toLocaleDateString(undefined, {
@@ -92,7 +93,7 @@
 
 <div class="grid">
     <div class="col is-6">
-        <div class="card" class:active={selectedJob}>
+        <div class="card">
             {#if selectedJob}
                 <h3>{selectedJob.company}</h3>
                 <p class="date">
@@ -148,18 +149,4 @@
         transform: scaleY(1.2);
     }
 
-    .card {
-        opacity: 0;
-        transition: 1s;
-        margin-top: 2rem;
-        overflow: hidden;
-        max-height: 0;
-    }
-    .card.active {
-        opacity: 1;
-        max-height: 500px;
-    }
-    .card .date {
-        color: var(--color-front-secondary);
-    }
 </style>
