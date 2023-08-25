@@ -1,10 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import Presentation from "./_presentation/index.astro";
 import Jobs from "./_jobs/index.astro";
 import Knowledges from "./_knowledges/index.astro";
+
+import DynamicBuildBackground from "./_presentation/DynamicBuildBackground.astro";
+import MainTitle from "./_presentation/MainTitle.astro";
+import WhoIAm from "./_presentation/WhoIAm.astro";
+import Presentation from "./_presentation/Presentation.astro";
 ---
+
+
+
 
 <script>
   document.getElementById("changeTheme").addEventListener("click", () => {
@@ -14,15 +21,25 @@ import Knowledges from "./_knowledges/index.astro";
 </script>
 
 <Layout title="Welcome to Astro.">
-  <main>
-    <button id="changeTheme" class="with-icon">
-      <i class="gg-dark-mode"></i>
-    </button>
 
+  <button id="changeTheme" class="with-icon">
+    <i class="gg-dark-mode"></i>
+  </button>
+
+  <DynamicBuildBackground />
+
+  <MainTitle />
+  <main class="container">
+    <hr />
+    <WhoIAm />
+    <hr class="mb-0"/>
+    <h2 class="part-title">How I work</h2>
     <Presentation />
-    <hr />
+    <hr class="mb-0"/>
+    <h2 class="part-title">Experiences</h2>
     <Jobs />
-    <hr />
+    <hr class="mb-0"/>
+    <h2 class="part-title">What I know</h2>
     <Knowledges />
   </main>
 </Layout>
@@ -32,6 +49,11 @@ import Knowledges from "./_knowledges/index.astro";
     position: fixed;
     top: 1rem;
     right: 1rem;
+  }
+
+  .part-title {
+    color: var(--color-bg-secondary);
+    text-transform: uppercase;
   }
 
 </style>
