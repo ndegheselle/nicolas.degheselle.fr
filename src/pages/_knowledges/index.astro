@@ -1,36 +1,6 @@
-<script>
-  // Create the books
-  // How to do the bookshelf?
+---
+import knowledges from "../../content/knowledges.json";
+import Knowledges from "./Knowledges.svelte";
+---
 
-  // Tested it
-  // Used in a complete project
-  // Used in seleveral projects
-</script>
-
-<span class="know">
-  C++
-</span>
-
-<span class="know some">
-  C++
-</span>
-
-<span class="know a-lot">
-  C++
-</span>
-
-<style>
-
-  .know {
-    border: 1px solid var(--color-bg-secondary);
-    border-radius: 0.2rem;
-    padding: 0.2rem 0.5rem;
-  }
-  .know.some {
-    border-color: var(--color-primary-dim);
-  }
-  .know.a-lot {
-    border-color: var(--color-primary);
-  }
-
-</style>
+<Knowledges knowledges={knowledges} client:idle/>

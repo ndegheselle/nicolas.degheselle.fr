@@ -1,22 +1,27 @@
 [
     {
-        "title": "C++",
-        "description": "Did a lot of that",
-        "level": 4
-    },
-    {
-        "title": "C#",
-        "description": "Did a lot of that",
-        "level": 2
-    },
-    {
-        "title": "Java",
-        "description": "Did a lot of that",
-        "level": 3
-    },
-    {
-        "title": "Python",
-        "description": "Did a lot of that",
-        "level": 1
+        "title": "Languages",
+        "elements": [
+            {
+                "title": "C++",
+                "description": "Did a lot of that",
+                "level": 2
+            },
+            {
+                "title": "C#",
+                "description": "Did a lot of that",
+                "level": 2
+            },
+            {
+                "title": "Java",
+                "description": "Did a lot of that",
+                "level": 3
+            },
+            {
+                "title": "Python",
+                "description": "Did a lot of that",
+                "level": 1
+            }
+        ]
     }
 ]
