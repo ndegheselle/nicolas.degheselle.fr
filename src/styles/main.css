@@ -25,10 +25,14 @@ hr {
 }
 
 .card {
+    width: 100%;
     text-align: center;
     background-color: var(--color-bg-secondary);
     padding: 1rem 1.5rem;
     border-radius: 0.5rem;
+}
+.card h3 {
+    margin: 0;
 }
 
 .giant-title {
@@ -44,7 +48,6 @@ hr {
 
 .giant-title.revert-background {
     color: var(--color-bg);
-    
     user-select: none;
 }
 

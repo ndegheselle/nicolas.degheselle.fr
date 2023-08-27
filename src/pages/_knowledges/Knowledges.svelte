@@ -1,17 +1,5 @@
 <script>
-    function getRandomHeight() {
-        return Math.floor(Math.random() * (120 - 80 + 1)) + 80;
-    }
-
-    function getRandomWidth() {
-        return Math.floor(Math.random() * (50 - 20 + 1)) + 20;
-    }
-
-    function getRandomSpacing() {
-        let spacings = ["is-spaced", "is-start", "is-end"];
-        return spacings[Math.floor(Math.random() * spacings.length)];
-    }
-
+    import Book from "./Book.svelte";
     function enterBookshelf(event) {
         // foreach books-container remove active class
         document
@@ -20,34 +8,43 @@
         // Add active class to the current element
         event.currentTarget.classList.add("active");
     }
+    function clickBookshelf(event, know) {
+        enterBookshelf(event);
+        selectedBookshelf = know;
+    }
 
+    let selectedBookshelf = null;
     export let knowledges = [];
 </script>
 
+<div class="grid">
+    <div class="col is-6">
+        {#if selectedBookshelf}
+            <div class="card mb-2">
+                <h3>{selectedBookshelf.title}</h3>
+                <p>
+                    {selectedBookshelf.description}
+                </p>
+            </div>
+        {/if}
+    </div>
+</div>
+
 {#each knowledges as know}
     <div class="grid">
-        <!-- If you are looking there you are wondering why I didn't made this with SVG. Because it's way easier to handle responsivity and transform origins -->
-        <div class="col is-4 bookshelf">
+        <div class="col is-6 bookshelf">
             {#each know.elements as element, index}
-                <div class="books-container" on:mouseenter={enterBookshelf}>
+                <a
+                    class="books-container"
+                    on:click={(e) => clickBookshelf(e, element)}
+                    on:mouseenter={enterBookshelf}
+                    href="javascript:;"
+                >
                     {#each Array(element.level) as _, __}
-                        <a
-                            class="book"
-                            class:secondary={index % 2}
-                            style="width: {getRandomWidth()}px;height: {getRandomHeight()}px;"
-                        >
-                            <span
-                                class="book-illustrations {getRandomSpacing()}"
-                            >
-                                <span class="vertical-line" />
-                                <span class="vertical-line" />
-                                <span class="vertical-line" />
-                                <span class="ball" />
-                            </span>
-                        </a>
+                        <Book isSecondary={index % 2}/>
                     {/each}
                     <span class="title">{element.title}</span>
-                </div>
+                </a>
             {/each}
 
             {#if know.title}
@@ -61,29 +58,21 @@
     .bookshelf {
         border: 0.6rem solid var(--color-bg-secondary);
         border-radius: 0.4rem;
-        height: 150px;
+        height: 180px;
+        position: relative;
     }
 
     .bookshelf-title {
         position: absolute;
-        bottom: 0.5rem;
+        bottom: 0;
+        left: -0.4rem;
         background-color: var(--color-bg);
+        border: 1px solid var(--color-bg-secondary);
         padding: 0.1rem 0.3rem;
         color: var(--color-front-secondary);
         border-radius: 0.2rem;
-    }
-
-    .book {
-        transition: 0.3s;
-        display: block;
-        width: 30px;
-        height: 100px;
-        background-color: var(--color-primary-dim);
-        border-radius: 0.2rem;
-        margin: 0 0.05rem;
-    }
-    .book.secondary {
-        background-color: var(--color-secondary-dim);
+        rotate: -90deg;
+        transform-origin: bottom left;
     }
 
     .books-container {
@@ -103,47 +92,7 @@
         border-bottom: 4px solid var(--color-bg-secondary);
     }
 
-    :global(.books-container.active .book) {
-        background-color: var(--color-primary);
-    }
-    :global(.books-container.active .book.secondary) {
-        background-color: var(--color-secondary);
-    }
     :global(.books-container.active .title) {
         color: var(--color-front-secondary) !important;
-    }
-
-    .book-illustrations {
-        display: flex;
-        padding: 0.2rem;
-        flex-direction: column;
-        height: 100%;
-        box-sizing: border-box;
-    }
-    .book-illustrations.is-spaced {
-        justify-content: space-between;
-    }
-    .book-illustrations.is-start {
-        justify-content: start;
-    }
-    .book-illustrations.is-end {
-        justify-content: end;
-    }
-
-    .vertical-line {
-        margin: 0.3rem 0;
-        display: block;
-        height: 0.3rem;
-        background-color: var(--color-bg);
-        width: 100%;
-    }
-    
-    .ball {
-        display: block;
-        width: 0.8rem;
-        height: 0.8rem;
-        background-color: var(--color-bg);
-        border-radius: 50%;
-        margin: 0 auto;
     }
 </style>
