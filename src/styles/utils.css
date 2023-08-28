@@ -1,6 +1,9 @@
 .ml-4 {
     margin-left: 1.5rem !important;
 }
+.ml-auto {
+    margin-left: auto;
+}
 
 .d-flex {
     display: flex !important;

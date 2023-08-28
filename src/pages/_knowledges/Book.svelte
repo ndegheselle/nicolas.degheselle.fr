@@ -1,10 +1,12 @@
 <script>
     function getRandomHeight() {
-        return Math.floor(Math.random() * (120 - 80 + 1)) + 80;
+        let more = 0;
+        if (isBackground) more = 20;
+        return Math.floor(Math.random() * (120 + more - 80 + more + 1)) + 80 + more;
     }
 
     function getRandomWidth() {
-        return Math.floor(Math.random() * (50 - 20 + 1)) + 20;
+        return Math.floor(Math.random() * (40 - 10 + 1)) + 10;
     }
 
     function getRandomSpacing() {
@@ -12,11 +14,13 @@
         return spacings[Math.floor(Math.random() * spacings.length)];
     }
 
+    export let isBackground = false;
     export let isSecondary = false;
 </script>
 
 <span
     class="book"
+    class:background={isBackground}
     class:secondary={isSecondary}
 >
     <span class="topside" />
@@ -37,11 +41,15 @@
         --book-color: var(--book-color-active);
     }
 
-    .book:hover .topside {
+    .book:hover:not(.background) .topside {
         min-height: 1rem;
     }
-    .book:hover {
+    .book:hover:not(.background) {
         transform: translateY(0.5rem);
+    }
+
+    .book.background {
+        --book-color: var(--color-bg-secondary);
     }
 
     .book {

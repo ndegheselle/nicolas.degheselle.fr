@@ -1,9 +1,9 @@
 :root {
     --color-primary: #FF6F61;
-    --color-primary-dim: #ffb7b0;
+    --color-primary-dim: #ff9a90;
 
     --color-secondary: #C23373;
-    --color-secondary-dim: #e396b8;
+    --color-secondary-dim: #d86c9c;
 
     --color-middle: #8D99AE;
 }
@@ -17,8 +17,11 @@ body[data-theme="light"] {
 
 body[data-theme="dark"] {
 
-    --color-primary-dim: #b00f00;
-    --color-primary-dim: #177584;
+    --color-primary: #219ebc;
+    --color-primary-dim: #104f5e;
+
+    --color-secondary: #83c5be;
+    --color-secondary-dim: #346f69;
 
     --color-bg: #2B2D42;
     --color-bg-secondary: #4C5075;

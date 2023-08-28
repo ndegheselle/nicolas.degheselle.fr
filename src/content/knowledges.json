@@ -4,23 +4,304 @@
         "elements": [
             {
                 "title": "C++",
-                "description": "Did a lot of that",
-                "level": 2
-            },
-            {
-                "title": "C#",
-                "description": "Did a lot of that",
+                "description": "Like it a lot. Large control on ressources, you can't do something wrong without knowing it. Can be hard to compile and debug at times.",
                 "level": 2
             },
             {
                 "title": "Java",
-                "description": "Did a lot of that",
+                "description": "Usefull. Do like the fact that you can have methods and property on enums. A little bit to verbose for me.",
+                "level": 1
+            },
+            {
+                "title": "C#",
+                "description": "My go to language. Less heavy than Java, but still multiplatform, clear syntax, easy to use, easy to debug, easy to compile, easy to deploy.",
                 "level": 3
             },
             {
                 "title": "Python",
+                "description": "Nice if you want something working fast, easy to use, easy to start, a lot of easily accessible libraries. Do like all the small syntax tricks.",
+                "level": 1
+            },
+            {
+                "containerClass": "ml-auto",
+                "title": "TypeScript",
+                "description": "And Javascript as well. Everything is easy to do, and so is making bad design choices. Promises are a pain.",
+                "level": 3
+            },
+            {
+                "title": "HTML/CSS",
+                "description": "It does it's job well, even more then you start to compare it to other alternatives (XAML ?).",
+                "level": 3
+            }
+        ]
+    },
+    {
+        "title": "Web apps",
+        "bookshelfClass": "is-3",
+        "elements": [
+            {
+                "title": "Astro.js",
                 "description": "Did a lot of that",
                 "level": 1
+            },
+            {
+                "title": "Nuxt",
+                "description": "Did a lot of that",
+                "level": 1
+            },
+            {
+                "title": "Webpack",
+                "description": "Did a lot of that",
+                "level": 3
+            },
+            
+            {
+                "title": "Vite",
+                "description": "Did a lot of that",
+                "level": 1
+            }
+        ]
+    },
+    {
+        "title": "Web frontend",
+        "bookshelfClass": "is-3",
+        "elements": [
+            {
+                "title": "SvelteKit",
+                "description": "Did a lot of that",
+                "level": 2
+            },
+            
+            {
+                "title": "Vuejs",
+                "description": "Did a lot of that",
+                "level": 3
+            },
+            {
+                "title": "Angular",
+                "description": "Did a lot of that",
+                "level": 2
+            },
+            {
+                "title": "React",
+                "description": "Did a lot of that",
+                "level": 1
+            }
+        ]
+    },
+    {
+        "title": "Databases",
+        "elements": [
+            {
+                "title": "MySQL",
+                "description": "Did a lot of that",
+                "level": 3
+            },
+            
+            {
+                "title": "SQL Server",
+                "description": "Did a lot of that",
+                "level": 3
+            },
+            {
+                "type": "separator"
+            },
+            {
+                "containerClass": "ml-auto",
+                "title": "MongoDB",
+                "description": "Did a lot of that",
+                "level": 2
+            }
+        ]
+    },
+    {
+        "title": "AI",
+        "bookshelfClass": "is-1",
+        "elements": [
+            {
+                "title": "Tensorflow",
+                "description": "Did a lot of that",
+                "level": 1
+            },
+            
+            {
+                "title": "Keras",
+                "description": "Did a lot of that",
+                "level": 1
+            }
+        ]
+    },
+    {
+        "title": "Environment",
+        "bookshelfClass": "is-1",
+        "elements": [
+            {
+                "title": "Docker",
+                "description": "Did a lot of that",
+                "level": 2
+            }
+        ]
+    },
+    {
+        "title": "Mobile",
+        "bookshelfClass": "is-2",
+        "elements": [
+            {
+                "title": "Ionic",
+                "description": "Did a lot of that",
+                "level": 1
+            },
+            {
+                "title": "Cordova",
+                "description": "Did a lot of that",
+                "level": 1
+            },
+            {
+                "title": "Kotlin",
+                "description": "Did a lot of that",
+                "level": 1
+            }
+        ]
+    },
+    {
+        "title": "Multiplatform",
+        "bookshelfClass": "is-2",
+        "elements": [
+            {
+                "containerClass": "ml-auto",
+                "title": "Flutter",
+                "description": "Did a lot of that",
+                "level": 1
+            },
+            {
+                "title": "Maui",
+                "description": "Did a lot of that",
+                "level": 3
+            }
+        ]
+    },
+    {
+        "title": "Desktop",
+        "elements": [
+            {
+                "title": "UWP",
+                "description": "Did a lot of that",
+                "level": 1
+            },
+            {
+                "title": "WPF",
+                "description": "Did a lot of that",
+                "level": 3
+            },
+            {
+                "title": "Swing",
+                "description": "Did a lot of that",
+                "level": 2
+            },
+            {
+                "containerClass": "ml-auto",
+                "title": "SDL2",
+                "description": "Did a lot of that",
+                "level": 2
+            },
+            {
+                "title": "SFML",
+                "description": "Did a lot of that",
+                "level": 2
+            },
+            {
+                "containerClass": "ml-auto",
+                "title": "Tauri",
+                "description": "Did a lot of that",
+                "level": 1
+            },
+            {
+                "title": "Electron",
+                "description": "Did a lot of that",
+                "level": 2
+            }
+        ]
+    },
+    {
+        "title": "Web backend",
+        "bookshelfClass": "is-4",
+        "elements": [
+            {
+                "title": ".NET ASP (Framework / Core)",
+                "description": "Did a lot of that",
+                "level": 2
+            },
+            {
+                "titleClass": "is-shifted",
+                "title": "Blazor",
+                "description": "Did a lot of that",
+                "level": 2
+            },
+            {
+                "containerClass": "ml-auto",
+                "title": "Spring",
+                "description": "Did a lot of that",
+                "level": 1
+            },
+            {
+                "title": "Laravel",
+                "description": "Did a lot of that",
+                "level": 3
+            }
+        ]
+    },
+    {
+        "title": "Web server",
+        "bookshelfClass": "is-2",
+        "elements": [
+            {
+                "containerClass": "ml-auto",
+                "title": "Nginx",
+                "description": "Did a lot of that",
+                "level": 3
+            },
+            {
+                "title": "Apache",
+                "description": "Did a lot of that",
+                "level": 1
+            }
+        ]
+    },
+    
+    {
+        "title": "Web API",
+        "elements": [
+            {
+                "title": "Express.js",
+                "description": "Did a lot of that",
+                "level": 3
+            },
+            {
+                "title": "Fastify",
+                "description": "Did a lot of that",
+                "level": 1
+            },
+            {
+                "title": "Node.js",
+                "description": "Did a lot of that",
+                "level": 3
+            },
+            {
+                "containerClass": "ml-auto",
+                "title": "Lumen",
+                "description": "Did a lot of that",
+                "level": 1
+            },
+            {
+                "title": "Slim",
+                "description": "Did a lot of that",
+                "level": 1
+            },
+            {
+                "containerClass": "ml-auto",
+                "title": "Swagger",
+                "description": "Did a lot of that",
+                "level": 2
             }
         ]
     }
