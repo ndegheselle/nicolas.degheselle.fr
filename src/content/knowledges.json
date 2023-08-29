@@ -30,7 +30,7 @@
             },
             {
                 "title": "HTML/CSS",
-                "description": "It does it's job well, even more then you start to compare it to other alternatives (XAML ?).",
+                "description": "It does it's job well, even more then you start to compare it to other markup languages (XAML ?).",
                 "level": 3
             }
         ]
@@ -46,18 +46,18 @@
             },
             {
                 "title": "Nuxt",
-                "description": "Did a lot of that",
+                "description": "Hard to use what you want.",
                 "level": 1
             },
             {
                 "title": "Webpack",
-                "description": "Did a lot of that",
+                "description": "Nice to cleany bundle and nicely separate everything. Should be used on every medium and big project.",
                 "level": 3
             },
             
             {
                 "title": "Vite",
-                "description": "Did a lot of that",
+                "description": "Simpler and faster than webpack. I really like it.",
                 "level": 1
             }
         ]
@@ -147,18 +147,18 @@
         "bookshelfClass": "is-2",
         "elements": [
             {
-                "title": "Ionic",
-                "description": "Did a lot of that",
+                "title": "Cordova",
+                "description": "It's a pain to use, but it's the only way to create a multiplatform (including mobile) app with web technologies.",
                 "level": 1
             },
             {
-                "title": "Cordova",
-                "description": "Did a lot of that",
+                "title": "Ionic",
+                "description": "Corodva without the pain of Cordova. A lot of nice prebuilt components.",
                 "level": 1
             },
             {
                 "title": "Kotlin",
-                "description": "Did a lot of that",
+                "description": "I do like what they did with the language, take some time to accostum to it but I see how it can save a lot of time (even more compared to Java).",
                 "level": 1
             }
         ]
@@ -170,12 +170,12 @@
             {
                 "containerClass": "ml-auto",
                 "title": "Flutter",
-                "description": "Did a lot of that",
+                "description": "Interesting concept, complete API / functionnalites and a lot of plugins. Not realy fan of the fact that it's really easy to mix logic and UI.",
                 "level": 1
             },
             {
                 "title": "Maui",
-                "description": "Did a lot of that",
+                "description": "Way less support than Flutter (Microsoft didn't create any official application with it). A lot of different problems that still need to be isued. In theory it's the future of app development.",
                 "level": 3
             }
         ]
@@ -194,30 +194,30 @@
                 "level": 3
             },
             {
-                "title": "Swing",
-                "description": "Did a lot of that",
+                "title": "JavaFX",
+                "description": "If you need to create a multiplatform app without too much work, it's a good choice. Cleary replace Swing for me.",
                 "level": 2
             },
             {
                 "containerClass": "ml-auto",
                 "title": "SDL2",
-                "description": "Did a lot of that",
+                "description": "The standard C++ graphic library. Nice to use alongside OpenGL, some discutable design choices then you dive really deep.",
                 "level": 2
             },
             {
                 "title": "SFML",
-                "description": "Did a lot of that",
+                "description": "Way easier to use than SDL2, with the same functionnalities. Great way to start with game development.",
                 "level": 2
             },
             {
                 "containerClass": "ml-auto",
                 "title": "Tauri",
-                "description": "Did a lot of that",
+                "description": "Nice alternative to Electron, but still in early development (documentation is lacking and some options are missing).",
                 "level": 1
             },
             {
                 "title": "Electron",
-                "description": "Did a lot of that",
+                "description": "The only mature solution if you a multiplatform desktop app with web technologies. It tend to take a lot of space and ressources.",
                 "level": 2
             }
         ]
@@ -228,24 +228,24 @@
         "elements": [
             {
                 "title": ".NET ASP (Framework / Core)",
-                "description": "Did a lot of that",
+                "description": "Sometime a little bit too magical for me (I like clearly defining the routes, with HTTP verb, route and params). The change from Framework to Core was a pain. Otherwise work really fine.",
                 "level": 2
             },
             {
                 "titleClass": "is-shifted",
                 "title": "Blazor",
-                "description": "Did a lot of that",
+                "description": "Nice template system, the syntaxe is pretty natural to use. It became even better with .NET 6.",
                 "level": 2
             },
             {
                 "containerClass": "ml-auto",
                 "title": "Spring",
-                "description": "Did a lot of that",
+                "description": "Not really a fan of, some setup like auth is a pain to do (but where is it not).",
                 "level": 1
             },
             {
                 "title": "Laravel",
-                "description": "Did a lot of that",
+                "description": "The right balance between easy to use and powerfull. The documentation is great, base project architecture taught me a lot.",
                 "level": 3
             }
         ]
@@ -257,12 +257,12 @@
             {
                 "containerClass": "ml-auto",
                 "title": "Nginx",
-                "description": "Did a lot of that",
+                "description": "Nice and fast, never encountered a situation where I was limited by it during development.",
                 "level": 3
             },
             {
                 "title": "Apache",
-                "description": "Did a lot of that",
+                "description": "Work as well as nginx but the configuration can be a pain for complexe setups.",
                 "level": 1
             }
         ]
@@ -273,34 +273,34 @@
         "elements": [
             {
                 "title": "Express.js",
-                "description": "Did a lot of that",
+                "description": "Nice framework to create an API on Node.js, have a lot of nice plugins.",
                 "level": 3
             },
             {
-                "title": "Fastify",
-                "description": "Did a lot of that",
+                "title": "Fastify.js",
+                "description": "Greate alternative to Express.js, faster and easy to use.",
                 "level": 1
             },
             {
                 "title": "Node.js",
-                "description": "Did a lot of that",
+                "description": "Large ecosystem with a lot of nice frameworks. Make fullstack development easier.",
                 "level": 3
             },
             {
                 "containerClass": "ml-auto",
                 "title": "Lumen",
-                "description": "Did a lot of that",
+                "description": "Realy nice to make API with PHP, not made to host a website.",
                 "level": 1
             },
             {
                 "title": "Slim",
-                "description": "Did a lot of that",
+                "description": "Nice to create small API or website with PHP without the overhead of big frameworks.",
                 "level": 1
             },
             {
                 "containerClass": "ml-auto",
                 "title": "Swagger",
-                "description": "Did a lot of that",
+                "description": "Fast to setup and, easy to use. Should be used on every API for documentation.",
                 "level": 2
             }
         ]
