@@ -41,12 +41,12 @@
         "elements": [
             {
                 "title": "Astro.js",
-                "description": "Did a lot of that",
+                "description": "Make it possible to use multiple techs in one project. Totally with the global idea of making the site as light as possible and separating what is static and dymanic.",
                 "level": 1
             },
             {
                 "title": "Nuxt",
-                "description": "Hard to use what you want.",
+                "description": "Tried it just after v3 have been released so there was not much documentation. Otherwise like everything about it (it's realy worth the assle) !",
                 "level": 1
             },
             {
@@ -57,7 +57,7 @@
             
             {
                 "title": "Vite",
-                "description": "Simpler and faster than webpack. I really like it.",
+                "description": "Simpler and faster than webpack. I really like it :)",
                 "level": 1
             }
         ]
@@ -68,23 +68,23 @@
         "elements": [
             {
                 "title": "SvelteKit",
-                "description": "Did a lot of that",
+                "description": "Very intersting, fast, good and efficient syntax, one straighforward way to do things. Rarelly been this satisfaised by a framework.",
                 "level": 2
             },
             
             {
                 "title": "Vuejs",
-                "description": "Did a lot of that",
+                "description": "A good balance between complexity and simplicity. Fast, light and with all the options you will need for a medium or large app.",
                 "level": 3
             },
             {
                 "title": "Angular",
-                "description": "Did a lot of that",
+                "description": "Well structured but more complexe than Vuejs, still does the job pretty well.",
                 "level": 2
             },
             {
                 "title": "React",
-                "description": "Did a lot of that",
+                "description": "I don't understand why it's used that much. There is 5 different way to do aynthing and as much way to do it wrong. The syntax is heavy (God forbid JSX and states).",
                 "level": 1
             }
         ]
@@ -94,13 +94,13 @@
         "elements": [
             {
                 "title": "MySQL",
-                "description": "Did a lot of that",
+                "description": "Nothing special to say about it (which is kinda a compliment). ",
                 "level": 3
             },
             
             {
                 "title": "SQL Server",
-                "description": "Did a lot of that",
+                "description": "Work as fine as MySQL but with the Microsoft touch.",
                 "level": 3
             },
             {
@@ -109,7 +109,7 @@
             {
                 "containerClass": "ml-auto",
                 "title": "MongoDB",
-                "description": "Did a lot of that",
+                "description": " Should be used more often for large dataset that are not requiring relationships.",
                 "level": 2
             }
         ]
@@ -120,13 +120,13 @@
         "elements": [
             {
                 "title": "Tensorflow",
-                "description": "Did a lot of that",
+                "description": "Good well documented way to start doing some neural network and more generally machine learning.",
                 "level": 1
             },
             
             {
                 "title": "Keras",
-                "description": "Did a lot of that",
+                "description": "Have a lot of models, pretty easy to use, would recommand.",
                 "level": 1
             }
         ]
@@ -137,7 +137,7 @@
         "elements": [
             {
                 "title": "Docker",
-                "description": "Did a lot of that",
+                "description": "Nice to create complete development environments. Make it easy to deploy, restore and load balance servers.",
                 "level": 2
             }
         ]
