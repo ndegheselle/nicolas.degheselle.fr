@@ -95,11 +95,14 @@
     <div class="col is-6">
         <div class="card">
             {#if selectedJob}
+            <span class="d-block">
                 <h3>{selectedJob.company}</h3>
                 <p class="date">
                     {formatDate(selectedJob.startingDate)} -
                     {formatDate(selectedJob.endingDate)}
                 </p>
+            </span>
+                <hr/>
                 <p>{selectedJob.description}</p>
             {/if}
         </div>
@@ -107,6 +110,10 @@
 </div>
 
 <style>
+    .date {
+        color: var(--color-middle);
+    }
+
     .timeline {
         flex-wrap: nowrap;
         overflow-x: auto;
