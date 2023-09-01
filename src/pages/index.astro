@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
+import Projects from "./_projects/index.astro";
 import Jobs from "./_jobs/index.astro";
 import Knowledges from "./_knowledges/index.astro";
 
@@ -32,12 +33,19 @@ import Presentation from "./_presentation/Presentation.astro";
   <main class="container">
     <hr />
     <WhoIAm />
+    
+
     <hr class="mb-0"/>
     <h2 class="part-title">How I work</h2>
     <Presentation />
     <hr class="mb-0"/>
     <h2 class="part-title">Experiences</h2>
     <Jobs />
+
+    <hr class="mb-0"/>
+    <h2 class="part-title">Projects</h2>
+    <Projects />
+
     <hr class="mb-0"/>
     <h2 class="part-title">What I know</h2>
     <Knowledges />

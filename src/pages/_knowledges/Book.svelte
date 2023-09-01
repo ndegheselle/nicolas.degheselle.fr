@@ -33,7 +33,17 @@
     </span>
 </span>
 
-<style>
+<style lang="scss">
+    @use "sass:map";
+    @import "src/styles/variables.scss";
+    
+    @media (max-width: map.get($grid-breakpoints, sm)) {
+        .book, .illustrations {
+            width: 100% !important;
+            max-width: 50px;
+        }
+    }
+
     .book:hover {
         --book-color: var(--book-color-active);
     }

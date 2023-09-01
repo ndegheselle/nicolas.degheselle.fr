@@ -13,7 +13,11 @@
         selectedBookshelf = know;
     }
 
-    let selectedBookshelf = {title: '', description: 'The more book there is the more I experienced the subject !  I listed mostly technologies I personnaly experimented with or used during internship / at work without focusing on ohter skills.'};
+    let selectedBookshelf = {
+        title: "",
+        description:
+            "The more book there is the more I experienced the subject !  I listed mostly technologies I personnaly experimented with or used during internship / at work without focusing on ohter skills.",
+    };
     export let knowledges = [];
 </script>
 
@@ -28,13 +32,13 @@
     </div>
 </div>
 
-<div class="grid">
+<div class="grid shelf-container">
     {#each knowledges as know}
-        <div class="col {know.bookshelfClass || 'is-6'}">
+        <div class="col {know.bookshelfClass || 'is-12'} col-md-full">
             <div class="bookshelf">
                 {#each know.elements as element, index}
                     {#if element.type}
-                        <span class="background-books">
+                        <span class="background-books d-md-none">
                             <Book isBackground={true} />
                             <Book isBackground={true} />
                             <Book isBackground={true} />
@@ -43,6 +47,7 @@
                         <a
                             class="books-container {element.containerClass ||
                                 ''}"
+                                style="flex: {know.elements.lenght};"
                             on:click={(e) => clickBookshelf(e, element)}
                             on:mouseenter={enterBookshelf}
                             href="javascript:;"
@@ -65,11 +70,19 @@
     {/each}
 </div>
 
-<style>
-    .col.is-6 {
-        margin: 0 25%;
+<style lang="scss">
+    @use "sass:map";
+    @import "src/styles/variables.scss";
+
+    .shelf-container {
+        margin: 0 20%;
     }
 
+    @media (max-width: map.get($grid-breakpoints, sm)) {
+        .shelf-container {
+            margin: 0;
+        }
+    }
     .book-more-info {
         position: sticky;
         top: 0.4rem;
@@ -98,7 +111,6 @@
     }
 
     .background-books {
-        display: flex;
         align-items: center;
         justify-content: center;
         transform: rotate(90deg) translateY(25%);
@@ -106,6 +118,8 @@
     }
 
     .books-container {
+        
+        flex: auto;
         display: flex;
         align-items: end;
         height: 100%;

@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .container {
   position: relative;
   max-width: 1200px;
@@ -90,4 +92,12 @@
 
 .col.is-12 {
   flex: 0 0 100%;
+}
+
+/* Responsivity */
+
+@media (max-width: map.get($grid-breakpoints, md)) {
+  .col.col-md-full {
+    flex: 0 0 100% !important;
+  }
 }
