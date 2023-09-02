@@ -74,15 +74,19 @@
     @use "sass:map";
     @import "src/styles/variables.scss";
 
-    .shelf-container {
-        margin: 0 20%;
-    }
-
-    @media (max-width: map.get($grid-breakpoints, sm)) {
+    @media (max-width: map.get($grid-breakpoints, md)) {
+        .books-container {
+            flex: auto;
+        }
         .shelf-container {
-            margin: 0;
+            margin: 0 !important;
         }
     }
+
+    .shelf-container {
+        margin: 0.4rem 20%;
+    }
+
     .book-more-info {
         position: sticky;
         top: 0.4rem;
@@ -118,8 +122,6 @@
     }
 
     .books-container {
-        
-        flex: auto;
         display: flex;
         align-items: end;
         height: 100%;
