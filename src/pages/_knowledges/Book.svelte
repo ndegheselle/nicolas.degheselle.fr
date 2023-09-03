@@ -1,16 +1,20 @@
 <script>
     function getRandomHeight() {
-        let more = 0;
-        if (isBackground) more = 20;
-        return Math.floor(Math.random() * (120 + more - 80 + more + 1)) + 80 + more;
+        return (
+            Math.floor(Math.random() * (120 - 80 + 1)) + 80
+        );
     }
 
     function getRandomWidth() {
-        return Math.floor(Math.random() * (40 - 10 + 1)) + 10;
+        return Math.floor(Math.random() * (40 - 20 + 1)) + 20;
     }
 
     function getRandomSpacing() {
-        let spacings = ["is-spaced", "is-start", "is-end"];
+        let spacings = [
+            "is-illustrations-spaced",
+            "is-illustrations-start",
+            "is-illustrations-end",
+        ];
         return spacings[Math.floor(Math.random() * spacings.length)];
     }
 
@@ -24,8 +28,10 @@
     class:secondary={isSecondary}
 >
     <span class="topside" />
-    <span class="illustrations {getRandomSpacing()}" 
-    style="width: {getRandomWidth()}px;height: {getRandomHeight()}px;">
+    <span
+        class="frontside {getRandomSpacing()}"
+        style="width: {getRandomWidth()}px;height: {getRandomHeight()}px;"
+    >
         <span class="vertical-line" />
         <span class="vertical-line" />
         <span class="vertical-line" />
@@ -36,11 +42,11 @@
 <style lang="scss">
     @use "sass:map";
     @import "src/styles/variables.scss";
-    
+
     @media (max-width: map.get($grid-breakpoints, sm)) {
-        .book, .illustrations {
+        .book,
+        .frontside {
             width: 100% !important;
-            max-width: 50px;
         }
     }
 
@@ -77,9 +83,11 @@
     }
 
     .book,
-    .book .topside {
+    .book .topside,
+    .book .frontside {
         display: block;
         transition: 0.3s;
+        box-sizing: border-box;
     }
 
     .book .topside {
@@ -89,22 +97,21 @@
         background-color: var(--color-bg-secondary);
         width: 100%;
         min-height: 0;
-        box-sizing: border-box;
     }
 
-    .illustrations {
+    .book .frontside {
         display: flex;
         padding: 0.2rem;
         flex-direction: column;
         align-items: center;
     }
-    .illustrations.is-spaced {
+    .book .frontside.is-illustrations-spaced {
         justify-content: space-between;
     }
-    .illustrations.is-start {
+    .book .frontside.is-illustrations-start {
         justify-content: start;
     }
-    .illustrations.is-end {
+    .book .frontside.is-illustrations-end {
         justify-content: end;
     }
 

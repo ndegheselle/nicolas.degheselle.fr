@@ -37,7 +37,7 @@
     },
     {
         "title": "Web apps",
-        "bookshelfClass": "is-6",
+        "bookshelfClass": "is-6 on-sm-is-12",
         "elements": [
             {
                 "title": "Astro.js",
@@ -64,7 +64,7 @@
     },
     {
         "title": "Web frontend",
-        "bookshelfClass": "is-6",
+        "bookshelfClass": "is-6 on-sm-is-12",
         "elements": [
             {
                 "title": "SvelteKit",
@@ -116,7 +116,7 @@
     },
     {
         "title": "AI",
-        "bookshelfClass": "is-2",
+        "bookshelfClass": "is-2 on-sm-is-6",
         "elements": [
             {
                 "title": "Tensorflow",
@@ -133,7 +133,7 @@
     },
     {
         "title": "Environment",
-        "bookshelfClass": "is-2",
+        "bookshelfClass": "is-2 on-sm-is-6",
         "elements": [
             {
                 "title": "Docker",
@@ -144,7 +144,7 @@
     },
     {
         "title": "Mobile",
-        "bookshelfClass": "is-4",
+        "bookshelfClass": "is-4 on-sm-is-6",
         "elements": [
             {
                 "title": "Cordova",
@@ -165,7 +165,7 @@
     },
     {
         "title": "Multiplatform",
-        "bookshelfClass": "is-4",
+        "bookshelfClass": "is-4 on-sm-is-6",
         "elements": [
             {
                 "containerClass": "ml-auto",
@@ -224,7 +224,7 @@
     },
     {
         "title": "Web backend",
-        "bookshelfClass": "is-6",
+        "bookshelfClass": "is-6 on-sm-is-12",
         "elements": [
             {
                 "title": ".NET ASP (Framework / Core)",
@@ -252,7 +252,7 @@
     },
     {
         "title": "Web server",
-        "bookshelfClass": "is-6",
+        "bookshelfClass": "is-6 on-sm-is-12",
         "elements": [
             {
                 "containerClass": "ml-auto",

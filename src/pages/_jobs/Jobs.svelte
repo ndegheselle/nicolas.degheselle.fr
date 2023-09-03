@@ -92,7 +92,7 @@
 </div>
 
 <div class="grid">
-    <div class="col is-6">
+    <div class="col is-6 on-sm-is-12">
         <div class="card">
             {#if selectedJob}
             <span class="d-block">

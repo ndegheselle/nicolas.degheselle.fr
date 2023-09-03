@@ -103,13 +103,18 @@
 /* Responsivity */
 
 @media (max-width: map.get($grid-breakpoints, sm)) {
-  .col {
-    flex: 0 0 100% !important;
+  .grid.with-gap > .col {
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
-@media (max-width: map.get($grid-breakpoints, md)) {
-  .col.col-md-full {
+
+@media (max-width: map.get($grid-breakpoints, sm)) {
+  .col.on-sm-is-6 {
+    flex: 0 0 50% !important;
+  }
+  .col.on-sm-is-12 {
     flex: 0 0 100% !important;
   }
 }

@@ -22,7 +22,7 @@
 </script>
 
 <div class="grid book-more-info">
-    <div class="col is-6">
+    <div class="col is-6 on-sm-is-12">
         <div class="card">
             <h3>{selectedBookshelf.title}</h3>
             <p>
@@ -34,7 +34,7 @@
 
 <div class="grid shelf-container">
     {#each knowledges as know}
-        <div class="col {know.bookshelfClass || 'is-12'} col-md-full">
+        <div class="col {know.bookshelfClass || 'is-12'}">
             <div class="bookshelf">
                 {#each know.elements as element, index}
                     {#if element.type}
@@ -75,16 +75,19 @@
     @import "src/styles/variables.scss";
 
     @media (max-width: map.get($grid-breakpoints, md)) {
-        .books-container {
-            flex: auto;
-        }
         .shelf-container {
             margin: 0 !important;
         }
     }
 
+    @media (min-width: map.get($grid-breakpoints, md)) and (max-width: map.get($grid-breakpoints, lg)) {
+        .shelf-container {
+            margin: 0.4rem 10% !important;
+        }
+    }
+
     .shelf-container {
-        margin: 0.4rem 20%;
+        margin: 0.4rem 25%;
     }
 
     .book-more-info {
@@ -115,6 +118,7 @@
     }
 
     .background-books {
+        display: flex;
         align-items: center;
         justify-content: center;
         transform: rotate(90deg) translateY(25%);

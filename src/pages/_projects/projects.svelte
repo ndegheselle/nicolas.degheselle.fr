@@ -4,7 +4,7 @@
 
 <div class="grid with-gap">
     {#each projects as project}
-        <div class="col is-6">
+        <div class="col is-6 on-sm-is-12">
             <div class="card is-horizontal grid">
                 <div class="col">
                     <img

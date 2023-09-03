@@ -1,3 +1,5 @@
+@use "sass:map";
+
 body {
     background-color: var(--color-bg);
     font-family: Ubuntu, sans-serif;
@@ -96,8 +98,25 @@ hr {
     writing-mode: vertical-lr;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: map.get($grid-breakpoints, sm)) {
+    .giant-title {
+        font-size: 9rem;
+        line-height: 8rem;
+        height: 7rem;
+        letter-spacing: -0.4rem;
+    }
+    
+    .giant-title.is-centered {
+        letter-spacing: 1rem;
+    }
+    
+    .title-complement {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: map.get($grid-breakpoints, md)) {
     html {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
