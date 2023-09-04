@@ -1,26 +1,22 @@
 [
+    
     {
-        "name": "test",
-        "url": "http://www.baidu.com",
-        "pictureUrl": "https://picsum.photos/200/300",
-        "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "name": "SmackMaHead",
+        "url": "https://github.com/Poulpynateur/perso-gamejam-1D",
+        "pictureUrl": "https://github.com/Poulpynateur/perso-gamejam-1D/blob/main/game.gif?raw=true",
+        "description": "A simple C++ game created in 1 week from nothing with SFML and OpenGL."
     },
     {
-        "name": "test",
-        "url": "http://www.baidu.com",
-        "pictureUrl": "https://picsum.photos/200/300",
-        "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "name": "Data scrapping app",
+        "url": "https://github.com/Poulpynateur/stage-INSA-electron",
+        "pictureUrl": "https://github.com/Poulpynateur/stage-INSA-electron/blob/master/preview.PNG?raw=true",
+        "description": "An interface for data scraping scientific articles resumes. Created with Electron.js"
     },
+    
     {
-        "name": "test",
-        "url": "http://www.baidu.com",
-        "pictureUrl": "https://picsum.photos/200/300",
-        "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    },
-    {
-        "name": "test",
-        "url": "http://www.baidu.com",
-        "pictureUrl": "https://picsum.photos/200/300",
-        "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "name": "Accountancy",
+        "url": "https://github.com/ndegheselle/MePloutos-accountancy",
+        "pictureUrl": "https://github.com/ndegheselle/MePloutos-accountancy/blob/main/_images/screenshoot-1.png?raw=true",
+        "description": "Personnal accountancy app that work as a PWA and multiplatform application. Created with SvelteKit and Tauri."
     }
 ]

@@ -5,9 +5,10 @@
 <div class="grid with-gap">
     {#each projects as project}
         <div class="col is-6 on-sm-is-12">
-            <div class="card is-horizontal grid">
+            <div class="card is-horizontal grid with-gap">
                 <div class="col">
                     <img
+                        class="project-preview"
                         src={project.pictureUrl}
                         alt="Project {project.name} preview."
                     />
@@ -30,3 +31,9 @@
         </div>
     {/each}
 </div>
+
+<style>
+.project-preview {
+    height: 10rem;
+}
+</style>
