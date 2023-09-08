@@ -1,6 +1,7 @@
 ---
 import "../styles/index.scss";
 
+import Footer from "./Footer.astro";
 interface Props {
 	title: string;
 }
@@ -16,7 +17,7 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-		<link href="https://css.gg/css?=|dark-mode|link" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/81bbd31b5a.js" crossorigin="anonymous"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;700&family=Ubuntu&display=swap" rel="stylesheet">
@@ -26,5 +27,6 @@ const { title } = Astro.props;
 	</head>
 	<body data-theme="light">
 		<slot />
+		<Footer />
 	</body>
 </html>

@@ -55,8 +55,7 @@
         selectedJob = _job;
     }
 
-    function formatDate(timestamp)
-    {
+    function formatDate(timestamp) {
         return new Date(timestamp).toLocaleDateString(undefined, {
             year: "numeric",
             month: "long",
@@ -95,23 +94,30 @@
     <div class="col is-6 on-sm-is-12">
         <div class="card">
             {#if selectedJob}
-            <span class="d-block">
-                <h3>{selectedJob.company}</h3>
-                <p class="date">
-                    {formatDate(selectedJob.startingDate)} -
-                    {formatDate(selectedJob.endingDate)}
-                </p>
-            </span>
-                <hr/>
-                <p>{selectedJob.description}</p>
+                <span class="job-header">
+                    <h3>{selectedJob.company}</h3>
+                    <b>
+                        {selectedJob.location}
+                    </b>
+                    <p class="date">
+                        {formatDate(selectedJob.startingDate)} -
+                        {formatDate(selectedJob.endingDate)}
+                    </p>
+                </span>
+                <hr />
+                <p class="description">{@html selectedJob.description}</p>
             {/if}
         </div>
     </div>
 </div>
 
 <style>
-    .date {
+    .job-header p, .job-header b{
         color: var(--color-middle);
+    }
+
+    .description {
+        text-align: left;
     }
 
     .timeline {
@@ -155,5 +161,4 @@
     .timeline-container:hover {
         transform: scaleY(1.2);
     }
-
 </style>

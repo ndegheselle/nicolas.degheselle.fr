@@ -18,7 +18,7 @@
                         <span class="grid is-start">
                             <h3>{project.name}</h3>
                             <a href="{project.url}" class="ml-2">
-                                <i class="gg-link"></i>
+                                <i class="fa-solid fa-link"></i>
                             </a>
                         </span>
                         <hr />

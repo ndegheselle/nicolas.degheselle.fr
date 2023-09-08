@@ -1,16 +1,33 @@
 [
     {
-      "startingDate": "2017-09-01",
-      "endingDate": "2020-02-01",
+      "startingDate": "2019-04-01",
+      "endingDate": "2019-06-01",
       "isInternship": true,
-      "company": "Company 1",
-      "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      "company": "INSA, laboratoire ICube",
+      "location": "Strasbourg (67)",
+      "description": "ICube is a scientific laboratory, my responsibility was to create tools to help the researchers. To do so, I designed an interface using Electron. To do so, I designed an interface using Electron.js to scrape scientific article abstracts from multiple sources. I then utilized Keras, Tensorflow, and Scikit-Learn to train an AI model for accurate article classification, exploring potential solutions through the TRIZ methodology.<br /><br />  This experience honed my web development, data scraping, and machine learning skills. The resulting project can be found there : <a hreaf='https://github.com/Poulpynateur/stage-INSA-electron'>electron project</a>"
     },
-
     {
-      "startingDate": "2022-05-05",
+      "isInternship": true,
+      "startingDate": "2020-01-01",
+      "endingDate": "2020-04-01",
+      "company": "ITS Future",
+      "location": "Strasbourg (67)",
+      "description": "At ITS Future, I contributed to user-centric solutions by maintaining and enhancing a web app and mobile app, applying Agile and SCRUM methodology. Leveraging Angular.ts for the frontend, Spring with Java EE for the backend, and Ionic for the mobile app, I also developed an API using Nest.js."
+    },
+    {
+      "isInternship": true,
+      "startingDate": "2020-09-01",
+      "endingDate": "2021-04-01",
+      "company": "AnyDesk",
+      "location": "Stuttgart - Germany",
+      "description": "AnyDesk is a company focusing on efficient code practices and the overall performance and customization of the software. <br/><br/>During my internship at AnyDesk, I contributed to the development of a high-performance remote desktop application using C++. I designed and implemented a specialized software for reading application logs, with the added capability of loading logs from remote computers. Additionally, I actively participated in enhancing the internal graphical library and the IPC library."
+    },
+    {
+      "startingDate": "2022-02-01",
       "endingDate": null,
-      "company": "Company 2",
-      "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      "company": "3MA Group",
+      "location": "Rouffach (68)",
+      "description": "Working as an analyst developper proficient in Agile and SCRUM methodologies. My job include maintaining, enhancing, and designing projects using legacy .NET Standard and modern Core. Specialized in WPF for desktop, MAUI for mobile, and Asp .NET / Blazor for web applications.Responsibilities:<ul><li>Maintain and improve existing projects, optimizing legacy .NET Standard applications.</li><li>Design and develop new projects using Microsoft Core technologies.</li><li>Create desktop applications with WPF, mobile apps with MAUI, and web apps with Asp .NET / Blazor.</li><li>Collaborate in Agile and SCRUM processes for iterative development.</li><li>Troubleshoot and support applications, ensuring smooth functionality.</li><li>Stay updated on the latest Microsoft technologies and recommend innovations.</li></ul>"
     }
 ]
