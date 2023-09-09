@@ -1,25 +1,17 @@
-let resizeObserver = null;
+let currentTarget = null;
 
-function setPreviewOn(target) {
+function resizePreviewOn(target) {
+  if (!target) return;
+  
   const buildPreviewElement = document.getElementById("buildPreview");
-  target.classList.add("building-element");
-  buildPreviewElement.classList.remove("d-none");
-  // Handle resize
-  resizeObserver = new ResizeObserver((entries) => {
-    const targetRect = entries[0].target.getBoundingClientRect();
-    const widthElement = buildPreviewElement.querySelector(".width");
-    const heightElement = buildPreviewElement.querySelector(".height");
+  const targetRect = target.getBoundingClientRect();
+  const widthElement = buildPreviewElement.querySelector(".width");
+  const heightElement = buildPreviewElement.querySelector(".height");
 
-    widthElement.style.width = `${targetRect.width + 1}px`;
-    widthElement.style.left = `${targetRect.left - 1}px`;
-    heightElement.style.height = `${targetRect.height + 1}px`;
-    heightElement.style.top = `${targetRect.top - 1}px`;
-  });
-
-  resizeObserver.observe(target, {
-    childList: true,
-    subtree: true,
-});
+  widthElement.style.width = `${targetRect.width + 1}px`;
+  widthElement.style.left = `${targetRect.left - 1}px`;
+  heightElement.style.height = `${targetRect.height + 1}px`;
+  heightElement.style.top = `${targetRect.top - 1}px`;
 }
 
 function hidePreview() {
@@ -55,16 +47,7 @@ function buildStyle(idCssToBuild, idCssContainer) {
 function setupBackgroundPreview(elementName) {
   const element = document.querySelector(elementName);
   if (!element) return;
-  cleanBackgroundPreview();
-  setPreviewOn(element);
-}
-
-function cleanBackgroundPreview()
-{
-  const elements = document.querySelectorAll(".building-element");
-  elements.forEach((element) => element.classList.remove("building-element"));
-  // clean resize observer
-  if (resizeObserver) resizeObserver.disconnect();
+  resizePreviewOn(element);
 }
 
 function addCssCoding(line) {
@@ -79,11 +62,17 @@ function addCssCoding(line) {
 }
 
 export function animateBuild(idCssToBuild, idCssContainer) {
+
+  function resizeOnCurrent() {
+    resizePreviewOn(currentTarget);
+  }
+  window.addEventListener('resize', resizeOnCurrent);
   var intervalId = window.setInterval(function () {
     const haveBuildRemaining = buildStyle(idCssToBuild, idCssContainer);
     if (!haveBuildRemaining) {
       clearInterval(intervalId);
-      cleanBackgroundPreview();
+      
+      window.removeEventListener('resize', resizeOnCurrent);
       hidePreview();
     }
   }, 500);
