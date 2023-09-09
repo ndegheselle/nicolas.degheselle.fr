@@ -10,6 +10,7 @@ function setPreviewOn(target) {
     const widthElement = buildPreviewElement.querySelector(".width");
     const heightElement = buildPreviewElement.querySelector(".height");
 
+    console.log(target, targetRect);
     widthElement.style.width = `${targetRect.width + 1}px`;
     widthElement.style.left = `${targetRect.left - 1}px`;
     heightElement.style.height = `${targetRect.height + 1}px`;
@@ -41,7 +42,7 @@ function buildStyle(idCssToBuild, idCssContainer) {
   addCssCoding(line);
 
   if (line.includes("{")) {
-    const elementName = line.replace("}", "").replace("{", "").trim().split(" ")[0];
+    const elementName = line.replace("}", "").replace("{", "").trim();
     setupBackgroundPreview(elementName);
   }
 
