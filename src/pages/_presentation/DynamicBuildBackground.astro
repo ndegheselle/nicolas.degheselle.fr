@@ -9,22 +9,31 @@
 <template id="cssToBuild">
   <style is:inline>
     .main-title {
-      background-color: var(--color-bg-secondary);
-      padding: 8rem 0;
-    }
-    .main-title h1 {
-      margin: 0;
       position: relative;
-      text-align: center;
-      font-weight: 700;
+
+      min-height: 100vh;
+      background-color: var(--color-bg-secondary);
+    }
+
+    .main-title .background, .main-title .first-name, .main-title .last-name {
       font-size: 14vw;
       line-height: 0.7;
+      position: absolute;
+      left: 50%;top: 50%;
     }
+
+    .main-title .background {
+      transform: translate(-50%, -50%);
+      color: var(--color-bg);
+    }
+
+    .main-title .first-name {
+      transform: translate(-50%, -100%);
+    }
+
     .main-title .last-name {
+      transform: translateX(-50%);
       color: var(--color-primary);
-    }
-    .main-title .last-name {
-      display: block;
     }
   </style>
 </template>
@@ -45,7 +54,7 @@
   .build-preview,
   .build-preview .height,
   .build-preview .width {
-    transition: 0.3s;
+    transition: 0.1s;
     position: absolute;
     top: 0;
     left: 0;
@@ -70,6 +79,9 @@
     top: 1.5rem;
     left: 1.5rem;
     font-family: Courier, sans-serif;
+  }
+  .build-preview, .building-css {
+    z-index: 2;
   }
 </style>
 

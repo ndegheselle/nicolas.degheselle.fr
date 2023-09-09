@@ -10,14 +10,16 @@ function setPreviewOn(target) {
     const widthElement = buildPreviewElement.querySelector(".width");
     const heightElement = buildPreviewElement.querySelector(".height");
 
-    console.log(target, targetRect);
     widthElement.style.width = `${targetRect.width + 1}px`;
     widthElement.style.left = `${targetRect.left - 1}px`;
     heightElement.style.height = `${targetRect.height + 1}px`;
     heightElement.style.top = `${targetRect.top - 1}px`;
   });
 
-  resizeObserver.observe(target);
+  resizeObserver.observe(target, {
+    childList: true,
+    subtree: true,
+});
 }
 
 function hidePreview() {
@@ -84,5 +86,5 @@ export function animateBuild(idCssToBuild, idCssContainer) {
       cleanBackgroundPreview();
       hidePreview();
     }
-  }, 1000);
+  }, 500);
 }

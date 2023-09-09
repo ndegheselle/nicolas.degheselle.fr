@@ -1,13 +1,25 @@
 <section class="main-title">
-    <h2 class="in-background giant-title is-centered revert-background">NDG</h2>
-    <h1>
-        <span>Nicolas</span>
-        <span class="last-name">De gheselle</span>
-    </h1>
+    <h2 class="background">NDG</h2>
+        <h1 class="first-name">Nicolas</h1>
+        <h1 class="last-name">De gheselle</h1>
 </section>
 
 <style>
-    .main-title * {
+    .main-title {
+        max-width: 100vw;
+        overflow: hidden;
+        z-index: 0;
+    }
+    .main-title, .main-title * {
         transition: 0.3s;
     }
+
+    .main-title * {
+        z-index: 10;
+        white-space: nowrap;
+        left: 0; top: 0;
+        margin: 0;
+    }
+
+    
 </style>
