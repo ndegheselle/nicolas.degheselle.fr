@@ -1,8 +1,43 @@
 <section class="main-title">
     <h2 class="background">NDG</h2>
-        <h1 class="first-name">Nicolas</h1>
-        <h1 class="last-name">De gheselle</h1>
+    <h1 class="first-name">Nicolas</h1>
+    <h1 class="last-name">De gheselle</h1>
 </section>
+
+<div id="test-div">Testing</div>
+<button id="test-button">click test</button>
+
+<script>
+    let isDone = false;
+
+    function updateBackground(timeStamp) {
+        var test = document.getElementById("test-div").getBoundingClientRect();
+
+        console.log(test.left, test.top, test.width, test.height);
+        if (!isDone) {
+            window.requestAnimationFrame(updateBackground);
+        }
+    }
+
+    document
+        .getElementById("test-button")
+        .addEventListener("click", function () {
+            document.getElementById("test-div").addEventListener("transitionend", () => {
+                isDone = true;
+            });
+            window.requestAnimationFrame(updateBackground);
+            document.getElementById("test-div").classList.toggle("test-class");
+        });
+</script>
+
+<style>
+    #test-div {
+        transition: 1s;
+    }
+    #test-div.test-class {
+        transform: translateX(100px);
+    }
+</style>
 
 <style>
     .main-title {
@@ -10,16 +45,47 @@
         overflow: hidden;
         z-index: 0;
     }
-    .main-title, .main-title * {
+    .main-title,
+    .main-title * {
         transition: 0.3s;
     }
 
     .main-title * {
         z-index: 10;
         white-space: nowrap;
-        left: 0; top: 0;
+        left: 0;
+        top: 0;
         margin: 0;
     }
 
-    
+    .main-title {
+        position: relative;
+
+        min-height: 100vh;
+        background-color: var(--color-bg-secondary);
+    }
+
+    .main-title .background,
+    .main-title .first-name,
+    .main-title .last-name {
+        font-size: 14vw;
+        line-height: 0.7;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+    }
+
+    .main-title .background {
+        transform: translate(-50%, -50%);
+        color: var(--color-bg);
+    }
+
+    .main-title .first-name {
+        transform: translate(-50%, -100%);
+    }
+
+    .main-title .last-name {
+        transform: translateX(-50%);
+        color: var(--color-primary);
+    }
 </style>
