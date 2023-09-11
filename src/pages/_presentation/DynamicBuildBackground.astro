@@ -9,6 +9,35 @@
 <template id="cssToBuild">
   <style is:inline>
 
+    .main-title {
+        position: relative;
+
+        min-height: 100vh;
+        background-color: var(--color-bg-secondary);
+    }
+
+    .main-title .background, 
+    .main-title .first-name, 
+    .main-title .last-name {
+        font-size: 14vw;
+        line-height: 0.85;
+        position: absolute;
+        left: 50%; top: 50%;
+    }
+
+    .main-title .background {
+        transform: translate(-50%, -50%);
+        color: var(--color-bg);
+    }
+
+    .main-title .first-name {
+        transform: translate(-50%, -100%);
+    }
+
+    .main-title .last-name {
+        transform: translateX(-50%);
+        color: var(--color-primary);
+    }
   </style>
 </template>
 <style id="cssBuildingContainer" is:inline></style>
@@ -46,7 +75,6 @@
   }
 
   .building-css {
-    width: 25%;
     height: 40rem;
     position: absolute;
     color: var(--color-middle);

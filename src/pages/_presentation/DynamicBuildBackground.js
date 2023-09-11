@@ -25,6 +25,11 @@ function addCssCodingToBackground(line) {
   container.append(span);
 }
 
+function clearCurrentTarget()
+{
+  currentTarget = null;
+}
+
 function updateBackground(timeStamp) {
   if(!currentTarget) return;
 
@@ -40,6 +45,7 @@ function setupBackgroundPreviewLine(elementName) {
 }
 
 function hidePreview() {
+  clearCurrentTarget();
   const buildPreviewElement = document.getElementById("buildPreview");
   const widthElement = buildPreviewElement.querySelector(".width");
   const heightElement = buildPreviewElement.querySelector(".height");
