@@ -21,7 +21,8 @@ import Presentation from "./_presentation/Presentation.astro";
 <Layout title="Nicolas De gheselle">
 
   <button id="changeTheme" class="with-icon">
-    <i class="gg-dark-mode"></i>
+    <i class="fa-solid fa-moon"></i>
+    <i class="fa-solid fa-sun"></i>
   </button>
 
   <DynamicBuildBackground />
@@ -54,6 +55,29 @@ import Presentation from "./_presentation/Presentation.astro";
     position: fixed;
     top: 1rem;
     right: 1rem;
+    z-index: 100;
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+    height: 2rem;
+    width: 2rem;
+    color: var(--color-middle);
+  }
+  #changeTheme i {
+    position: absolute;
+    transition: 0.3s;
+    transform-origin: bottom center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 1.4rem;
+  }
+  body[data-theme="dark"] #changeTheme .fa-moon {
+    transform: rotate(180deg);
+  }
+  body[data-theme="light"] #changeTheme .fa-sun {
+    transform: rotate(180deg);
   }
 
   .part-title {
