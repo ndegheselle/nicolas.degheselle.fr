@@ -9,7 +9,7 @@
             },
             {
                 "title": "Java",
-                "description": "Usefull. Do like the fact that you can have methods and property on enums. A little bit to verbose for me.",
+                "description": "Usefull. Do like the fact that you can have methods and property on enums. A little bit too verbose for me.",
                 "level": 1
             },
             {
@@ -41,7 +41,7 @@
         "elements": [
             {
                 "title": "Astro.js",
-                "description": "Make it possible to use multiple techs in one project. Totally with the global idea of making the site as light as possible and separating what is static and dymanic.",
+                "description": "Make it possible to use multiple techs in one project. Totally onboard with making the site as light as possible and separating what is static and dymanic.",
                 "level": 1
             },
             {
@@ -240,7 +240,7 @@
             {
                 "containerClass": "ml-auto",
                 "title": "Spring",
-                "description": "Not really a fan of, some setup like auth is a pain to do (but where is it not).",
+                "description": "Not really a fan of, some setups like auth are a pain to do (but where is it not).",
                 "level": 1
             },
             {
@@ -289,18 +289,18 @@
             {
                 "containerClass": "ml-auto",
                 "title": "Lumen",
-                "description": "Realy nice to make API with PHP, not made to host a website.",
+                "description": "Realy nice to make APIs with PHP, not made to host a website.",
                 "level": 1
             },
             {
                 "title": "Slim",
-                "description": "Nice to create small API or website with PHP without the overhead of big frameworks.",
+                "description": "Nice to create small APIs or websites with PHP without the overhead of big frameworks.",
                 "level": 1
             },
             {
                 "containerClass": "ml-auto",
                 "title": "Swagger",
-                "description": "Fast to setup and, easy to use. Should be used on every API for documentation.",
+                "description": "Fast to setup and easy to use. Should be used on every API for documentation.",
                 "level": 2
             }
         ]
