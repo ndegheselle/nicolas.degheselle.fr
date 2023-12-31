@@ -1,6 +1,10 @@
-Use astro.build
+# TODO
 
-- Create a library system
-- You can pull out books
-- There is all the techs and software I ever used
-- Create a custom search system
+- Fix cards on mobile
+    - Auto height
+    - Image spacing and position
+
+- Update current projects
+- Add rust as a language
+- Create a slicker theme
+- Add something to explain that the front page is animated
