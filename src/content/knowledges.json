@@ -18,8 +18,13 @@
                 "level": 3
             },
             {
+                "title": "rust"
+                "description": "Different paradigm from what I am familiar with. Peculiar syntax, need some time to be used to.",
+                "level":1
+            },
+            {
                 "title": "Python",
-                "description": "Nice if you want something working fast, easy to use, easy to start, a lot of easily accessible libraries. Do like all the small syntax tricks.",
+                "description": "Nice if you want something working fast, easy to start / use, a lot of easily accessible libraries. Do like all the small syntax tricks.",
                 "level": 1
             },
             {
