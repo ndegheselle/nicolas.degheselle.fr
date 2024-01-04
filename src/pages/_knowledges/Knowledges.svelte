@@ -16,7 +16,7 @@
     let selectedBookshelf = {
         title: "",
         description:
-            "The more book there is the more I experienced the subject !  I listed mostly technologies I personnaly experimented with or used during internship / at work without focusing on ohter skills.",
+            "The more book there is the more I experienced the subject !  I listed mostly technologies I personnaly experimented with or used during internship / at work without focusing on other skills.",
     };
     export let knowledges = [];
 </script>
@@ -72,15 +72,15 @@
 
 <style lang="scss">
     @use "sass:map";
-    @import "src/styles/variables.scss";
+    @import "src/scss/gracile/variables.scss";
 
-    @media (max-width: map.get($grid-breakpoints, md)) {
+    @media (max-width: $breakpoint-md) {
         .shelf-container {
             margin: 0 !important;
         }
     }
 
-    @media (min-width: map.get($grid-breakpoints, md)) and (max-width: map.get($grid-breakpoints, lg)) {
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
         .shelf-container {
             margin: 0.4rem 10% !important;
         }

@@ -41,9 +41,9 @@
 
 <style lang="scss">
     @use "sass:map";
-    @import "src/styles/variables.scss";
+    @import "src/scss/gracile/variables.scss";
 
-    @media (max-width: map.get($grid-breakpoints, sm)) {
+    @media (max-width: $breakpoint-sm) {
         .book,
         .frontside {
             width: 100% !important;
