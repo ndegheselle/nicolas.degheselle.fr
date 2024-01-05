@@ -2,7 +2,7 @@
     export let projects = [];
 </script>
 
-<div class="grid with-gap">
+<div class="grid with-gutter">
     {#each projects as project}
         <div class="col is-6 on-sm-is-12">
             <div class="card is-horizontal grid with-gap">

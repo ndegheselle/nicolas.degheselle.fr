@@ -1,6 +1,6 @@
 @use "sass:math";
 
-$grid-spacing: 1.6rem;
+$grid-spacing: 0.6rem;
 
 .container {
     position: relative;
@@ -12,7 +12,8 @@ $grid-spacing: 1.6rem;
     position: relative;
     display: flex;
     flex-flow: row wrap;
-    margin: 0 (-$grid-spacing);
+    justify-content: center;
+    margin: 0;
 }
 
 .grid.with-gutter {
