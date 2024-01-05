@@ -51,6 +51,11 @@ function hidePreview() {
   const heightElement = buildPreviewElement.querySelector(".height");
   widthElement.setAttribute("style", "");
   heightElement.setAttribute("style", "");
+
+  // Document query selector add finished to the .main-title element
+  const mainTitle = document.querySelector(".main-title-container");
+  if (!mainTitle) return;
+    mainTitle.classList.add("finished");
 }
 
 function buildStyle(idCssToBuild, idCssContainer) {

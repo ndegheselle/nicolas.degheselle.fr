@@ -8,35 +8,35 @@
 
 <template id="cssToBuild">
   <style is:inline>
-
     .main-title {
-        position: relative;
+      position: relative;
 
-        min-height: 100vh;
-        background-color: var(--color-bg-secondary);
+      min-height: 100vh;
+      background-color: var(--color-bg-dark);
     }
 
-    .main-title .background, 
-    .main-title .first-name, 
+    .main-title .background,
+    .main-title .first-name,
     .main-title .last-name {
-        font-size: 14vw;
-        line-height: 0.85;
-        position: absolute;
-        left: 50%; top: 50%;
+      font-size: 14vw;
+      line-height: 0.85;
+      position: absolute;
+      left: 50%;
+      top: 50%;
     }
 
     .main-title .background {
-        transform: translate(-50%, -50%);
-        color: var(--color-bg);
+      transform: translate(-50%, -50%);
+      color: var(--color-bg);
     }
 
     .main-title .first-name {
-        transform: translate(-50%, -100%);
+      transform: translate(-50%, -100%);
     }
 
     .main-title .last-name {
-        transform: translateX(-50%);
-        color: var(--color-primary);
+      transform: translateX(-50%);
+      color: var(--color-primary);
     }
   </style>
 </template>
@@ -66,29 +66,35 @@
   }
 
   .build-preview .height {
-    border-top: 1px solid var(--color-middle);
-    border-bottom: 1px solid var(--color-middle);
+    border-top: 1px solid var(--color-gray);
+    border-bottom: 1px solid var(--color-gray);
   }
   .build-preview .width {
-    border-left: 1px solid var(--color-middle);
-    border-right: 1px solid var(--color-middle);
+    border-left: 1px solid var(--color-gray);
+    border-right: 1px solid var(--color-gray);
   }
 
   .building-css {
     height: 40rem;
     position: absolute;
-    color: var(--color-middle);
+    color: var(--color-gray);
     top: 1.5rem;
     left: 1.5rem;
     font-family: Courier, sans-serif;
   }
-  .build-preview, .building-css {
+  .build-preview,
+  .building-css {
     z-index: 2;
   }
 </style>
 
 <!-- Global since span are generated via JS -->
 <style is:global>
+  .main-title-container.finished .width,
+  .main-title-container.finished .height {
+    opacity: 0;
+  }
+
   .building-css span {
     display: block;
     animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
