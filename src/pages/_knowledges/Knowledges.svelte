@@ -1,4 +1,5 @@
 <script>
+    import Card from "../../components/Card.svelte";
     import Book from "./Book.svelte";
     function enterBookshelf(event) {
         // foreach books-container remove active class
@@ -23,12 +24,12 @@
 
 <div class="grid book-more-info">
     <div class="col is-6 on-sm-is-12">
-        <div class="card">
-            <h3>{selectedBookshelf.title}</h3>
+        <Card>
+            <h3 slot="title">{selectedBookshelf.title}</h3>
             <p>
                 {@html selectedBookshelf.description}
             </p>
-        </div>
+        </Card>
     </div>
 </div>
 

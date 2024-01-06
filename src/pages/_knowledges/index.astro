@@ -1,12 +1,13 @@
 ---
 import knowledges from "../../content/knowledges.json";
 import Knowledges from "./Knowledges.svelte";
+import Card from "../../components/Card.svelte";
 ---
 
 <Knowledges knowledges={knowledges} client:idle />
 <div class="grid">
     <div class="col is-6 on-sm-is-12">
-        <div class="card">
+        <Card>
             This is a non-exhaustive list, a lot of different things are omitted that are not
             my main domain but where I do have some expertise. Like for example :
             <ul>
@@ -15,6 +16,6 @@ import Knowledges from "./Knowledges.svelte";
                 <li>Cybersecurity</li>
                 <li>Team / project management</li>
             </ul>
-        </div>
+        </Card>
     </div>
 </div>

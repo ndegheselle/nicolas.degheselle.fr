@@ -133,3 +133,9 @@ dl {
     margin: $unit-2 0 $unit-4 0;
   }
 }
+
+hr {
+  border: 0.1rem dotted var(--color-gray-light);
+  border-style: none none dotted; 
+  background-color: transparent;
+}

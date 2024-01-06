@@ -1,17 +1,17 @@
+---
+import Card from "../../components/Card.svelte";
+---
+
 <div class="grid with-gutter">
-  <div class="col is-auto">
-    <h2 class="giant-title">Who</h2><h3 class="title-complement rotate">
-      Is that?
-    </h3>
-  </div>
-  <div class="col on-sm-is-12">
-    <div class="card">
-      <h2>It is I</h2>
+  <div class="col is-6 on-sm-is-12">
+    <h2 class="giant-title is-overlapping">Who?</h2>
+    <Card>
+      <h2 slot="title">Me</h2>
       <p>
         I am a French software engineer. Focusing on creating efficient,
         maintainable and simple softwares. Always interested in learning new
         things and hone my skills !
       </p>
-    </div>
+    </Card>
   </div>
 </div>

@@ -1,32 +1,34 @@
+---
+import Card from "../../components/Card.svelte";
+---
+
+<h2 class="giant-title is-overlapping">How?</h2>
 <div class="grid with-gutter">
     <div class="col on-sm-is-12">
-        <div class="card">
-            <h3>Simplicity and Elegance</h3>
-            <hr />
+        <Card>
+            <h3 slot="title">Simplicity and Elegance</h3>
             <p>
                 Create clear and elegant code, implementing complex features in
                 a straightforward manner for maintainability.
             </p>
-        </div>
+        </Card>
     </div>
     <div class="col on-sm-is-12">
-        <div class="card">
-            <h3>Iterative and Agile Approach</h3>
-            <hr />
+        <Card>
+            <h3 slot="title">Iterative and Agile Approach</h3>
             <p>
                 Embrace an iterative and Agile development process to arrive at
                 lasting solutions while meeting client needs effectively.
             </p>
-        </div>
+        </Card>
     </div>
     <div class="col on-sm-is-12">
-        <div class="card">
-            <h3>Leveraging Existing Resources</h3>
-            <hr />
+        <Card>
+            <h3 slot="title">Leveraging Existing Resources</h3>
             <p>
                 Maximize efficiency by utilizing existing tools and knowledge,
                 promoting a global perspective during development.
             </p>
-        </div>
+        </Card>
     </div>
 </div>

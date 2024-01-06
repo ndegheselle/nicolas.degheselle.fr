@@ -19,7 +19,7 @@ function addCssCodingToBackground(line) {
   const span = document.createElement("span");
 
   if (line.includes(";")) {
-    span.classList.add("ml-4");
+    span.classList.add("is-scoped");
   }
   span.innerHTML = line;
   container.append(span);

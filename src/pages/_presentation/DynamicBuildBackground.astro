@@ -9,8 +9,6 @@
 <template id="cssToBuild">
   <style is:inline>
     .main-title {
-      position: relative;
-
       min-height: 100vh;
       background-color: var(--color-bg-dark);
     }
@@ -20,7 +18,6 @@
     .main-title .last-name {
       font-size: 14vw;
       line-height: 0.85;
-      position: absolute;
       left: 50%;
       top: 50%;
     }
@@ -100,6 +97,10 @@
     animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
+  }
+
+  .building-css span.is-scoped {
+    margin-left: 1.2rem;
   }
 
   @keyframes typing {

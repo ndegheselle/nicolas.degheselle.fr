@@ -9,7 +9,15 @@ h6 {
 }
 
 .giant-title {
-    display: inline-block;
+    text-align: center;
     text-transform: uppercase;
-    color: var(--color-bg-secondary);
+    color: var(--color-gray-light);
+    font-weight: bold;
+    font-size: 10vw;
+    line-height: 0.8;
+    margin: 0;
+}
+
+.giant-title.is-overlapping {
+    transform: translateY(40%);
 }

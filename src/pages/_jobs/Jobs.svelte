@@ -1,4 +1,6 @@
 <script>
+    import Card from "../../components/Card.svelte";
+
     function getMonthsBetweenDates(_jobs) {
         const startDate = new Date(_jobs[0].startingDate);
         const endDate = new Date();
@@ -67,6 +69,9 @@
     export let jobs = [];
 </script>
 
+
+<h2 class="giant-title is-overlapping">Where?</h2>
+
 <div class="grid timeline">
     {#each months as month}
         <a
@@ -92,9 +97,9 @@
 
 <div class="grid">
     <div class="col is-6 on-sm-is-12">
-        <div class="card">
-            {#if selectedJob}
-                <span class="job-header">
+        {#if selectedJob}
+            <Card>
+                <span slot="title" class="job-header">
                     <h3>{selectedJob.company}</h3>
                     <b>
                         {selectedJob.location}
@@ -104,26 +109,17 @@
                         {formatDate(selectedJob.endingDate)}
                     </p>
                 </span>
-                <hr />
                 <p class="description">{@html selectedJob.description}</p>
-            {/if}
-        </div>
+            </Card>
+        {/if}
     </div>
 </div>
 
 <style>
-    .job-header p, .job-header b{
-        color: var(--color-middle);
-    }
-
-    .description {
-        text-align: left;
-    }
-
     .timeline {
+        align-items: center;
         flex-wrap: nowrap;
-        overflow-x: auto;
-        min-height: 6rem;
+        margin-bottom: 2rem;
     }
 
     .timeline-container {
@@ -134,7 +130,7 @@
     .timeline-container .year {
         font-family: "Teko", sans-serif;
         position: absolute;
-        color: var(--color-front-secondary);
+        color: var(--color-gray);
     }
 
     .timeline-bar {
@@ -143,10 +139,10 @@
         width: 0.3rem;
         height: 1rem;
         border-radius: 0.4rem;
-        background-color: var(--color-bg-secondary);
+        background-color: var(--color-gray);
     }
     .timeline-bar.is-internship {
-        background-color: var(--color-primary-dim);
+        background-color: var(--color-primary-light);
         height: 1.5rem;
         margin: 0.25rem 0;
     }

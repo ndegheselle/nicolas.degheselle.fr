@@ -1,17 +1,17 @@
 // Core colors
 $primary-color: #5755d9 !default;
-$primary-color-dark: darken($primary-color, 3%) !default;
-$primary-color-light: lighten($primary-color, 3%) !default;
+$primary-color-dark: darken($primary-color, 10%) !default;
+$primary-color-light: lighten($primary-color, 10%) !default;
 $secondary-color: lighten($primary-color, 37.5%) !default;
 $secondary-color-dark: darken($secondary-color, 3%) !default;
 $secondary-color-light: lighten($secondary-color, 3%) !default;
 
 // Gray colors
 $dark-color: #303742 !default;
-$light-color: #fff !default;
+$light-color: #ffffff !default;
 $gray-color: lighten($dark-color, 55%) !default;
-$gray-color-dark: darken($gray-color, 30%) !default;
-$gray-color-light: lighten($gray-color, 20%) !default;
+$gray-color-dark: darken($gray-color, 10%) !default;
+$gray-color-light: lighten($gray-color, 10%) !default;
 
 $font-color: $dark-color !default;
 $border-color: lighten($dark-color, 65%) !default;
@@ -24,7 +24,7 @@ $bg-color-light: $light-color !default;
 // Create a css variable for each color
 :root {
     --color-primary: #{$primary-color};
-    --color-primary-dim: #{$primary-color-light};
+    --color-primary-light: #{$primary-color-light};
     --color-primary-dark: #{$primary-color-dark};
 
     --color-secondary: #{$secondary-color};
