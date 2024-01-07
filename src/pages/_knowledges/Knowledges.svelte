@@ -14,22 +14,29 @@
         selectedBookshelf = know;
     }
 
-    let selectedBookshelf = {
-        title: "",
-        description:
-            "The more book there is the more I experienced the subject !  I listed mostly technologies I personnaly experimented with or used during internship / at work without focusing on other skills.",
-    };
+    let selectedBookshelf = null;
     export let knowledges = [];
 </script>
 
 <div class="grid book-more-info">
     <div class="col is-6 on-sm-is-12">
-        <Card>
-            <h3 slot="title">{selectedBookshelf.title}</h3>
-            <p>
-                {@html selectedBookshelf.description}
-            </p>
-        </Card>
+        {#if selectedBookshelf}
+            <Card>
+                <h3 slot="title">{selectedBookshelf.title}</h3>
+                <p>
+                    {@html selectedBookshelf.description}
+                </p>
+            </Card>
+        {:else}
+            <Card>
+                <p>
+                    The more book there is the more I experienced the subject !
+                    I listed mostly technologies I personnaly experimented with
+                    or used during internship / at work without focusing on
+                    other skills.
+                </p>
+            </Card>
+        {/if}
     </div>
 </div>
 
@@ -48,7 +55,7 @@
                         <a
                             class="books-container {element.containerClass ||
                                 ''}"
-                                style="flex: {know.elements.lenght};"
+                            style="flex: {know.elements.lenght};"
                             on:click={(e) => clickBookshelf(e, element)}
                             on:mouseenter={enterBookshelf}
                             href="javascript:;"
@@ -77,11 +84,11 @@
 
     @media (max-width: $breakpoint-md) {
         .shelf-container {
-            margin: 0 !important;
+            margin: 0.4rem !important;
         }
     }
 
-    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-xl) {
         .shelf-container {
             margin: 0.4rem 10% !important;
         }
@@ -100,8 +107,7 @@
     .bookshelf {
         display: flex;
         width: 100%;
-        border: 0.6rem solid var(--color-bg-secondary);
-        border-radius: 0.4rem;
+        border: 0.5rem solid var(--color-border);
         height: 180px;
         position: relative;
     }
@@ -109,10 +115,10 @@
     .bookshelf-title {
         position: absolute;
         bottom: 0;
-        background-color: var(--color-bg);
-        border: 1px solid var(--color-bg-secondary);
+        background-color: var(--color-bg-light);
+        border: 1px solid var(--color-border);
         padding: 0.1rem 0.3rem;
-        color: var(--color-front-secondary);
+        color: var(--color-gray-dark);
         border-radius: 0.2rem;
         rotate: -90deg;
         transform-origin: bottom left;
@@ -139,16 +145,16 @@
         top: 0;
         left: 50%;
         transform: translateX(-50%);
-        color: var(--color-bg-secondary);
+        color: var(--color-gray-light);
         font-weight: bold;
-        border-bottom: 4px solid var(--color-bg-secondary);
+        border-bottom: 4px solid var(--color-border);
     }
     .books-container .title.is-shifted {
         top: 1.5rem;
     }
 
     :global(.books-container.active .title) {
-        color: var(--color-front-secondary) !important;
+        color: var(--color-primary) !important;
         z-index: 1;
     }
 </style>

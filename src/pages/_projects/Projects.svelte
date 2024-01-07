@@ -1,39 +1,45 @@
 <script>
+    import Card from "../../components/Card.svelte";
     export let projects = [];
 </script>
 
+<h2 class="giant-title is-overlapping">Projects!</h2>
 <div class="grid with-gutter">
     {#each projects as project}
         <div class="col is-6 on-sm-is-12">
-            <div class="card is-horizontal grid with-gap">
-                <div class="col">
-                    <img
-                        class="project-preview"
-                        src={project.pictureUrl}
-                        alt="Project {project.name} preview."
-                    />
+            <Card>
+                <div slot="title" class="project-card-title">
+                    <h3>{project.name}</h3>
+                    <a href={project.url} class="ml-2">
+                        <i class="fa-solid fa-link"></i>
+                    </a>
                 </div>
-                <div class="col">
-                    <div>
-                        <span class="grid is-start">
-                            <h3>{project.name}</h3>
-                            <a href="{project.url}" class="ml-2">
-                                <i class="fa-solid fa-link"></i>
-                            </a>
-                        </span>
-                        <hr />
-                        <p>
-                            {@html project.description}
-                        </p>
-                    </div>
-                </div>
-            </div>
+                <img
+                    class="project-preview"
+                    src={project.pictureUrl}
+                    alt="Project {project.name} preview."
+                />
+                <p>
+                    {@html project.description}
+                </p>
+            </Card>
         </div>
     {/each}
 </div>
 
 <style>
-.project-preview {
-    height: 10rem;
-}
+    .project-card-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .project-card-title h3 {
+        margin: 0;
+    }
+
+    .project-preview {
+        width: 100%;
+        max-height: 6rem;
+        object-fit:  cover;
+    }
 </style>

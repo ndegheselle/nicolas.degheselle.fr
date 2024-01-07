@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import Projects from "./_projects/index.astro";
+import Projects from "./_projects/Projects.svelte";
 import Jobs from "./_jobs/Jobs.svelte";
 import Knowledges from "./_knowledges/index.astro";
 
@@ -10,6 +10,7 @@ import WhoIAm from "./_presentation/WhoIAm.astro";
 import Presentation from "./_presentation/Presentation.astro";
 
 import jobs from "../content/jobs.json";
+import projects from "../content/projects.json";
 ---
 
 <script>
@@ -32,9 +33,7 @@ import jobs from "../content/jobs.json";
     <WhoIAm />
     <Presentation />
     <Jobs jobs={jobs} client:idle/>
-    <h2 class="part-title">Projects</h2>
-    <Projects />
-    <h2 class="part-title">What I know</h2>
+    <Projects projects={projects}/>
     <Knowledges />
   </main>
 </Layout>

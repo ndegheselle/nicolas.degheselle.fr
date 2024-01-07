@@ -2,7 +2,9 @@
     <div class="card-header">
         <slot name="title" />
     </div>
-    <hr />
+    {#if $$slots.title}
+        <hr />
+    {/if}
     <div class="card-body">
         <slot />
     </div>
@@ -12,7 +14,7 @@
     .card {
         padding: 0.4rem 0.6rem;
 
-        background-color: rgba(var(--color-dark-rgb), 0.8);
+        background-color: rgba(var(--color-light), 0.8);
         border-radius: 0.2rem;
         box-shadow: 0 4px 30px var(--color-gray-light);
         backdrop-filter: blur(5px);

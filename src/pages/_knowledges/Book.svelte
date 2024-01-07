@@ -69,11 +69,11 @@
     }
 
     .book {
-        --book-color: var(--color-primary-dim);
+        --book-color: var(--color-primary-light);
         --book-color-active: var(--color-primary);
     }
     .book.secondary {
-        --book-color: var(--color-secondary-dim);
+        --book-color: var(--color-secondary-light);
         --book-color-active: var(--color-secondary);
     }
     .book {
@@ -94,7 +94,7 @@
         border-top: 0.2rem solid var(--color-bg);
         border-left: 0.2rem solid var(--book-color);
         border-right: 0.2rem solid var(--book-color);
-        background-color: var(--color-bg-secondary);
+        background-color: var(--color-bg-light);
         width: 100%;
         min-height: 0;
     }

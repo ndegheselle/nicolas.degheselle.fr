@@ -4,18 +4,26 @@ import Knowledges from "./Knowledges.svelte";
 import Card from "../../components/Card.svelte";
 ---
 
+<h2 class="giant-title is-overlapping">What?</h2>
 <Knowledges knowledges={knowledges} client:idle />
 <div class="grid">
     <div class="col is-6 on-sm-is-12">
         <Card>
-            This is a non-exhaustive list, a lot of different things are omitted that are not
-            my main domain but where I do have some expertise. Like for example :
-            <ul>
-                <li>Networking / network management</li>
-                <li>Virtualization</li>
-                <li>Cybersecurity</li>
-                <li>Team / project management</li>
-            </ul>
+            <p>
+                This is a non-exhaustive list, a lot of different things are
+                omitted that are not my main domain but where I do have some
+                expertise. Like for example :
+                <ul>
+                    <li>Networking / network management</li>
+                    <li>Virtualization</li>
+                    <li>Cybersecurity</li>
+                    <li>Team / project management</li>
+                </ul>
+            </p>
         </Card>
     </div>
 </div>
+
+<style>
+    
+</style>
