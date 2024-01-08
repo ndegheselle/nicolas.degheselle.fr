@@ -14,6 +14,13 @@ import projects from "../content/projects.json";
 ---
 
 <script>
+
+  const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+  if (darkThemeMq.matches)
+  {
+    document.body.dataset.theme = "dark";
+  }
+
   document.getElementById("changeTheme").addEventListener("click", () => {
     document.body.dataset.theme =
       document.body.dataset.theme === "light" ? "dark" : "light";
@@ -50,6 +57,7 @@ import projects from "../content/projects.json";
     height: 2rem;
     width: 2rem;
     color: var(--color-middle);
+    cursor: pointer;
   }
   #changeTheme i {
     position: absolute;

@@ -1,0 +1,45 @@
+body[data-theme="dark"] {
+    // Core colors
+    $primary-color: darken(#867AE9, 12%) !default;
+    $primary-color-dark: darken($primary-color, 10%) !default;
+    $primary-color-light: lighten($primary-color, 10%) !default;
+    $secondary-color: darken(#FD8A8A, 12%) !default;
+    $secondary-color-dark: darken($secondary-color, 10%) !default;
+    $secondary-color-light: lighten($secondary-color, 10%) !default;
+
+    // Gray colors
+    $dark-color: #FEFCF3 !default;
+    $light-color: #222831 !default;
+    $gray-color: lighten($light-color, 15%) !default;
+    $gray-color-dark: darken($gray-color, 2%) !default;
+    $gray-color-light: lighten($gray-color, 2%) !default;
+
+    $border-color: lighten($light-color, 5%) !default;
+    $border-color-dark: darken($border-color, 10%) !default;
+    $border-color-light: lighten($border-color, 8%) !default;
+    $bg-color: $light-color !default;
+    $bg-color-dark: darken($bg-color, 3%) !default;
+    $bg-color-light: lighten($light-color, 3%) !default;
+
+    // Create a css variable for each color
+    --color-primary: #{$primary-color};
+    --color-primary-light: #{$primary-color-light};
+    --color-primary-dark: #{$primary-color-dark};
+
+    --color-secondary: #{$secondary-color};
+    --color-secondary-light: #{$secondary-color-light};
+    --color-secondary-dark: #{$secondary-color-dark};
+
+    --color-light: #{$light-color};
+    --color-dark: #{$dark-color};
+    --color-gray: #{$gray-color};
+    --color-gray-dark: #{$gray-color-dark};
+    --color-gray-light: #{$gray-color-light};
+
+    --color-border: #{$border-color};
+    --color-border-dark: #{$border-color-dark};
+    --color-border-light: #{$border-color-light};
+    --color-bg: #{$bg-color};
+    --color-bg-dark: #{$bg-color-dark};
+    --color-bg-light: #{$bg-color-light};
+}

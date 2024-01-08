@@ -119,7 +119,7 @@
     .timeline {
         align-items: center;
         flex-wrap: nowrap;
-        margin-bottom: 2rem;
+        margin: 2rem 0;
     }
 
     .timeline-container {
