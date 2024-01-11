@@ -3,7 +3,7 @@
     export let projects = [];
 </script>
 
-<h2 class="giant-title is-overlapping">Projects!</h2>
+<h2 class="giant-title is-overlapping fil-ariane-balise" id="title-projects">Projects!</h2>
 <div class="grid with-gutter">
     {#each projects as project}
         <div class="col is-3 on-sm-is-12 stretch-container">

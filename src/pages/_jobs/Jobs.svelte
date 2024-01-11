@@ -70,7 +70,7 @@
 </script>
 
 
-<h2 class="giant-title is-overlapping">Where?</h2>
+<h2 class="giant-title is-overlapping fil-ariane-balise" id="title-where">Where?</h2>
 
 <div class="grid timeline">
     {#each months as month}
