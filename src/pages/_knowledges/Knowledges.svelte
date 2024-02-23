@@ -33,7 +33,7 @@
                     The more book there is the more I experienced the subject !
                     I listed mostly technologies I personnaly experimented with
                     or used during internship / at work without focusing on
-                    other skills.
+                    other skills. If you want to learn more about those, hit me up !
                 </p>
             </Card>
         {/if}

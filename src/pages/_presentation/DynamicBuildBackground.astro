@@ -10,8 +10,6 @@
   <style is:inline>
     .main-title {
       position: relative;
-
-      min-height: 100vh;
       background-color: var(--color-bg-dark);
     }
 
@@ -91,6 +89,10 @@
 
 <!-- Global since span are generated via JS -->
 <style is:global>
+.main-title {
+  min-height: 100vh;
+}
+
   .main-title-container.finished .width,
   .main-title-container.finished .height {
     opacity: 0;

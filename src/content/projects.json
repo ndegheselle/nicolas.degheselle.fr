@@ -7,10 +7,10 @@
         "description": "A simple C++ game created in 1 week from nothing with SFML and OpenGL."
     },
     {
-        "name": "Data scrapping app",
-        "url": "https://github.com/Poulpynateur/stage-INSA-electron",
-        "pictureUrl": "https://github.com/Poulpynateur/stage-INSA-electron/blob/master/preview.PNG?raw=true",
-        "description": "An interface for data scraping scientific articles resumes. Created with Electron.js"
+        "name": "WPF soundboard app",
+        "url": "https://github.com/ndegheselle/MeNoisy-soundboard",
+        "pictureUrl": "https://github.com/ndegheselle/MeNoisy-soundboard/blob/main/images/preview.gif?raw=true",
+        "description": "WPF soundboard used to play sound on any audio peripheral. Created with C# and WPF."
     },
     
     {

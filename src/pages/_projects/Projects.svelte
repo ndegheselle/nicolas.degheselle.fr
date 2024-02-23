@@ -41,5 +41,6 @@
         width: 100%;
         max-height: 6rem;
         object-fit:  cover;
+        object-position: top;
     }
 </style>
