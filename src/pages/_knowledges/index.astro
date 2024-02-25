@@ -1,10 +1,14 @@
 ---
 import knowledges from "../../content/knowledges.json";
 import Knowledges from "./Knowledges.svelte";
+import SvgBookshelfGeneration from "./SvgBookshelfGeneration.svelte";
 import Card from "../../components/Card.svelte";
 ---
 
 <h2 class="giant-title is-overlapping fil-ariane-balise" id="title-what">What?</h2>
+
+<SvgBookshelfGeneration client:idle/>
+
 <Knowledges knowledges={knowledges} client:idle />
 <div class="grid">
     <div class="col is-6 on-sm-is-12">
@@ -23,7 +27,3 @@ import Card from "../../components/Card.svelte";
         </Card>
     </div>
 </div>
-
-<style>
-    
-</style>
