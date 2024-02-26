@@ -1,6 +1,17 @@
 <script>
     import { SVG } from "@svgdotjs/svg.js";
-    import { onMount } from "svelte";
+    import { onMount, createEventDispatcher } from "svelte";
+
+	const dispatch = createEventDispatcher();
+
+    function bookSelected()
+    {
+        dispatch('bookSelected', { book: 'book' });
+    }
+    function bookHovered()
+    {
+        dispatch('bookHovered', { book: 'book' });
+    }
 
     let categories = [
         {
@@ -84,6 +95,7 @@
     const BOOK_RANDOM_HEIGHT = 10;
 
     let draw;
+    let svg;
 
     function createCols(row, parent) {
         const colWidth = BOOKSHELF_WIDTH / row.length;
@@ -154,8 +166,7 @@
     }
 
     onMount(() => {
-        draw = SVG()
-            .addTo("#svg-container")
+        draw = SVG(svg)
             .size("100%", "100%")
             .viewbox(
                 0,
@@ -185,7 +196,9 @@
     });
 </script>
 
-<div id="svg-container"></div>
+<svg bind:this={svg}>
+    <use xlink:href="#bookshelf-defs"/>
+</svg>
 
 <style global>
         :global(.book-group) {
