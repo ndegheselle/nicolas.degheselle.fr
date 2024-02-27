@@ -4,11 +4,15 @@
 
     const dispatch = createEventDispatcher();
 
-    function bookSelected() {
-        dispatch("bookSelected", { book: "book" });
+    function bookSelected(book) {
+        dispatch("bookSelected", book);
     }
-    function bookHovered() {
-        dispatch("bookHovered", { book: "book" });
+    function bookEntered(book) {
+        dispatch("bookEntered", book);
+    }
+    function bookLeave()
+    {
+        dispatch("bookLeave");
     }
 
     function randomIntFromInterval(min, max) {
@@ -70,7 +74,20 @@
                 .group()
                 .translate(BOOK_WIDTH * currentBookNumber + BOOK_GROUP_SPACING * i, 0)
                 .addClass("book-group");
-
+                bookGroup
+                .rect(
+                    BOOK_WIDTH * book.volumes.length,
+                    BOOK_HEIGHT + BOOK_RANDOM_HEIGHT,
+                )
+                .radius(4)
+                .move(
+                    SUPPORT_SIZE * 2,
+                    BOOKSHELF_HEIGHT -
+                        BOOK_HEIGHT -
+                        BOOK_RANDOM_HEIGHT -
+                        SUPPORT_SIZE,
+                )
+                .addClass("book-group-selection");
             bookGroup
                 .text(book.title)
                 .x((book.volumes.length * BOOK_WIDTH) / 2)
@@ -81,7 +98,7 @@
                 const randHeight = Math.random() * 0.2 + 0.9;
                 const randBook = randomIntFromInterval(1, 4);
 
-                let book = bookGroup
+                let bookVisual = bookGroup
                     // .rect(BOOK_WIDTH, BOOK_HEIGHT + randomHeight)
                     .use('book-' + randBook)
                     .move(
@@ -92,25 +109,20 @@
                     )
                     .scale(1, randHeight, 0, BOOKSHELF_HEIGHT - SUPPORT_SIZE);
 
-                book.on("mouseenter", () => {
+                bookVisual
+                .on("mouseenter", () => {
                     bookGroup.addClass("is-active");
+                    bookEntered(book);
                 }).on("mouseleave", () => {
                     bookGroup.removeClass("is-active");
+                    bookLeave();
+                })
+                .click(() => {
+                    bookSelected(book);
                 });
+                
             });
-            bookGroup
-                .rect(
-                    BOOK_WIDTH * book.volumes.length,
-                    BOOK_HEIGHT + BOOK_RANDOM_HEIGHT,
-                )
-                .move(
-                    SUPPORT_SIZE * 2,
-                    BOOKSHELF_HEIGHT -
-                        BOOK_HEIGHT -
-                        BOOK_RANDOM_HEIGHT -
-                        SUPPORT_SIZE,
-                )
-                .addClass("book-group-selection");
+
 
             currentBookNumber += book.volumes.length;
         }
