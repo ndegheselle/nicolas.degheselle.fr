@@ -1,18 +1,20 @@
 <script>
     import { SVG } from "@svgdotjs/svg.js";
-    import { onMount, createEventDispatcher } from "svelte";
+    import { onMount } from "svelte";
+    import { isBookSelected, activeBook } from "./LibraryStore.js";
 
-    const dispatch = createEventDispatcher();
-
-    function bookSelected(book) {
-        dispatch("bookSelected", book);
+    function bookSelected(book, volume) {
+        $isBookSelected = true;
+        $activeBook = book;
     }
     function bookEntered(book) {
-        dispatch("bookEntered", book);
+        if (!$isBookSelected)
+            $activeBook = book;
     }
     function bookLeave()
     {
-        dispatch("bookLeave");
+        if (!$isBookSelected)
+            $activeBook = null;
     }
 
     function randomIntFromInterval(min, max) {
@@ -99,8 +101,8 @@
                 const randBook = randomIntFromInterval(1, 4);
 
                 let bookVisual = bookGroup
-                    // .rect(BOOK_WIDTH, BOOK_HEIGHT + randomHeight)
                     .use('book-' + randBook)
+                    .addClass("book-container")
                     .move(
                         BOOK_WIDTH * j + SUPPORT_SIZE * 2,
                         BOOKSHELF_HEIGHT -
@@ -112,13 +114,19 @@
                 bookVisual
                 .on("mouseenter", () => {
                     bookGroup.addClass("is-active");
+                    bookVisual.addClass("is-active");
                     bookEntered(book);
                 }).on("mouseleave", () => {
                     bookGroup.removeClass("is-active");
+                    bookVisual.removeClass("is-active");
                     bookLeave();
                 })
-                .click(() => {
-                    bookSelected(book);
+                .click((e) => {
+                    bookGroup.addClass("is-selected");
+                    bookVisual.addClass("is-selected");
+
+                    e.stopPropagation();
+                    bookSelected(book, volume);
                 });
                 
             });
