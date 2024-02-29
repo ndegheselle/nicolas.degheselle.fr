@@ -32,12 +32,12 @@
                 tag: "Languages",
                 books: [
                     {
-                        title: "Javascript",
+                        title: ".qsdfqsdfqsdf",
                         description: "101",
                         volumes: ["101", "Promises", "Everything else"],
                     },
                     {
-                        title: "Javascript",
+                        title: ".Javasadadajs",
                         description: "Promises",
                         volumes: ["101"],
                     },
@@ -56,8 +56,7 @@
         ],
     ];
 
-    function cleanBooks(bookSelected)
-    {
+    function cleanBooks(bookSelected) {
         console.log(bookSelected);
         if (!bookSelected)
             document
@@ -175,9 +174,7 @@
 
 {#each bookcase as bookshelf}
     <div>
-        <Bookshelf
-            {bookshelf}
-        />
+        <Bookshelf {bookshelf} />
     </div>
 {/each}
 
@@ -294,7 +291,7 @@
         stroke-dasharray: 5;
         fill: none;
         transition: 0.3s;
-        stroke: var(--color-bg-dark);
+        stroke: var(--color-primary-low);
         opacity: 0;
     }
     :global(
@@ -303,7 +300,7 @@
         ) {
         opacity: 1;
     }
-    :global(.book-container) {
+    :global(svg, .book-container) {
         --color-back-low: #f5f5f5;
         --color-back: #e0e0e0;
         --color-medium: #d0d0d0;
@@ -321,7 +318,24 @@
     }
     :global(.book-container.is-selected) {
         opacity: 0;
-   pointer-events: none;
+        pointer-events: none;
+    }
+
+    :global(.text-title, .text-subtitle) {
+        fill: var(--color-gray-light);
+    }
+
+    :global(.text-title) {
+        font-weight: bold;
+    }
+    :global(.text-subtitle) {
+        font-size: 0.8rem;
+        transition: 0.3s;
+    }
+
+    :global(.is-active .text-subtitle, .is-selected .text-subtitle) {
+        fill: var(--color-primary-low);
+        transform: translateY(-0.8rem);
     }
 
     .book-cover,
@@ -354,6 +368,15 @@
 
     .color-background {
         fill: var(--color-bg);
+    }
+
+    :global(.color-back-low) {
+        fill: var(--color-back-low);
+        stroke: var(--color-back-low);
+    }
+    :global(.color-back) {
+        fill: var(--color-back);
+        stroke: var(--color-back);
     }
 
     /* Book animation */
