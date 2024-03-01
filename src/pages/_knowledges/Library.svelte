@@ -57,11 +57,11 @@
     ];
 
     function cleanBooks(bookSelected) {
-        console.log(bookSelected);
+        console.log("cleanBooks", bookSelected);
         if (!bookSelected)
             document
                 .querySelectorAll(
-                    ".book-group.is-selected, .book-container.is-selected",
+                    ".book-group.is-selected, .book-volume.is-selected",
                 )
                 .forEach((el) => el.classList.remove("is-selected"));
     }
@@ -186,7 +186,7 @@
 >
     <div class="background">
         <svg
-            class="book-container"
+            class="book-volume"
             id="eCWPjVlUpTk1"
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -286,21 +286,7 @@
 </div>
 
 <style>
-    :global(.book-group-selection) {
-        stroke-width: 3;
-        stroke-dasharray: 5;
-        fill: none;
-        transition: 0.3s;
-        stroke: var(--color-primary-low);
-        opacity: 0;
-    }
-    :global(
-            .book-group.is-active .book-group-selection,
-            .book-group.is-selected .book-group-selection
-        ) {
-        opacity: 1;
-    }
-    :global(svg, .book-container) {
+    :global(svg, .book-group) {
         --color-back-low: #f5f5f5;
         --color-back: #e0e0e0;
         --color-medium: #d0d0d0;
@@ -311,31 +297,23 @@
         --color-primary: #ff6f61;
         transition: 0.3s;
     }
-    :global(.book-container.is-active) {
-        cursor: grabbing;
+
+    :global(
+            .book-group.is-active .book-volume,
+            .book-group.is-selected .book-volume
+        ) {
         --color-front-low: var(--color-primary-low);
         --color-front: var(--color-primary);
     }
-    :global(.book-container.is-selected) {
+
+    :global(.book-volume.is-active) {
+        cursor: grabbing;
+        --color-front-low: var(--color-primary) !important;
+        --color-front: var(--color-primary-low) !important;
+    }
+    :global(.book-volume.is-selected) {
         opacity: 0;
         pointer-events: none;
-    }
-
-    :global(.text-title, .text-subtitle) {
-        fill: var(--color-gray-light);
-    }
-
-    :global(.text-title) {
-        font-weight: bold;
-    }
-    :global(.text-subtitle) {
-        font-size: 0.8rem;
-        transition: 0.3s;
-    }
-
-    :global(.is-active .text-subtitle, .is-selected .text-subtitle) {
-        fill: var(--color-primary-low);
-        transform: translateY(-0.8rem);
     }
 
     .book-cover,

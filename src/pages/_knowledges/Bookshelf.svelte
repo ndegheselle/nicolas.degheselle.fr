@@ -43,12 +43,6 @@
         for (let i = 0; i < bookshelf.length; i++) {
             const col = bookshelf[i];
             const colGroup = parent.group().translate(i * colWidth, 0);
-            colGroup
-                .text(col.tag)
-                .x(colWidth / 2)
-                .y(8)
-                .attr("text-anchor", "middle")
-                .addClass("text-title");
 
             // Horizontal supports
             colGroup
@@ -72,35 +66,14 @@
                     0,
                 )
                 .addClass("book-group");
-            bookGroup
-                .rect(
-                    BOOK_WIDTH * book.volumes.length,
-                    BOOK_HEIGHT + BOOK_RANDOM_HEIGHT,
-                )
-                .radius(4)
-                .move(
-                    SUPPORT_SIZE * 2,
-                    BOOKSHELF_HEIGHT -
-                        BOOK_HEIGHT -
-                        BOOK_RANDOM_HEIGHT -
-                        SUPPORT_SIZE,
-                )
-                .addClass("book-group-selection");
-            bookGroup
-                .text(book.title)
-                .x(BOOK_WIDTH * book.volumes.length / 2 + SUPPORT_SIZE * 2)
-                .y(42)
-                .attr("text-anchor", "middle")
-                .addClass("text-subtitle");
 
             book.volumes.forEach((volume, j) => {
-                // Random number between 0.8 and 1.2
-                const randHeight = Math.random() * 0.2 + 0.9;
+                const randHeight = Math.random() * (BOOK_RANDOM_HEIGHT_MAX - BOOK_RANDOM_HEIGHT_MIN) + BOOK_RANDOM_HEIGHT_MIN;
                 const randBook = randomIntFromInterval(1, 4);
 
                 let bookVisual = bookGroup
                     .use("book-" + randBook)
-                    .addClass("book-container")
+                    .addClass("book-volume")
                     .move(
                         BOOK_WIDTH * j + SUPPORT_SIZE * 2,
                         BOOKSHELF_HEIGHT - BOOK_HEIGHT - SUPPORT_SIZE,
@@ -132,12 +105,13 @@
     }
 
     const BOOKSHELF_WIDTH = 500;
-    const BOOKSHELF_HEIGHT = 180;
+    const BOOKSHELF_HEIGHT = 120;
     const SUPPORT_SIZE = 8;
 
     const BOOK_WIDTH = 20;
     const BOOK_HEIGHT = 100;
-    const BOOK_RANDOM_HEIGHT = 10;
+    const BOOK_RANDOM_HEIGHT_MAX = 1.1;
+    const BOOK_RANDOM_HEIGHT_MIN = 0.9;
     const BOOK_GROUP_SPACING = 2;
 
     let draw;
