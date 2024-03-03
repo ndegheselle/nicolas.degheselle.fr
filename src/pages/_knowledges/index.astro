@@ -1,13 +1,12 @@
 ---
 import knowledges from "../../content/knowledges.json";
 import Knowledges from "./Knowledges.svelte";
-import Library from "./Library.svelte";
 import Card from "../../components/Card.svelte";
 ---
 
 <h2 class="giant-title is-overlapping fil-ariane-balise" id="title-what">What?</h2>
 
-<Library client:idle client:only/>
+
 
 <Knowledges knowledges={knowledges} client:idle />
 <div class="grid">

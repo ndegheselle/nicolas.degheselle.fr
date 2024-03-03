@@ -1,18 +1,7 @@
 <script>
     import { SVG } from "@svgdotjs/svg.js";
     import { onMount } from "svelte";
-    import { isBookSelected, activeBook } from "./LibraryStore.js";
-
-    function bookSelected(book, volume) {
-        $isBookSelected = true;
-        $activeBook = book;
-    }
-    function bookEntered(book) {
-        if (!$isBookSelected) $activeBook = book;
-    }
-    function bookLeave() {
-        if (!$isBookSelected) $activeBook = null;
-    }
+    import { bookStore } from "./LibraryStore.js";
 
     function randomIntFromInterval(min, max) {
         // min and max included
@@ -67,38 +56,34 @@
                 )
                 .addClass("book-group");
 
-            book.volumes.forEach((volume, j) => {
+            // Set the DOM element so that we can select it later
+            book.dom = bookGroup.node;
+
+            for (let volumeIndex = 0; volumeIndex < book.volumes.length; volumeIndex++) {
                 const randHeight = Math.random() * (BOOK_RANDOM_HEIGHT_MAX - BOOK_RANDOM_HEIGHT_MIN) + BOOK_RANDOM_HEIGHT_MIN;
                 const randBook = randomIntFromInterval(1, 4);
 
-                let bookVisual = bookGroup
+                let volumeVisual = bookGroup
                     .use("book-" + randBook)
                     .addClass("book-volume")
                     .move(
-                        BOOK_WIDTH * j + SUPPORT_SIZE * 2,
+                        BOOK_WIDTH * volumeIndex + SUPPORT_SIZE * 2,
                         BOOKSHELF_HEIGHT - BOOK_HEIGHT - SUPPORT_SIZE,
                     )
                     .scale(1, randHeight, 0, BOOKSHELF_HEIGHT - SUPPORT_SIZE);
 
-                bookVisual
+                volumeVisual
                     .on("mouseenter", () => {
-                        bookGroup.addClass("is-active");
-                        bookVisual.addClass("is-active");
-                        bookEntered(book);
+                        bookStore.select(book, volumeIndex, { target: "book", preview: true });
                     })
                     .on("mouseleave", () => {
-                        bookGroup.removeClass("is-active");
-                        bookVisual.removeClass("is-active");
-                        bookLeave();
+                        bookStore.unselect({ preview: true });
                     })
                     .click((e) => {
-                        bookGroup.addClass("is-selected");
-                        bookVisual.addClass("is-selected");
-
                         e.stopPropagation();
-                        bookSelected(book, volume);
+                        bookStore.select(book, volumeIndex, { target: "book" });
                     });
-            });
+            }
 
             currentBookNumber += book.volumes.length;
         }

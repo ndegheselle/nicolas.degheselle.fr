@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Projects from "./_projects/Projects.svelte";
 import Jobs from "./_jobs/Jobs.svelte";
 import Knowledges from "./_knowledges/index.astro";
+import Me from "./_me/index.astro";
 
 import MainTitle from "./_presentation/MainTitle.astro";
 import WhoIAm from "./_presentation/WhoIAm.astro";
@@ -45,7 +46,7 @@ import FilAriane from "../components/FilAriane.svelte";
     <Presentation />
     <Jobs jobs={jobs} client:idle/>
     <Projects projects={projects}/>
-    <Knowledges />
+    <Me />
   </main>
 </Layout>
 

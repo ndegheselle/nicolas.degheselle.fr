@@ -1,6 +1,6 @@
 <script>
     import Bookshelf from "./Bookshelf.svelte";
-    import { isBookSelected, activeBook } from "./LibraryStore.js";
+    import { bookStore, bookcase } from "./LibraryStore.js";
 
     function clickOutside(element, callbackFunction) {
         function onClick(event) {
@@ -20,55 +20,9 @@
             },
         };
     }
-
-    function unselectBook() {
-        $isBookSelected = false;
-        $activeBook = null;
-    }
-
-    let bookcase = [
-        [
-            {
-                tag: "Languages",
-                books: [
-                    {
-                        title: ".qsdfqsdfqsdf",
-                        description: "101",
-                        volumes: ["101", "Promises", "Everything else"],
-                    },
-                    {
-                        title: ".Javasadadajs",
-                        description: "Promises",
-                        volumes: ["101"],
-                    },
-                ],
-            },
-            {
-                tag: "Other",
-                books: [
-                    {
-                        title: "aa",
-                        description: "The most popular language",
-                        volumes: ["101", "Promises", "Everything else"],
-                    },
-                ],
-            },
-        ],
-    ];
-
-    function cleanBooks(bookSelected) {
-        console.log("cleanBooks", bookSelected);
-        if (!bookSelected)
-            document
-                .querySelectorAll(
-                    ".book-group.is-selected, .book-volume.is-selected",
-                )
-                .forEach((el) => el.classList.remove("is-selected"));
-    }
-
-    $: cleanBooks($isBookSelected);
 </script>
 
+<!-- Book elements -->
 <svg display="none" viewBox="0 0 20 100">
     <defs>
         <g id="book-top">
@@ -172,17 +126,19 @@
     <use href="#book-2" />
 </svg>
 
-{#each bookcase as bookshelf}
-    <div>
-        <Bookshelf {bookshelf} />
-    </div>
-{/each}
+<div class="grid">
+    {#each bookcase as bookshelf}
+        <div class="col is-6 on-md-is-12">
+            <Bookshelf {bookshelf} />
+        </div>
+    {/each}
+</div>
 
 <div
     class="book-display container"
-    class:preview={$activeBook}
-    class:full={$activeBook && $isBookSelected}
-    use:clickOutside={unselectBook}
+    class:preview={$bookStore.volume}
+    class:full={$bookStore.isSelected}
+    use:clickOutside={bookStore.putBackVolume}
 >
     <div class="background">
         <svg
@@ -276,16 +232,18 @@
     </div>
 
     <div class="content">
-        {#if $activeBook}
-            <h1>{$activeBook.title}</h1>
+        {#if $bookStore.book}
+            <h1>{$bookStore.book.title}</h1>
             <hr />
-            <h3>{$activeBook.subtitle}</h3>
-            <p>{$activeBook.description}</p>
+
+            <h3>{$bookStore.volume.title}</h3>
+            <p>{$bookStore.book.description}</p>
         {/if}
     </div>
 </div>
 
 <style>
+    
     :global(svg, .book-group) {
         --color-back-low: #f5f5f5;
         --color-back: #e0e0e0;
