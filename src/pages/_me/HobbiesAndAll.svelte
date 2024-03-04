@@ -2,6 +2,8 @@
     import { onMount } from "svelte";
     import Card from "../../components/Card.svelte";
 
+    import Experimentations from "./Experimentations.svelte";
+
     let hoverInfos = null;
     let showHoverInfos = false;
     onMount(() => {
@@ -39,25 +41,7 @@
 
 <div class="svg-container">
     <div class="experimental-container">
-        <svg width="100%" height="100%" viewBox="0 0 100 50">
-            <rect
-                x="0"
-                y="0"
-                width="100"
-                height="50"
-                fill="magenta"
-                stroke-width="1"
-            />
-            <rect
-                data-title="title"
-                data-description="description"
-                x="10"
-                y="10"
-                width="10"
-                height="10"
-                fill="green"
-            />
-        </svg>
+        <Experimentations />
     </div>
     <div class="desktop-container">
         <svg width="100%" height="100%" viewBox="0 0 100 100">
