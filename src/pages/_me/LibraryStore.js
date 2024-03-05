@@ -2,52 +2,67 @@ import { writable } from 'svelte/store';
 
 function createStore() {
     const { subscribe, set, update } = writable({
-        target: null,
         data: null,
-        childIndex: 0,
-        isSelected: false,
+        options: {
+            target: null,
+            childIndex: 0,
+            isLocked: false,
+        }
     });
 
     // XXX : would prefer to use svelte markup, but the element are created dynamically
-    function resetClass(store) {
-        store.data?.dom.classList.remove('is-active');
-        store.data?.dom.classList.remove('is-selected');
+    function resetClass(className) {
+        for (let dom of document.querySelectorAll(`svg .${className}`) || [])
+        {
+            dom.classList.remove(className);
+        }
     }
 
-    function addClass(store, className) {
-        store.data.dom.classList.add(className);
+    function addClass(doms, className) {
+        for (let dom of doms || [])
+        {
+            dom.classList.add(className);
+        }
     }
 
-    function unselect(options = { preview: false }) {
+    function unselect(force = false) {
+
+        resetClass('is-active');
+        if (force)
+            resetClass('is-selected');
+
         update(store => {
             // Don't preview other children if a child is selected
-            if (options.preview && store.isSelected)
+            if (!force && store.options.isLocked)
                 return store;
-                resetClass(store);
             return {
-                target: null,
                 data: null,
-                childIndex: 0,
-                isSelected: false,
+                options: {
+                    target: null,
+                    childIndex: 0,
+                    isLocked: false,
+                }
             }
         });
     }
 
-    function select(data, childIndex, options = { target: "book", preview: false }) {
+    function select(data, doms, options = { childIndex: -1, target: "book", isLocked: true }) {
+        resetClass('is-active');
+        if (options.isLocked)
+            resetClass('is-selected');
+
+        addClass(doms, 'is-active');
+        if (options.isLocked)
+            addClass(doms, 'is-selected');
+
         update(store => {
             // Don't preview other children if a child is selected
-            if (options.preview && store.isSelected)
+            if (!options.isLocked && store.options.isLocked)
                 return store;
-
-            resetClass(store);
-            store = {
-                target: options.target,
+            return {
                 data,
-                childIndex,
-                isSelected: !options.preview,
+                options
             }
-            addClass(store, options.preview ? 'is-active' : 'is-selected');
-            return store;
         });
     }
 
@@ -58,9 +73,7 @@ function createStore() {
     }
 }
 
-export const bookStore = createStore();
-export const volumeStore = createStore();
-
+export const selectedStore = createStore();
 export let bookcase = [
     [
         {

@@ -1,39 +1,22 @@
 <script>
-    import { onMount } from "svelte";
     import Card from "../../components/Card.svelte";
-
     import Experimentations from "./Experimentations.svelte";
 
-    let hoverInfos = null;
-    let showHoverInfos = false;
-    onMount(() => {
-        // Foreach element with data-title attribute
-        document.querySelectorAll("[data-title]").forEach((element) => {
-            // Add event listener to each element
-            element.addEventListener("mouseover", (event) => {
-                // Get the title attribute
-                const title = element.getAttribute("data-title");
-                // Get the description attribute
-                const description = element.getAttribute("data-description");
-                hoverInfos = {
-                    title,
-                    description,
-                };
-                showHoverInfos = true;
-            });
-            element.addEventListener("mouseout", (event) => {
-                showHoverInfos = false;
-            });
-        });
-    });
+    import { selectedStore } from "./LibraryStore";
+
+    function canPreview(store)
+    {
+        return store?.options?.target === "other" && store.data;
+    }
+
 </script>
 
-<div class="grid hover-more-info" class:is-active={showHoverInfos}>
+<div class="grid hover-more-info" class:is-active={canPreview($selectedStore)}>
     <div class="col is-6 on-sm-is-12">
         <Card>
-            <h3 slot="title">{hoverInfos?.title}</h3>
+            <h3 slot="title">{$selectedStore.data?.title}</h3>
             <p>
-                {@html hoverInfos?.description}
+                {@html $selectedStore.data?.description}
             </p>
         </Card>
     </div>
@@ -103,13 +86,13 @@
     .hover-more-info {
         width: 100%;
         top: 0.4rem;
+        left: 0;
         transition: 0.3s;
-        position: fixed;
         transform: translateY(-120%);
+        position: fixed;
     }
 
     .hover-more-info.is-active {
         transform: translateY(0);
     }
-
 </style>

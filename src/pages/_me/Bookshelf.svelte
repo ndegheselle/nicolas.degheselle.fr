@@ -1,7 +1,7 @@
 <script>
     import { SVG } from "@svgdotjs/svg.js";
     import { onMount } from "svelte";
-    import { bookStore } from "./LibraryStore.js";
+    import { selectedStore } from "./LibraryStore.js";
 
     function randomIntFromInterval(min, max) {
         // min and max included
@@ -54,18 +54,17 @@
                     BOOK_WIDTH * currentBookNumber + BOOK_GROUP_SPACING * i,
                     0,
                 )
-                .addClass("book-group");
-
-            // Set the DOM element so that we can select it later
-            book.dom = bookGroup.node;
+                .addClass("book-group")
+                .addClass("selectable");
 
             for (let volumeIndex = 0; volumeIndex < book.volumes.length; volumeIndex++) {
                 const randHeight = Math.random() * (BOOK_RANDOM_HEIGHT_MAX - BOOK_RANDOM_HEIGHT_MIN) + BOOK_RANDOM_HEIGHT_MIN;
                 const randBook = randomIntFromInterval(1, 4);
 
-                let volumeVisual = bookGroup
+                const volumeVisual = bookGroup
                     .use("book-" + randBook)
                     .addClass("book-volume")
+                    .addClass("selectable")
                     .move(
                         BOOK_WIDTH * volumeIndex + SUPPORT_SIZE * 2,
                         BOOKSHELF_HEIGHT - BOOK_HEIGHT - SUPPORT_SIZE,
@@ -74,14 +73,14 @@
 
                 volumeVisual
                     .on("mouseenter", () => {
-                        bookStore.select(book, volumeIndex, { target: "book", preview: true });
+                        selectedStore.select(book, [bookGroup.node, volumeVisual.node], { target: "book", childIndex: volumeIndex});
                     })
                     .on("mouseleave", () => {
-                        bookStore.unselect({ preview: true });
+                        selectedStore.unselect();
                     })
                     .click((e) => {
                         e.stopPropagation();
-                        bookStore.select(book, volumeIndex, { target: "book" });
+                        selectedStore.select(book, [bookGroup.node, volumeVisual.node],  { target: "book", childIndex: volumeIndex, isLocked: true });
                     });
             }
 

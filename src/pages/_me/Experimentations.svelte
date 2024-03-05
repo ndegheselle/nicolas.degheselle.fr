@@ -1,6 +1,7 @@
 <script>
     import { SVG } from "@svgdotjs/svg.js";
     import { onMount } from "svelte";
+    import { selectedStore } from "./LibraryStore.js";
 
     function randomIntFromInterval(min, max) {
         // min and max included
@@ -12,17 +13,50 @@
 
         for (let i = 0; i < experimentations.length; i++) {
             const experimentation = experimentations[i];
-            const random = randomIntFromInterval(-PAPER_SPACING_RAND, PAPER_SPACING_RAND);
+            const random = randomIntFromInterval(
+                -PAPER_SPACING_RAND,
+                PAPER_SPACING_RAND,
+            );
 
-            console.log(i * PAPER_SPACING + random, ROW_HEIGHT * Math.floor(i / PAPER_PER_ROW) + random);
-            const paper = draw.use("experimentation-paper")
+            const paper = draw
+                .use("experimentation-paper")
                 .move(
                     i * PAPER_SPACING + random + EXTERIOR_SPACING,
-                    ROW_HEIGHT * Math.floor(i / PAPER_PER_ROW) + random + EXTERIOR_SPACING,
+                    ROW_HEIGHT * Math.floor(i / PAPER_PER_ROW) +
+                        random +
+                        EXTERIOR_SPACING,
                 )
-                .rotate(randomIntFromInterval(-PAPER_ROTATION_RAND, PAPER_ROTATION_RAND));
-        }
+                .rotate(
+                    randomIntFromInterval(
+                        -PAPER_ROTATION_RAND,
+                        PAPER_ROTATION_RAND,
+                    ),
+                )
+                .addClass("selectable");
 
+            paper
+                .on("mouseenter", () => {
+                    selectedStore.select(
+                        experimentation,
+                        [paper.node],
+                        { target: "other"},
+                    );
+                })
+                .on("mouseleave", () => {
+                    selectedStore.unselect();
+                })
+                .click((e) => {
+                    e.stopPropagation();
+                    selectedStore.select(
+                        experimentation,
+                        [paper.node],
+                        {
+                            target: "other",
+                            isLocked: true,
+                        },
+                    );
+                });
+        }
     });
 
     const EXTERIOR_SPACING = 10;
@@ -34,22 +68,24 @@
     const PAPER_ROTATION_RAND = 10;
 
     let svg;
-    let experimentations = [{
-        title: "Paper",
-        description: "A paper with a folded corner",
-    },
-    {
-        title: "Paper",
-        description: "A paper with a folded corner",
-    },
-    {
-        title: "Paper",
-        description: "A paper with a folded corner",
-    },
-    {
-        title: "Paper",
-        description: "A paper with a folded corner",
-    }];
+    let experimentations = [
+        {
+            title: "Paper",
+            description: "A paper with a folded corner",
+        },
+        {
+            title: "Paper",
+            description: "A paper with a folded corner",
+        },
+        {
+            title: "Paper",
+            description: "A paper with a folded corner",
+        },
+        {
+            title: "Paper",
+            description: "A paper with a folded corner",
+        },
+    ];
 </script>
 
 <svg bind:this={svg} width="100%" height="100%" viewBox="0 0 200 100">
@@ -203,20 +239,12 @@
 </svg>
 
 <style>
-    :global(svg, .book-group) {
-        --color-back-low: #f5f5f5;
-        --color-back: #e0e0e0;
-        --color-medium: #d0d0d0;
-        --color-front-low: #c0c0c0;
-        --color-front: #b0b0b0;
-
-        --color-primary-low: #ff8f81;
-        --color-primary: #ff6f61;
-        transition: 0.3s;
-    }
-
     .pin {
         fill: var(--color-medium);
+    }
+
+    .text, .folded-corner, .paper {
+        transition: 0.3s;
     }
 
     .text,

@@ -1,6 +1,6 @@
 <script>
     import Bookshelf from "./Bookshelf.svelte";
-    import { bookStore, bookcase } from "./LibraryStore.js";
+    import { selectedStore, bookcase } from "./LibraryStore.js";
 
     function clickOutside(element, callbackFunction) {
         function onClick(event) {
@@ -20,6 +20,12 @@
             },
         };
     }
+
+    function canPreview(store)
+    {
+        return store.options.target == "book" && store.data;
+    }
+
 </script>
 
 <!-- Book elements -->
@@ -134,11 +140,12 @@
     {/each}
 </div>
 
+
 <div
     class="book-display container"
-    class:preview={$bookStore.volume}
-    class:full={$bookStore.isSelected}
-    use:clickOutside={bookStore.putBackVolume}
+    class:preview={canPreview($selectedStore)}
+    class:full={canPreview($selectedStore) && $selectedStore.options.isLocked}
+    use:clickOutside={() => selectedStore.unselect(true)}
 >
     <div class="background">
         <svg
@@ -232,40 +239,19 @@
     </div>
 
     <div class="content">
-        {#if $bookStore.book}
-            <h1>{$bookStore.book.title}</h1>
+        {#if canPreview($selectedStore)}
+            <h1>{$selectedStore.data.title}</h1>
             <hr />
 
-            <h3>{$bookStore.volume.title}</h3>
-            <p>{$bookStore.book.description}</p>
+            <h3>{$selectedStore.data.volumes[$selectedStore.options.childIndex].title}</h3>
+            <p>{$selectedStore.data.description}</p>
         {/if}
     </div>
 </div>
 
 <style>
-    
-    :global(svg, .book-group) {
-        --color-back-low: #f5f5f5;
-        --color-back: #e0e0e0;
-        --color-medium: #d0d0d0;
-        --color-front-low: #c0c0c0;
-        --color-front: #b0b0b0;
-
-        --color-primary-low: #ff8f81;
-        --color-primary: #ff6f61;
-        transition: 0.3s;
-    }
-
-    :global(
-            .book-group.is-active .book-volume,
-            .book-group.is-selected .book-volume
-        ) {
-        --color-front-low: var(--color-primary-low);
-        --color-front: var(--color-primary);
-    }
 
     :global(.book-volume.is-active) {
-        cursor: grabbing;
         --color-front-low: var(--color-primary) !important;
         --color-front: var(--color-primary-low) !important;
     }
