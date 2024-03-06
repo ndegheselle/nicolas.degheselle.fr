@@ -2,11 +2,11 @@
     import Card from "../../components/Card.svelte";
     import Experimentations from "./Experimentations.svelte";
 
-    import { selectedStore } from "./LibraryStore";
+    import { selectedStore } from "./MeStore";
 
     function canPreview(store)
     {
-        return store?.options?.target === "other" && store.data;
+        store?.options?.target === "other" && store.data;
     }
 
 </script>

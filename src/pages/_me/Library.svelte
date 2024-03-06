@@ -1,8 +1,9 @@
 <script>
     import Bookshelf from "./Bookshelf.svelte";
-    import { selectedStore, bookcase } from "./LibraryStore.js";
+    import { selectedStore, bookcase } from "./MeStore.js";
 
-    function clickOutside(element, callbackFunction) {
+    function clickOutside(element, callbackFunction)
+    {
         function onClick(event) {
             if (!element.contains(event.target)) {
                 callbackFunction();
