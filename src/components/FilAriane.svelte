@@ -15,12 +15,12 @@
             if (!container) return;
 
             // Get the relative position of the scroll in the container
-            let containerHeight = container.offsetHeight;
+            let containerHeight = container.offsetHeight - window.innerHeight;
             let containerTop = container.getBoundingClientRect().top;
 
             if (containerTop > 0) scrollPercent = 0;
             else if (containerHeight + containerTop < 0) scrollPercent = 100;
-            else scrollPercent = (-containerTop / containerHeight) * 100;
+            else scrollPercent = (-containerTop / containerHeight ) * 100;
         });
     });
 
@@ -34,7 +34,7 @@
         balises = [];
         elements.forEach((element) => {
             // Get container height
-            let containerHeight = container.offsetHeight;
+            let containerHeight = container.offsetHeight - window.innerHeight;
             // Push percentage of the element position in the container
             balises.push({
                 link: "#" + element.id,

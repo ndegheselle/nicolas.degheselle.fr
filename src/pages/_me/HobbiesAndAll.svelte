@@ -6,7 +6,7 @@
 
     function canPreview(store)
     {
-        store?.options?.target === "other" && store.data;
+        return store?.options?.target === "other" && store.data;
     }
 
 </script>
@@ -85,11 +85,12 @@
     /* More info on hovered*/
     .hover-more-info {
         width: 100%;
-        top: 0.4rem;
+        bottom: 0.4rem;
         left: 0;
         transition: 0.3s;
-        transform: translateY(-120%);
+        transform: translateY(120%);
         position: fixed;
+        z-index: 10;
     }
 
     .hover-more-info.is-active {
