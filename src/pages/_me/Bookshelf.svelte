@@ -12,15 +12,18 @@
             .size("100%", "100%")
             .viewbox(0, 0, BOOKSHELF_WIDTH, BOOKSHELF_HEIGHT);
 
-        draw.rect(BOOKSHELF_WIDTH, SUPPORT_SIZE).addClass("color-back");
+        draw.rect(BOOKSHELF_WIDTH, SUPPORT_SIZE).addClass("color-back")
+            .addClass("selectable is-background");
         draw.rect(BOOKSHELF_WIDTH, SUPPORT_SIZE)
             .move(0, BOOKSHELF_HEIGHT - SUPPORT_SIZE)
-            .addClass("color-back");
+            .addClass("color-back")
+            .addClass("selectable is-background");
 
         // Last vertical support
         draw.rect(SUPPORT_SIZE, BOOKSHELF_HEIGHT)
             .move(BOOKSHELF_WIDTH - SUPPORT_SIZE * 2, 0)
-            .addClass("color-back-low");
+            .addClass("color-back-low")
+            .addClass("selectable is-background");
 
         createCols(draw);
     });
@@ -36,7 +39,8 @@
             colGroup
                 .rect(SUPPORT_SIZE, BOOKSHELF_HEIGHT)
                 .move(SUPPORT_SIZE, 0)
-                .addClass("color-back-low");
+                .addClass("color-back-low")
+            .addClass("selectable is-background");
 
             createBooks(col, colGroup);
         }
@@ -102,6 +106,6 @@
     export let bookshelf = [];
 </script>
 
-<svg bind:this={svg}>
+<svg bind:this={svg} class="svg-bookshelf">
     <use xlink:href="#bookshelf-defs" />
 </svg>

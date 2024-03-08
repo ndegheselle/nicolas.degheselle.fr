@@ -84,7 +84,7 @@ mark {
 
 // Blockquote
 blockquote {
-  border-left: $border-width-lg solid var(--color-border);
+  border-left: $border-width-lg solid var(--color-midground);
   margin-left: 0;
   padding: $unit-2 $unit-4;
 
@@ -135,7 +135,7 @@ dl {
 }
 
 hr {
-  border: 0.1rem dotted var(--color-gray-light);
+  border: 0.1rem dotted var(--color-midground-less);
   border-style: none none dotted; 
   background-color: transparent;
 }

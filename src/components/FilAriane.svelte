@@ -92,7 +92,7 @@
 
     .progress-bar {
         width: 0.4rem;
-        background-color: var(--color-bg-dark);
+        background-color: var(--color-background-more);
         height: 50vh;
         border-radius: 0.2rem;
     }
@@ -109,15 +109,15 @@
         left: 50%;
         width: 0.8rem;
         height: 0.8rem;
-        background-color: var(--color-bg-light);
+        background-color: var(--color-background-less);
         border-radius: 50%;
-        border: 0.2rem solid var(--color-border-dark);
+        border: 0.2rem solid var(--color-midground-more);
         transform: translate(-50%, -50%);
         transition: 0.3s;
     }
 
     .fil-ariane-container .balise.active {
-        background-color: var(--color-primary-light);
+        background-color: var(--color-primary-less);
         border-color: var(--color-primary);
     }
 </style>

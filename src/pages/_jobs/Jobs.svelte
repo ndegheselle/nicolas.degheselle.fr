@@ -130,7 +130,7 @@
     .timeline-container .year {
         font-family: "Teko", sans-serif;
         position: absolute;
-        color: var(--color-gray);
+        color: var(--color-midground);
     }
 
     .timeline-bar {
@@ -139,10 +139,10 @@
         width: 0.3rem;
         height: 1rem;
         border-radius: 0.4rem;
-        background-color: var(--color-gray);
+        background-color: var(--color-midground);
     }
     .timeline-bar.is-internship {
-        background-color: var(--color-primary-light);
+        background-color: var(--color-primary-less);
         height: 1.5rem;
         margin: 0.25rem 0;
     }

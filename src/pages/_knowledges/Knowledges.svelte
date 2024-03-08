@@ -107,7 +107,7 @@
     .bookshelf {
         display: flex;
         width: 100%;
-        border: 0.5rem solid var(--color-border);
+        border: 0.5rem solid var(--color-midground);
         height: 180px;
         position: relative;
     }
@@ -115,10 +115,10 @@
     .bookshelf-title {
         position: absolute;
         bottom: 0;
-        background-color: var(--color-bg-light);
-        border: 1px solid var(--color-border);
+        background-color: var(--color-background-less);
+        border: 1px solid var(--color-midground);
         padding: 0.1rem 0.3rem;
-        color: var(--color-gray-dark);
+        color: var(--color-midground-more);
         border-radius: 0.2rem;
         rotate: -90deg;
         transform-origin: bottom left;
@@ -145,9 +145,9 @@
         top: 0;
         left: 50%;
         transform: translateX(-50%);
-        color: var(--color-gray-light);
+        color: var(--color-midground-less);
         font-weight: bold;
-        border-bottom: 4px solid var(--color-border);
+        border-bottom: 4px solid var(--color-midground);
     }
     .books-container .title.is-shifted {
         top: 1.5rem;

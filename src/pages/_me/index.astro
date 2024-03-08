@@ -7,20 +7,34 @@ import HobbiesAndAll from "./HobbiesAndAll.svelte";
 <HobbiesAndAll client:idle />
 
 <style is:global>
-    svg {
-        --color-back-low: #f5f5f5;
-        --color-back: #e0e0e0;
-        --color-medium: #d0d0d0;
-        --color-front-low: #c0c0c0;
-        --color-front: #b0b0b0;
 
-        --color-primary-low: #ff8f81;
-        --color-primary: #ff6f61;
+    .me-tag {
+        display: inline-block;
+        padding: 0 0.4rem;
+        text-align: center;
+        border: 1px solid var(--color-midground);
+        border-radius: 0.2rem;
+        background-color: var(--color-background-less);
+    }
+
+    /** Svg variables and selected style **/
+    svg {
+        --color-back-low: var(--color-background-less);
+        --color-back: var(--color-background-more);
+        --color-front-low: var(--color-midground-less);
+        --color-front: var(--color-midground);
+
+        --color-primary-low: var(--color-primary-less);
         transition: 0.3s;
     }
 
     svg .selectable {
         cursor: grab;
+    }
+
+    svg .selectable.is-background.is-active, svg .selectable.is-background.is-selected {
+        --color-back-low: var(--color-primary);
+        --color-back: var(--color-primary-low);
     }
 
     svg .selectable.is-active{
@@ -32,4 +46,42 @@ import HobbiesAndAll from "./HobbiesAndAll.svelte";
         --color-front-low: var(--color-primary);
         --color-front: var(--color-primary-low);
     }
+
+    /** Selectable special display container **/
+    .selectable-display {
+        width: 100%;
+        max-width: 24rem;
+        left: 50%;
+        position: fixed;
+        top: 100vh;
+        transition: 0.3s;
+        z-index: 100;
+        transform: translate(-50%, 0);
+    }
+
+    .selectable-display.preview {
+        transform: translate(-50%, -7rem);
+    }
+    .selectable-display.full {
+        transform: translate(-50%, -15rem);
+    }
+
+    .selectable-display .background {
+        position: absolute;
+        width: 100%;
+    }
+
+    .selectable-display .content {
+        position: relative;
+        margin: 4rem;
+        text-align: center;
+    }
+
+    .selectable-display .content h1 {
+        margin: 0;
+    }
+    .selectable-display .content hr {
+        margin: 0.4rem 5rem;
+    }
+
 </style>

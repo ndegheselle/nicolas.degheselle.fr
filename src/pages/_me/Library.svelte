@@ -1,35 +1,34 @@
 <script>
     import Bookshelf from "./Bookshelf.svelte";
     import { selectedStore, bookcase } from "./MeStore.js";
-
-    function clickOutside(element, callbackFunction)
-    {
-        function onClick(event) {
-            if (!element.contains(event.target)) {
-                callbackFunction();
-            }
-        }
-
-        document.body.addEventListener("click", onClick);
-
-        return {
-            update(newCallbackFunction) {
-                callbackFunction = newCallbackFunction;
-            },
-            destroy() {
-                document.body.removeEventListener("click", onClick);
-            },
-        };
-    }
+    import clickOutside from "../../components/clickOutside.js";
 
     function canPreview(store)
     {
         return store.options.target == "book" && store.data;
     }
 
+    let libraryExplanation = {
+        title: "Paper",
+        description: "A paper with a folded corner",
+    };
+
+    function selectExplanation() {
+
+        selectedStore.select(
+            libraryExplanation,
+            
+        Array.from(document.querySelectorAll('.svg-bookshelf .selectable.is-background')),
+            {
+                target: "other",
+                isLocked: true,
+            },
+        );
+    }
+
 </script>
 
-<!-- Book elements -->
+<!-- Books elements defs -->
 <svg display="none" viewBox="0 0 20 100">
     <defs>
         <g id="book-top">
@@ -134,6 +133,14 @@
 </svg>
 
 <div class="grid">
+    <span class="me-tag">
+        <a href="javascript:void(0)" on:click|stopPropagation={selectExplanation}>
+            My library of knowledge
+        </a>
+    </span>
+</div>
+
+<div class="grid">
     {#each bookcase as bookshelf}
         <div class="col is-6 on-md-is-12">
             <Bookshelf {bookshelf} />
@@ -143,7 +150,7 @@
 
 
 <div
-    class="book-display container"
+    class="selectable-display container"
     class:preview={canPreview($selectedStore)}
     class:full={canPreview($selectedStore) && $selectedStore.options.isLocked}
     use:clickOutside={() => selectedStore.unselect(true)}
@@ -268,7 +275,7 @@
     }
 
     .book-cover {
-        fill: var(--color-bg);
+        fill: var(--color-background);
         stroke: var(--color-front);
     }
 
@@ -290,7 +297,7 @@
     }
 
     .color-background {
-        fill: var(--color-bg);
+        fill: var(--color-background);
     }
 
     :global(.color-back-low) {
@@ -316,42 +323,5 @@
     }
     .book:hover {
         transform: translateY(8px);
-    }
-
-    /* Book content preview */
-    .book-display {
-        width: 100%;
-        max-width: 24rem;
-        left: 50%;
-        position: fixed;
-        top: 100vh;
-        transition: 0.3s;
-        z-index: 100;
-        transform: translate(-50%, 0);
-    }
-
-    .book-display.preview {
-        transform: translate(-50%, -7rem);
-    }
-    .book-display.full {
-        transform: translate(-50%, -15rem);
-    }
-
-    .book-display .background {
-        position: absolute;
-        width: 100%;
-    }
-
-    .book-display .content {
-        position: relative;
-        margin: 4rem;
-        text-align: center;
-    }
-
-    .book-display .content h1 {
-        margin: 0;
-    }
-    .book-display .content hr {
-        margin: 0.4rem 5rem;
     }
 </style>

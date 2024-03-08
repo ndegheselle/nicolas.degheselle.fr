@@ -2,10 +2,7 @@
     import { SVG } from "@svgdotjs/svg.js";
     import { onMount } from "svelte";
     import { selectedStore } from "./MeStore.js";
-
-    function randomIntFromInterval(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
+    import clickOutside from "../../components/clickOutside.js";
 
     onMount(() => {
         const draw = SVG(svg);
@@ -31,32 +28,35 @@
                         PAPER_ROTATION_RAND,
                     ),
                 )
-                .addClass("selectable");
+                .addClass("selectable")
+                .addClass("experimentation-result");
 
             paper
                 .on("mouseenter", () => {
-                    selectedStore.select(
-                        experimentation,
-                        [paper.node],
-                        { target: "other"},
-                    );
+                    selectedStore.select(experimentation, [paper.node], {
+                        target: "experimentation",
+                    });
                 })
                 .on("mouseleave", () => {
                     selectedStore.unselect();
                 })
                 .click((e) => {
                     e.stopPropagation();
-                    selectedStore.select(
-                        experimentation,
-                        [paper.node],
-                        {
-                            target: "other",
-                            isLocked: true,
-                        },
-                    );
+                    selectedStore.select(experimentation, [paper.node], {
+                        target: "experimentation",
+                        isLocked: true,
+                    });
                 });
         }
     });
+
+    function randomIntFromInterval(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    function canPreview(store) {
+        return store?.options?.target === "experimentation" && store.data;
+    }
 
     const EXTERIOR_SPACING = 10;
     const PAPER_PER_ROW = 10;
@@ -85,7 +85,31 @@
             description: "A paper with a folded corner",
         },
     ];
+    let experimentationBackground;
+    let experimentationExplanation = {
+        title: "Paper",
+        description: "A paper with a folded corner",
+    };
+
+    function selectExplanation() {
+        selectedStore.select(
+            experimentationExplanation,
+            [experimentationBackground],
+            {
+                target: "other",
+                isLocked: true,
+            },
+        );
+    }
 </script>
+
+<div class="grid">
+    <span class="me-tag">
+        <a href="javascript:void(0)" on:click|stopPropagation={selectExplanation}>
+            Some experimentation
+        </a>
+    </span>
+</div>
 
 <svg bind:this={svg} width="100%" height="100%" viewBox="0 0 200 100">
     <defs>
@@ -226,23 +250,127 @@
         </g>
     </defs>
 
-    <rect
-        x="0"
-        y="0"
-        width="200"
-        height="100"
-        rx="2"
-        fill="var(--color-back)"
-    />
-    <rect x="2" y="2" width="196" height="96" fill="var(--color-back-low)" />
+    <g>
+        <rect
+            class="selectable is-background"
+            bind:this={experimentationBackground}
+            x="0"
+            y="0"
+            width="200"
+            height="100"
+            rx="2"
+            fill="var(--color-back)"
+        />
+        <rect
+            x="2"
+            y="2"
+            width="196"
+            height="96"
+            fill="var(--color-back-low)"
+        />
+    </g>
 </svg>
+
+<div
+    class="selectable-display container"
+    class:preview={canPreview($selectedStore)}
+    class:full={canPreview($selectedStore) && $selectedStore.options.isLocked}
+    use:clickOutside={() => selectedStore.unselect(true)}
+>
+    <div class="background">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 300 300"
+        >
+            <path
+                d="M50.858369,0L0,17.51073L-0.000001,300h300v-300h-249.14163Z"
+                transform="translate(.000001 0)"
+                class="paper"
+                stroke-width="0.6"
+            />
+            <path
+                d="M17.85422,30.16041L0.000001,17.51073L50.85837,0L17.85422,30.16041Z"
+                transform="translate(.000002 0)"
+                class="folded-corner"
+                stroke-width="0.6"
+            />
+            <ellipse
+                rx="3.558748"
+                ry="3.558748"
+                transform="translate(10.459187 40.301078)"
+                class="folded-corner"
+                stroke-width="0"
+            />
+            <ellipse
+                rx="3.558748"
+                ry="3.558748"
+                transform="translate(10.459187 60.036141)"
+                class="folded-corner"
+                stroke-width="0"
+            />
+            <ellipse
+                rx="3.558748"
+                ry="3.558748"
+                transform="translate(10.459187 79.898247)"
+                class="folded-corner"
+                stroke-width="0"
+            />
+            <ellipse
+                rx="3.558748"
+                ry="3.558748"
+                transform="translate(10.459187 99.963028)"
+                class="folded-corner"
+                stroke-width="0"
+            />
+            <ellipse
+                rx="3.558748"
+                ry="3.558748"
+                transform="translate(10.459187 120.464549)"
+                class="folded-corner"
+                stroke-width="0"
+            />
+            <ellipse
+                rx="3.558748"
+                ry="3.558748"
+                transform="translate(10.459187 140.352379)"
+                class="folded-corner"
+                stroke-width="0"
+            />
+            <ellipse
+                rx="3.558748"
+                ry="3.558748"
+                transform="translate(10.459187 160.048981)"
+                class="folded-corner"
+                stroke-width="0"
+            />
+            <ellipse
+                rx="3.558748"
+                ry="3.558748"
+                transform="translate(10.459187 180.005756)"
+                class="folded-corner"
+                stroke-width="0"
+            />
+        </svg>
+    </div>
+
+    <div class="content">
+        {#if canPreview($selectedStore)}
+            <h1>{$selectedStore.data.title}</h1>
+            <hr />
+            <p>{$selectedStore.data.description}</p>
+        {/if}
+    </div>
+</div>
 
 <style>
     .pin {
-        fill: var(--color-medium);
+        fill: var(--color-back-low);
     }
 
-    .text, .folded-corner, .paper {
+    .text,
+    .folded-corner,
+    .paper {
         transition: 0.3s;
     }
 
@@ -253,5 +381,13 @@
 
     .paper {
         fill: var(--color-front-low);
+    }
+
+    :global(.experimentation-result) {
+        transition: 0.3s;
+    }
+
+    :global(.experimentation-result.is-selected) {
+        opacity: 0;
     }
 </style>

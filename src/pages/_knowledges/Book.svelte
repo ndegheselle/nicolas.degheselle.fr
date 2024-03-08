@@ -65,15 +65,15 @@
     }
 
     .book.background {
-        --book-color: var(--color-bg-secondary);
+        --book-color: var(--color-background-secondary);
     }
 
     .book {
-        --book-color: var(--color-primary-light);
+        --book-color: var(--color-primary-less);
         --book-color-active: var(--color-primary);
     }
     .book.secondary {
-        --book-color: var(--color-secondary-light);
+        --book-color: var(--color-secondary-less);
         --book-color-active: var(--color-secondary);
     }
     .book {
@@ -91,10 +91,10 @@
     }
 
     .book .topside {
-        border-top: 0.2rem solid var(--color-bg);
+        border-top: 0.2rem solid var(--color-background);
         border-left: 0.2rem solid var(--book-color);
         border-right: 0.2rem solid var(--book-color);
-        background-color: var(--color-bg-light);
+        background-color: var(--color-background-less);
         width: 100%;
         min-height: 0;
     }
@@ -118,7 +118,7 @@
     .ball,
     .vertical-line {
         display: block;
-        background-color: var(--color-bg);
+        background-color: var(--color-background);
     }
 
     .vertical-line {

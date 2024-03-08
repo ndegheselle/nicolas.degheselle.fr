@@ -13,8 +13,8 @@ html {
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-dark);
+  background: var(--color-background);
+  color: var(--color-foreground);
   font-family: $body-font-family;
   font-size: $font-size;
   overflow-x: hidden;
@@ -30,11 +30,11 @@ a {
   &:hover,
   &:active,
   &.active {
-    color: var(--color-primary-dark);
+    color: var(--color-primary-more);
     text-decoration: underline;
   }
 
   &:visited {
-    color: var(--color-primary-dark);
+    color: var(--color-primary-more);
   }
 }
