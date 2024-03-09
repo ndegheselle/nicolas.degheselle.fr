@@ -1,11 +1,9 @@
 <script>
     import Bookshelf from "./Bookshelf.svelte";
-    import { selectedStore, bookcase } from "./MeStore.js";
-    import clickOutside from "../../components/clickOutside.js";
+    import { selectedStore, bookcase } from "../MeStore.js";
+    import clickOutside from "@components/ClickOutside.js";
 
-    function canPreview(store)
-    {
-        return store.options.target == "book" && store.data;
+    function canPreview(sto@components/ClickOutside.jsstore.options.target == "book" && store.data;
     }
 
     let libraryExplanation = {

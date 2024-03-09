@@ -1,7 +1,7 @@
 <script>
     import { SVG } from "@svgdotjs/svg.js";
     import { onMount } from "svelte";
-    import { selectedStore } from "./MeStore.js";
+    import { selectedStore } from "../MeStore.js";
 
     function randomIntFromInterval(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);

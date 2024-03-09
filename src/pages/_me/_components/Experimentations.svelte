@@ -1,11 +1,11 @@
 <script>
     import { SVG } from "@svgdotjs/svg.js";
     import { onMount } from "svelte";
-    import { selectedStore } from "./MeStore.js";
-    import clickOutside from "../../components/clickOutside.js";
+    import { selectedStore } from "../MeStore.js";
+    import clickOutside from "@components/ClickOutside.js";
 
     onMount(() => {
-        const draw = SVG(svg);
+ @components/ClickOutside.js);
 
         for (let i = 0; i < experimentations.length; i++) {
             const experimentation = experimentations[i];

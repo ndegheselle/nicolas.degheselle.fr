@@ -1,5 +1,4 @@
 <script>
-
     $: applySearch(search);
 
     function applySearch()
@@ -28,11 +27,9 @@
     let search;
 </script>
 
-<div class="grid">
-    <div class="col is-6 on-sm-is-12 has-icon">
-        <input bind:value={search}/>
-        <i class="input-icon fa-solid fa-magnifying-glass"></i>
-    </div>
+<div class="has-icon">
+    <input bind:value={search}/>
+    <i class="input-icon fa-solid fa-magnifying-glass"></i>
 </div>
 
 <style>

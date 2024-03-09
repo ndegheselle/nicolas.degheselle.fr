@@ -1,25 +1,85 @@
 ---
-import Library from "./Library.svelte";
-import HobbiesAndAll from "./HobbiesAndAll.svelte";
-import SearchMe from "./SearchMe.svelte";
+import Search from "./Search.svelte";
+import SelectedDefaultDisplay from "./SelectedDefaultDisplay.svelte";
+import Card from "../../components/Card.svelte";
+
+import Library from "./_components/Library.svelte";
+import Experimentations from "./_components/Experimentations.svelte";
 ---
 
-<div id="me-container">
-    <SearchMe client:idle client:only />
+<h2 class="giant-title is-overlapping fil-ariane-balise" id="title-what">
+    Me?
+</h2>
 
-    <Library client:idle client:only />
-    <HobbiesAndAll client:idle />
+<div class="grid">
+    <div class="col is-6 on-sm-is-12">
+        <Card>
+            <p class="is-text-centered">What I do, what technologies I uses and so on. You can search something specific there or just browse at your will !</p>
+            <Search client:idle client:only />
+        </Card>
+    </div>
 </div>
 
-<style is:global>
+<SelectedDefaultDisplay />
+<div id="me-container">
+    <Library client:idle client:only />
+    <div class="svg-container">
+        <div class="experimental-container">
+            <Experimentations client:idle />
+        </div>
+        <div class="desktop-container">
+            <svg width="100%" height="100%" viewBox="0 0 100 100">
+                <rect
+                    x="0"
+                    y="0"
+                    width="100"
+                    height="100"
+                    fill="cyan"
+                    stroke-width="1"></rect>
+            </svg>
+        </div>
+        <div class="hobby-container">
+            <svg width="100%" height="100%" viewBox="0 0 100 50">
+                <rect
+                    x="0"
+                    y="0"
+                    width="100"
+                    height="50"
+                    fill="yellow"
+                    stroke-width="1"></rect>
+            </svg>
+        </div>
+    </div>
+</div>
 
-    .me-tag {
-        display: inline-block;
-        padding: 0 0.4rem;
-        text-align: center;
-        border: 1px solid var(--color-midground);
-        border-radius: 0.2rem;
-        background-color: var(--color-background-less);
+<style is:global lang="scss">
+    @import "../../scss/gracile/variables.scss";
+
+    .svg-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+        .svg-container {
+            display: block;
+        }
+    }
+
+    .svg-container .experimental-container {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .svg-container .desktop-container {
+        grid-column: 1;
+        grid-row: 1 / 3;
+    }
+
+    .svg-container .hobby-container {
+        grid-column: 2;
+        grid-row: 2;
     }
 
     /** Svg variables and selected style **/
@@ -37,12 +97,14 @@ import SearchMe from "./SearchMe.svelte";
         cursor: grab;
     }
 
-    svg .selectable.is-background.is-active, svg .selectable.is-background.is-selected {
+    svg .selectable.is-background.is-active,
+    svg .selectable.is-background.is-selected {
         --color-back-low: var(--color-primary);
         --color-back: var(--color-primary-low);
     }
 
-    svg .selectable.is-active, svg .selectable.is-search-result{
+    svg .selectable.is-active,
+    svg .selectable.is-search-result {
         --color-front-low: var(--color-primary-low);
         --color-front: var(--color-primary);
     }
@@ -89,10 +151,17 @@ import SearchMe from "./SearchMe.svelte";
         margin: 0.4rem 5rem;
     }
 
-    /** Search */
+    /** Parts and Search*/
+    .me-tag {
+        display: inline-block;
+        padding: 0 0.4rem;
+        text-align: center;
+        border: 1px solid var(--color-midground);
+        border-radius: 0.2rem;
+        background-color: var(--color-background-less);
+    }
 
-    .search-text
-    {
+    .search-text {
         transition: 0.3s;
         font-family: Teko;
         font-weight: 300;
@@ -103,5 +172,4 @@ import SearchMe from "./SearchMe.svelte";
     .is-searching .search-text {
         opacity: 1;
     }
-
 </style>
