@@ -14,14 +14,17 @@
                 PAPER_SPACING_RAND,
             );
 
-            const paper = draw
-                .use("experimentation-paper")
-                .move(
+            const paperGroup = draw
+                .group()
+                .translate(
                     i * PAPER_SPACING + random + EXTERIOR_SPACING,
                     ROW_HEIGHT * Math.floor(i / PAPER_PER_ROW) +
                         random +
                         EXTERIOR_SPACING,
-                )
+                );
+
+            const paper = paperGroup
+                .use("experimentation-paper")
                 .rotate(
                     randomIntFromInterval(
                         -PAPER_ROTATION_RAND,
@@ -29,7 +32,18 @@
                     ),
                 )
                 .addClass("selectable")
-                .addClass("experimentation-result");
+                .addClass("experimentation-result")
+                .data("search", experimentation.title);
+
+            paperGroup
+                .text(experimentation.title)
+                .move(PAPER_WIDTH /2, -20 + (i % 2) * 5)
+                .font({
+                    anchor: "middle",
+                    size: 7,
+
+                })
+                .addClass("search-text");
 
             paper
                 .on("mouseenter", () => {
@@ -58,13 +72,14 @@
         return store?.options?.target === "experimentation" && store.data;
     }
 
-    const EXTERIOR_SPACING = 10;
+    const EXTERIOR_SPACING = 15;
     const PAPER_PER_ROW = 10;
     const ROW_HEIGHT = 30;
 
-    const PAPER_SPACING = 15;
+    const PAPER_SPACING = 20;
     const PAPER_SPACING_RAND = 2;
     const PAPER_ROTATION_RAND = 10;
+    const PAPER_WIDTH = 20;
 
     let svg;
     let experimentations = [
@@ -105,13 +120,16 @@
 
 <div class="grid">
     <span class="me-tag">
-        <a href="javascript:void(0)" on:click|stopPropagation={selectExplanation}>
+        <a
+            href="javascript:void(0)"
+            on:click|stopPropagation={selectExplanation}
+        >
             Some experimentation
         </a>
     </span>
 </div>
 
-<svg bind:this={svg} width="100%" height="100%" viewBox="0 0 200 100">
+<svg bind:this={svg} width="100%" viewBox="0 0 200 100">
     <defs>
         <g id="experimentation-paper">
             <path

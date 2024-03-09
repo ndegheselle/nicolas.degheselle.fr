@@ -1,10 +1,15 @@
 ---
 import Library from "./Library.svelte";
 import HobbiesAndAll from "./HobbiesAndAll.svelte";
+import SearchMe from "./SearchMe.svelte";
 ---
 
-<Library client:idle client:only />
-<HobbiesAndAll client:idle />
+<div id="me-container">
+    <SearchMe client:idle client:only />
+
+    <Library client:idle client:only />
+    <HobbiesAndAll client:idle />
+</div>
 
 <style is:global>
 
@@ -37,7 +42,7 @@ import HobbiesAndAll from "./HobbiesAndAll.svelte";
         --color-back: var(--color-primary-low);
     }
 
-    svg .selectable.is-active{
+    svg .selectable.is-active, svg .selectable.is-search-result{
         --color-front-low: var(--color-primary-low);
         --color-front: var(--color-primary);
     }
@@ -82,6 +87,21 @@ import HobbiesAndAll from "./HobbiesAndAll.svelte";
     }
     .selectable-display .content hr {
         margin: 0.4rem 5rem;
+    }
+
+    /** Search */
+
+    .search-text
+    {
+        transition: 0.3s;
+        font-family: Teko;
+        font-weight: 300;
+        fill: var(--color-midground-more);
+        opacity: 0;
+    }
+
+    .is-searching .search-text {
+        opacity: 1;
     }
 
 </style>

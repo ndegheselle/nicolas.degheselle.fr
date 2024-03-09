@@ -12,7 +12,8 @@
             .size("100%", "100%")
             .viewbox(0, 0, BOOKSHELF_WIDTH, BOOKSHELF_HEIGHT);
 
-        draw.rect(BOOKSHELF_WIDTH, SUPPORT_SIZE).addClass("color-back")
+        draw.rect(BOOKSHELF_WIDTH, SUPPORT_SIZE)
+            .addClass("color-back")
             .addClass("selectable is-background");
         draw.rect(BOOKSHELF_WIDTH, SUPPORT_SIZE)
             .move(0, BOOKSHELF_HEIGHT - SUPPORT_SIZE)
@@ -40,7 +41,7 @@
                 .rect(SUPPORT_SIZE, BOOKSHELF_HEIGHT)
                 .move(SUPPORT_SIZE, 0)
                 .addClass("color-back-low")
-            .addClass("selectable is-background");
+                .addClass("selectable is-background");
 
             createBooks(col, colGroup);
         }
@@ -58,10 +59,18 @@
                     0,
                 )
                 .addClass("book-group")
-                .addClass("selectable");
+                .addClass("selectable")
+                .data("search", book.title);
 
-            for (let volumeIndex = 0; volumeIndex < book.volumes.length; volumeIndex++) {
-                const randHeight = Math.random() * (BOOK_RANDOM_HEIGHT_MAX - BOOK_RANDOM_HEIGHT_MIN) + BOOK_RANDOM_HEIGHT_MIN;
+            for (
+                let volumeIndex = 0;
+                volumeIndex < book.volumes.length;
+                volumeIndex++
+            ) {
+                const randHeight =
+                    Math.random() *
+                        (BOOK_RANDOM_HEIGHT_MAX - BOOK_RANDOM_HEIGHT_MIN) +
+                    BOOK_RANDOM_HEIGHT_MIN;
                 const randBook = randomIntFromInterval(1, 4);
 
                 const volumeVisual = bookGroup
@@ -76,16 +85,39 @@
 
                 volumeVisual
                     .on("mouseenter", () => {
-                        selectedStore.select(book, [bookGroup.node, volumeVisual.node], { target: "book", childIndex: volumeIndex});
+                        selectedStore.select(
+                            book,
+                            [bookGroup.node, volumeVisual.node],
+                            { target: "book", childIndex: volumeIndex },
+                        );
                     })
                     .on("mouseleave", () => {
                         selectedStore.unselect();
                     })
                     .click((e) => {
                         e.stopPropagation();
-                        selectedStore.select(book, [bookGroup.node, volumeVisual.node],  { target: "book", childIndex: volumeIndex, isLocked: true });
+                        selectedStore.select(
+                            book,
+                            [bookGroup.node, volumeVisual.node],
+                            {
+                                target: "book",
+                                childIndex: volumeIndex,
+                                isLocked: true,
+                            },
+                        );
                     });
             }
+
+            bookGroup
+                .text(book.title)
+                .move(
+                    (BOOK_WIDTH * (book.volumes.length + 1)) / 2,
+                    (i % 2) * 15,
+                )
+                .font({
+                    anchor: "middle",
+                })
+                .addClass("search-text");
 
             currentBookNumber += book.volumes.length;
         }

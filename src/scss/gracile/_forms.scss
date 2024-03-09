@@ -1,0 +1,36 @@
+input {
+    appearance: none;
+    background: var(--color-background-more);
+    background-image: none;
+    border: 1px solid var(--color-midground);
+    border-radius: 0.2rem;
+    color: var(--color-foreground);
+    display: block;
+    max-width: 100%;
+    outline: none;
+    position: relative;
+    width: 100%;
+    padding: 0.1rem 0.4rem;
+
+    &:focus {
+        border-color: var(--color-primary-less);
+    }
+
+    &::placeholder {
+        color: var(--color-midground);
+    }
+}
+
+.has-icon {
+    position: relative;
+    .input-icon {
+        right: 0;
+        height: .8rem;
+      margin: 0 .4rem;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: .8rem;
+      z-index: 2;
+    }
+}
