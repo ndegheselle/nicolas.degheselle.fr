@@ -2,10 +2,10 @@
     import { SVG } from "@svgdotjs/svg.js";
     import { onMount } from "svelte";
     import { selectedStore } from "../MeStore.js";
-    import clickOutside from "@components/ClickOutside.js";
+    import clickOutside from "@components/clickOutside.js";
 
     onMount(() => {
- @components/ClickOutside.js);
+        const draw = SVG(svg);
 
         for (let i = 0; i < experimentations.length; i++) {
             const experimentation = experimentations[i];
