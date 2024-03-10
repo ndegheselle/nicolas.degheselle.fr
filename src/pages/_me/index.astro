@@ -5,6 +5,8 @@ import Card from "../../components/Card.svelte";
 
 import Library from "./_components/Library.svelte";
 import Experimentations from "./_components/Experimentations.svelte";
+import DesktopSvg from "./desktop.svg?raw";
+import HobbiesSvg from "./hobbies.svg?raw";
 ---
 
 <h2 class="giant-title is-overlapping fil-ariane-balise" id="title-what">
@@ -28,31 +30,32 @@ import Experimentations from "./_components/Experimentations.svelte";
             <Experimentations client:idle />
         </div>
         <div class="desktop-container">
-            <svg width="100%" height="100%" viewBox="0 0 100 100">
-                <rect
-                    x="0"
-                    y="0"
-                    width="100"
-                    height="100"
-                    fill="cyan"
-                    stroke-width="1"></rect>
-            </svg>
+            <Fragment set:html={DesktopSvg}/>
         </div>
         <div class="hobby-container">
-            <svg width="100%" height="100%" viewBox="0 0 100 50">
-                <rect
-                    x="0"
-                    y="0"
-                    width="100"
-                    height="50"
-                    fill="yellow"
-                    stroke-width="1"></rect>
-            </svg>
+            <Fragment set:html={HobbiesSvg} />
         </div>
     </div>
 </div>
 
 <style is:global lang="scss">
+    .desktop-container {
+        display: flex;
+    }
+
+    .desktop-container svg {
+        margin-top: auto;
+        width: 100%;
+        height: auto;
+        transform: translateY(-2rem);
+    }
+
+    .hobby-container svg{
+        width: auto;
+        height: 100%;
+        transform: translateY(-2rem);
+    }
+
     @import "../../scss/gracile/variables.scss";
 
     .svg-container {
@@ -153,6 +156,8 @@ import Experimentations from "./_components/Experimentations.svelte";
 
     /** Parts and Search*/
     .me-tag {
+        margin-top: 0.4rem;
+        margin-bottom: 0.2rem;
         display: inline-block;
         padding: 0 0.4rem;
         text-align: center;
