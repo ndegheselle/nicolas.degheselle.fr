@@ -7,6 +7,8 @@ import Library from "./_components/Library.svelte";
 import Experimentations from "./_components/Experimentations.svelte";
 import DesktopSvg from "./desktop.svg?raw";
 import HobbiesSvg from "./hobbies.svg?raw";
+
+import me from "../../content/me.json";
 ---
 
 <h2 class="giant-title is-overlapping fil-ariane-balise" id="title-what">
@@ -27,7 +29,7 @@ import HobbiesSvg from "./hobbies.svg?raw";
     <Library client:idle client:only />
     <div class="svg-container">
         <div class="experimental-container">
-            <Experimentations client:idle />
+            <Experimentations client:idle experimentations={me.experimentations} />
         </div>
         <div class="desktop-container">
             <Fragment set:html={DesktopSvg}/>

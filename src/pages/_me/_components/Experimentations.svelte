@@ -7,60 +7,58 @@
     onMount(() => {
         const draw = SVG(svg);
 
+        let numberOfPaper = 0;
         for (let i = 0; i < experimentations.length; i++) {
-            const experimentation = experimentations[i];
-            const random = randomIntFromInterval(
-                -PAPER_SPACING_RAND,
-                PAPER_SPACING_RAND,
-            );
+            for (let j = 0; j < experimentations[i].length; j++) {
+                const experimentation = experimentations[i][j];
+                const paperGroup = draw
+                    .group()
+                    .translate(
+                        numberOfPaper * PAPER_SPACING + EXTERIOR_SPACING /2 + i * CATEGORIES_SPACING,
+                        ROW_HEIGHT * Math.floor(numberOfPaper / PAPER_PER_ROW) +
+                            EXTERIOR_SPACING,
+                    );
 
-            const paperGroup = draw
-                .group()
-                .translate(
-                    i * PAPER_SPACING + random + EXTERIOR_SPACING,
-                    ROW_HEIGHT * Math.floor(i / PAPER_PER_ROW) +
-                        random +
-                        EXTERIOR_SPACING,
-                );
+                const paper = paperGroup
+                    .use("experimentation-paper")
+                    .rotate(
+                        randomIntFromInterval(
+                            -PAPER_ROTATION_RAND,
+                            PAPER_ROTATION_RAND,
+                        ),
+                    )
+                    .addClass("selectable")
+                    .addClass("experimentation-result")
+                    .data("search", experimentation.title);
 
-            const paper = paperGroup
-                .use("experimentation-paper")
-                .rotate(
-                    randomIntFromInterval(
-                        -PAPER_ROTATION_RAND,
-                        PAPER_ROTATION_RAND,
-                    ),
-                )
-                .addClass("selectable")
-                .addClass("experimentation-result")
-                .data("search", experimentation.title);
+                paperGroup
+                    .text(experimentation.title)
+                    .move(PAPER_WIDTH / 2, -20 + (numberOfPaper % 2) * 5)
+                    .font({
+                        anchor: "middle",
+                        size: 7,
+                    })
+                    .addClass("search-text");
 
-            paperGroup
-                .text(experimentation.title)
-                .move(PAPER_WIDTH /2, -20 + (i % 2) * 5)
-                .font({
-                    anchor: "middle",
-                    size: 7,
-
-                })
-                .addClass("search-text");
-
-            paper
-                .on("mouseenter", () => {
-                    selectedStore.select(experimentation, [paper.node], {
-                        target: "experimentation",
+                paper
+                    .on("mouseenter", () => {
+                        selectedStore.select(experimentation, [paper.node], {
+                            target: "experimentation",
+                        });
+                    })
+                    .on("mouseleave", () => {
+                        selectedStore.unselect();
+                    })
+                    .click((e) => {
+                        e.stopPropagation();
+                        selectedStore.select(experimentation, [paper.node], {
+                            target: "experimentation",
+                            isLocked: true,
+                        });
                     });
-                })
-                .on("mouseleave", () => {
-                    selectedStore.unselect();
-                })
-                .click((e) => {
-                    e.stopPropagation();
-                    selectedStore.select(experimentation, [paper.node], {
-                        target: "experimentation",
-                        isLocked: true,
-                    });
-                });
+
+                numberOfPaper++;
+            }
         }
     });
 
@@ -72,40 +70,6 @@
         return store?.options?.target === "experimentation" && store.data;
     }
 
-    const EXTERIOR_SPACING = 15;
-    const PAPER_PER_ROW = 10;
-    const ROW_HEIGHT = 30;
-
-    const PAPER_SPACING = 20;
-    const PAPER_SPACING_RAND = 2;
-    const PAPER_ROTATION_RAND = 10;
-    const PAPER_WIDTH = 20;
-
-    let svg;
-    let experimentations = [
-        {
-            title: "Paper",
-            description: "A paper with a folded corner",
-        },
-        {
-            title: "Paper",
-            description: "A paper with a folded corner",
-        },
-        {
-            title: "Paper",
-            description: "A paper with a folded corner",
-        },
-        {
-            title: "Paper",
-            description: "A paper with a folded corner",
-        },
-    ];
-    let experimentationBackground;
-    let experimentationExplanation = {
-        title: "Paper",
-        description: "A paper with a folded corner",
-    };
-
     function selectExplanation() {
         selectedStore.select(
             experimentationExplanation,
@@ -116,6 +80,24 @@
             },
         );
     }
+
+    const EXTERIOR_SPACING = 14;
+    const PAPER_PER_ROW = 10;
+    const ROW_HEIGHT = 30;
+
+    const PAPER_SPACING = 16;
+    const CATEGORIES_SPACING = 10;
+    const PAPER_ROTATION_RAND = 10;
+    const PAPER_WIDTH = 20;
+
+    let svg;
+    let experimentationBackground;
+    let experimentationExplanation = {
+        title: "Paper",
+        description: "A paper with a folded corner",
+    };
+
+    export let experimentations = [];
 </script>
 
 <div class="grid">
@@ -407,5 +389,6 @@
 
     :global(.experimentation-result.is-selected) {
         opacity: 0;
+        pointer-events: none;
     }
 </style>
