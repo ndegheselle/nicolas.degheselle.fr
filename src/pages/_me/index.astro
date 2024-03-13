@@ -18,7 +18,10 @@ import me from "../../content/me.json";
 <div class="grid">
     <div class="col is-6 on-sm-is-12">
         <Card>
-            <p class="is-text-centered">What I do, what technologies I uses and so on. You can search something specific there or just browse at your will !</p>
+            <p class="is-text-centered">
+                What I do, what technologies I uses and so on. You can search
+                something specific there or just hover and select at your will !
+            </p>
             <Search client:idle client:only />
         </Card>
     </div>
@@ -29,10 +32,13 @@ import me from "../../content/me.json";
     <Library client:idle client:only />
     <div class="svg-container">
         <div class="experimental-container">
-            <Experimentations client:idle experimentations={me.experimentations} />
+            <Experimentations
+                client:idle
+                experimentations={me.experimentations}
+            />
         </div>
         <div class="desktop-container">
-            <Fragment set:html={DesktopSvg}/>
+            <Fragment set:html={DesktopSvg} />
         </div>
         <div class="hobby-container">
             <Fragment set:html={HobbiesSvg} />
@@ -41,6 +47,8 @@ import me from "../../content/me.json";
 </div>
 
 <style is:global lang="scss">
+    @import "../../scss/gracile/variables.scss";
+
     .desktop-container {
         display: flex;
     }
@@ -52,14 +60,12 @@ import me from "../../content/me.json";
         transform: translateY(-2rem);
     }
 
-    .hobby-container svg{
+    .hobby-container svg {
         width: auto;
         height: 100%;
         transform: translateY(-2rem);
-        float: right;
+        margin-left: auto;
     }
-
-    @import "../../scss/gracile/variables.scss";
 
     .svg-container {
         display: grid;
@@ -126,28 +132,40 @@ import me from "../../content/me.json";
         max-width: 24rem;
         left: 50%;
         position: fixed;
-        top: 100vh;
+        bottom: 0;
         transition: 0.3s;
         z-index: 100;
-        transform: translate(-50%, 0);
+        transform: translate(-50%, 100%);
     }
 
     .selectable-display.preview {
-        transform: translate(-50%, -7rem);
+        transform: translate(-50%, 65%);
     }
     .selectable-display.full {
-        transform: translate(-50%, -15rem);
+        transform: translate(-50%, 30%);
     }
 
     .selectable-display .background {
-        position: absolute;
         width: 100%;
+        max-width: 100vw;
     }
 
-    .selectable-display .content {
-        position: relative;
+    .selectable-display .content-container {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .selectable-display .content-container .content {
         margin: 4rem;
         text-align: center;
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+        .selectable-display .content-container .content {
+            margin: 4rem 2rem;
+        }
     }
 
     .selectable-display .content h1 {

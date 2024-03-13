@@ -245,14 +245,17 @@
         </svg>
     </div>
 
-    <div class="content">
+    <div class="content-container">
+        <div class="content">
+            
         {#if canPreview($selectedStore)}
-            <h1>{$selectedStore.data.title}</h1>
-            <hr />
+        <h1>{$selectedStore.data.title}</h1>
+        <hr />
 
-            <h3>{$selectedStore.data.volumes[$selectedStore.options.childIndex].title}</h3>
-            <p>{$selectedStore.data.description}</p>
-        {/if}
+        <h3>{$selectedStore.data.volumes[$selectedStore.options.childIndex].title}</h3>
+        <p>{$selectedStore.data.description}</p>
+    {/if}
+        </div>
     </div>
 </div>
 
