@@ -96,7 +96,7 @@
 
 <style>
     :global(.timeline .is-background) {
-        fill: var(--color-background-more);
+        fill: var(--color-background-more-2);
     }
 
     :global(.timeline .timeline-bar) {

@@ -1,7 +1,7 @@
 body[data-theme="dark"] {
     // Core colors
-    $primary-color: #867AE9 !default;
-    $secondary-color: darken(#FD8A8A, 12%) !default;
+    $primary-color: #F7418F !default;
+    $secondary-color: #FF8E8F !default;
 
     $foreground-color: #FEFCF3 !default;
     $background-color: #222831 !default;
@@ -13,18 +13,17 @@ body[data-theme="dark"] {
     --color-primary-more: #{darken($primary-color, 10%)};
 
     --color-secondary: #{$secondary-color};
-    --color-secondary-less: #{darken($secondary-color, 5%)};
-    --color-secondary-more: #{lighten($secondary-color, 5%)};
+    --color-secondary-less: #{lighten($secondary-color, 5%)};
+    --color-secondary-more: #{darken($secondary-color, 5%)};
 
     --color-foreground: #{$foreground-color};
-    --color-foreground-less: #{darken($foreground-color, 10%)};
-    --color-foreground-more: #{lighten($foreground-color, 10%)};
+    --color-foreground-less: #{lighten($foreground-color, 10%)};
 
     --color-midground: #{$midground-color};
-    --color-midground-less: #{darken($midground-color, 10%)};
-    --color-midground-more: #{lighten($midground-color, 10%)};
+    --color-midground-less: #{lighten($midground-color, 10%)};
+    --color-midground-more: #{darken($midground-color, 10%)};
 
     --color-background: #{$background-color};
-    --color-background-less: #{darken($background-color, 2%)};
-    --color-background-more: #{lighten($background-color, 5%)};
+    --color-background-more-1: #{lighten($background-color, 2%)};
+    --color-background-more-2: #{darken($background-color, 5%)};
 }

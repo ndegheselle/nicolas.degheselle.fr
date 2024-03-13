@@ -92,7 +92,7 @@
 
     .progress-bar {
         width: 0.4rem;
-        background-color: var(--color-background-more);
+        background-color: var(--color-background-more-2);
         height: 50vh;
         border-radius: 0.2rem;
     }
@@ -109,7 +109,7 @@
         left: 50%;
         width: 0.8rem;
         height: 0.8rem;
-        background-color: var(--color-background-less);
+        background-color: var(--color-background-more-1);
         border-radius: 50%;
         border: 0.2rem solid var(--color-midground-more);
         transform: translate(-50%, -50%);

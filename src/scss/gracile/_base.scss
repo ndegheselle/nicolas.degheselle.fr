@@ -22,7 +22,7 @@ body {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-primary-less);
   outline: none;
   text-decoration: none;
 
@@ -30,11 +30,7 @@ a {
   &:hover,
   &:active,
   &.active {
-    color: var(--color-primary-more);
+    color: var(--color-primary);
     text-decoration: underline;
-  }
-
-  &:visited {
-    color: var(--color-primary-more);
   }
 }

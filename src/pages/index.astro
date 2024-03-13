@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 
 import Projects from "./_projects/Projects.svelte";
 import Jobs from "./_jobs/Jobs.svelte";
-import Knowledges from "./_knowledges/index.astro";
 import Me from "./_me/index.astro";
 
 import MainTitle from "./_presentation/MainTitle.astro";
@@ -17,7 +16,6 @@ import FilAriane from "../components/FilAriane.svelte";
 ---
 
 <script>
-
   const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
   if (darkThemeMq.matches)
   {
@@ -61,7 +59,7 @@ import FilAriane from "../components/FilAriane.svelte";
     overflow: hidden;
     height: 2rem;
     width: 2rem;
-    color: var(--color-middle);
+    color: var(--color-foreground-low);
     cursor: pointer;
   }
   #changeTheme i {
