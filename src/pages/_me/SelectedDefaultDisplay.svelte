@@ -1,10 +1,33 @@
 <script>
+    import { on } from "@svgdotjs/svg.js";
     import Card from "../../components/Card.svelte";
     import { selectedStore } from "./MeStore";
+    import { onMount } from "svelte";
 
     function canPreview(store) {
         return store?.options?.target === "other" && store.data;
     }
+
+    onMount(() => {
+        document.querySelectorAll("[data-select-target]").forEach((el) => {
+            el.classList.add("selectable");
+            el.addEventListener("mouseenter", (e) => {
+                selectedStore.select({ title: "test" }, [el], {
+                    target: "other",
+                });
+            });
+            el.addEventListener("mouseleave", (e) => {
+                selectedStore.unselect();
+            });
+            el.addEventListener("click", (e) => {
+                e.stopPropagation();
+                selectedStore.select({ title: "test" }, [el], {
+                    target: "other",
+                            isLocked: true,
+                });
+            });
+        });
+    });
 </script>
 
 <div class="grid hover-more-info" class:is-active={canPreview($selectedStore)}>
