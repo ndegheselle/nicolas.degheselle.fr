@@ -108,6 +108,9 @@ import me from "../../content/me.json";
     svg .selectable {
         cursor: grab;
     }
+    svg .selectable > * {
+        transition: 0.3s;
+    }
 
     svg .selectable.is-background.is-active,
     svg .selectable.is-background.is-selected {

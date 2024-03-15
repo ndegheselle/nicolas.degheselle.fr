@@ -1,8 +1,8 @@
 <script>
-    import { on } from "@svgdotjs/svg.js";
     import Card from "../../components/Card.svelte";
     import { selectedStore } from "./MeStore";
     import { onMount } from "svelte";
+    import me from "../../content/me.json";
 
     function canPreview(store) {
         return store?.options?.target === "other" && store.data;
@@ -10,9 +10,14 @@
 
     onMount(() => {
         document.querySelectorAll("[data-select-target]").forEach((el) => {
+            console.log(
+                me.others[el.dataset.selectTarget],
+                el.dataset.selectTarget,
+                me.others,
+            );
             el.classList.add("selectable");
             el.addEventListener("mouseenter", (e) => {
-                selectedStore.select({ title: "test" }, [el], {
+                selectedStore.select(me.others[el.dataset.selectTarget], [el], {
                     target: "other",
                 });
             });
@@ -21,9 +26,9 @@
             });
             el.addEventListener("click", (e) => {
                 e.stopPropagation();
-                selectedStore.select({ title: "test" }, [el], {
+                selectedStore.select(me.others[el.dataset.selectTarget], [el], {
                     target: "other",
-                            isLocked: true,
+                    isLocked: true,
                 });
             });
         });
@@ -33,9 +38,15 @@
 <div class="grid hover-more-info" class:is-active={canPreview($selectedStore)}>
     <div class="col is-6 on-sm-is-12">
         <Card>
-            <h3 slot="title">{$selectedStore.data?.title}</h3>
+            <h3 slot="title">
+                {#if $selectedStore.data?.title}
+                    {$selectedStore.data?.title}
+                {/if}
+            </h3>
             <p>
-                {@html $selectedStore.data?.description}
+                {#if $selectedStore.data?.title}
+                    {@html $selectedStore.data?.description}
+                {/if}
             </p>
         </Card>
     </div>

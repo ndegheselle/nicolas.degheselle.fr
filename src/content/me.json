@@ -6,33 +6,33 @@
                 {
                     "title": "C++",
                     "description": "Like it a lot. Large control on ressources, you can't do something wrong without knowing it. Can be hard to compile and debug at times.",
-                    "level": 2
+                    "volumes": ["Memory management", "Templates", "Win32"]
                 },
                 {
                     "title": "Java",
                     "description": "Usefull. Do like the fact that you can have methods and property on enums. A little bit too verbose for me.",
-                    "level": 1
+                    "volumes": ["POO"]
                 },
                 {
                     "title": "C#",
                     "description": "My go to language. Less heavy than Java, but still multiplatform, clear syntax, easy to use, easy to debug, easy to compile, easy to deploy.",
-                    "level": 3
+                    "volumes": ["Threading", "Reflection", "Dependencies injections"]
                 },
                 {
                     "title": "Python",
                     "description": "Nice if you want something working fast, easy to start / use, a lot of easily accessible libraries. Do like all the small syntax tricks.",
-                    "level": 1
+                    "volumes": ["Modules"]
                 },
                 {
                     "containerClass": "ml-auto",
                     "title": "TypeScript",
                     "description": "And Javascript as well. Everything is easy to do, and so is making bad design choices. Promises are a pain.",
-                    "level": 3
+                    "volumes": ["Libraries", "Dynamic programming", "Promises"]
                 },
                 {
                     "title": "HTML/CSS",
                     "description": "It does it's job well, even more then you start to compare it to other markup languages (XAML ?).",
-                    "level": 3
+                    "volumes": ["Layout", "Responsive", "Shadow DOM"]
                 }
             ]
         },
@@ -43,17 +43,17 @@
                 {
                     "title": "Astro.js",
                     "description": "Make it possible to use multiple techs in one project. Totally onboard with making the site as light as possible and separating what is static and dymanic.",
-                    "level": 1
+                    "volumes": ["Flexibility & UI-agnostic", "MPA"]
                 },
                 {
                     "title": "Webpack",
                     "description": "Nice to cleany bundle and nicely separate everything. Should be used on every medium and big project.",
-                    "level": 3
+                    "volumes": ["Hot reload", "Bundling", "Clean & minify"]
                 },
                 {
                     "title": "Vite",
                     "description": "Simpler and faster than webpack. I really like it :)",
-                    "level": 1
+                    "volumes": ["Development server"]
                 }
             ]
         },
@@ -62,19 +62,19 @@
             "bookshelfClass": "is-6 on-sm-is-12",
             "elements": [
                 {
-                    "title": "SvelteKit",
-                    "description": "Very intersting, fast, good and efficient syntax, one straighforward way to do things. Rarelly been this satisfaised by a framework.",
-                    "level": 2
-                },
-                {
                     "title": "Vuejs",
                     "description": "A good balance between complexity and simplicity. Fast, light and with all the options you will need for a medium or large app.",
-                    "level": 3
+                    "volumes": [ "Components", "SPA", "Bindings"]
                 },
                 {
                     "title": "Angular",
                     "description": "Well structured but more complexe than Vuejs, still does the job pretty well.",
-                    "level": 2
+                    "volumes": ["Robust"]
+                },
+                {
+                    "title": "SvelteKit",
+                    "description": "Very intersting, fast, good and efficient syntax, one straighforward way to do things. Rarelly been this satisfaised by a framework.",
+                    "volumes": ["Simple", "Efficient", "Fast"]
                 }
             ]
         },
@@ -84,18 +84,18 @@
                 {
                     "title": "MySQL",
                     "description": "Nothing special to say about it (which is kinda a compliment). ",
-                    "level": 3
+                    "volumes": ["Relationships", "Indexing", "Procedures & Views"]
                 },
                 {
                     "title": "SQL Server",
                     "description": "Work as fine as MySQL but with the Microsoft touch.",
-                    "level": 3
+                    "volumes": ["Relationships", "Indexing", "Procedures & Views"]
                 },
                 {
                     "containerClass": "ml-auto",
                     "title": "MongoDB",
                     "description": " Should be used more often for large dataset that are not requiring relationships.",
-                    "level": 2
+                    "volumes": ["Flexibility", "Scalability"]
                 }
             ]
         },
@@ -104,14 +104,14 @@
             "bookshelfClass": "is-2 on-sm-is-6",
             "elements": [
                 {
-                    "title": "Tensorflow",
-                    "description": "Good well documented way to start doing some neural network and more generally machine learning.",
-                    "level": 1
-                },
-                {
                     "title": "Keras",
                     "description": "Have a lot of models, pretty easy to use, would recommand.",
-                    "level": 1
+                    "volumes": ["Preprocessing", "Models"]
+                },
+                {
+                    "title": "Tensorflow",
+                    "description": "Good well documented way to start doing some neural network and more generally machine learning.",
+                    "volumes": ["Neural network"]
                 }
             ]
         },
@@ -122,7 +122,7 @@
                 {
                     "title": "Docker",
                     "description": "Nice to create complete development environments. Make it easy to deploy, restore and load balance servers.",
-                    "level": 2
+                    "volumes": ["Containers", "Deployment", "Microservices"]
                 }
             ]
         },
@@ -133,7 +133,7 @@
                 {
                     "title": "Maui",
                     "description": "Way less support than Flutter (Microsoft didn't create any official application with it). A lot of different problems that still need to be isued. In theory it's the future of app development.",
-                    "level": 3
+                    "volumes": ["Multiplatform", "Single codebase", "Deployment"]
                 }
             ]
         },
@@ -141,41 +141,35 @@
             "title": "Desktop",
             "elements": [
                 {
-                    "title": "UWP",
-                    "description": "Did a lot of that",
-                    "level": 1
-                },
-                {
                     "title": "WPF",
-                    "description": "Did a lot of that",
-                    "level": 3
+                    "description": "Nice way to separate the UI from the logic. The XAML syntax is a little bit heavy for me.",
+                    "volumes": ["Converters", "MVVM", "ControlTemplate parts"]
                 },
                 {
                     "title": "JavaFX",
                     "description": "If you need to create a multiplatform app without too much work, it's a good choice. Cleary replace Swing for me.",
-                    "level": 2
+                    "volumes": ["Modern UI"]
                 },
                 {
                     "containerClass": "ml-auto",
                     "title": "SDL2",
                     "description": "The standard C++ graphic library. Nice to use alongside OpenGL, some discutable design choices then you dive really deep.",
-                    "level": 2
+                    "volumes": ["Graphics", "Inputs", "Audio"]
                 },
                 {
                     "title": "SFML",
                     "description": "Way easier to use than SDL2, with the same functionnalities. Great way to start with game development.",
-                    "level": 2
+                    "volumes": ["Graphics", "Vertex arrays"]
                 },
                 {
                     "title": "Electron",
                     "description": "The only mature solution if you a multiplatform desktop app with web technologies. It tend to take a lot of space and ressources.",
-                    "level": 2
+                    "volumes": ["Easy and fast development"]
                 }
             ]
         },
         {
             "title": "Web backend",
-            "bookshelfClass": "is-6 on-sm-is-12",
             "elements": [
                 {
                     "title": ".NET ASP (Framework / Core)",
@@ -183,13 +177,11 @@
                     "level": 2
                 },
                 {
-                    "titleClass": "is-shifted",
                     "title": "Blazor",
                     "description": "Nice template system, the syntaxe is pretty natural to use. It became even better with .NET 6.",
                     "level": 2
                 },
                 {
-                    "containerClass": "ml-auto",
                     "title": "Spring",
                     "description": "Not really a fan of, some setups like auth are a pain to do (but where is it not).",
                     "level": 1
@@ -304,5 +296,11 @@
                 "description": "Tried it just after v3 have been released so there was not much documentation. Otherwise like everything about it (it's realy worth the assle) !"
             }
         ]
-    ]
+    ],
+    "others": {
+        "test": {
+            "title": "Test",
+            "description": "Test"
+        }
+    }
 }
