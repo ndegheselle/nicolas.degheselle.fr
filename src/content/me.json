@@ -406,6 +406,18 @@
         "test": {
             "title": "Test",
             "description": "Test"
+        },
+        "books": {
+            "title": "Books",
+            "description": "I like to read here and there, mostly fantasy and sci-fi."
+        },
+        "outdoor": {
+            "title": "Touching some grass",
+            "description": "I like to do some trekking, with a bike or on foot. Lastly I have tried some electric motocross, wich is the most fun vehicle I ever used :)"
+        },
+        "network": {
+            "title": "Network",
+            "description": "Aside from programming I also studied networtking and security, from deployment to supervision."
         }
     }
 }
