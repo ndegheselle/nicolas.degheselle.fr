@@ -8,9 +8,9 @@
         const draw = SVG(svg);
 
         let numberOfPaper = 0;
-        for (let i = 0; i < experimentations.length; i++) {
-            for (let j = 0; j < experimentations[i].length; j++) {
-                const experimentation = experimentations[i][j];
+        for (let i = 0; i < experimentations.contents.length; i++) {
+            for (let j = 0; j < experimentations.contents[i].length; j++) {
+                const experimentation = experimentations.contents[i][j];
                 const paperGroup = draw
                     .group()
                     .translate(
@@ -72,7 +72,10 @@
 
     function selectExplanation() {
         selectedStore.select(
-            experimentationExplanation,
+            {
+                title: experimentations.title,
+                description: experimentations.description,
+            },
             [experimentationBackground],
             {
                 target: "other",
@@ -92,12 +95,7 @@
 
     let svg;
     let experimentationBackground;
-    let experimentationExplanation = {
-        title: "Paper",
-        description: "A paper with a folded corner",
-    };
-
-    export let experimentations = [];
+    export let experimentations = {};
 </script>
 
 <div class="grid">

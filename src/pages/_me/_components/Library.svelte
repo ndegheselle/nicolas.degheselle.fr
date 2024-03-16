@@ -1,23 +1,23 @@
 <script>
     import Bookshelf from "./Bookshelf.svelte";
-    import { selectedStore, bookcase } from "../MeStore.js";
+    import { selectedStore } from "../MeStore.js";
     import clickOutside from "@components/clickOutside.js";
 
     function canPreview(store) {
         return store.options.target == "book" && store.data;
     }
 
-    let libraryExplanation = {
-        title: "Paper",
-        description: "A paper with a folded corner",
-    };
-
     function selectExplanation() {
-
         selectedStore.select(
-            libraryExplanation,
-            
-        Array.from(document.querySelectorAll('.svg-bookshelf .selectable.is-background')),
+            {
+                title: knowledges.title,
+                description: knowledges.description,
+            },
+            Array.from(
+                document.querySelectorAll(
+                    ".svg-bookshelf .selectable.is-background",
+                ),
+            ),
             {
                 target: "other",
                 isLocked: true,
@@ -25,6 +25,7 @@
         );
     }
 
+    export let knowledges = {};
 </script>
 
 <!-- Books elements defs -->
@@ -133,20 +134,22 @@
 
 <div class="grid">
     <span class="me-tag">
-        <a href="javascript:void(0)" on:click|stopPropagation={selectExplanation}>
+        <a
+            href="javascript:void(0)"
+            on:click|stopPropagation={selectExplanation}
+        >
             My library of knowledge
         </a>
     </span>
 </div>
 
 <div class="grid">
-    {#each bookcase as bookshelf}
+    {#each knowledges.contents as bookshelf}
         <div class="col is-6 on-md-is-12">
             <Bookshelf {bookshelf} />
         </div>
     {/each}
 </div>
-
 
 <div
     class="selectable-display container"
@@ -247,20 +250,22 @@
 
     <div class="content-container">
         <div class="content">
-            
-        {#if canPreview($selectedStore)}
-        <h1>{$selectedStore.data.title}</h1>
-        <hr />
+            {#if canPreview($selectedStore)}
+                <h1>{$selectedStore.data.title}</h1>
+                <hr />
 
-        <h3>{$selectedStore.data.volumes[$selectedStore.options.childIndex].title}</h3>
-        <p>{$selectedStore.data.description}</p>
-    {/if}
+                <h3>
+                    {$selectedStore.data.volumes[
+                        $selectedStore.options.childIndex
+                    ]}
+                </h3>
+                <p>{$selectedStore.data.description}</p>
+            {/if}
         </div>
     </div>
 </div>
 
 <style>
-
     :global(.book-volume.is-active) {
         --color-front-low: var(--color-primary) !important;
         --color-front: var(--color-primary-low) !important;

@@ -1,302 +1,407 @@
 {
-    "knowledges": [
-        {
-            "title": "Languages",
-            "elements": [
+    "knowledges": {
+        "title": "Knowledges",
+        "description": "List of the things I know and have experience with.",
+        "contents": [
+            [
                 {
-                    "title": "C++",
-                    "description": "Like it a lot. Large control on ressources, you can't do something wrong without knowing it. Can be hard to compile and debug at times.",
-                    "volumes": ["Memory management", "Templates", "Win32"]
+                    "tag": "Languages",
+                    "books": [
+                        {
+                            "title": "C++",
+                            "description": "Like it a lot. Large control on ressources, you can't do something wrong without knowing it. Can be hard to compile and debug at times.",
+                            "volumes": [
+                                "Memory management",
+                                "Templates",
+                                "Win32"
+                            ]
+                        },
+                        {
+                            "title": "Java",
+                            "description": "Usefull. Do like the fact that you can have methods and property on enums. A little bit too verbose for me.",
+                            "volumes": [
+                                "POO"
+                            ]
+                        },
+                        {
+                            "title": "C#",
+                            "description": "My go to language. Less heavy than Java, but still multiplatform, clear syntax, easy to use, easy to debug, easy to compile, easy to deploy.",
+                            "volumes": [
+                                "Threading",
+                                "Reflection",
+                                "Dependencies injections"
+                            ]
+                        },
+                        {
+                            "title": "Python",
+                            "description": "Nice if you want something working fast, easy to start / use, a lot of easily accessible libraries. Do like all the small syntax tricks.",
+                            "volumes": [
+                                "Modules"
+                            ]
+                        },
+                        {
+                            "title": "TypeScript",
+                            "description": "And Javascript as well. Everything is easy to do, and so is making bad design choices. Promises are a pain.",
+                            "volumes": [
+                                "Libraries",
+                                "Dynamic programming",
+                                "Promises"
+                            ]
+                        },
+                        {
+                            "title": "HTML/CSS",
+                            "description": "It does it's job well, even more then you start to compare it to other markup languages (XAML ?).",
+                            "volumes": [
+                                "Layout",
+                                "Responsive",
+                                "Shadow DOM"
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "title": "Java",
-                    "description": "Usefull. Do like the fact that you can have methods and property on enums. A little bit too verbose for me.",
-                    "volumes": ["POO"]
+                    "tag": "Web apps",
+                    "books": [
+                        {
+                            "title": "Astro.js",
+                            "description": "Make it possible to use multiple techs in one project. Totally onboard with making the site as light as possible and separating what is static and dymanic.",
+                            "volumes": [
+                                "Flexibility & UI-agnostic",
+                                "MPA"
+                            ]
+                        },
+                        {
+                            "title": "Webpack",
+                            "description": "Nice to cleany bundle and nicely separate everything. Should be used on every medium and big project.",
+                            "volumes": [
+                                "Hot reload",
+                                "Bundling",
+                                "Clean & minify"
+                            ]
+                        },
+                        {
+                            "title": "Vite",
+                            "description": "Simpler and faster than webpack. I really like it :)",
+                            "volumes": [
+                                "Development server"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "tag": "Web frontend",
+                    "books": [
+                        {
+                            "title": "Vuejs",
+                            "description": "A good balance between complexity and simplicity. Fast, light and with all the options you will need for a medium or large app.",
+                            "volumes": [
+                                "Components",
+                                "SPA",
+                                "Bindings"
+                            ]
+                        },
+                        {
+                            "title": "Angular",
+                            "description": "Well structured but more complexe than Vuejs, still does the job pretty well.",
+                            "volumes": [
+                                "Robust"
+                            ]
+                        },
+                        {
+                            "title": "SvelteKit",
+                            "description": "Very intersting, fast, good and efficient syntax, one straighforward way to do things. Rarelly been this satisfaised by a framework.",
+                            "volumes": [
+                                "Simple",
+                                "Efficient",
+                                "Fast"
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "title": "C#",
-                    "description": "My go to language. Less heavy than Java, but still multiplatform, clear syntax, easy to use, easy to debug, easy to compile, easy to deploy.",
-                    "volumes": ["Threading", "Reflection", "Dependencies injections"]
+                    "tag": "Databases",
+                    "books": [
+                        {
+                            "title": "MySQL",
+                            "description": "Nothing special to say about it (which is kinda a compliment). ",
+                            "volumes": [
+                                "Relationships",
+                                "Indexing",
+                                "Procedures & Views"
+                            ]
+                        },
+                        {
+                            "title": "SQL Server",
+                            "description": "Work as fine as MySQL but with the Microsoft touch.",
+                            "volumes": [
+                                "Relationships",
+                                "Indexing",
+                                "Procedures & Views"
+                            ]
+                        },
+                        {
+                            "containerClass": "ml-auto",
+                            "title": "MongoDB",
+                            "description": " Should be used more often for large dataset that are not requiring relationships.",
+                            "volumes": [
+                                "Flexibility",
+                                "Scalability"
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "title": "Python",
-                    "description": "Nice if you want something working fast, easy to start / use, a lot of easily accessible libraries. Do like all the small syntax tricks.",
-                    "volumes": ["Modules"]
+                    "tag": "AI",
+                    "books": [
+                        {
+                            "title": "Keras",
+                            "description": "Have a lot of models, pretty easy to use, would recommand.",
+                            "volumes": [
+                                "Preprocessing",
+                                "Models"
+                            ]
+                        },
+                        {
+                            "title": "Tensorflow",
+                            "description": "Good well documented way to start doing some neural network and more generally machine learning.",
+                            "volumes": [
+                                "Neural network"
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "containerClass": "ml-auto",
-                    "title": "TypeScript",
-                    "description": "And Javascript as well. Everything is easy to do, and so is making bad design choices. Promises are a pain.",
-                    "volumes": ["Libraries", "Dynamic programming", "Promises"]
+                    "tag": "Environment",
+                    "books": [
+                        {
+                            "title": "Docker",
+                            "description": "Nice to create complete development environments. Make it easy to deploy, restore and load balance servers.",
+                            "volumes": [
+                                "Containers",
+                                "Deployment",
+                                "Microservices"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "tag": "Multiplatform",
+                    "books": [
+                        {
+                            "title": "Maui",
+                            "description": "Way less support than Flutter (Microsoft didn't create any official application with it). A lot of different problems that still need to be isued. In theory it's the future of app development.",
+                            "volumes": [
+                                "Multiplatform",
+                                "Single codebase",
+                                "Deployment"
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "title": "HTML/CSS",
-                    "description": "It does it's job well, even more then you start to compare it to other markup languages (XAML ?).",
-                    "volumes": ["Layout", "Responsive", "Shadow DOM"]
+                    "tag": "Desktop",
+                    "books": [
+                        {
+                            "title": "WPF",
+                            "description": "Nice way to separate the UI from the logic. The XAML syntax is a little bit heavy for me.",
+                            "volumes": [
+                                "Converters",
+                                "MVVM",
+                                "ControlTemplate parts"
+                            ]
+                        },
+                        {
+                            "title": "JavaFX",
+                            "description": "If you need to create a multiplatform app without too much work, it's a good choice. Cleary replace Swing for me.",
+                            "volumes": [
+                                "Modern UI"
+                            ]
+                        },
+                        {
+                            "containerClass": "ml-auto",
+                            "title": "SDL2",
+                            "description": "The standard C++ graphic library. Nice to use alongside OpenGL, some discutable design choices then you dive really deep.",
+                            "volumes": [
+                                "Graphics",
+                                "Inputs",
+                                "Audio"
+                            ]
+                        },
+                        {
+                            "title": "SFML",
+                            "description": "Way easier to use than SDL2, with the same functionnalities. Great way to start with game development.",
+                            "volumes": [
+                                "Graphics",
+                                "Vertex arrays"
+                            ]
+                        },
+                        {
+                            "title": "Electron",
+                            "description": "The only mature solution if you a multiplatform desktop app with web technologies. It tend to take a lot of space and ressources.",
+                            "volumes": [
+                                "Easy and fast development"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tag": "Web backend",
+                    "books": [
+                        {
+                            "title": ".NET ASP (Framework / Core)",
+                            "description": "Sometime a little bit too magical for me (I like clearly defining the routes, with HTTP verb, route and params). The change from Framework to Core was a pain. Otherwise work really fine.",
+                            "volumes": [
+                                "Middlewares",
+                                "SignalR",
+                                "Blazor"
+                            ]
+                        },
+                        {
+                            "title": "Laravel",
+                            "description": "The right balance between easy to use and powerfull. The documentation is great, base project architecture taught me a lot.",
+                            "volumes": [
+                                "Authentification handling",
+                                "Blade",
+                                "Artisan"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "tag": "Web server",
+                    "books": [
+                        {
+                            "title": "Nginx",
+                            "description": "Nice and fast, never encountered a situation where I was limited by it during development.",
+                            "volumes": [
+                                "Caching",
+                                "Load balancing",
+                                "Reverse proxy"
+                            ]
+                        },
+                        {
+                            "title": "Apache",
+                            "description": "Work as well as nginx but the configuration can be a pain for complexe setups.",
+                            "volumes": [
+                                "Sub-domains"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tag": "Web API",
+                    "books": [
+                        {
+                            "title": "Node.js",
+                            "description": "Large ecosystem with a lot of nice frameworks. Make fullstack development easier.",
+                            "volumes": [
+                                "npm",
+                                "CORS",
+                                "REST"
+                            ]
+                        },
+                        {
+                            "title": "Express.js",
+                            "description": "Nice framework to create an API on Node.js, have a lot of nice plugins.",
+                            "volumes": [
+                                "Routing",
+                                "Authentification",
+                                "Middlewares"
+                            ]
+                        },
+                        {
+                            "title": "Fastify.js",
+                            "description": "Greate alternative to Express.js, faster and easy to use.",
+                            "volumes": [
+                                "Autoload"
+                            ]
+                        },
+                        {
+                            "title": "Lumen",
+                            "description": "Realy nice to make APIs with PHP, not made to host a website.",
+                            "volumes": [
+                                "API"
+                            ]
+                        },
+                        {
+                            "title": "Slim",
+                            "description": "Nice to create small APIs or websites with PHP without the overhead of big frameworks.",
+                            "volumes": [
+                                "API"
+                            ]
+                        },
+                        {
+                            "title": "Swagger",
+                            "description": "Fast to setup and easy to use. Should be used on every API for documentation.",
+                            "volumes": [
+                                "OpenAPI",
+                                "REST API"
+                            ]
+                        }
+                    ]
                 }
             ]
-        },
-        {
-            "title": "Web apps",
-            "bookshelfClass": "is-6 on-sm-is-12",
-            "elements": [
-                {
-                    "title": "Astro.js",
-                    "description": "Make it possible to use multiple techs in one project. Totally onboard with making the site as light as possible and separating what is static and dymanic.",
-                    "volumes": ["Flexibility & UI-agnostic", "MPA"]
-                },
-                {
-                    "title": "Webpack",
-                    "description": "Nice to cleany bundle and nicely separate everything. Should be used on every medium and big project.",
-                    "volumes": ["Hot reload", "Bundling", "Clean & minify"]
-                },
-                {
-                    "title": "Vite",
-                    "description": "Simpler and faster than webpack. I really like it :)",
-                    "volumes": ["Development server"]
-                }
-            ]
-        },
-        {
-            "title": "Web frontend",
-            "bookshelfClass": "is-6 on-sm-is-12",
-            "elements": [
-                {
-                    "title": "Vuejs",
-                    "description": "A good balance between complexity and simplicity. Fast, light and with all the options you will need for a medium or large app.",
-                    "volumes": [ "Components", "SPA", "Bindings"]
-                },
-                {
-                    "title": "Angular",
-                    "description": "Well structured but more complexe than Vuejs, still does the job pretty well.",
-                    "volumes": ["Robust"]
-                },
-                {
-                    "title": "SvelteKit",
-                    "description": "Very intersting, fast, good and efficient syntax, one straighforward way to do things. Rarelly been this satisfaised by a framework.",
-                    "volumes": ["Simple", "Efficient", "Fast"]
-                }
-            ]
-        },
-        {
-            "title": "Databases",
-            "elements": [
-                {
-                    "title": "MySQL",
-                    "description": "Nothing special to say about it (which is kinda a compliment). ",
-                    "volumes": ["Relationships", "Indexing", "Procedures & Views"]
-                },
-                {
-                    "title": "SQL Server",
-                    "description": "Work as fine as MySQL but with the Microsoft touch.",
-                    "volumes": ["Relationships", "Indexing", "Procedures & Views"]
-                },
-                {
-                    "containerClass": "ml-auto",
-                    "title": "MongoDB",
-                    "description": " Should be used more often for large dataset that are not requiring relationships.",
-                    "volumes": ["Flexibility", "Scalability"]
-                }
-            ]
-        },
-        {
-            "title": "AI",
-            "bookshelfClass": "is-2 on-sm-is-6",
-            "elements": [
-                {
-                    "title": "Keras",
-                    "description": "Have a lot of models, pretty easy to use, would recommand.",
-                    "volumes": ["Preprocessing", "Models"]
-                },
-                {
-                    "title": "Tensorflow",
-                    "description": "Good well documented way to start doing some neural network and more generally machine learning.",
-                    "volumes": ["Neural network"]
-                }
-            ]
-        },
-        {
-            "title": "Environment",
-            "bookshelfClass": "is-2 on-sm-is-6",
-            "elements": [
-                {
-                    "title": "Docker",
-                    "description": "Nice to create complete development environments. Make it easy to deploy, restore and load balance servers.",
-                    "volumes": ["Containers", "Deployment", "Microservices"]
-                }
-            ]
-        },
-        {
-            "title": "Multiplatform",
-            "bookshelfClass": "is-4 on-sm-is-6",
-            "elements": [
-                {
-                    "title": "Maui",
-                    "description": "Way less support than Flutter (Microsoft didn't create any official application with it). A lot of different problems that still need to be isued. In theory it's the future of app development.",
-                    "volumes": ["Multiplatform", "Single codebase", "Deployment"]
-                }
-            ]
-        },
-        {
-            "title": "Desktop",
-            "elements": [
-                {
-                    "title": "WPF",
-                    "description": "Nice way to separate the UI from the logic. The XAML syntax is a little bit heavy for me.",
-                    "volumes": ["Converters", "MVVM", "ControlTemplate parts"]
-                },
-                {
-                    "title": "JavaFX",
-                    "description": "If you need to create a multiplatform app without too much work, it's a good choice. Cleary replace Swing for me.",
-                    "volumes": ["Modern UI"]
-                },
-                {
-                    "containerClass": "ml-auto",
-                    "title": "SDL2",
-                    "description": "The standard C++ graphic library. Nice to use alongside OpenGL, some discutable design choices then you dive really deep.",
-                    "volumes": ["Graphics", "Inputs", "Audio"]
-                },
-                {
-                    "title": "SFML",
-                    "description": "Way easier to use than SDL2, with the same functionnalities. Great way to start with game development.",
-                    "volumes": ["Graphics", "Vertex arrays"]
-                },
-                {
-                    "title": "Electron",
-                    "description": "The only mature solution if you a multiplatform desktop app with web technologies. It tend to take a lot of space and ressources.",
-                    "volumes": ["Easy and fast development"]
-                }
-            ]
-        },
-        {
-            "title": "Web backend",
-            "elements": [
-                {
-                    "title": ".NET ASP (Framework / Core)",
-                    "description": "Sometime a little bit too magical for me (I like clearly defining the routes, with HTTP verb, route and params). The change from Framework to Core was a pain. Otherwise work really fine.",
-                    "level": 2
-                },
-                {
-                    "title": "Blazor",
-                    "description": "Nice template system, the syntaxe is pretty natural to use. It became even better with .NET 6.",
-                    "level": 2
-                },
-                {
-                    "title": "Spring",
-                    "description": "Not really a fan of, some setups like auth are a pain to do (but where is it not).",
-                    "level": 1
-                },
-                {
-                    "title": "Laravel",
-                    "description": "The right balance between easy to use and powerfull. The documentation is great, base project architecture taught me a lot.",
-                    "level": 3
-                }
-            ]
-        },
-        {
-            "title": "Web server",
-            "bookshelfClass": "is-6 on-sm-is-12",
-            "elements": [
-                {
-                    "containerClass": "ml-auto",
-                    "title": "Nginx",
-                    "description": "Nice and fast, never encountered a situation where I was limited by it during development.",
-                    "level": 3
-                },
-                {
-                    "title": "Apache",
-                    "description": "Work as well as nginx but the configuration can be a pain for complexe setups.",
-                    "level": 1
-                }
-            ]
-        },
-        {
-            "title": "Web API",
-            "elements": [
-                {
-                    "title": "Express.js",
-                    "description": "Nice framework to create an API on Node.js, have a lot of nice plugins.",
-                    "level": 3
-                },
-                {
-                    "title": "Fastify.js",
-                    "description": "Greate alternative to Express.js, faster and easy to use.",
-                    "level": 1
-                },
-                {
-                    "title": "Node.js",
-                    "description": "Large ecosystem with a lot of nice frameworks. Make fullstack development easier.",
-                    "level": 3
-                },
-                {
-                    "containerClass": "ml-auto",
-                    "title": "Lumen",
-                    "description": "Realy nice to make APIs with PHP, not made to host a website.",
-                    "level": 1
-                },
-                {
-                    "title": "Slim",
-                    "description": "Nice to create small APIs or websites with PHP without the overhead of big frameworks.",
-                    "level": 1
-                },
-                {
-                    "containerClass": "ml-auto",
-                    "title": "Swagger",
-                    "description": "Fast to setup and easy to use. Should be used on every API for documentation.",
-                    "level": 2
-                }
-            ]
-        }
-    ],
-    "experimentations": [
-        [
-            {
-                "title": "rust",
-                "description": "Different paradigm from what I am familiar with. Peculiar syntax, need some time to be used to."
-            },
-            {
-                "title": "Kotlin",
-                "description": "I do like what they did with the language, take some time to accostum to it but I see how it can save a lot of time (even more compared to Java)."
-            },
-            {
-                "title": "Swift",
-                "description": "Nice language, a lot of nice features, I like a lot the storyboard concept. The only downside is that it's only for Apple."
-            }
-        ],
-        [
-            {
-                "title": "Tauri",
-                "description": "Nice alternative to Electron, but still in early development (documentation is lacking and some options are missing)."
-            },
-            {
-                "title": "Flutter",
-                "description": "Interesting concept, complete API / functionnalites and a lot of plugins. Not realy fan of the fact that it's really easy to mix logic and UI."
-            },
-            {
-                "title": "Avalonia UI",
-                "description": ""
-            },
-            {
-                "title": "Cordova",
-                "description": "It's a pain to use, but it's the only way to create a multiplatform (including mobile) app with web technologies.",
-                "level": 1
-            },
-            {
-                "title": "Ionic",
-                "description": "Corodva without the pain of Cordova. A lot of nice prebuilt components."
-            }
-        ],
-        [
-            {
-                "title": "React",
-                "description": "I don't understand why it's used that much. There is 5 different way to do aynthing and as much way to do it wrong. The syntax is heavy (God forbid JSX and states)."
-            },
-            {
-                "title": "Nuxt",
-                "description": "Tried it just after v3 have been released so there was not much documentation. Otherwise like everything about it (it's realy worth the assle) !"
-            }
         ]
-    ],
+    },
+    "experimentations": {
+        "title": "Experimentations",
+        "description": "List of the things I experimented with, but didn't made a full project with.",
+        "contents": [
+            [
+                {
+                    "title": "rust",
+                    "description": "Different paradigm from what I am familiar with. Peculiar syntax, need some time to be used to."
+                },
+                {
+                    "title": "Kotlin",
+                    "description": "I do like what they did with the language, take some time to accostum to it but I see how it can save a lot of time (even more compared to Java)."
+                },
+                {
+                    "title": "Swift",
+                    "description": "Nice language, a lot of nice features, I like a lot the storyboard concept. The only downside is that it's only for Apple."
+                }
+            ],
+            [
+                {
+                    "title": "Tauri",
+                    "description": "Nice alternative to Electron, but still in early development (documentation is lacking and some options are missing)."
+                },
+                {
+                    "title": "Flutter",
+                    "description": "Interesting concept, complete API / functionnalites and a lot of plugins. Not realy fan of the fact that it's really easy to mix logic and UI."
+                },
+                {
+                    "title": "Avalonia UI",
+                    "description": ""
+                },
+                {
+                    "title": "Cordova",
+                    "description": "It's a pain to use, but it's the only way to create a multiplatform (including mobile) app with web technologies.",
+                    "level": 1
+                },
+                {
+                    "title": "Ionic",
+                    "description": "Corodva without the pain of Cordova. A lot of nice prebuilt components."
+                }
+            ],
+            [
+                {
+                    "title": "React",
+                    "description": "I don't understand why it's used that much. There is 5 different way to do aynthing and as much way to do it wrong. The syntax is heavy (God forbid JSX and states)."
+                },
+                {
+                    "title": "Nuxt",
+                    "description": "Tried it just after v3 have been released so there was not much documentation. Otherwise like everything about it (it's realy worth the assle) !"
+                }
+            ]
+        ]
+    },
     "others": {
         "test": {
             "title": "Test",

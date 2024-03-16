@@ -29,7 +29,7 @@ import me from "../../content/me.json";
 
 <SelectedDefaultDisplay client:idle />
 <div id="me-container">
-    <Library client:idle client:only />
+    <Library knowledges={me.knowledges} client:idle client:only />
     <div class="svg-container">
         <div class="experimental-container">
             <Experimentations

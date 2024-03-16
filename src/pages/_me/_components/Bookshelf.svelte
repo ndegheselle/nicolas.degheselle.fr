@@ -22,7 +22,7 @@
 
         // Last vertical support
         draw.rect(SUPPORT_SIZE, BOOKSHELF_HEIGHT)
-            .move(BOOKSHELF_WIDTH - SUPPORT_SIZE * 2, 0)
+            .move(BOOKSHELF_WIDTH - SUPPORT_SIZE - SUPPORT_SPACING, 0)
             .addClass("color-back-low")
             .addClass("selectable is-background");
 
@@ -30,20 +30,33 @@
     });
 
     function createCols(parent) {
-        const colWidth = BOOKSHELF_WIDTH / bookshelf.length;
+        // Sum of bookshelf books
+        let totalNumberOfVolumes = 0;
+        for (let i = 0; i < bookshelf.length; i++) {
+            totalNumberOfVolumes += bookshelf[i].books.reduce(
+                (acc, book) => acc + book.volumes.length,
+                0,
+            );
+        }
 
+        let offsetX = 0;
         for (let i = 0; i < bookshelf.length; i++) {
             const col = bookshelf[i];
-            const colGroup = parent.group().translate(i * colWidth, 0);
+            const numberOfVolumes = col.books.reduce(
+                (acc, book) => acc + book.volumes.length,
+                0,
+            );
+            const colGroup = parent.group().translate(offsetX, 0);
 
             // Horizontal supports
             colGroup
                 .rect(SUPPORT_SIZE, BOOKSHELF_HEIGHT)
-                .move(SUPPORT_SIZE, 0)
+                .move(SUPPORT_SPACING, 0)
                 .addClass("color-back-low")
                 .addClass("selectable is-background");
 
             createBooks(col, colGroup);
+            offsetX += numberOfVolumes / totalNumberOfVolumes * (BOOKSHELF_WIDTH - SUPPORT_SIZE - SUPPORT_SPACING);
         }
     }
 
@@ -78,7 +91,7 @@
                     .addClass("book-volume")
                     .addClass("selectable")
                     .move(
-                        BOOK_WIDTH * volumeIndex + SUPPORT_SIZE * 2,
+                        BOOK_WIDTH * volumeIndex + SUPPORT_SIZE + SUPPORT_SPACING,
                         BOOKSHELF_HEIGHT - BOOK_HEIGHT - SUPPORT_SIZE,
                     )
                     .scale(1, randHeight, 0, BOOKSHELF_HEIGHT - SUPPORT_SIZE);
@@ -126,8 +139,9 @@
     const BOOKSHELF_WIDTH = 500;
     const BOOKSHELF_HEIGHT = 120;
     const SUPPORT_SIZE = 8;
+    const SUPPORT_SPACING = 4;
 
-    const BOOK_WIDTH = 20;
+    const BOOK_WIDTH = 18;
     const BOOK_HEIGHT = 100;
     const BOOK_RANDOM_HEIGHT_MAX = 1.1;
     const BOOK_RANDOM_HEIGHT_MIN = 0.9;
