@@ -380,6 +380,7 @@
        stroke-miterlimit="10"
        id="path9754" />
   </g>
+  <g data-select-target="network">
   <rect
      width="52.235466"
      height="46.23138"
@@ -1069,5 +1070,6 @@
        id="rect9900"
        x="0"
        y="0" />
+  </g>
   </g>
 </svg>
