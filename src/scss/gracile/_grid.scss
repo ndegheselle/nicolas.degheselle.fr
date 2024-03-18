@@ -17,6 +17,11 @@ $grid-spacing: 0.6rem;
     margin: 0;
 }
 
+.grid.is-auto {
+    justify-content: space-between;
+    align-items: center;
+}
+
 .grid.with-gutter {
     margin: -$grid-spacing;
 }

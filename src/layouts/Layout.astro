@@ -1,5 +1,5 @@
 ---
-import "../scss/styles.scss";
+import BlankLayout from './BlankLayout.astro';
 
 interface Props {
 	title: string;
@@ -7,65 +7,41 @@ interface Props {
 
 const { title } = Astro.props;
 ---
-
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="images/favicon.ico" sizes="any" />
-
-		<script
-			src="https://kit.fontawesome.com/81bbd31b5a.js"
-			crossorigin="anonymous"></script>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;700&family=Ubuntu&display=swap"
-			rel="stylesheet"
-		/>
-
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body data-theme="light">
-		<slot />
-		<footer class="grid">
-			<div>
-				<span>
-					<a
-						href="https://www.linkedin.com/in/nicolas-de-gheselle-1437a1167/"
-						><i class="fa-brands fa-linkedin"></i></a
-					>
-					<a href="https://github.com/ndegheselle"
-						><i class="fa-brands fa-github"></i></a
-					>
-					<a
-						href="https://profile.indeed.com/p/nicolasd-0srnfwm"
-						title="CV"><i class="fa-regular fa-file"></i></a
-					></span
+<BlankLayout title={title}>
+    <slot />
+	<footer class="grid">
+		<div>
+			<span>
+				<a
+					href="https://www.linkedin.com/in/nicolas-de-gheselle-1437a1167/"
+					><i class="fa-brands fa-linkedin"></i></a
 				>
-				<p>
-					Made with love by myself <i class="fa-regular fa-heart"></i>
-				</p>
-			</div>
-
-		</footer>
-	</body>
-</html>
+				<a href="https://github.com/ndegheselle"
+					><i class="fa-brands fa-github"></i></a
+				>
+				<a
+					href="https://profile.indeed.com/p/nicolasd-0srnfwm"
+					title="CV"><i class="fa-regular fa-file"></i></a
+				></span
+			>
+			<p>
+				Made with love by myself <i class="fa-regular fa-heart"></i>
+			</p>
+		</div>
+	</footer>
+</BlankLayout>
 
 <style>
-	footer {
-		background-color: var(--color-background-more-2);
-		height: 10rem;
-		margin-top: 2rem !important;
-		padding-top: 2rem;
-		text-align: center;
-		color: var(--color-midground);
-	}
+    footer {
+        background-color: var(--color-background-more-2);
+        height: 10rem;
+        margin-top: 2rem !important;
+        padding-top: 2rem;
+        text-align: center;
+        color: var(--color-midground);
+    }
 
-	footer a {
-		font-size: 1.2rem;
-	}
+    footer a {
+        font-size: 1.2rem;
+    }
 </style>

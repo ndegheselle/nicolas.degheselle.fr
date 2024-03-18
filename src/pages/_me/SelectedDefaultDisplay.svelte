@@ -2,7 +2,7 @@
     import Card from "../../components/Card.svelte";
     import { selectedStore } from "./MeStore";
     import { onMount } from "svelte";
-    import me from "../../content/me.json";
+    import skills from "../../content/skills.json";
 
     function canPreview(store) {
         return store?.options?.target === "other" && store.data;
@@ -11,13 +11,13 @@
     onMount(() => {
         document.querySelectorAll("[data-select-target]").forEach((el) => {
             console.log(
-                me.others[el.dataset.selectTarget],
+                skills.others[el.dataset.selectTarget],
                 el.dataset.selectTarget,
-                me.others,
+                skills.others,
             );
             el.classList.add("selectable");
             el.addEventListener("mouseenter", (e) => {
-                selectedStore.select(me.others[el.dataset.selectTarget], [el], {
+                selectedStore.select(skills.others[el.dataset.selectTarget], [el], {
                     target: "other",
                 });
             });
@@ -26,7 +26,7 @@
             });
             el.addEventListener("click", (e) => {
                 e.stopPropagation();
-                selectedStore.select(me.others[el.dataset.selectTarget], [el], {
+                selectedStore.select(skills.others[el.dataset.selectTarget], [el], {
                     target: "other",
                     isLocked: true,
                 });

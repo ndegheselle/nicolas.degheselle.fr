@@ -8,7 +8,7 @@ import Experimentations from "./_components/Experimentations.svelte";
 import DesktopSvg from "./desktop.svg?raw";
 import HobbiesSvg from "./hobbies.svg?raw";
 
-import me from "../../content/me.json";
+import skills from "../../content/skills.json";
 ---
 
 <h2 class="giant-title is-overlapping fil-ariane-balise" id="title-what">
@@ -29,12 +29,12 @@ import me from "../../content/me.json";
 
 <SelectedDefaultDisplay client:idle />
 <div id="me-container">
-    <Library knowledges={me.knowledges} client:idle client:only />
+    <Library knowledges={skills.knowledges} client:idle client:only />
     <div class="svg-container">
         <div class="experimental-container">
             <Experimentations
                 client:idle
-                experimentations={me.experimentations}
+                experimentations={skills.experimentations}
             />
         </div>
         <div class="desktop-container">

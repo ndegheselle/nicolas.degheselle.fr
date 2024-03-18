@@ -1,0 +1,11 @@
+---
+import BlankLayout from "@layouts/BlankLayout.astro";
+import CV from "./CV.svelte";
+
+import me from "../../content/me.json";
+import jobs from "../../content/jobs.json";
+---
+
+<BlankLayout title="CV - Nicolas De gheselle">
+    <CV {jobs} {me} />
+</BlankLayout>

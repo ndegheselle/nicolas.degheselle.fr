@@ -6,7 +6,7 @@
 <h2 class="giant-title is-overlapping fil-ariane-balise" id="title-projects">Projects!</h2>
 <div class="grid with-gutter">
     {#each projects as project}
-        <div class="col is-3 on-sm-is-12 stretch-container">
+        <div class="col is-3 on-sm-is-12">
             <Card>
                 <div slot="title" class="project-card-title">
                     <h3>{project.name}</h3>

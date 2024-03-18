@@ -1,18 +1,12 @@
 <script>
-    import Card from "../../components/Card.svelte";
+    import Card from "@components/Card.svelte";
+    import { formatDates } from "@components/utils.js";
     import { SVG } from "@svgdotjs/svg.js";
     import { onMount } from "svelte";
 
     function selectJob(_job) {
         if (_job == null) return;
         selectedJob = _job;
-    }
-
-    function formatDate(timestamp) {
-        return new Date(timestamp).toLocaleDateString(undefined, {
-            year: "numeric",
-            month: "long",
-        }).replace(/^\w/, c => c.toUpperCase());
     }
 
     onMount(() => {
@@ -79,16 +73,15 @@
         {#if selectedJob}
             <Card>
                 <div slot="title" class="is-text-centered">
-                    <h3>{selectedJob.company}</h3>
-                    <b>
-                        {selectedJob.location}
-                    </b>
+                    <h3>{selectedJob.title}</h3>
+                    <span class="subtitle">
+                        {selectedJob.company} - {selectedJob.location}
+                    </span>
                     <p class="date">
-                        {formatDate(selectedJob.startingDate)} -
-                        {formatDate(selectedJob.endingDate)}
+                        {formatDates(selectedJob.startingDate, selectedJob.endingDate)}
                     </p>
                 </div>
-                <p class="description">{@html selectedJob.description}</p>
+                <p>{@html selectedJob.description}</p>
             </Card>
         {/if}
     </div>
