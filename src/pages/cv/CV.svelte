@@ -1,7 +1,18 @@
 <script>
     import { formatDate, formatDates } from "@components/utils.js";
 
+    function isDifferenceMoreThanFiveMonths(date1, date2) {
+        date2 = date2 || new Date();
+        var differenceInMilliseconds = Math.abs(
+            new Date(date1) - new Date(date2),
+        );
+        var differenceInMonths =
+            differenceInMilliseconds / (1000 * 60 * 60 * 24 * 30.44); // Average number of days in a month
+        return differenceInMonths > 5;
+    }
+
     export let jobs = [];
+    export let skills = {};
     export let me = {};
 </script>
 
@@ -21,29 +32,33 @@
 
 <main class="container">
     <div class="grid is-auto">
-        <h2 class="col is-auto">Expérience professionnelle</h2>
+        <h2 class="col is-auto">Work Experience</h2>
         <span class="col is-separator"></span>
     </div>
 
     <section class="part">
         {#each jobs as job}
-            <div class="grid is-auto">
-                <div class="col is-1 on-md-is-12">
-                    <span class="subtitle">
-                        {formatDates(job.startingDate, job.endingDate)}
-                    </span>
+            {#if isDifferenceMoreThanFiveMonths(job.startingDate, job.endingDate)}
+                <div class="grid is-auto">
+                    <div class="col is-1 on-md-is-12">
+                        <span class="subtitle">
+                            {formatDates(job.startingDate, job.endingDate)}
+                        </span>
+                    </div>
+                    <div class="col is-content">
+                        <h3>{job.title}</h3>
+                        <span class="subtitle"
+                            >{job.company} - {job.location}</span
+                        >
+                        <p>{@html job.description}</p>
+                    </div>
                 </div>
-                <div class="col is-content">
-                    <h3>{job.title}</h3>
-                    <span class="subtitle">{job.company} - {job.location}</span>
-                    <p>{@html job.shortDescription}</p>
-                </div>
-            </div>
+            {/if}
         {/each}
     </section>
 
     <div class="grid is-auto">
-        <h2 class="col is-auto">Éducation</h2>
+        <h2 class="col is-auto">Education</h2>
         <span class="col is-separator"></span>
     </div>
 
@@ -61,13 +76,10 @@
         </div>
     {/each}
 
-    <div class="grid is-auto">
-        <h2 class="col is-auto">Compétences</h2>
-        <span class="col is-separator"></span>
-    </div>
+
 
     <div class="grid is-auto">
-        <h2 class="col is-auto">Cértifications et licenses</h2>
+        <h2 class="col is-auto">Certifications and Licenses</h2>
         <span class="col is-separator"></span>
     </div>
     {#each me.certifications as certification}
@@ -83,31 +95,42 @@
             </div>
         </div>
     {/each}
+
+    <div class="grid is-auto">
+        <h2 class="col is-auto">Skills</h2>
+        <span class="col is-separator"></span>
+    </div>
+
+    <div class="grid skills">
+        {#each skills as skill}
+            <div class="col is-3">
+                <span class="subtitle">{skill.title}</span>
+                <div class="tags">
+                    {#each skill.items as tag}
+                        <span class="tag">{tag}</span>
+                    {/each}
+                </div>
+            </div>
+        {/each}
+    </div>
 </main>
 
 <style>
-
-@media print {
-    :global(html)
-    {
-    font-size: 16px;
+    @media print {
+        :global(html) {
+            font-size: 16px;
+        }
     }
-}
-
 
     header {
         background: var(--color-background-more-2);
         padding: 1rem;
+        margin-bottom: 1rem;
     }
 
     .main-header {
         border-bottom: 0.2rem var(--color-primary-less) solid;
         border-top: 0.2rem var(--color-primary-less) solid;
-        padding: 1rem 0;
-    }
-
-    .container {
-        padding: 1rem;
     }
 
     h1,
@@ -123,6 +146,10 @@
         margin-right: 0.2rem;
     }
 
+    .skills, .is-content  {
+        padding-bottom: 0.6rem;
+    }
+
     .contacts {
         display: flex;
         flex-direction: column;
@@ -132,12 +159,19 @@
 
     .is-content {
         border-left: 0.1rem solid var(--color-background-more-1);
+        margin-left: 0.2rem;
         padding-left: 0.6rem;
-        padding-bottom: 0.6rem;
     }
 
     .is-separator {
         border-top: 0.1rem solid var(--color-background-more-1);
-        margin-left: 1rem;
+        margin: 0 0.8rem;
+    }
+
+    .tag {
+        background: var(--color-background-more-1);
+        padding: 0.2rem 0.8rem;
+        border-radius: 0.2rem;
+        margin-right: 0.1rem;
     }
 </style>

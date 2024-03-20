@@ -1,0 +1,16 @@
+{
+    "main": [
+        {
+            "title": "Languages",
+            "items": ["C++", "C#"]
+        },
+        {
+            "title": "Frameworks",
+            "items": ["Qt", "WPF"]
+        },
+        {
+            "title": "Frameworks",
+            "items": ["Qt", "WPF"]
+        }
+    ]
+}

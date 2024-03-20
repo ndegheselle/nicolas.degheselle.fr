@@ -4,8 +4,9 @@ import CV from "./CV.svelte";
 
 import me from "../../content/me.json";
 import jobs from "../../content/jobs.json";
+import skills from "../../content/skillsProfiles.json";
 ---
 
 <BlankLayout title="CV - Nicolas De gheselle">
-    <CV {jobs} {me} />
+    <CV client:idle skills={skills.main} {jobs} {me} />
 </BlankLayout>
