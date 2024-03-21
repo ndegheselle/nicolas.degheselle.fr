@@ -6,8 +6,7 @@
       "company": "INSA, laboratoire ICube",
       "location": "Strasbourg (67)",
       "title": "IT developer internship",
-      "description": "Creation of tools to help the laboratory's researchers. Development of an Electron.js interface to simplify the scrapping of scientific article abstracts from multiple sources. Used Keras, Tensorflow and Scikit-Learn to train an AI model for accurate classification of articles and propose potential solutions using TRIZ methodology.",
-      "shortDescription": "Electron.js interface and machine learning tools with Keras, Tensorflow, and Scikit-Learn for scientific classification."
+      "description": "Creation of tools to help the laboratory's researchers. Development of an Electron.js interface to simplify the scrapping of scientific article abstracts from multiple sources. Used Keras, Tensorflow and Scikit-Learn to train an AI model for accurate classification of articles and propose potential solutions using TRIZ methodology."
     },
     {
       "isInternship": true,
@@ -16,8 +15,7 @@
       "company": "ITS Future",
       "location": "Strasbourg (67)",
       "title": "IT developer internship",
-      "description": "Maintenance and enhancement of a web and mobile application, applying Agile and SCRUM methodologies. Use of Angular.ts for the frontend, Spring (Java EE) for the backend, and Ionic for the mobile application. Creation of an API using Nest.js and Puppeteer.",
-      "shortDescription": "Maintained and enhanced a web and mobile app with SCRUM methodologies and using Angular.ts, Spring, Ionic, Nest.js, and Puppeteer."
+      "description": "Maintenance and enhancement of a web and mobile application, applying Agile and SCRUM methodologies. Use of Angular.ts for the frontend, Spring (Java EE) for the backend, and Ionic for the mobile application. Creation of an API using Nest.js and Puppeteer."
     },
     {
       "isInternship": true,
@@ -26,15 +24,13 @@
       "company": "AnyDesk",
       "location": "Stuttgart (Germany)",
       "title": "IT developer internship",
-      "description": "Contributed to the development of a high-performance remote desktop application created with C++. Design and implementation of specialized software for reading application logs, with the possibility of loading logs from remote computers. Enhancement of the in-house graphics and IPC library.",
-      "shortDescription": "Developed and enhanced a high-performance C++ remote desktop application, designed a specialized log-reading software, and improved an in-house graphics and IPC library."
+      "description": "Contributed to the development of a high-performance remote desktop application created with C++. Design and implementation of specialized software for reading application logs, with the possibility of loading logs from remote computers. Enhancement of the in-house graphics and IPC library."
     },
     {
       "startingDate": "2022-02-01",
       "company": "3MA Group",
       "location": "Rouffach (68)",
       "title": "Analyst Developer",
-      "description": "Work as an analyst developer using Agile and SCRUM methodologies. Development of desktop and mobile applications, websites and APIs using Microsoft technologies (C#, WPF, ASP). <br/>My responsibilities include:<ul><li>Takeover and maintenance of existing applications, with ongoing user support. Improving and upgrading these applications where possible.</li><li>Design and development of new projects in response to customer needs, carrying out a complete analysis and integration of existing tools and processes.</li><li>Enhancement and creation of shared libraries between the company's various projects, with standardization of styles and components used.</li></ul>",
-      "shortDescription": "As an analyst developer, I utilize Agile and SCRUM methodologies to maintain and enhance existing applications, design new projects based on customer needs, and create shared libraries for standardization, using Microsoft technologies for desktop, mobile, web, and API development."
+      "description": "Worked as an analyst developer using Agile and SCRUM methodologies. Developed desktop and mobile applications, websites and APIs using Microsoft technologies (C#, WPF, ASP). <br/>My responsibilities included:<ul><li>Takeover and maintenance of existing applications, with ongoing user support. Improving and upgrading these applications where possible.</li><li>Design and development of new projects in response to customer needs, carrying out a complete analysis and integration of existing tools and processes.</li><li>Enhancement and creation of shared libraries between the company's various projects, with standardization of styles and components used.</li></ul>"
     }
 ]

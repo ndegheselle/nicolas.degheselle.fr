@@ -12,5 +12,9 @@
             "title": "Frameworks",
             "items": ["Qt", "WPF"]
         }
-    ]
+    ],
+    "test": {
+        "tags": ["C++", "C#"],
+        "items": ["Qt", "WPF"]
+    }
 }

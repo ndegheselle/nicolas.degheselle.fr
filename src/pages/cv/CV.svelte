@@ -37,7 +37,7 @@
     </div>
 
     <section class="part">
-        {#each jobs as job}
+        {#each [...jobs].reverse() as job}
             {#if isDifferenceMoreThanFiveMonths(job.startingDate, job.endingDate)}
                 <div class="grid is-auto">
                     <div class="col is-1 on-md-is-12">
@@ -76,7 +76,27 @@
         </div>
     {/each}
 
+    <div class="grid is-auto">
+        <h2 class="col is-auto">Skills</h2>
+        <span class="col is-separator"></span>
+    </div>
 
+    <div class="grid is-auto">
+        <div class="col is-1 on-md-is-12">
+        </div>
+        <div class="col is-content">
+            <div class="tags">
+                {#each skills.tags as tag}
+                    <span class="tag">{tag}</span>
+                {/each}
+            </div>
+            <ul>
+            {#each skills.items as item}
+            <li>{item}</li>
+            {/each}
+            </ul>
+        </div>
+    </div>
 
     <div class="grid is-auto">
         <h2 class="col is-auto">Certifications and Licenses</h2>
@@ -95,24 +115,6 @@
             </div>
         </div>
     {/each}
-
-    <div class="grid is-auto">
-        <h2 class="col is-auto">Skills</h2>
-        <span class="col is-separator"></span>
-    </div>
-
-    <div class="grid skills">
-        {#each skills as skill}
-            <div class="col is-3">
-                <span class="subtitle">{skill.title}</span>
-                <div class="tags">
-                    {#each skill.items as tag}
-                        <span class="tag">{tag}</span>
-                    {/each}
-                </div>
-            </div>
-        {/each}
-    </div>
 </main>
 
 <style>
@@ -146,10 +148,6 @@
         margin-right: 0.2rem;
     }
 
-    .skills, .is-content  {
-        padding-bottom: 0.6rem;
-    }
-
     .contacts {
         display: flex;
         flex-direction: column;
@@ -161,6 +159,7 @@
         border-left: 0.1rem solid var(--color-background-more-1);
         margin-left: 0.2rem;
         padding-left: 0.6rem;
+        padding-bottom: 0.6rem;
     }
 
     .is-separator {
