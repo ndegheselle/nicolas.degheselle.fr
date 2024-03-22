@@ -24,13 +24,13 @@
       "company": "AnyDesk",
       "location": "Stuttgart (Germany)",
       "title": "IT developer internship",
-      "description": "Contributed to the development of a high-performance remote desktop application created with C++. Design and implementation of specialized software for reading application logs, with the possibility of loading logs from remote computers. Enhancement of the in-house graphics and IPC library."
+      "description": "Contributed to the development of a high-performance remote desktop application (AnyDesk) created with C++, Win32, SDL2 and DirectX. The company focus on making optimized and in house code by using the least external libraries possible.<ul><li>Design and developpement of an application to read logs from the AnyDesk application, enabling remote loading of log files to facilitate debugging by developers.</li><li>Creation of low-level graphical components using the company's custom library. Testing and fixing bugs in the internal IPC and graphic libraries.</li></ul>"
     },
     {
       "startingDate": "2022-02-01",
       "company": "3MA Group",
       "location": "Rouffach (68)",
       "title": "Analyst Developer",
-      "description": "Worked as an analyst developer using Agile and SCRUM methodologies. Developed desktop and mobile applications, websites and APIs using Microsoft technologies (C#, WPF, ASP). <br/>My responsibilities included:<ul><li>Takeover and maintenance of existing applications, with ongoing user support. Improving and upgrading these applications where possible.</li><li>Design and development of new projects in response to customer needs, carrying out a complete analysis and integration of existing tools and processes.</li><li>Enhancement and creation of shared libraries between the company's various projects, with standardization of styles and components used.</li></ul>"
+      "description": "Worked as an analyst developer using Agile and SCRUM methodologies. Developed desktop and mobile applications, websites and APIs using Microsoft technologies (C#, WPF, ASP).<br/><ul><li>Conception et création d'une application métier de traitement de fichier PDF et de tris postaux. Facilité et automatisé les traitements, regroupés différents logiciels et services en une interface unique.</li><li>Mise a niveau, maintenance et amélioration d'applications existantes utilisant un large éventaille de technologies. Comprendre les besoins métier et utilisateur et intégration de fonctionnalités dans l'ecosysteme existant</li><li>Mise en place de librairies et standards afin d'uniformiser et simplifier le développment de projets. Recherche et test de nouvelles technologies.</li></ul>"
     }
 ]

@@ -18,7 +18,7 @@
 
 <header class="container">
     <div class="grid is-auto">
-        <div class="col main-header is-8">
+        <div class="col main-header is-8 is-content">
             <h1>Nicolas DE GHESELLE</h1>
             <p>{me.description}</p>
         </div>
@@ -75,29 +75,7 @@
             </div>
         </div>
     {/each}
-
-    <div class="grid is-auto">
-        <h2 class="col is-auto">Skills</h2>
-        <span class="col is-separator"></span>
-    </div>
-
-    <div class="grid is-auto">
-        <div class="col is-1 on-md-is-12">
-        </div>
-        <div class="col is-content">
-            <div class="tags">
-                {#each skills.tags as tag}
-                    <span class="tag">{tag}</span>
-                {/each}
-            </div>
-            <ul>
-            {#each skills.items as item}
-            <li>{item}</li>
-            {/each}
-            </ul>
-        </div>
-    </div>
-
+    
     <div class="grid is-auto">
         <h2 class="col is-auto">Certifications and Licenses</h2>
         <span class="col is-separator"></span>
@@ -115,6 +93,28 @@
             </div>
         </div>
     {/each}
+
+    <div class="grid is-auto">
+        <h2 class="col is-auto">Skills</h2>
+        <span class="col is-separator"></span>
+    </div>
+    {#each skills as skill}
+    <div class="grid skills">
+        <div class="col is-1 on-md-is-12">
+            <span class="subtitle">
+                {skill.title}
+            </span>
+        </div>
+        <div class="col is-content">
+            <div class="tags">
+                {#each skill.items as tag}
+                    <span class="tag">{tag}</span>
+                {/each}
+            </div>
+        </div>
+
+    </div>
+ {/each}
 </main>
 
 <style>
@@ -125,7 +125,7 @@
     }
 
     header {
-        background: var(--color-background-more-2);
+        background: var(--color-background-more-1);
         padding: 1rem;
         margin-bottom: 1rem;
     }
@@ -155,6 +155,10 @@
         text-align: right;
     }
 
+    .skills .is-content {
+        padding-bottom: 0;
+    }
+
     .is-content {
         border-left: 0.1rem solid var(--color-background-more-1);
         margin-left: 0.2rem;
@@ -168,9 +172,11 @@
     }
 
     .tag {
+        display: inline-block;
         background: var(--color-background-more-1);
         padding: 0.2rem 0.8rem;
         border-radius: 0.2rem;
         margin-right: 0.1rem;
+        margin-bottom: 0.1rem;
     }
 </style>

@@ -142,7 +142,6 @@
                             ]
                         },
                         {
-                            "containerClass": "ml-auto",
                             "title": "MongoDB",
                             "description": " Should be used more often for large dataset that are not requiring relationships.",
                             "volumes": [

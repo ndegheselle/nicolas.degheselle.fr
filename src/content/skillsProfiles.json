@@ -2,19 +2,15 @@
     "main": [
         {
             "title": "Languages",
-            "items": ["C++", "C#"]
+            "items": ["C#","C++","HTML5 / CSS3 / ECMAScript6","MSSQL / MySQL"]
         },
         {
             "title": "Frameworks",
-            "items": ["Qt", "WPF"]
+            "items": ["WPF","Maui","VueJS","SveltKit",".NET Asp","Node.js","Nginx"]
         },
         {
-            "title": "Frameworks",
-            "items": ["Qt", "WPF"]
+            "title": "Tools",
+            "items": ["Git","Scrum & Agile","Troubleshooting","Docker","REST"]
         }
-    ],
-    "test": {
-        "tags": ["C++", "C#"],
-        "items": ["Qt", "WPF"]
-    }
+    ]
 }
