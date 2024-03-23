@@ -414,5 +414,25 @@
             "title": "Network",
             "description": "Aside from programming I also studied networtking and security, from deployment to supervision."
         }
+    },
+    "profiles": {
+        "main": [
+            {
+                "title": "Languages",
+                "items": ["C#","C++","HTML5 / CSS3 / ECMAScript6","MSSQL / MySQL"]
+            },
+            {
+                "title": "Frameworks",
+                "items": ["WPF","Maui","VueJS","SveltKit",".NET Asp","Node.js"]
+            },
+            {
+                "title": "Practices",
+                "items": ["Scrum & Agile","Troubleshooting", "Git", "REST"]
+            },
+            {
+                "title": "Environments",
+                "items": ["Docker","Nginx"]
+            }
+        ]
     }
 }

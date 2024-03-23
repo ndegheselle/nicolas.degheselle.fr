@@ -18,7 +18,7 @@
 
 <header class="container">
     <div class="grid is-auto">
-        <div class="col main-header is-8 is-content">
+        <div class="col main-header is-9 is-content">
             <h1>Nicolas DE GHESELLE</h1>
             <p>{me.description}</p>
         </div>
@@ -47,9 +47,9 @@
                     </div>
                     <div class="col is-content">
                         <h3>{job.title}</h3>
-                        <span class="subtitle"
-                            >{job.company} - {job.location}</span
-                        >
+                        <span class="subtitle">
+                            {job.company} - {job.location}
+                        </span>
                         <p>{@html job.description}</p>
                     </div>
                 </div>
@@ -75,7 +75,27 @@
             </div>
         </div>
     {/each}
-    
+
+    <div class="grid is-auto">
+        <h2 class="col is-auto">Skills</h2>
+        <span class="col is-separator"></span>
+    </div>
+
+        <div class="grid">
+            <div class="col is-1 on-md-is-12">
+            </div>
+            <div class="col is-content">
+                {#each skills as skill}
+                <div class="tags">
+                    {#each skill.items as tag}
+                        <span class="tag">{tag}</span>
+                    {/each}
+                </div>
+                {/each}
+            </div>
+
+        </div>
+
     <div class="grid is-auto">
         <h2 class="col is-auto">Certifications and Licenses</h2>
         <span class="col is-separator"></span>
@@ -93,34 +113,12 @@
             </div>
         </div>
     {/each}
-
-    <div class="grid is-auto">
-        <h2 class="col is-auto">Skills</h2>
-        <span class="col is-separator"></span>
-    </div>
-    {#each skills as skill}
-    <div class="grid skills">
-        <div class="col is-1 on-md-is-12">
-            <span class="subtitle">
-                {skill.title}
-            </span>
-        </div>
-        <div class="col is-content">
-            <div class="tags">
-                {#each skill.items as tag}
-                    <span class="tag">{tag}</span>
-                {/each}
-            </div>
-        </div>
-
-    </div>
- {/each}
 </main>
 
 <style>
     @media print {
         :global(html) {
-            font-size: 16px;
+            font-size: 15px;
         }
     }
 
@@ -155,15 +153,11 @@
         text-align: right;
     }
 
-    .skills .is-content {
-        padding-bottom: 0;
-    }
-
     .is-content {
         border-left: 0.1rem solid var(--color-background-more-1);
         margin-left: 0.2rem;
         padding-left: 0.6rem;
-        padding-bottom: 0.6rem;
+        padding-bottom: 0.4rem;
     }
 
     .is-separator {

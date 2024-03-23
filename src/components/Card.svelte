@@ -20,5 +20,6 @@
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
         border: 1px solid var(--color-midground-less);
+        height: 100%;
     }
 </style>

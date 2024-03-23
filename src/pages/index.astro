@@ -31,8 +31,7 @@ import FilAriane from "../components/FilAriane.svelte";
 <Layout title="Nicolas De gheselle">
 
   <button id="changeTheme" class="with-icon">
-    <i class="fa-solid fa-moon"></i>
-    <i class="fa-solid fa-sun"></i>
+    <i class="fa-solid fa-circle"></i>
   </button>
 
   <MainTitle />
@@ -56,22 +55,12 @@ import FilAriane from "../components/FilAriane.svelte";
     z-index: 100;
     background-color: transparent;
     border: none;
-    overflow: hidden;
     height: 2rem;
     width: 2rem;
     color: var(--color-foreground-low);
-    cursor: pointer;
-  }
-  #changeTheme i {
-    position: absolute;
-    transition: 0.3s;
-    transform-origin: bottom center;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     font-size: 1.4rem;
   }
+
   body[data-theme="dark"] #changeTheme .fa-moon {
     transform: rotate(180deg);
   }
