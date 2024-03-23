@@ -11,9 +11,13 @@
 </div>
 
 <style>
+    hr {
+        max-width: 10rem;
+    }
+
     .card {
         padding: 0.4rem 0.6rem;
-
+        text-align: center;
         background-color: rgba(var(--color-foreground), 0.8);
         border-radius: 0.2rem;
         box-shadow: 0 0 20px var(--color-midground-less);

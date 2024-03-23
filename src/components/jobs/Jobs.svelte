@@ -1,6 +1,6 @@
 <script>
     import Card from "@components/Card.svelte";
-    import { formatDates } from "@components/utils.js";
+    import { formatDates } from "@base/utils.js";
     import { SVG } from "@svgdotjs/svg.js";
     import { onMount } from "svelte";
 
@@ -10,7 +10,12 @@
     }
 
     onMount(() => {
-        const draw = SVG(svg).viewbox(0, 0, WIDTH, HEIGHT + EXTERIOR_SPACING * 2);
+        const draw = SVG(svg).viewbox(
+            0,
+            0,
+            WIDTH,
+            HEIGHT + EXTERIOR_SPACING * 2,
+        );
 
         let totalDuration = 0;
         for (let i = 0; i < jobs.length; i++) {
@@ -34,11 +39,11 @@
                 .addClass("timeline-bar")
                 .addClass(job.isInternship ? "is-internship" : "is-job")
                 .on("mouseenter", () => {
-                        selectJob(job);
-                    })
-                    .click((e) => {
-                        selectJob(job);
-                    });
+                    selectJob(job);
+                })
+                .click((e) => {
+                    selectJob(job);
+                });
 
             x += width + SPACING / 2;
             draw.circle(HEIGHT)
@@ -56,15 +61,12 @@
     let svg = null;
     $: selectedJob = jobs[jobs.length - 1];
     export let jobs = [];
+    
 </script>
-
-<h2 class="giant-title is-overlapping fil-ariane-balise" id="title-where">
-    Where?
-</h2>
 
 <div class="grid">
     <div class="col is-6 on-sm-is-12">
-    <svg class="timeline" bind:this={svg} width="100%"></svg>
+        <svg class="timeline" bind:this={svg} width="100%"></svg>
     </div>
 </div>
 
@@ -72,22 +74,29 @@
     <div class="col is-6 on-sm-is-12">
         {#if selectedJob}
             <Card>
-                <div slot="title" class="is-text-centered">
+                <div slot="title">
                     <h3>{selectedJob.title}</h3>
                     <span class="subtitle">
                         {selectedJob.company} - {selectedJob.location}
                     </span>
                     <p class="date">
-                        {formatDates(selectedJob.startingDate, selectedJob.endingDate)}
+                        {formatDates(
+                            selectedJob.startingDate,
+                            selectedJob.endingDate,
+                        )}
                     </p>
                 </div>
-                <p>{@html selectedJob.description}</p>
+                <p class="job-description">{@html selectedJob.description}</p>
             </Card>
         {/if}
     </div>
 </div>
 
 <style>
+    .job-description {
+        text-align: left;
+    }
+
     :global(.timeline .is-background) {
         fill: var(--color-background-more-2);
     }

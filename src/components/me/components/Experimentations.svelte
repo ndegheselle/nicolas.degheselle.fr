@@ -2,7 +2,7 @@
     import { SVG } from "@svgdotjs/svg.js";
     import { onMount } from "svelte";
     import { selectedStore } from "../MeStore.js";
-    import clickOutside from "@components/clickOutside.js";
+    import clickOutside from "@base/clickOutside.js";
 
     onMount(() => {
         const draw = SVG(svg);
@@ -104,7 +104,7 @@
             href="javascript:void(0)"
             on:click|stopPropagation={selectExplanation}
         >
-            Some experimentation
+            {experimentations.title}
         </a>
     </span>
 </div>

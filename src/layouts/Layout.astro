@@ -1,11 +1,14 @@
 ---
 import BlankLayout from './BlankLayout.astro';
+import { useTranslations } from "@i18n/utils";
 
 interface Props {
 	title: string;
 }
 
+const { lang } = Astro.params;
 const { title } = Astro.props;
+const t = useTranslations(lang);
 ---
 <BlankLayout title={title}>
     <slot />
@@ -20,12 +23,12 @@ const { title } = Astro.props;
 					><i class="fa-brands fa-github"></i></a
 				>
 				<a
-					href="https://profile.indeed.com/p/nicolasd-0srnfwm"
+					href="cv"
 					title="CV"><i class="fa-regular fa-file"></i></a
 				></span
 			>
 			<p>
-				Made with love by myself <i class="fa-regular fa-heart"></i>
+				{t('footer.text')} <i class="fa-regular fa-heart"></i>
 			</p>
 		</div>
 	</footer>

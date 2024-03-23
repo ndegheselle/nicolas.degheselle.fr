@@ -1,0 +1,439 @@
+{
+    "knowledges": {
+        "title": "Connaissances",
+        "description": "Liste des technologies que je connais et que j'ai utilisées dans des projets.",
+        "contents": [
+            [
+                {
+                    "tag": "Langages",
+                    "books": [
+                        {
+                            "title": "C++",
+                            "description": "J'aime beaucoup. Un grand contrôle sur les ressources, on ne peut pas faire quelque chose de mal sans le savoir. Peut être difficile à compiler et à déboguer parfois.",
+                            "volumes": [
+                                "Gestion de la mémoire",
+                                "Modèles",
+                                "Win32"
+                            ]
+                        },
+                        {
+                            "title": "Java",
+                            "description": "Utile. J'aime le fait que l'on puisse avoir des méthodes et des propriétés sur les énumérations. Un peu trop verbeux pour moi.",
+                            "volumes": [
+                                "POO"
+                            ]
+                        },
+                        {
+                            "title": "C#",
+                            "description": "Mon langage de prédilection. Moins lourd que Java, mais toujours multiplateforme, syntaxe claire, facile à utiliser, facile à déboguer, facile à compiler, facile à déployer.",
+                            "volumes": [
+                                "Threads",
+                                "Réflexion",
+                                "Injection de dépendances"
+                            ]
+                        },
+                        {
+                            "title": "Python",
+                            "description": "Sympa si vous voulez quelque chose qui fonctionne rapidement, facile à démarrer/utiliser, beaucoup de bibliothèques facilement accessibles. J'aime tous les petits raccourcis de syntaxe.",
+                            "volumes": [
+                                "Modules"
+                            ]
+                        },
+                        {
+                            "title": "TypeScript",
+                            "description": "Et aussi JavaScript. Tout est facile à faire, y compris faire de mauvais choix de conception. Les promesses sont une douleur.",
+                            "volumes": [
+                                "Bibliothèques",
+                                "Programmation dynamique",
+                                "Promesses"
+                            ]
+                        },
+                        {
+                            "title": "HTML/CSS",
+                            "description": "Il fait bien son travail, encore plus lorsque vous commencez à le comparer à d'autres langages de balisage (XAML ?).",
+                            "volumes": [
+                                "Mise en page",
+                                "Adaptatif",
+                                "Shadow DOM"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tag": "Applications web",
+                    "books": [
+                        {
+                            "title": "Astro.js",
+                            "description": "Permet d'utiliser plusieurs technologies dans un même projet. Tout à fait d'accord pour rendre le site aussi léger que possible et séparer ce qui est statique et dynamique.",
+                            "volumes": [
+                                "Flexibilité et indépendance de l'interface utilisateur",
+                                "MPA"
+                            ]
+                        },
+                        {
+                            "title": "Webpack",
+                            "description": "Permet de regrouper proprement et de séparer correctement tout. Devrait être utilisé sur chaque projet moyen et grand.",
+                            "volumes": [
+                                "Rechargement à chaud",
+                                "Regroupement",
+                                "Propre et minifié"
+                            ]
+                        },
+                        {
+                            "title": "Vite",
+                            "description": "Plus simple et plus rapide que webpack. Je l'aime vraiment :)",
+                            "volumes": [
+                                "Serveur de développement"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "tag": "Frontend web",
+                    "books": [
+                        {
+                            "title": "Vuejs",
+                            "description": "Un bon équilibre entre complexité et simplicité. Rapide, léger et avec toutes les options dont vous aurez besoin pour une application de taille moyenne ou grande.",
+                            "volumes": [
+                                "Composants",
+                                "SPA",
+                                "Bindings"
+                            ]
+                        },
+                        {
+                            "title": "Angular",
+                            "description": "Bien structuré mais plus complexe que Vuejs, fait quand même très bien le travail.",
+                            "volumes": [
+                                "Robuste"
+                            ]
+                        },
+                        {
+                            "title": "SvelteKit",
+                            "description": "Très intéressant, rapide, bonne syntaxe et efficace, une façon simple de faire les choses. Rarement été aussi satisfait par un framework.",
+                            "volumes": [
+                                "Simple",
+                                "Efficace",
+                                "Rapide"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tag": "Bases de données",
+                    "books": [
+                        {
+                            "title": "MySQL",
+                            "description": "Rien de spécial à dire à son sujet (ce qui est un compliment en quelque sorte).",
+                            "volumes": [
+                                "Relations",
+                                "Indexation",
+                                "Procédures et vues"
+                            ]
+                        },
+                        {
+                            "title": "SQL Server",
+                            "description": "Fonctionne aussi bien que MySQL mais avec la touche Microsoft.",
+                            "volumes": [
+                                "Relations",
+                                "Indexation",
+                                "Procédures et vues"
+                            ]
+                        },
+                        {
+                            "title": "MongoDB",
+                            "description": "Devrait être utilisé plus souvent pour les ensembles de données volumineux qui ne nécessitent pas de relations.",
+                            "volumes": [
+                                "Flexibilité",
+                                "Scalabilité"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tag": "IA",
+                    "books": [
+                        {
+                            "title": "Keras",
+                            "description": "Possède de nombreux modèles, assez facile à utiliser, je recommande.",
+                            "volumes": [
+                                "Prétraitement",
+                                "Modèles"
+                            ]
+                        },
+                        {
+                            "title": "Tensorflow",
+                            "description": "Bon moyen bien documenté de commencer à faire des réseaux neuronaux et plus généralement de l'apprentissage automatique.",
+                            "volumes": [
+                                "Réseau neuronal"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tag": "Environnement",
+                    "books": [
+                        {
+                            "title": "Docker",
+                            "description": "Pratique pour créer des environnements de développement complets. Facilite le déploiement, la restauration et l'équilibrage de charge des serveurs.",
+                            "volumes": [
+                                "Conteneurs",
+                                "Déploiement",
+                                "Microservices"
+                            ]
+                        }
+                    ]
+                }
+            ]
+            ,
+            [
+                {
+                    "tag": "Multiplateforme",
+                    "books": [
+                        {
+                            "title": "Maui",
+                            "description": "Beaucoup moins de support que Flutter (Microsoft n'a créé aucune application officielle avec). Encore beaucoup de problèmes différents à résoudre. En théorie, c'est l'avenir du développement d'applications.",
+                            "volumes": [
+                                "Multiplateforme",
+                                "Codebase unique",
+                                "Déploiement"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tag": "Bureau",
+                    "books": [
+                        {
+                            "title": "WPF",
+                            "description": "Bonne façon de séparer l'interface utilisateur de la logique. La syntaxe XAML est personnellement un peu lourde.",
+                            "volumes": [
+                                "Convertisseurs",
+                                "MVVM",
+                                "Parties de ControlTemplate"
+                            ]
+                        },
+                        {
+                            "title": "JavaFX",
+                            "description": "Si vous avez besoin de créer une application multiplateforme sans trop de travail, c'est un bon choix. Remplace clairement Swing.",
+                            "volumes": [
+                                "Interface utilisateur moderne"
+                            ]
+                        },
+                        {
+                            "containerClass": "ml-auto",
+                            "title": "SDL2",
+                            "description": "La bibliothèque graphique standard en C++. Agréable à utiliser avec OpenGL, mais certains choix de conception discutables lorsque vous creusez vraiment en profondeur.",
+                            "volumes": [
+                                "Graphiques",
+                                "Entrées",
+                                "Audio"
+                            ]
+                        },
+                        {
+                            "title": "SFML",
+                            "description": "Beaucoup plus facile à utiliser que SDL2, avec les mêmes fonctionnalités. Excellent moyen de commencer le développement de jeux.",
+                            "volumes": [
+                                "Graphiques",
+                                "Tableaux de sommets"
+                            ]
+                        },
+                        {
+                            "title": "Electron",
+                            "description": "La seule solution mature si vous avez besoin d'une application de bureau multiplateforme avec des technologies web. Elle a tendance à prendre beaucoup d'espace et de ressources.",
+                            "volumes": [
+                                "Développement facile et rapide"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tag": "Backend web",
+                    "books": [
+                        {
+                            "title": ".NET ASP (Framework / Core)",
+                            "description": "Parfois un peu trop magique pour moi (j'aime définir clairement les routes, avec la méthode HTTP, la route et les paramètres). Le passage du Framework à Core a été douloureux. Sinon, ça fonctionne très bien.",
+                            "volumes": [
+                                "Middlewares",
+                                "SignalR",
+                                "Blazor"
+                            ]
+                        },
+                        {
+                            "title": "Laravel",
+                            "description": "Le bon équilibre entre facilité d'utilisation et puissance. La documentation est excellente, l'architecture de base du projet m'a beaucoup appris.",
+                            "volumes": [
+                                "Gestion de l'authentification",
+                                "Blade",
+                                "Artisan"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "tag": "Serveur Web",
+                    "books": [
+                        {
+                            "title": "Nginx",
+                            "description": "Rapide et performant, je n'ai jamais rencontré de situation où j'ai été limité par lui lors du développement.",
+                            "volumes": [
+                                "Mise en cache",
+                                "Équilibrage de charge",
+                                "Proxy inverse"
+                            ]
+                        },
+                        {
+                            "title": "Apache",
+                            "description": "Fonctionne aussi bien que Nginx, mais la configuration peut être compliquée pour des configurations complexes.",
+                            "volumes": [
+                                "Sous-domaines"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tag": "API Web",
+                    "books": [
+                        {
+                            "title": "Node.js",
+                            "description": "Vaste écosystème avec de nombreux frameworks intéressants. Facilite le développement fullstack.",
+                            "volumes": [
+                                "npm",
+                                "CORS",
+                                "REST"
+                            ]
+                        },
+                        {
+                            "title": "Express.js",
+                            "description": "Framework pratique pour créer une API sur Node.js, dispose de nombreux plugins intéressants.",
+                            "volumes": [
+                                "Routing",
+                                "Authentification",
+                                "Middlewares"
+                            ]
+                        },
+                        {
+                            "title": "Fastify.js",
+                            "description": "Excellente alternative à Express.js, plus rapide et facile à utiliser.",
+                            "volumes": [
+                                "Autoload"
+                            ]
+                        },
+                        {
+                            "title": "Lumen",
+                            "description": "Très pratique pour créer des API avec PHP, n'est pas conçu pour héberger un site web.",
+                            "volumes": [
+                                "API"
+                            ]
+                        },
+                        {
+                            "title": "Slim",
+                            "description": "Idéal pour créer de petites API ou des sites web avec PHP sans les inconvénients des gros frameworks.",
+                            "volumes": [
+                                "API"
+                            ]
+                        },
+                        {
+                            "title": "Swagger",
+                            "description": "Rapide à configurer et facile à utiliser. Devrait être utilisé sur chaque API pour la documentation.",
+                            "volumes": [
+                                "OpenAPI",
+                                "REST API"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        ]
+    },
+    "experimentations": {
+        "title": "Expérimentations",
+        "description": "Liste des technologies sur lesquelles j'ai expérimenté, mais sans réaliser un projet complet.",
+        "contents": [
+            [
+                {
+                    "title": "rust",
+                    "description": "Paradigme différent de ce que je connais. Syntaxe particulière, besoin de temps pour s'y habituer."
+                },
+                {
+                    "title": "Kotlin",
+                    "description": "J'aime ce qu'ils ont fait avec le langage, cela prend du temps pour s'y habituer mais je vois comment cela peut faire gagner beaucoup de temps (encore plus par rapport à Java)."
+                },
+                {
+                    "title": "Swift",
+                    "description": "Beau langage, beaucoup de fonctionnalités intéressantes, j'aime beaucoup le concept de storyboard. Le seul inconvénient est qu'il est uniquement pour Apple."
+                }
+            ],
+            [
+                {
+                    "title": "Tauri",
+                    "description": "Belle alternative à Electron, mais encore en développement précoce (la documentation est insuffisante et certaines options manquent)."
+                },
+                {
+                    "title": "Flutter",
+                    "description": "Concept intéressant, API / fonctionnalités complètes et de nombreux plugins. Je ne suis pas vraiment fan du fait qu'il soit très facile de mélanger la logique et l'interface utilisateur."
+                },
+                {
+                    "title": "Avalonia UI",
+                    "description": "Semble être ce que MAUI devrait être."
+                },
+                {
+                    "title": "Cordova",
+                    "description": "C'est pénible à utiliser, mais c'est le seul moyen de créer une application multiplateforme (y compris mobile) avec des technologies web.",
+                    "level": 1
+                },
+                {
+                    "title": "Ionic",
+                    "description": "Cordova sans les inconvénients de Cordova. Beaucoup de composants pré-construits intéressants."
+                }
+            ],
+            [
+                {
+                    "title": "React",
+                    "description": "Je ne comprends pas pourquoi il est autant utilisé. Il y a 5 façons différentes de faire n'importe quoi et autant de façons de le faire de travers. La syntaxe est lourde (Dieu nous préserve de JSX et des états)."
+                },
+                {
+                    "title": "Nuxt",
+                    "description": "Je l'ai essayé juste après la sortie de la version 3, donc pas beaucoup de documentation. Sinon, j'aime bien le concept (ça vaut vraiment la peine) !"
+                }
+            ]
+        ]
+    },
+    "others": {
+        "books": {
+            "title": "Livres",
+            "description": "J'aime lire ici et là, surtout de la fantasy et de la science-fiction."
+        },
+        "outdoor": {
+            "title": "Sortir en plein air",
+            "description": "J'aime faire de la randonnée, à vélo ou à pied. Récemment, j'ai essayé du motocross électrique, c'est le véhicule le plus amusant que j'ai jamais utilisé :)"
+        },
+        "network": {
+            "title": "Réseau",
+            "description": "En plus de la programmation, j'ai également étudié le réseau et la sécurité, du déploiement à la supervision."
+        }
+    },
+    "profiles": {
+        "main": [
+            {
+                "title": "Languages",
+                "items": ["C#","C++","HTML5 / CSS3 / ECMAScript6","MSSQL / MySQL"]
+            },
+            {
+                "title": "Frameworks",
+                "items": ["WPF","Maui","VueJS","SveltKit",".NET Asp","Node.js"]
+            },
+            {
+                "title": "Pratiques",
+                "items": ["Scrum & Agile","Troubleshooting", "Git", "REST"]
+            },
+            {
+                "title": "Environnements",
+                "items": ["Docker","Nginx"]
+            }
+        ]
+    }
+}

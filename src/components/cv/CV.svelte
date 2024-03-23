@@ -1,5 +1,5 @@
 <script>
-    import { formatDate, formatDates } from "@components/utils.js";
+    import { formatDate, formatDates } from "@base/utils.js";
 
     function isDifferenceMoreThanFiveMonths(date1, date2) {
         date2 = date2 || new Date();
@@ -119,6 +119,11 @@
     @media print {
         :global(html) {
             font-size: 15px;
+            margin: 2rem;
+        }
+
+        :global(.side-menu) {
+            display: none;
         }
     }
 

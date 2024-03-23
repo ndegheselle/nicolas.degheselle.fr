@@ -1,7 +1,7 @@
 <script>
     import Bookshelf from "./Bookshelf.svelte";
     import { selectedStore } from "../MeStore.js";
-    import clickOutside from "@components/clickOutside.js";
+    import clickOutside from "@base/clickOutside.js";
 
     function canPreview(store) {
         return store.options.target == "book" && store.data;
@@ -138,7 +138,7 @@
             href="javascript:void(0)"
             on:click|stopPropagation={selectExplanation}
         >
-            My library of knowledge
+            {knowledges.title}
         </a>
     </span>
 </div>

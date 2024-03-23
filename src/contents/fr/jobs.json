@@ -1,0 +1,36 @@
+[
+    {
+      "startingDate": "2019-04-01",
+      "endingDate": "2019-06-01",
+      "isInternship": true,
+      "company": "INSA, laboratoire ICube",
+      "location": "Strasbourg (67)",
+      "title": "Stage de développement informatique",
+      "description": "Création d'outils pour aider les chercheurs du laboratoire. Développement d'une interface Electron.js pour simplifier le scraping des résumés d'articles scientifiques provenant de sources multiples. Utilisation de Keras, Tensorflow et Scikit-Learn pour entraîner un modèle d'IA pour la classification précise des articles et proposer des solutions potentielles en utilisant la méthodologie TRIZ."
+    },
+    {
+      "isInternship": true,
+      "startingDate": "2020-01-01",
+      "endingDate": "2020-04-01",
+      "company": "ITS Future",
+      "location": "Strasbourg (67)",
+      "title": "Stage de développement informatique",
+      "description": "Maintenance et amélioration d'une application web et mobile, en appliquant les méthodologies Agile et SCRUM. Utilisation d'Angular.ts pour le frontend, Spring (Java EE) pour le backend et Ionic pour l'application mobile. Création d'une API en utilisant Nest.js et Puppeteer."
+    },
+    {
+      "isInternship": true,
+      "startingDate": "2020-09-01",
+      "endingDate": "2021-04-01",
+      "company": "AnyDesk",
+      "location": "Stuttgart (Allemagne)",
+      "title": "Stage de développement informatique",
+      "description": "Contribution au développement d'une application de bureau à distance haute performance (AnyDesk) créée avec C++, Win32, SDL2 et DirectX. L'entreprise se concentre sur la création de code optimisé et interne en utilisant le moins de bibliothèques externes possible.<ul><li>Conception et développement d'une application pour lire les journaux de l'application AnyDesk, permettant le chargement à distance des fichiers journaux pour faciliter le débogage par les développeurs.</li><li>Création de composants graphiques de bas niveau en utilisant la bibliothèque personnalisée de l'entreprise. Test et correction des bugs dans les bibliothèques IPC et graphiques internes.</li></ul>"
+    },
+    {
+      "startingDate": "2022-02-01",
+      "company": "3MA Group",
+      "location": "Rouffach (68)",
+      "title": "Analyst Developer",
+      "description": "Analyste développeur utilisant les méthodologies Agile et SCRUM. Développement d'applications bureautiques et mobiles, de sites web et d'API à l'aide des technologies Microsoft (C#, WPF, ASP).<br/><ul><li>Conception et création d'une application métier de traitement de fichier PDF et de tris postaux. Facilité et automatisé les traitements, regroupés différents logiciels et services en une interface unique.</li><li>Mise a niveau, maintenance et amélioration d'applications existantes utilisant un large éventaille de technologies. Comprendre les besoins métier et utilisateur et intégration de fonctionnalités dans l'ecosysteme existant.</li><li>Mise en place de librairies et standards afin d'uniformiser et simplifier le développment de projets. Recherche et test de nouvelles technologies.</li></ul>"
+    }
+]

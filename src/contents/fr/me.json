@@ -1,0 +1,36 @@
+{
+    "description": "Ingénieur logiciel hautement qualifié avec un diplôme d'ingénieur et deux ans d'expérience. Spécialisé dans le développement d'applications full-stack et desktop. Engagé à créer des solutions maintenables qui tirent parti du code existant. Axé sur une architecture de code concise, simple et découplée. Compétent dans une gamme diversifiée de technologies et de frameworks. Passionné par la livraison de produits de haute qualité répondant aux besoins des utilisateurs tout en garantissant la scalabilité et l'efficacité.",
+    "guidelines": [
+        {
+            "title": "Simplicité et élégance",
+            "description": "Création de code clair et élégant, implémentation de fonctionnalités complexes de manière directe pour faciliter la maintenance."
+        },
+        {
+            "title": "Approche itérative et Agile",
+            "description": "Adoption d'un processus de développement itératif et Agile pour parvenir à des solutions durables tout en répondant efficacement aux besoins des clients."
+        },
+        {
+            "title": "Exploitation des ressources existantes",
+            "description": "Maximisation de l'efficacité en utilisant des outils et des connaissances existants, favorisant une perspective globale lors du développement."
+        }
+    ],
+    "certifications": [
+        {
+            "name": "TOEIC",
+            "date": "2021-01-01",
+            "description": "Avec un score de 990"
+        },
+        {
+            "name": "CCNA",
+            "date": "2020-09-01",
+            "description": "CCNA 2 : Commutation, Routage et Essentiels"
+        }
+    ],
+    "educations": [
+        {
+            "name": "Master en Informatique",
+            "date": "2022-09-01",
+            "description": "Spécialisé en développement Logiciel à CESI - Strasbourg (67)"
+        }
+    ]
+}

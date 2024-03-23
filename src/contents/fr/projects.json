@@ -1,0 +1,22 @@
+[
+    
+    {
+        "name": "SmackMaHead",
+        "url": "https://github.com/Poulpynateur/perso-gamejam-1D",
+        "pictureUrl": "https://github.com/Poulpynateur/perso-gamejam-1D/blob/main/game.gif?raw=true",
+        "description": "Un jeu simple en C++ créé en 1 semaine à partir de rien avec SFML et OpenGL."
+    },
+    {
+        "name": "Application soundboard WPF",
+        "url": "https://github.com/ndegheselle/MeNoisy-soundboard",
+        "pictureUrl": "https://github.com/ndegheselle/MeNoisy-soundboard/blob/main/images/preview.gif?raw=true",
+        "description": "Soundboard WPF utilisée pour jouer des sons sur n'importe quel périphérique audio. Créée avec C# et WPF."
+    },
+    
+    {
+        "name": "Comptabilité",
+        "url": "https://github.com/ndegheselle/MePloutos-accountancy",
+        "pictureUrl": "https://github.com/ndegheselle/MePloutos-accountancy/blob/main/_images/screenshoot-1.png?raw=true",
+        "description": "Application de comptabilité personnelle qui fonctionne comme une PWA et une application multiplateforme. Créée avec SvelteKit et Tauri."
+    }
+]

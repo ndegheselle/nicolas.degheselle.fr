@@ -1,15 +1,18 @@
 ---
 import "../scss/styles.scss";
+import { getLangFromUrl } from "@i18n/utils";
+import { languages } from "@i18n/ui";
 
 interface Props {
 	title: string;
 }
 
+const lang = getLangFromUrl(Astro.url);
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -30,6 +33,46 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body data-theme="light">
+		<div class="side-menu">
+			<button id="changeTheme">
+			<i class="fa-solid fa-circle"></i>
+		</button>
+			<a href={`/${lang == 'en' ? 'fr' : 'en'}/`}>
+				{(lang == 'en' ? languages['fr'] : languages['en'] )}
+			</a>
+		</div>
 		<slot />
 	</body>
+
+	<script>
+		const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+		if (darkThemeMq.matches) {
+			document.body.dataset.theme = "dark";
+		}
+
+		document.getElementById("changeTheme").addEventListener("click", () => {
+			document.body.dataset.theme =
+				document.body.dataset.theme === "light" ? "dark" : "light";
+		});
+	</script>
 </html>
+
+<style>
+	.side-menu {
+		position: fixed;
+		top: 0rem;
+		right: 0.2rem;
+		z-index: 100;
+
+		flex-direction: column;
+		display: flex;
+  		align-items: center;
+	}
+
+	#changeTheme {
+		background-color: transparent;
+		border: none;
+		color: var(--color-foreground-low);
+		font-size: 1.4rem;
+	}
+</style>

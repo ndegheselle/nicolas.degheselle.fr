@@ -1,33 +1,35 @@
 ---
 import Search from "./Search.svelte";
 import SelectedDefaultDisplay from "./SelectedDefaultDisplay.svelte";
-import Card from "../../components/Card.svelte";
+import Card from "@components/Card.svelte";
 
-import Library from "./_components/Library.svelte";
-import Experimentations from "./_components/Experimentations.svelte";
+import Library from "./components/Library.svelte";
+import Experimentations from "./components/Experimentations.svelte";
 import DesktopSvg from "./desktop.svg?raw";
 import HobbiesSvg from "./hobbies.svg?raw";
+import { useTranslations } from "@i18n/utils";
 
-import skills from "../../content/skills.json";
+const { lang } = Astro.params;
+const skills = await import(`../../contents/${lang}/skills.json`);
+const t = useTranslations(lang);
 ---
 
 <h2 class="giant-title is-overlapping fil-ariane-balise" id="title-what">
-    Me?
+    {t('title.me')}
 </h2>
 
 <div class="grid">
     <div class="col is-6 on-sm-is-12">
         <Card>
             <p class="is-text-centered">
-                What I do, what technologies I uses and so on. You can search
-                something specific there or just hover and select at your will !
+                {t('me.explanation')}
             </p>
             <Search client:idle client:only />
         </Card>
     </div>
 </div>
 
-<SelectedDefaultDisplay client:idle />
+<SelectedDefaultDisplay otherSkills={skills.others} client:idle />
 <div id="me-container">
     <Library knowledges={skills.knowledges} client:idle client:only />
     <div class="svg-container">
@@ -47,7 +49,7 @@ import skills from "../../content/skills.json";
 </div>
 
 <style is:global lang="scss">
-    @import "../../scss/gracile/variables.scss";
+    @import "@scss/gracile/variables.scss";
 
     .desktop-container {
         display: flex;

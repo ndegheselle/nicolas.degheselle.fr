@@ -1,0 +1,44 @@
+---
+import Layout from "@layouts/Layout.astro";
+import FilAriane from "@components/FilAriane.svelte";
+
+import Projects from "@components/projects/Projects.svelte";
+import Jobs from "@components/jobs/Jobs.svelte";
+import Me from "@components/me/Me.astro";
+
+import MainTitle from "@components/presentation/MainTitle.astro";
+import Presentation from "@components/presentation/Presentation.astro";
+
+import { languages } from "@i18n/ui";
+import { useTranslations } from "@i18n/utils";
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const jobs = (await import(`../../contents/${lang}/jobs.json`)).default;
+const projects = (await import(`../../contents/${lang}/projects.json`)).default;
+
+const t = useTranslations(lang);
+---
+
+<Layout title="Nicolas De gheselle">
+  <MainTitle />
+
+  <FilAriane client:idle />
+  <main class="container fil-ariane-tracking">
+    <Presentation />
+
+    <h2 class="giant-title is-overlapping fil-ariane-balise" id="title-where">
+      {t("title.where")}
+    </h2>
+    <Jobs {jobs} client:idle />
+
+    <h2 class="giant-title is-overlapping fil-ariane-balise" id="title-projects">
+      {t("title.projects")}
+    </h2>
+    <Projects {projects} />
+    <Me />
+  </main>
+</Layout>
