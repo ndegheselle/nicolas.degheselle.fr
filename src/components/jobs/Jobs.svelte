@@ -112,7 +112,7 @@
     }
 
     :global(.timeline .timeline-bar.is-internship) {
-        fill: var(--color-primary-low);
+        fill: var(--color-primary-less);
     }
 
     :global(.timeline .timeline-bar.is-job) {

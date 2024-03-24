@@ -1,0 +1,233 @@
+/*#region svg colors*/
+svg {
+    --color-back-low: var(--color-background-more-1);
+    --color-back: var(--color-background-more-2);
+    --color-front-low: var(--color-midground-less);
+    --color-front: var(--color-midground);
+
+    --color-primary-low: var(--color-primary-less);
+    transition: 0.3s;
+}
+
+svg .selectable {
+    cursor: grab;
+}
+
+svg .selectable>* {
+    transition: 0.3s;
+}
+
+svg .selectable.is-background.is-active,
+svg .selectable.is-background.is-selected {
+    --color-back-low: var(--color-primary);
+    --color-back: var(--color-primary-low);
+}
+
+svg .selectable.is-active,
+svg .selectable.is-search-result {
+    --color-front-low: var(--color-primary-low);
+    --color-front: var(--color-primary);
+}
+
+svg .selectable.is-selected {
+    --color-front-low: var(--color-primary);
+    --color-front: var(--color-primary-low);
+}
+
+// General purpose classes
+.color-background {
+    fill: var(--color-background);
+}
+
+.color-back-low {
+    fill: var(--color-back-low);
+    stroke: var(--color-back-low);
+}
+
+.color-back {
+    fill: var(--color-back);
+    stroke: var(--color-back);
+}
+
+/*#endregion*/
+
+/*#region Selectable infos popup **/
+.selectable-display {
+    width: 100%;
+    max-width: 24rem;
+    left: 50%;
+    position: fixed;
+    bottom: 0;
+    transition: 0.3s;
+    z-index: 100;
+    transform: translate(-50%, 100%);
+}
+
+.selectable-display.preview {
+    transform: translate(-50%, 65%);
+}
+
+.selectable-display.full {
+    transform: translate(-50%, 10%);
+}
+
+.selectable-display .background {
+    width: 100%;
+    max-width: 100vw;
+}
+
+.selectable-display .content-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.selectable-display .content-container .content {
+    margin: 4rem;
+    text-align: center;
+}
+
+@media screen and (max-width: $breakpoint-md) {
+    .selectable-display .content-container .content {
+        margin: 4rem 2rem;
+    }
+}
+
+.selectable-display .content h1 {
+    margin: 0;
+}
+
+.selectable-display .content hr {
+    margin: 0.4rem 5rem;
+}
+
+/*#endregion*/
+
+/*#region Search*/
+.search-text {
+    transition: 0.3s;
+    font-family: Teko;
+    font-weight: 300;
+    fill: var(--color-midground-more);
+    opacity: 0;
+}
+
+.is-searching .search-text {
+    opacity: 1;
+}
+
+.me-tag {
+    margin-top: 0.4rem;
+    margin-bottom: 0.2rem;
+    display: inline-block;
+    padding: 0 0.4rem;
+    text-align: center;
+    border: 1px solid var(--color-midground);
+    border-radius: 0.2rem;
+    background-color: var(--color-background-more-1);
+}
+
+/*#endregion*/
+
+/*#region Layout*/
+.desktop-container {
+    display: flex;
+}
+
+.desktop-container svg {
+    margin-top: auto;
+    width: 100%;
+    height: auto;
+    transform: translateY(-2rem);
+}
+
+.hobby-container svg {
+    width: auto;
+    height: 100%;
+    transform: translateY(-2rem);
+    margin-left: auto;
+}
+
+.svg-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+@media screen and (max-width: $breakpoint-md) {
+    .svg-container {
+        display: block;
+    }
+}
+
+.svg-container .experimental-container {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.svg-container .desktop-container {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.svg-container .hobby-container {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/*#endregion*/
+
+/*#region Book special style*/
+.book-volume.is-selected {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.book-cover,
+.book-markings,
+.book-border {
+    transition: 0.3s;
+}
+
+.book-cover {
+    fill: var(--color-background);
+    stroke: var(--color-front);
+}
+
+.book-border {
+    fill: var(--color-front-low);
+    stroke: var(--color-front-low);
+}
+
+.book-markings {
+    fill: var(--color-front);
+}
+
+.book-paper {
+    fill: #fefefe;
+}
+
+.book-paper-line {
+    fill: #ddd;
+    stroke: #ddd;
+}
+
+.book .top {
+    transition: 0.3s;
+    transform: scaleY(0);
+}
+
+.book {
+    transition: 0.3s;
+}
+
+.book:hover .top {
+    transform: scaleY(1);
+}
+
+.book:hover {
+    transform: translateY(8px);
+}
+
+/*#endregion*/
