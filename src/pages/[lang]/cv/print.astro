@@ -15,22 +15,9 @@ const skills = await import(`../../../contents/${lang}/skills.json`);
 ---
 
 <BlankLayout title="CV - Nicolas De gheselle">
-  <a slot="side-menu" href="cv/print">
-    <i class="fa-solid fa-print"></i>
-  </a>
-  <div class="container page">
     <CV client:idle skills={skills.profiles.main} {jobs} {me} />
-  </div>
 </BlankLayout>
 
-<style>
-  .page {
-    margin-top: 0.4rem;
-    margin-bottom: 0.4rem;
-    padding: 0;
-    max-width: 50rem;
-    border-radius: 0.6rem;
-    border: 1px solid var(--color-midground);
-    overflow: hidden;
-  }
-</style>
+<script>
+    window.print();
+</script>

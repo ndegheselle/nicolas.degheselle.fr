@@ -16,7 +16,7 @@
     export let me = {};
 </script>
 
-<header class="container">
+<header>
     <div class="grid is-auto">
         <div class="col main-header is-9 is-content">
             <h1>Nicolas DE GHESELLE</h1>
@@ -30,7 +30,7 @@
     </div>
 </header>
 
-<main class="container">
+<main>
     <div class="grid is-auto">
         <h2 class="col is-auto">Work Experience</h2>
         <span class="col is-separator"></span>
@@ -119,9 +119,7 @@
     @media print {
         :global(html) {
             font-size: 15px;
-            margin: 2rem;
         }
-
         :global(.side-menu) {
             display: none;
         }
@@ -129,13 +127,16 @@
 
     header {
         background: var(--color-background-more-1);
-        padding: 1rem;
-        margin-bottom: 1rem;
+        padding: 3rem 3rem 1rem 3rem;
     }
 
     .main-header {
         border-bottom: 0.2rem var(--color-primary-less) solid;
         border-top: 0.2rem var(--color-primary-less) solid;
+    }
+
+    main {
+        margin: 1rem 3rem;
     }
 
     h1,
