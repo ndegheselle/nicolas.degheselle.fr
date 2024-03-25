@@ -413,6 +413,14 @@
         "network": {
             "title": "Network",
             "description": "Aside from programming I also studied networtking and security, from deployment to supervision."
+        },
+        "software-blender": {
+            "title": "Blender",
+            "description": "I do some 3d design occasionally, I used a lot Blender game engine then that was a thing."
+        },
+        "software-unreal": {
+            "title": "Unreal engine",
+            "description": "I am starting to look more and more into this game engine (mostly to do some C++)."
         }
     },
     "profiles": {

@@ -229,5 +229,34 @@ svg .selectable.is-selected {
 .book:hover {
     transform: translateY(8px);
 }
+/*#endregion*/
 
+/*#region Experimental*/
+.pin {
+    fill: var(--color-back-low);
+}
+
+.text,
+.folded-corner,
+.paper {
+    transition: 0.3s;
+}
+
+.text,
+.folded-corner {
+    fill: var(--color-front);
+}
+
+.paper {
+    fill: var(--color-front-low);
+}
+
+.experimentation-result {
+    transition: 0.3s;
+}
+
+.experimentation-result.is-selected {
+    opacity: 0;
+    pointer-events: none;
+}
 /*#endregion*/

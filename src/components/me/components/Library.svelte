@@ -2,6 +2,7 @@
     import Bookshelf from "./Bookshelf.svelte";
     import { selectedStore } from "../MeStore.js";
     import clickOutside from "@base/clickOutside.js";
+    import svgDefs from "../svgs/books-defs.svg?raw";
 
     function canPreview(store) {
         return store.options.target == "book" && store.data;
@@ -29,108 +30,7 @@
 </script>
 
 <!-- Books elements defs -->
-<svg display="none" viewBox="0 0 20 100">
-    <defs>
-        <g id="book-top">
-            <rect width="20" height="26" class="book-border" rx="4" />
-            <rect width="14" height="22" x="3" class="book-paper" />
-            <rect width="14" height="3" x="3" y="-1" class="color-background" />
-        </g>
-
-        <g id="book-1" class="book">
-            <g class="front" transform="translate(0,20)">
-                <rect width="20" height="80" class="book-border" rx="4" />
-                <rect
-                    width="10"
-                    height="60"
-                    x="5"
-                    y="10"
-                    class="book-markings"
-                />
-            </g>
-            <use href="#book-top" class="top" transform-origin="10 22" />
-        </g>
-
-        <g id="book-2" class="book">
-            <g class="front" transform="translate(0,20)">
-                <rect width="20" height="80" class="book-border" rx="4" />
-                <rect
-                    width="16"
-                    height="10"
-                    x="2"
-                    y="10"
-                    class="book-markings"
-                />
-                <rect
-                    width="16"
-                    height="10"
-                    x="2"
-                    y="60"
-                    class="book-markings"
-                />
-            </g>
-            <use href="#book-top" class="top" transform-origin="10 22" />
-        </g>
-
-        <g id="book-3" class="book">
-            <g class="front" transform="translate(0,20)">
-                <rect width="20" height="80" class="book-border" rx="4" />
-                <rect
-                    width="12"
-                    height="10"
-                    x="4"
-                    y="15"
-                    class="book-markings"
-                />
-                <rect
-                    width="12"
-                    height="10"
-                    x="4"
-                    y="30"
-                    class="book-markings"
-                />
-                <rect
-                    width="12"
-                    height="10"
-                    x="4"
-                    y="45"
-                    class="book-markings"
-                />
-            </g>
-            <use href="#book-top" class="top" transform-origin="10 22" />
-        </g>
-
-        <g id="book-4" class="book">
-            <g class="front" transform="translate(0,20)">
-                <rect width="20" height="80" class="book-border" rx="4" />
-                <rect
-                    width="4"
-                    height="45"
-                    x="5"
-                    y="12"
-                    class="book-markings"
-                />
-                <rect
-                    width="4"
-                    height="35"
-                    x="10"
-                    y="22"
-                    class="book-markings"
-                />
-                <rect
-                    width="12"
-                    height="10"
-                    x="4"
-                    y="60"
-                    class="book-markings"
-                />
-            </g>
-            <use href="#book-top" class="top" transform-origin="10 22" />
-        </g>
-    </defs>
-
-    <use href="#book-2" />
-</svg>
+{@html svgDefs}
 
 <div class="grid">
     <span class="me-tag">
