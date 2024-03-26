@@ -6,7 +6,7 @@
             <rect width="14" height="3" x="3" y="-1" class="color-background" />
         </g>
 
-        <g id="book-1" class="book">
+        <g id="book-1">
             <g class="front" transform="translate(0,20)">
                 <rect width="20" height="80" class="book-border" rx="4" />
                 <rect
@@ -17,10 +17,10 @@
                     class="book-markings"
                 />
             </g>
-            <use href="#book-top" class="top" transform-origin="10 22" />
+            <use href="#book-top" class="book-top" transform-origin="10 22" />
         </g>
 
-        <g id="book-2" class="book">
+        <g id="book-2">
             <g class="front" transform="translate(0,20)">
                 <rect width="20" height="80" class="book-border" rx="4" />
                 <rect
@@ -38,10 +38,10 @@
                     class="book-markings"
                 />
             </g>
-            <use href="#book-top" class="top" transform-origin="10 22" />
+            <use href="#book-top" class="book-top" transform-origin="10 22" />
         </g>
 
-        <g id="book-3" class="book">
+        <g id="book-3">
             <g class="front" transform="translate(0,20)">
                 <rect width="20" height="80" class="book-border" rx="4" />
                 <rect
@@ -66,10 +66,10 @@
                     class="book-markings"
                 />
             </g>
-            <use href="#book-top" class="top" transform-origin="10 22" />
+            <use href="#book-top" class="book-top" transform-origin="10 22" />
         </g>
 
-        <g id="book-4" class="book">
+        <g id="book-4">
             <g class="front" transform="translate(0,20)">
                 <rect width="20" height="80" class="book-border" rx="4" />
                 <rect
@@ -94,7 +94,7 @@
                     class="book-markings"
                 />
             </g>
-            <use href="#book-top" class="top" transform-origin="10 22" />
+            <use href="#book-top" class="book-top" transform-origin="10 22" />
         </g>
     </defs>
 

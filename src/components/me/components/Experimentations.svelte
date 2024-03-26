@@ -78,7 +78,11 @@
                 title: experimentations.title,
                 description: experimentations.description,
             },
-            [experimentationBackground],
+            Array.from(
+                document.querySelectorAll(
+                    ".svg-experimentations-board .selectable.is-background",
+                ),
+            ),
             {
                 target: "other",
                 isLocked: true,
@@ -96,7 +100,6 @@
     const PAPER_WIDTH = 20;
 
     let svgContainer;
-    let experimentationBackground;
     export let experimentations = {};
 </script>
 

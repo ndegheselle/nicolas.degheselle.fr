@@ -115,7 +115,19 @@
     {/each}
 </main>
 
-<style>
+<style lang="scss">
+    @import "../../scss/gracile/variables.scss";
+
+    @media screen and (max-width: $breakpoint-md) {
+        header {
+            padding: 1rem !important;
+        }
+
+        main {
+            margin: 1rem !important;
+        }
+    }
+
     @media print {
         :global(html) {
             font-size: 15px;

@@ -213,21 +213,20 @@ svg .selectable.is-selected {
     stroke: #ddd;
 }
 
-.book .top {
+.book-volume {
     transition: 0.3s;
-    transform: scaleY(0);
+    // Using CSS variable because of shadowdom
+    --book-top-scale: 0;
 }
 
-.book {
+.book-top{
     transition: 0.3s;
+    transform: scaleY(var(--book-top-scale));
 }
 
-.book:hover .top {
-    transform: scaleY(1);
-}
-
-.book:hover {
+.book-volume:hover {
     transform: translateY(8px);
+    --book-top-scale: 1;
 }
 /*#endregion*/
 

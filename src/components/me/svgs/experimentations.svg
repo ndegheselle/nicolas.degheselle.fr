@@ -1,4 +1,4 @@
-<svg width="100%" viewBox="0 0 200 100">
+<svg width="100%" viewBox="0 0 200 100" class="svg-experimentations-board">
     <defs>
         <g id="experimentation-paper">
             <path
@@ -140,7 +140,6 @@
     <g>
         <rect
             class="selectable is-background"
-            bind:this={experimentationBackground}
             x="0"
             y="0"
             width="200"
