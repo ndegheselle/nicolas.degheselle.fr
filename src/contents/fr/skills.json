@@ -415,25 +415,5 @@
             "title": "Réseau",
             "description": "En plus de la programmation, j'ai également étudié le réseau et la sécurité, du déploiement à la supervision."
         }
-    },
-    "profiles": {
-        "main": [
-            {
-                "title": "Languages",
-                "items": ["C#","C++","HTML5 / CSS3 / ECMAScript6","MSSQL / MySQL"]
-            },
-            {
-                "title": "Frameworks",
-                "items": ["WPF","Maui","VueJS","SveltKit",".NET Asp","Node.js"]
-            },
-            {
-                "title": "Pratiques",
-                "items": ["Scrum & Agile","Troubleshooting", "Git", "REST"]
-            },
-            {
-                "title": "Environnements",
-                "items": ["Docker","Nginx"]
-            }
-        ]
     }
 }

@@ -12,7 +12,7 @@
     }
 
     export let jobs = [];
-    export let skills = {};
+    export let profile = {};
     export let me = {};
 </script>
 
@@ -20,7 +20,7 @@
     <div class="grid is-auto">
         <div class="col main-header is-9 is-content">
             <h1>Nicolas DE GHESELLE</h1>
-            <p>{me.description}</p>
+            <p>{ profile.description || me.description}</p>
         </div>
         <span class="col contacts">
             <a href="mailto:nicolas@degheselle.fr">nicolas@degheselle.fr</a>
@@ -85,7 +85,7 @@
             <div class="col is-1 on-md-is-12">
             </div>
             <div class="col is-content">
-                {#each skills as skill}
+                {#each profile.skills as skill}
                 <div class="tags">
                     {#each skill.items as tag}
                         <span class="tag">{tag}</span>

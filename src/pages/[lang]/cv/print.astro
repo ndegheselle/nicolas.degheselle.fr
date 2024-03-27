@@ -11,11 +11,11 @@ export async function getStaticPaths() {
 const { lang } = Astro.params;
 const me = await import(`../../../contents/${lang}/me.json`);
 const jobs = (await import(`../../../contents/${lang}/jobs.json`)).default;
-const skills = await import(`../../../contents/${lang}/skills.json`);
+const profiles = await import(`../../../contents/${lang}/profiles.json`);
 ---
 
 <BlankLayout title="CV - Nicolas De gheselle">
-    <CV client:idle skills={skills.profiles.main} {jobs} {me} />
+    <CV client:idle profile={profiles.resologi} {jobs} {me} />
 </BlankLayout>
 
 <script>
