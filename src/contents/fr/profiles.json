@@ -15,7 +15,7 @@
             },
             {
                 "title": "Environments",
-                "items": ["Docker","Nginx"]
+                "items": ["Docker", "Nginx", "Cybersecurity"]
             }
         ]
     },
@@ -35,7 +35,7 @@
             },
             {
                 "title": "Environments",
-                "items": ["Docker","Nginx"]
+                "items": ["Docker","Nginx", "Cybersecurity"]
             }
         ]
     }
