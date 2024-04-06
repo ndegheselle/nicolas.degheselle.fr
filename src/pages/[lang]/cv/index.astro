@@ -19,7 +19,7 @@ const profiles = await import(`../../../contents/${lang}/profiles.json`);
     <i class="fa-solid fa-print"></i>
   </a>
   <div class="container page">
-    <CV client:idle profile={profiles.main} {jobs} {me} />
+    <CV client:idle profile={profiles.main} {jobs} {me} {lang}/>
   </div>
 </BlankLayout>
 

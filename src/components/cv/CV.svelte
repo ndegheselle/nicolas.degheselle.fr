@@ -1,5 +1,6 @@
 <script>
     import { formatDate, formatDates } from "@base/utils.js";
+    import { useTranslations } from "@i18n/utils";
 
     function isDifferenceMoreThanFiveMonths(date1, date2) {
         date2 = date2 || new Date();
@@ -14,6 +15,9 @@
     export let jobs = [];
     export let profile = {};
     export let me = {};
+    export let lang = "";
+    const t = useTranslations(lang);
+
 </script>
 
 <header>
@@ -32,7 +36,7 @@
 
 <main>
     <div class="grid is-auto">
-        <h2 class="col is-auto">Work Experience</h2>
+        <h2 class="col is-auto">{t("cv.experience")}</h2>
         <span class="col is-separator"></span>
     </div>
 
@@ -58,7 +62,7 @@
     </section>
 
     <div class="grid is-auto">
-        <h2 class="col is-auto">Education</h2>
+        <h2 class="col is-auto">{t("cv.education")}</h2>
         <span class="col is-separator"></span>
     </div>
 
@@ -77,7 +81,7 @@
     {/each}
 
     <div class="grid is-auto">
-        <h2 class="col is-auto">Skills</h2>
+        <h2 class="col is-auto">{t("cv.skills")}</h2>
         <span class="col is-separator"></span>
     </div>
 
@@ -97,7 +101,7 @@
         </div>
 
     <div class="grid is-auto">
-        <h2 class="col is-auto">Certifications and Licenses</h2>
+        <h2 class="col is-auto">{t("cv.certifications")}</h2>
         <span class="col is-separator"></span>
     </div>
     {#each me.certifications as certification}
