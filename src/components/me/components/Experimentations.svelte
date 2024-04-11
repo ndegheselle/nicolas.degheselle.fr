@@ -16,7 +16,7 @@
                 const paperGroup = draw
                     .group()
                     .translate(
-                        numberOfPaper * PAPER_SPACING + EXTERIOR_SPACING /2 + i * CATEGORIES_SPACING,
+                        (numberOfPaper * PAPER_SPACING + EXTERIOR_SPACING /2 + i * CATEGORIES_SPACING) % MAX_WIDTH,
                         ROW_HEIGHT * Math.floor(numberOfPaper / PAPER_PER_ROW) +
                             EXTERIOR_SPACING,
                     );
@@ -98,6 +98,7 @@
     const CATEGORIES_SPACING = 10;
     const PAPER_ROTATION_RAND = 10;
     const PAPER_WIDTH = 20;
+    const MAX_WIDTH = PAPER_PER_ROW * PAPER_WIDTH - 10;
 
     let svgContainer;
     export let experimentations = {};

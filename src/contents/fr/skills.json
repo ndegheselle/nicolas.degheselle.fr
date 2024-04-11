@@ -399,6 +399,12 @@
                     "title": "Nuxt",
                     "description": "Je l'ai essayé juste après la sortie de la version 3, donc pas beaucoup de documentation. Sinon, j'aime bien le concept (ça vaut vraiment la peine) !"
                 }
+            ],
+            [
+                {
+                    "title": "Ultralight.cpp",
+                    "description": "Belle alternative à Webkit, mais rend compliqué le bebugging et la mise en place de l'interop."
+                }
             ]
         ]
     },
