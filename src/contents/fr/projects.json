@@ -12,7 +12,6 @@
         "pictureUrl": "https://github.com/ndegheselle/MeNoisy-soundboard/blob/main/images/preview.gif?raw=true",
         "description": "Soundboard WPF utilisée pour jouer des sons sur n'importe quel périphérique audio. Créée avec C# et WPF."
     },
-    
     {
         "name": "Comptabilité",
         "url": "https://github.com/ndegheselle/MePloutos-accountancy",
