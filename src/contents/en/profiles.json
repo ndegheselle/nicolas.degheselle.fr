@@ -2,40 +2,44 @@
     "main": {
         "skills": [
             {
-                "title": "Languages",
-                "items": ["C#","C++","HTML5 / CSS3 / ECMAScript6","MSSQL / MySQL"]
+                "title": "Desktop",
+                "items": ["C#", "C++", "Python", "WPF", "Maui", "SDL2", "OpenGL"]
             },
             {
-                "title": "Frameworks",
-                "items": ["WPF","Maui","VueJS","SveltKit",".NET Asp","Node.js"]
+                "title": "Web",
+                "items": ["HTML5 / CSS3 / ECMAScript6", "VueJS", "SveltKit", "Swagger", "Express.js"]
+            },
+            {
+                "title": "DB & Servers",
+                "items": ["SQL Server", "MongoDB", ".NET Asp", "Node.js", "Nginx", "Docker"]
             },
             {
                 "title": "Practices",
-                "items": ["Scrum & Agile","Troubleshooting", "Git", "REST"]
+                "items": ["Scrum & Agile", "Git", "Cybersecurity", "REST"]
             },
             {
-                "title": "Environments",
-                "items": ["Docker","Nginx", "Cybersecurity"]
+                "title": "Soft Skills",
+                "items": ["Problem Solving","Teamwork","Troubleshooting","Adaptability"]
             }
         ]
     },
-    "resologi": {
+    "desktop": {
         "skills": [
             {
-                "title": "Languages",
-                "items": ["C#","C++","Python","MSSQL / MySQL"]
+                "title": "Desktop",
+                "items": ["C#", "C++", "Python", "WPF", "Maui", "SDL2", "OpenGL"]
             },
             {
-                "title": "Frameworks",
-                "items": ["WPF","Maui",".NET Asp","Node.js"]
+                "title": "DB & Servers",
+                "items": ["SQL Server", "SQLite", "MongoDB", "Docker"]
             },
             {
                 "title": "Practices",
-                "items": ["Scrum & Agile","Troubleshooting", "Git", "REST"]
+                "items": ["Scrum & Agile", "Git", "Cybersecurity", "REST"]
             },
             {
-                "title": "Environments",
-                "items": ["Docker","Nginx", "Cybersecurity"]
+                "title": "Soft Skills",
+                "items": ["Problem Solving","Teamwork","Troubleshooting","Adaptability"]
             }
         ]
     }

@@ -15,7 +15,7 @@ const profiles = await import(`../../../contents/${lang}/profiles.json`);
 ---
 
 <BlankLayout title="CV - Nicolas De gheselle">
-    <CV client:idle profile={profiles.resologi} {jobs} {me} {lang} />
+    <CV client:idle profile={profiles.main} {jobs} {me} {lang} />
 </BlankLayout>
 
 <script>

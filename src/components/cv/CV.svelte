@@ -17,14 +17,13 @@
     export let me = {};
     export let lang = "";
     const t = useTranslations(lang);
-
 </script>
 
 <header>
     <div class="grid is-auto">
         <div class="col main-header is-9 is-content">
             <h1>Nicolas DE GHESELLE</h1>
-            <p>{ profile.description || me.description}</p>
+            <p>{profile.description || me.description}</p>
         </div>
         <span class="col contacts">
             <a href="mailto:nicolas@degheselle.fr">nicolas@degheselle.fr</a>
@@ -44,7 +43,7 @@
         {#each [...jobs].reverse() as job}
             {#if isDifferenceMoreThanFiveMonths(job.startingDate, job.endingDate)}
                 <div class="grid is-auto">
-                    <div class="col is-1 on-md-is-12">
+                    <div class="col is-sub on-md-is-12">
                         <span class="subtitle">
                             {formatDates(job.startingDate, job.endingDate)}
                         </span>
@@ -68,7 +67,7 @@
 
     {#each me.educations as education}
         <div class="grid is-auto">
-            <div class="col is-1 on-md-is-12">
+            <div class="col is-sub on-md-is-12">
                 <span class="subtitle">
                     {formatDate(education.date)}
                 </span>
@@ -85,20 +84,22 @@
         <span class="col is-separator"></span>
     </div>
 
-        <div class="grid">
-            <div class="col is-1 on-md-is-12">
-            </div>
-            <div class="col is-content">
-                {#each profile.skills as skill}
-                <div class="tags">
-                    {#each skill.items as tag}
-                        <span class="tag">{tag}</span>
-                    {/each}
-                </div>
+    {#each profile.skills as skill}
+    <div class="grid is-auto">
+        <div class="col is-sub on-md-is-12">
+            <span class="subtitle">
+                {skill.title}
+            </span>
+        </div>
+        <div class="col is-content is-small">
+            <div class="tags">
+                {#each skill.items as tag}
+                    <span class="tag">{tag}</span>
                 {/each}
             </div>
-
         </div>
+    </div>
+{/each}
 
     <div class="grid is-auto">
         <h2 class="col is-auto">{t("cv.certifications")}</h2>
@@ -106,7 +107,7 @@
     </div>
     {#each me.certifications as certification}
         <div class="grid is-auto">
-            <div class="col is-1 on-md-is-12">
+            <div class="col is-sub on-md-is-12">
                 <span class="subtitle">
                     {formatDate(certification.date)}
                 </span>
@@ -175,11 +176,19 @@
         text-align: right;
     }
 
+    .is-sub {
+        flex: 0 0 5rem;
+    }
+
     .is-content {
         border-left: 0.1rem solid var(--color-background-more-1);
         margin-left: 0.2rem;
         padding-left: 0.6rem;
         padding-bottom: 0.4rem;
+    }
+
+    .is-content.is-small {
+        padding-bottom: 0;
     }
 
     .is-separator {
