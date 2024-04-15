@@ -7,7 +7,7 @@
             },
             {
                 "title": "Web",
-                "items": ["HTML5 / CSS3 / ECMAScript6", "VueJS", "SveltKit", "Swagger", "Express.js"]
+                "items": ["HTML5 / CSS3 / ECMAScript6", "Vue.js", "SveltKit", "Swagger", "Express.js"]
             },
             {
                 "title": "DB & Servers",

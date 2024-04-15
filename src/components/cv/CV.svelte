@@ -69,7 +69,7 @@
         <div class="grid is-auto">
             <div class="col is-sub on-md-is-12">
                 <span class="subtitle">
-                    {formatDate(education.date)}
+                    {formatDates(education.startingDate, education.endingDate)}
                 </span>
             </div>
             <div class="col is-content">
@@ -150,6 +150,10 @@
     .main-header {
         border-bottom: 0.2rem var(--color-primary-less) solid;
         border-top: 0.2rem var(--color-primary-less) solid;
+    }
+
+    .main-header p {
+        text-align: justify;
     }
 
     main {

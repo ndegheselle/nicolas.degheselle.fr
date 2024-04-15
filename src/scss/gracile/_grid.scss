@@ -48,7 +48,7 @@ $grid-spacing: 0.6rem;
 @media screen and (max-width: $breakpoint-sm) {
     @for $i from 1 through 12 {
         .col.on-sm-is-#{$i} {
-            flex: 0 0 math.percentage(math.div($i, 12));
+            flex: 0 0 math.percentage(math.div($i, 12)) !important;
         }
     }
 }
@@ -56,7 +56,7 @@ $grid-spacing: 0.6rem;
 @media screen and (max-width: $breakpoint-md) {
     @for $i from 1 through 12 {
         .col.on-md-is-#{$i} {
-            flex: 0 0 math.percentage(math.div($i, 12));
+            flex: 0 0 math.percentage(math.div($i, 12)) !important;
         }
     }
 }
