@@ -1,5 +1,6 @@
 {
     "main": {
+        "description": "Ingénieur logiciel efficace, diplômé d'un master en informatique et fort de plus de deux ans d'expérience en développement d'applications et de sites web. Compétent en C#, C++, Python, WPF, etc. Passionné par l'optimisation des applications pour un rendement maximal. Je souhaite utiliser mes compétences pour offrir des solutions innovantes, faciles à entretenir, répondant aux besoins de l'entreprise et dépassant les attentes des clients.",
         "skills": [
             {
                 "title": "Desktop",
@@ -24,6 +25,7 @@
         ]
     },
     "resologi": {
+        "description": "Ingénieur logiciel efficace, diplômé d'un master en informatique et fort de plus de deux ans d'expérience en développement d'applications et de sites web. Compétent en C#, C++, Python, WPF, etc. Passionné par l'optimisation des applications pour un rendement maximal. Je souhaite utiliser mes compétences pour offrir des solutions innovantes, faciles à entretenir, répondant aux besoins de l'entreprise et dépassant les attentes des clients.",
         "skills": [
             {
                 "title": "Desktop",

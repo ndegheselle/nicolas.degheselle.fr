@@ -7,7 +7,7 @@ import Jobs from "@components/jobs/Jobs.svelte";
 import Me from "@components/me/Me.astro";
 
 import MainTitle from "@components/presentation/MainTitle.astro";
-import Presentation from "@components/presentation/Presentation.astro";
+import Presentation from "@components/presentation/Presentation.svelte";
 
 import { languages } from "@i18n/ui";
 import { useTranslations } from "@i18n/utils";
@@ -19,6 +19,7 @@ export async function getStaticPaths() {
 const { lang } = Astro.params;
 const jobs = (await import(`../../contents/${lang}/jobs.json`)).default;
 const projects = (await import(`../../contents/${lang}/projects.json`)).default;
+const me = await import(`../../contents/${lang}/me.json`);
 
 const t = useTranslations(lang);
 ---
@@ -28,7 +29,7 @@ const t = useTranslations(lang);
 
   <FilAriane client:idle />
   <main class="container fil-ariane-tracking">
-    <Presentation />
+    <Presentation {me} {lang}/>
 
     <h2 class="giant-title is-overlapping fil-ariane-balise" id="title-where">
       {t("title.where")}

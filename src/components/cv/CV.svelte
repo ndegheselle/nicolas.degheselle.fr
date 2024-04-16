@@ -74,7 +74,8 @@
             </div>
             <div class="col is-content">
                 <h3>{education.name}</h3>
-                <span class="subtitle">{@html education.description}</span>
+                <span class="subtitle">{education.location}</span>
+                <p>{education.description}</p>
             </div>
         </div>
     {/each}
@@ -85,21 +86,21 @@
     </div>
 
     {#each profile.skills as skill}
-    <div class="grid is-auto">
-        <div class="col is-sub on-md-is-12">
-            <span class="subtitle">
-                {skill.title}
-            </span>
-        </div>
-        <div class="col is-content is-small">
-            <div class="tags">
-                {#each skill.items as tag}
-                    <span class="tag">{tag}</span>
-                {/each}
+        <div class="grid is-auto">
+            <div class="col is-sub on-md-is-12">
+                <span class="subtitle">
+                    {skill.title}
+                </span>
+            </div>
+            <div class="col is-content is-small">
+                <div class="tags">
+                    {#each skill.items as tag}
+                        <span class="tag">{tag}</span>
+                    {/each}
+                </div>
             </div>
         </div>
-    </div>
-{/each}
+    {/each}
 
     <div class="grid is-auto">
         <h2 class="col is-auto">{t("cv.certifications")}</h2>
@@ -198,14 +199,5 @@
     .is-separator {
         border-top: 0.1rem solid var(--color-background-more-1);
         margin: 0 0.8rem;
-    }
-
-    .tag {
-        display: inline-block;
-        background: var(--color-background-more-1);
-        padding: 0.2rem 0.8rem;
-        border-radius: 0.2rem;
-        margin-right: 0.1rem;
-        margin-bottom: 0.1rem;
     }
 </style>

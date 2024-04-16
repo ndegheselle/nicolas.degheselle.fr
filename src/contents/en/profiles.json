@@ -1,5 +1,6 @@
 {
     "main": {
+        "description": "Results-driven software engineer with a Master's degree in Computer Science and over two years of experience developing desktop and mobile applications, websites, and APIs. Proficient in a wide range of technologies, including C#, C++, Python and WPF. Passionate about developing low-level code and optimizing applications for maximum performance. Seeking to leverage my skills and experience to deliver innovative and maintainable solutions that meet business needs and exceed customer expectations.",
         "skills": [
             {
                 "title": "Desktop",
@@ -24,6 +25,7 @@
         ]
     },
     "desktop": {
+        "description": "Results-driven software engineer with a Master's degree in Computer Science and over two years of experience developing desktop and mobile applications, websites, and APIs. Proficient in a wide range of technologies, including C#, C++, Python and WPF. Passionate about developing low-level code and optimizing applications for maximum performance. Seeking to leverage my skills and experience to deliver innovative and maintainable solutions that meet business needs and exceed customer expectations.",
         "skills": [
             {
                 "title": "Desktop",
