@@ -23,7 +23,6 @@
             else if (containerHeight + containerTop < 0) newScrollPercent = 100;
             else newScrollPercent = (-containerTop / containerHeight ) * 100;
 
-            console.log(newScrollPercent, scrollPercent);
             if (newScrollPercent !== scrollPercent && Math.abs(scrollPercent - newScrollPercent) > 1) {
                 scrollPercent = newScrollPercent;
             }

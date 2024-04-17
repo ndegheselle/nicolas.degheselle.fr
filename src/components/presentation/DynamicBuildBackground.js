@@ -1,17 +1,17 @@
 let currentTarget = null;
 
+let buildPreviewElement;
+let widthElement;
+let heightElement;
+
 function resizePreviewLineOn(target) {
   if (!target) return;
-  
-  const buildPreviewElement = document.getElementById("buildPreview");
   const targetRect = target.getBoundingClientRect();
-  const widthElement = buildPreviewElement.querySelector(".width");
-  const heightElement = buildPreviewElement.querySelector(".height");
-
+  
   widthElement.style.width = `${targetRect.width + 1}px`;
   widthElement.style.left = `${targetRect.left - 1}px`;
   heightElement.style.height = `${targetRect.height + 1}px`;
-  heightElement.style.top = `${targetRect.top - 1}px`;
+  heightElement.style.top = `${targetRect.top + window.scrollY - 1}px`;
 }
 
 function addCssCodingToBackground(line) {
@@ -82,6 +82,11 @@ function buildStyle(idCssToBuild, idCssContainer) {
 }
 
 export function animateBuild(idCssToBuild, idCssContainer) {
+
+  buildPreviewElement = document.getElementById("buildPreview");
+  widthElement = buildPreviewElement.querySelector(".width");
+  heightElement = buildPreviewElement.querySelector(".height");
+
   var intervalId = window.setInterval(function () {
     const haveBuildRemaining = buildStyle(idCssToBuild, idCssContainer);
     if (!haveBuildRemaining) {
