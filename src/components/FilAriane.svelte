@@ -11,21 +11,28 @@
 
         // Get
         window.addEventListener("scroll", () => {
-            let container = document.querySelector(".fil-ariane-tracking");
             if (!container) return;
 
             // Get the relative position of the scroll in the container
             let containerHeight = container.offsetHeight - window.innerHeight;
             let containerTop = container.getBoundingClientRect().top;
 
-            if (containerTop > 0) scrollPercent = 0;
-            else if (containerHeight + containerTop < 0) scrollPercent = 100;
-            else scrollPercent = (-containerTop / containerHeight ) * 100;
+            let newScrollPercent;
+
+            if (containerTop > 0) newScrollPercent = 0;
+            else if (containerHeight + containerTop < 0) newScrollPercent = 100;
+            else newScrollPercent = (-containerTop / containerHeight ) * 100;
+
+            console.log(newScrollPercent, scrollPercent);
+            if (newScrollPercent !== scrollPercent && Math.abs(scrollPercent - newScrollPercent) > 1) {
+                scrollPercent = newScrollPercent;
+            }
         });
     });
 
     function createFil() {
-        let container = document.querySelector(".fil-ariane-tracking");
+        container = document.querySelector(".fil-ariane-tracking");
+
         if (!container) return;
 
         let elements = container.querySelectorAll(".fil-ariane-balise");
@@ -49,6 +56,7 @@
         });
     }
 
+    let container = {};
     let balises = [];
     let scrollPercent = 0;
 </script>
@@ -77,7 +85,6 @@
         top: 25vh;
         left: 0.6rem;
         z-index: 10;
-        transition: 0.3s;
     }
 
     @media screen and (max-width: $breakpoint-md) {
@@ -98,7 +105,6 @@
     }
 
     .progress {
-        transition: 0.2s;
         width: 100%;
         background-color: var(--color-primary);
         border-radius: 0.2rem;
@@ -113,7 +119,6 @@
         border-radius: 50%;
         border: 0.2rem solid var(--color-midground-more);
         transform: translate(-50%, -50%);
-        transition: 0.3s;
     }
 
     .fil-ariane-container .balise.active {
