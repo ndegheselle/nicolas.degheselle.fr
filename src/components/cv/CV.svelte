@@ -141,6 +141,24 @@
         :global(.side-menu) {
             display: none;
         }
+
+    }
+
+    // PDF safe fonts
+    * {
+        font-family: "Trebuchet MS", sans-serif !important;
+    }
+    h1, h2, h3 {
+        font-weight: bold;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+    h3 {
+        font-size: 1.2rem;
     }
 
     header {
