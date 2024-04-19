@@ -28,6 +28,7 @@
         <span class="col contacts">
             <a href="mailto:nicolas@degheselle.fr">nicolas@degheselle.fr</a>
             <a href="http://nicolas.degheselle.fr/">nicolas.degheselle.fr</a>
+            <a href="www.linkedin.com/in/nicolas-de-gheselle-1437a1167">linkedin</a>
             <span>+33 7 68 18 51 80</span>
         </span>
     </div>
@@ -158,7 +159,7 @@
         font-size: 1.4rem;
     }
     h3 {
-        font-size: 1.2rem;
+        font-size: 1.0rem;
     }
 
     header {
