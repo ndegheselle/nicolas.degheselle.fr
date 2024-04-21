@@ -32,8 +32,8 @@
                 "items": ["C#", "C++", "Python", "WPF", "Maui", "SDL2", "OpenGL"]
             },
             {
-                "title": "DB & Servers",
-                "items": ["SQL Server", "SQLite", "MongoDB", "Docker"]
+                "title": "Database",
+                "items": ["SQL Server", "SQLite", "MongoDB"]
             },
             {
                 "title": "Pratiques",

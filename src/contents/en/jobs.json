@@ -23,7 +23,7 @@
       "endingDate": "2021-04-01",
       "company": "AnyDesk",
       "location": "Stuttgart (Germany)",
-      "title": "IT developer internship",
+      "title": "C++ developer internship",
       "description": "Contributed to the creation of a high-performance remote desktop application (AnyDesk), utilizing C++, Win32, SDL2, and DirectX. The company prioritized optimizing and developing in-house code with minimal external libraries.<ul><li>Designed and developed an application to analyze logs from AnyDesk, enabling remote loading of log files to streamline debugging for developers.</li><li>Implemented parsing with precise memory allocation and management to handle large amounts of data, created and implemented complex graphical components with virtualization from scratch.</li><li>Handled and interacted with Win32 to provide native functionalities, handled multi-threaded communication.</li><li>Corrected bugs and conducted rigorous testing and debugging of the internal IPC and graphics libraries.</li></ul>"
     },
     {
@@ -31,6 +31,6 @@
       "company": "3MA Group",
       "location": "Rouffach (68)",
       "title": "Analyst Developer",
-      "description": "Leading analyst developer role utilizing Agile and SCRUM methodologies. Developing desktop, mobile applications, websites, and APIs leveraging Microsoft technologies (C#, WPF, ASP.NET).<ul><li>Designing and implementing a business application for PDF file processing and postal sorting.</li><li>Streamlining and automating processes by consolidating different software and services into a unified interface.</li><li>Executing upgrades, maintenance, and performance improvements of existing applications using diverse technologies.</li><li>Analyzing business and user requirements, and seamlessly integrating functionalities into established systems.</li><li>Constructing libraries to standardize and simplify project development in order to minimize specific code and promote well-tested and documented code.</li><li>Providing insight to create, test, and setup new tools and libraries to facilitate project management and development.</li></ul>"
+      "description": "Leading analyst developer role utilizing Agile and SCRUM methodologies. Developing desktop, mobile applications, websites, and APIs leveraging Microsoft technologies (C#, WPF, ASP.NET).<ul><li>Designing and implementing a business application for PDF file processing and postal sorting.</li><li>Streamlining and automating processes by consolidating different software and services into a unified interface.</li><li>Executing upgrades, maintenance, and performance improvements of existing applications using diverse technologies.</li><li>Creating and maintaining MSSQL relational databases, using and improving a custom C# ORM library</li><li>Constructing libraries to standardize and simplify project development in order to minimize specific code and promote well-tested and documented code.</li><li>Providing insight to create, test, and setup new tools and libraries to facilitate project management and development.</li></ul>"
     }
 ]

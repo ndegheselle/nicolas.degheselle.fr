@@ -28,7 +28,7 @@
         <span class="col contacts">
             <a href="mailto:nicolas@degheselle.fr">nicolas@degheselle.fr</a>
             <a href="http://nicolas.degheselle.fr/">nicolas.degheselle.fr</a>
-            <a href="www.linkedin.com/in/nicolas-de-gheselle-1437a1167">linkedin</a>
+            <a href="https://www.linkedin.com/in/nicolas-de-gheselle-1437a1167/">linkedin</a>
             <span>+33 7 68 18 51 80</span>
         </span>
     </div>
@@ -137,7 +137,7 @@
 
     @media print {
         :global(html) {
-            font-size: 15px;
+            font-size: 14px;
         }
         :global(.side-menu) {
             display: none;
@@ -148,18 +148,6 @@
     // PDF safe fonts
     * {
         font-family: "Trebuchet MS", sans-serif !important;
-    }
-    h1, h2, h3 {
-        font-weight: bold;
-    }
-    h1 {
-        font-size: 2rem;
-    }
-    h2 {
-        font-size: 1.4rem;
-    }
-    h3 {
-        font-size: 1.0rem;
     }
 
     header {
@@ -178,6 +166,20 @@
 
     main {
         margin: 1rem 3rem;
+    }
+
+    h1, h2, h3 {
+        font-weight: bold;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+        margin: 1rem 0 0.6rem 0 !important;
+    }
+    h3 {
+        font-size: 1.0rem;
     }
 
     h1,
