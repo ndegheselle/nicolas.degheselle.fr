@@ -24,7 +24,7 @@
       "company": "AnyDesk",
       "location": "Stuttgart (Germany)",
       "title": "C++ developer internship",
-      "description": "Contributed to the creation of a high-performance remote desktop application (AnyDesk), utilizing C++, Win32, SDL2, and DirectX. The company prioritized optimizing and developing in-house code with minimal external libraries.<ul><li>Designed and developed an application to analyze logs from AnyDesk, enabling remote loading of log files to streamline debugging for developers.</li><li>Implemented parsing with precise memory allocation and management to handle large amounts of data, created and implemented complex graphical components with virtualization from scratch.</li><li>Handled and interacted with Win32 to provide native functionalities, handled multi-threaded communication.</li><li>Corrected bugs and conducted rigorous testing and debugging of the internal IPC and graphics libraries.</li></ul>"
+      "description": "Contributed to the creation of a high-performance remote desktop application (AnyDesk), utilizing C++, Win32, SDL2, and DirectX. The company prioritized optimizing and developing in-house code with minimal external libraries.<ul><li>Designed and developed a C++ application to analyze logs from AnyDesk to streamline debugging.</li><li>Implemented parsing and complex graphical components with virtualization from scratch to handle large amounts of data.</li><li>Handled and interacted with Win32 to provide native functionalities, handled multi-threaded communication.</li><li>Corrected bugs and conducted rigorous testing and debugging of the internal IPC and graphics libraries. Documented and tracked bugs using Jira and Confluence.</li></ul>"
     },
     {
       "startingDate": "2022-02-01",

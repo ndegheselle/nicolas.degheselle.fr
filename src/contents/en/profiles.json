@@ -44,5 +44,30 @@
                 "items": ["Problem Solving","Teamwork","Troubleshooting","Adaptability"]
             }
         ]
+    },
+    "web": {
+        "description": "Results-driven software engineer with a Master's degree in Computer Science and over two years of experience in desktop and mobile applications. Passionate about developing low-level code and optimization, seeking to leverage my skills and experience to deliver innovative and maintainable solutions that exceed customer expectations.",
+        "skills": [
+            {
+                "title": "Languages",
+                "items": ["C#", "C++", "Python", "HTML5 / CSS3 / ECMAScript6"]
+            },
+            {
+                "title": "Web",
+                "items": ["Vue.js", "SveltKit", "Swagger", "Express.js"]
+            },
+            {
+                "title": "DB & Servers",
+                "items": ["SQL Server", "MongoDB", ".NET Asp", "Node.js", "Nginx", "Docker"]
+            },
+            {
+                "title": "Practices",
+                "items": ["Scrum & Agile", "Git", "Cybersecurity", "REST"]
+            },
+            {
+                "title": "Soft Skills",
+                "items": ["Problem Solving","Teamwork","Troubleshooting","Adaptability"]
+            }
+        ]
     }
 }
