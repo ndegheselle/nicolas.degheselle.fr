@@ -1,6 +1,6 @@
 {
     "main": {
-        "description": "Ingénieur logiciel curieux et investi, titulaire d'une maîtrise en informatique et possédant plus de deux ans d'expérience dans le domaine des applications de bureau et mobiles. Curieux et passionné par le développement de code de bas niveau et l'optimisation, je cherche à mettre à profit mes compétences et mon expérience pour fournir des solutions créatives et innovantes.",
+        "description": "Ingénieur logiciel curieux et investi, titulaire d'une maîtrise en informatique et possédant plus de deux ans d'expérience en développement bureau et mobiles. Curieux et passionné par le développement de code bas niveau et l'optimisation, je cherche à mettre à profit mes compétences et mon expérience pour fournir des solutions créatives et innovantes.",
         "skills": [
             {
                 "title": "Desktop",
@@ -25,7 +25,7 @@
         ]
     },
     "desktop": {
-        "description": "Ingénieur logiciel curieux et investi, titulaire d'une maîtrise en informatique et possédant plus de deux ans d'expérience dans le domaine des applications de bureau et mobiles. Curieux et passionné par le développement de code de bas niveau et l'optimisation, je cherche à mettre à profit mes compétences et mon expérience pour fournir des solutions créatives et innovantes.",
+        "description": "Ingénieur logiciel curieux et investi, titulaire d'une maîtrise en informatique et possédant plus de deux ans d'expérience en développement bureau et mobiles. Curieux et passionné par le développement de code bas niveau et l'optimisation, je cherche à mettre à profit mes compétences et mon expérience pour fournir des solutions créatives et innovantes.",
         "skills": [
             {
                 "title": "Desktop",
@@ -46,7 +46,7 @@
         ]
     },
     "web": {
-        "description": "Ingénieur logiciel curieux et investi, titulaire d'une maîtrise en informatique et possédant plus de deux ans d'expérience dans le domaine des applications de bureau et mobiles. Curieux et passionné par le développement de code de bas niveau et l'optimisation, je cherche à mettre à profit mes compétences et mon expérience pour fournir des solutions créatives et innovantes.",
+        "description": "Ingénieur logiciel curieux et investi, titulaire d'une maîtrise en informatique et possédant plus de deux ans d'expérience en développement bureau et mobiles. Curieux et passionné par le développement de code bas niveau et l'optimisation, je cherche à mettre à profit mes compétences et mon expérience pour fournir des solutions créatives et innovantes.",
         "skills": [
             {
                 "title": "Languages",
