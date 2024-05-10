@@ -30,8 +30,10 @@
     "educations": [
         {
             "name": "Master en Informatique",
-            "date": "2022-09-01",
-            "description": "Spécialisé en développement Logiciel à CESI - Strasbourg (67)"
+            "location": "CESI - Strasbourg (67)",
+            "startingDate": "2017-09-01",
+            "endingDate": "2022-09-01",
+            "description": "Développement Logiciel spécialisé en cybersécurité"
         }
     ]
 }
