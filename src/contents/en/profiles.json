@@ -50,11 +50,11 @@
         "skills": [
             {
                 "title": "Languages",
-                "items": ["C#", "C++", "Python", "HTML5 / CSS3 / ECMAScript6"]
+                "items": ["Java", "C#", "C++", "HTML5 / CSS3 / ECMAScript6"]
             },
             {
                 "title": "Web",
-                "items": ["Vue.js", "SveltKit", "Swagger", "Express.js"]
+                "items": ["Spring", "Vue.js", "SveltKit", "Swagger", "Express.js"]
             },
             {
                 "title": "DB & Servers",
