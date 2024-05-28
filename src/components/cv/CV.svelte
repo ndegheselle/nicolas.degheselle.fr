@@ -50,7 +50,7 @@
                         </span>
                     </div>
                     <div class="col is-content">
-                        <h3>{job.title}</h3>
+                        <h3>{@html job.title}</h3>
                         <span class="subtitle">
                             {job.company} - {job.location}
                         </span>
