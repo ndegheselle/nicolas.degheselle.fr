@@ -28,7 +28,9 @@
         <span class="col contacts">
             <a href="mailto:nicolas@degheselle.fr">nicolas@degheselle.fr</a>
             <a href="http://nicolas.degheselle.fr/">nicolas.degheselle.fr</a>
-            <a href="https://www.linkedin.com/in/nicolas-de-gheselle-1437a1167/">linkedin</a>
+            <a href="https://www.linkedin.com/in/nicolas-de-gheselle-1437a1167/"
+                >linkedin</a
+            >
             <span>+33 7 68 18 51 80</span>
         </span>
     </div>
@@ -55,6 +57,13 @@
                             {job.company} - {job.location}
                         </span>
                         <p>{@html job.description}</p>
+                        {#if job.bullets}
+                            <ul>
+                                {#each job.bullets as bullet}
+                                    <li>{@html bullet}</li>
+                                {/each}
+                            </ul>
+                        {/if}
                     </div>
                 </div>
             {/if}
@@ -142,7 +151,6 @@
         :global(.side-menu) {
             display: none;
         }
-
     }
 
     // PDF safe fonts
@@ -168,7 +176,9 @@
         margin: 1rem 3rem;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
         font-weight: bold;
     }
     h1 {
@@ -179,7 +189,7 @@
         margin: 1rem 0 0.6rem 0 !important;
     }
     h3 {
-        font-size: 1.0rem;
+        font-size: 1rem;
     }
 
     h1,
