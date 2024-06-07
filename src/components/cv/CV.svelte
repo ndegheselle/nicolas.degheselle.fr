@@ -21,7 +21,7 @@
 
 <header>
     <div class="grid is-auto">
-        <div class="col main-header is-9 is-content">
+        <div class="col main-header is-10 is-content">
             <h1>Nicolas DE GHESELLE</h1>
             <p>{profile.description || me.description}</p>
         </div>
@@ -146,7 +146,7 @@
 
     @media print {
         :global(html) {
-            font-size: 14px;
+            font-size: 13.75px;
         }
         :global(.side-menu) {
             display: none;
@@ -166,6 +166,7 @@
     .main-header {
         border-bottom: 0.2rem var(--color-primary-less) solid;
         border-top: 0.2rem var(--color-primary-less) solid;
+        padding-right: 1rem;
     }
 
     .main-header p {

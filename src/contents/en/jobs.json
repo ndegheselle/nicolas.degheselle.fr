@@ -37,7 +37,7 @@
     "company": "3MA Group",
     "location": "Rouffach (68)",
     "title": "Software Engineer",
-    "description": "At 3ma Group, an industrial company specializing in marketing, production, and logistics, I develop and maintain mobile and desktop applications to meet client needs and streamline internal processes. I also provide end-user support.",
+    "description": "3ma Group is an industrial company specializing in marketing, production, and logistics. I develop and maintain mobile and desktop applications to meet client needs and streamline internal processes.",
     "bullets": [
       "Developed and launched a new WPF desktop application consolidating multiple existing tools, enhancing user efficiency and scalability.",
       "Refactored legacy codebase in C# and .NET, creating frameworks and improving code maintainability, significantly reducing technical debt.",
