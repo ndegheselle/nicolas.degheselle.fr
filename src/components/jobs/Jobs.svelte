@@ -61,6 +61,7 @@
     let svg = null;
     $: selectedJob = jobs[jobs.length - 1];
     export let jobs = [];
+    export let lang = "";
     
 </script>
 
@@ -83,6 +84,7 @@
                         {formatDates(
                             selectedJob.startingDate,
                             selectedJob.endingDate,
+                            lang
                         )}
                     </p>
                 </div>

@@ -6,6 +6,7 @@ export const languages = {
 export const defaultLang = 'en';
 export const ui = {
     en: {
+        'time.present': 'Present',
         'title.who': 'Who?',
         'title.how': 'How?',
         'title.where': 'Where?',
@@ -19,6 +20,7 @@ export const ui = {
         'cv.certifications': 'Certifications and Licenses',
     },
     fr: {
+        'time.present': 'Présent',
         'title.who': 'Qui?',
         'title.how': 'Quoi?',
         'title.where': 'Où?',

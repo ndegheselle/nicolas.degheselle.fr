@@ -48,7 +48,7 @@
                 <div class="grid is-auto">
                     <div class="col is-sub on-md-is-12">
                         <span class="subtitle">
-                            {formatDates(job.startingDate, job.endingDate)}
+                            {formatDates(job.startingDate, job.endingDate, lang)}
                         </span>
                     </div>
                     <div class="col is-content">
@@ -79,7 +79,7 @@
         <div class="grid is-auto">
             <div class="col is-sub on-md-is-12">
                 <span class="subtitle">
-                    {formatDates(education.startingDate, education.endingDate)}
+                    {formatDates(education.startingDate, education.endingDate, lang)}
                 </span>
             </div>
             <div class="col is-content">
@@ -146,7 +146,8 @@
 
     @media print {
         :global(html) {
-            font-size: 13.75px;
+            // font-size: 13.75px;
+            font-size: 14px;
         }
         :global(.side-menu) {
             display: none;
@@ -187,7 +188,7 @@
     }
     h2 {
         font-size: 1.4rem;
-        margin: 1rem 0 0.6rem 0 !important;
+        margin: 0.4rem 0 0.6rem 0 !important;
     }
     h3 {
         font-size: 1rem;
@@ -221,7 +222,7 @@
         border-left: 0.1rem solid var(--color-background-more-1);
         margin-left: 0.2rem;
         padding-left: 0.6rem;
-        padding-bottom: 0.4rem;
+        padding-bottom: 0.6rem;
     }
 
     .is-content.is-small {
