@@ -21,7 +21,7 @@
 
 <header>
     <div class="grid is-auto">
-        <div class="col main-header is-10 is-content">
+        <div class="col main-header is-9 is-content">
             <h1>Nicolas DE GHESELLE</h1>
             <p>{profile.description || me.description}</p>
         </div>
