@@ -76,7 +76,7 @@
         {#if selectedJob}
             <Card>
                 <div slot="title">
-                    <h3>{selectedJob.title}</h3>
+                    <h3>{@html selectedJob.title}</h3>
                     <span class="subtitle">
                         {selectedJob.company} - {selectedJob.location}
                     </span>
@@ -95,10 +95,6 @@
 </div>
 
 <style>
-    .job-description {
-        text-align: left;
-    }
-
     :global(.timeline .is-background) {
         fill: var(--color-background-more-2);
     }
