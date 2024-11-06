@@ -3,8 +3,8 @@
         "description": "Ingénieur logiciel passionné et investi, titulaire d'une maîtrise en informatique avec trois ans d'expérience en développement d'applications bureau et mobiles. Expert en C#, .NET, et C++, spécialisé dans le développement de code bas niveau et l'optimisation des performances. Je cherche à mettre à profit mes compétences pour fournir des solutions créatives et innovantes.",
         "skills": [
             {
-                "title": "Desktop",
-                "items": ["C#", "C++", "Python", "WPF", "Maui", "SDL2", "OpenGL"]
+                "title": "Développement",
+                "items": ["C#", "C++", "Python", "ARM MCUs", "WPF", "SDL2", "OpenGL"]
             },
             {
                 "title": "Web",
@@ -12,7 +12,7 @@
             },
             {
                 "title": "DB & Servers",
-                "items": ["SQL Server", "MongoDB", ".NET Asp", "Node.js", "Nginx", "Docker"]
+                "items": ["SQL Server", "MySQL", "MongoDB", ".NET Asp", "Node.js", "Nginx", "Docker"]
             },
             {
                 "title": "Pratiques",
@@ -28,12 +28,12 @@
         "description": "Ingénieur logiciel passionné et investi, titulaire d'une maîtrise en informatique avec trois ans d'expérience en développement d'applications bureau et mobiles. Expert en C#, .NET, et C++, spécialisé dans le développement de code bas niveau et l'optimisation des performances. Je cherche à mettre à profit mes compétences pour fournir des solutions créatives et innovantes.",
         "skills": [
             {
-                "title": "Desktop",
-                "items": ["C#", "C++", "Python", "WPF", "Maui", "SDL2", "OpenGL"]
+                "title": "Développement",
+                "items": ["C#", "C/C++", "Python", "WPF", "ARM MCUs", "SDL2", "OpenGL"]
             },
             {
-                "title": "Database",
-                "items": ["SQL Server", "SQLite", "MongoDB"]
+                "title": "BDD",
+                "items": ["SQL Server", "MySQL", "SQLite", "MongoDB"]
             },
             {
                 "title": "Pratiques",
@@ -58,7 +58,7 @@
             },
             {
                 "title": "DB & Servers",
-                "items": ["SQL Server", "MongoDB", ".NET Asp", "Node.js", "Nginx", "Docker"]
+                "items": ["SQL Server", "MySQL", "MongoDB", ".NET Asp", "Node.js", "Nginx", "Docker"]
             },
             {
                 "title": "Practices",

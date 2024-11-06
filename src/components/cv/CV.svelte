@@ -215,7 +215,7 @@
     }
 
     .is-sub {
-        flex: 0 0 5rem;
+        flex: 0 0 6rem;
     }
 
     .is-content {
