@@ -14,11 +14,13 @@
 <div class="grid with-gutter">
   <div class="col is-6 on-sm-is-12">
     <Card>
-      <h2 slot="title">{t("title.me")}</h2>
-      <div>
-        {#each me.tags as tag}
-          <span class="tag">{tag}</span>
-        {/each}
+      <div slot="title">
+        <h2>{t("title.me")}</h2>
+        <div>
+          {#each me.tags as tag}
+            <span class="tag">{tag}</span>
+          {/each}
+        </div>
       </div>
       <p>
         {@html me.description}
