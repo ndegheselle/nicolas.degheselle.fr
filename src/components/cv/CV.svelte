@@ -56,7 +56,6 @@
                         <span class="subtitle">
                             {job.company} - {job.location}
                         </span>
-                        <p>{@html job.description}</p>
                         {#if job.bullets}
                             <ul>
                                 {#each job.bullets as bullet}

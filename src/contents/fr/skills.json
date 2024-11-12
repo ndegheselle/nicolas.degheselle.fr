@@ -398,12 +398,20 @@
                 {
                     "title": "Nuxt",
                     "description": "Je l'ai essayé juste après la sortie de la version 3, donc pas beaucoup de documentation. Sinon, j'aime bien le concept (ça vaut vraiment la peine) !"
+                },
+                {
+                    "title": "Redis",
+                    "description": "Base de données clés valeurs haute performance. Facile à mettre en place, à utiliser, que demande le peuple."
                 }
             ],
             [
                 {
                     "title": "Ultralight.cpp",
                     "description": "Belle alternative à Webkit, mais rend compliqué le bebugging et la mise en place de l'interop."
+                },
+                {
+                    "title": "AppWrite",
+                    "description": "Backend platform, simplifie le développement web et mobile. Similaire à supabase et firebase, possibilité de self-host, projet gratuit pour tester et développer. Noice."
                 }
             ]
         ]

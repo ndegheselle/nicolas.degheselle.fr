@@ -97,6 +97,4 @@
             <use href="#book-top" class="book-top" transform-origin="10 22" />
         </g>
     </defs>
-
-    <use href="#book-2" />
 </svg>
