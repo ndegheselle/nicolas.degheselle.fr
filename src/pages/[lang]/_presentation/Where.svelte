@@ -1,7 +1,6 @@
 <script>
     import Card from "@components/Card.svelte";
     import { formatDates } from "@base/utils.js";
-    import { SVG } from "@svgdotjs/svg.js";
     import { onMount } from "svelte";
     import { useTranslations } from "@i18n/utils";
 
@@ -10,17 +9,11 @@
         selectedJob = _job;
     }
 
-    onMount(() => {
-        const draw = SVG(svg).viewbox(
-            0,
-            0,
-            WIDTH,
-            HEIGHT + EXTERIOR_SPACING * 2,
-        );
-
+    function jobsToTimeline(_jobs)
+    {
         let totalDuration = 0;
-        for (let i = 0; i < jobs.length; i++) {
-            const job = jobs[i];
+        for (let i = 0; i < _jobs.length; i++) {
+            const job = _jobs[i];
             job.startingDate = new Date(job.startingDate).getTime();
             job.endingDate =
                 new Date(job.endingDate).getTime() || new Date().getTime();
@@ -29,38 +22,16 @@
         }
 
         let x = 0;
-        for (let i = 0; i < jobs.length; i++) {
-            const job = jobs[i];
-            const width =
-                (job.duration / totalDuration) *
-                (WIDTH - SPACING * (jobs.length - 1));
-            draw.rect(width, HEIGHT)
-                .radius(10)
-                .move(x, EXTERIOR_SPACING)
-                .addClass("timeline-bar")
-                .addClass(job.isInternship ? "is-internship" : "is-job")
-                .on("mouseenter", () => {
-                    selectJob(job);
-                })
-                .click((e) => {
-                    selectJob(job);
-                });
-
-            x += width + SPACING / 2;
-            draw.circle(HEIGHT)
-                .center(x, EXTERIOR_SPACING + HEIGHT / 2)
-                .addClass("is-background");
-            x += SPACING / 2;
+        for (let i = 0; i < _jobs.length; i++) {
+            const job = _jobs[i];
+            job.width = (job.duration / totalDuration) * 100;
         }
-    });
+        return _jobs;
+    }
 
-    const WIDTH = 500;
-    const HEIGHT = 20;
-    const SPACING = 30;
-    const EXTERIOR_SPACING = 10;
-
-    let svg = null;
     $: selectedJob = jobs[jobs.length - 1];
+    $: timeline = jobsToTimeline(jobs);
+
     export let jobs = [];
     export let lang = "";
     const t = useTranslations(lang);
@@ -71,8 +42,22 @@
 </h2>
 
 <div class="grid">
-    <div class="col is-6 on-sm-is-12">
-        <svg class="timeline" bind:this={svg} width="100%"></svg>
+    <div class="col is-6 on-sm-is-12 stretch-container timeline">
+        {#each timeline as job, index}
+            <span
+                role="button"
+                tabindex={index}
+                on:mouseenter={() => selectJob(job)}
+                href="#"
+                class="timeline-bar sheen"
+                class:is-job={!job.isInternship}
+                class:is-internship={job.isInternship}
+                style="width:{job.width}%"
+            />
+            {#if job != jobs[jobs.length - 1]}
+                <span class="is-background" />
+            {/if}
+        {/each}
     </div>
 </div>
 
@@ -100,25 +85,50 @@
 </div>
 
 <style>
-    :global(.timeline .is-background) {
-        fill: var(--color-background-more-2);
+    .timeline {
+        margin: 0.6rem 0;
     }
-
-    :global(.timeline .timeline-bar) {
-        transform-origin: center;
-        transition: 0.3s;
+    .timeline-bar {
+        height: 1.4rem;
+        border-radius: 0.8rem;
         cursor: pointer;
     }
-
-    :global(.timeline .timeline-bar:hover) {
-        transform: scaleY(1.2);
+    .timeline-bar.is-internship {
+        background: var(--color-primary-less);
+    }
+    .timeline-bar.is-job {
+        background: var(--color-primary);
+    }
+    .is-background {
+        border-radius: 50%;
+        background-color: var(--color-background-more-2);
+        height: 1rem;
+        width: 1rem;
+        margin: auto 0.4rem;
+    }
+    .sheen {
+        position: relative;
+        overflow: hidden;
     }
 
-    :global(.timeline .timeline-bar.is-internship) {
-        fill: var(--color-primary-less);
+    .sheen:before {
+        content: "";
+        position: absolute;
+        opacity: 0.2;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            100deg,
+            transparent,
+            var(--color-foreground),
+            transparent
+        );
+        transition: all 650ms;
     }
 
-    :global(.timeline .timeline-bar.is-job) {
-        fill: var(--color-primary);
+    .sheen:hover:before {
+        left: 100%;
     }
 </style>

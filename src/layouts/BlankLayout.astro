@@ -33,7 +33,7 @@ const { title } = Astro.props;
 			<button id="changeTheme">
 				<i class="fa-solid fa-circle"></i>
 			</button>
-			<a href={`/${lang == "en" ? "fr" : "en"}/`}>
+			<a href={`/${lang == "en" ? "fr" : "en"}`}>
 				{lang == "en" ? languages["fr"] : languages["en"]}
 			</a>
 			<slot name="side-menu" />
@@ -42,14 +42,18 @@ const { title } = Astro.props;
 	</body>
 
 	<script>
-		const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-		if (darkThemeMq.matches) {
-			document.body.dataset.theme = "dark";
+		let theme = localStorage.getItem('theme');
+	
+		if (!theme) {
+			const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+			theme = darkThemeMq.matches ? "dark" : "light";
 		}
-
+	
+		document.body.dataset.theme = theme;
+	
 		document.getElementById("changeTheme").addEventListener("click", () => {
-			document.body.dataset.theme =
-				document.body.dataset.theme === "light" ? "dark" : "light";
+			document.body.dataset.theme = document.body.dataset.theme === "light" ? "dark" : "light";
+			localStorage.setItem('theme', document.body.dataset.theme);
 		});
 	</script>
 </html>
