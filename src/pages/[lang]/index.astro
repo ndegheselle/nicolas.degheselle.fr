@@ -2,12 +2,11 @@
 import Layout from "@layouts/Layout.astro";
 import FilAriane from "@components/FilAriane.svelte";
 
-import Projects from "@components/projects/Projects.svelte";
-import Jobs from "@components/jobs/Jobs.svelte";
-import Me from "@components/me/Me.astro";
-
-import MainTitle from "@components/presentation/MainTitle.astro";
-import Presentation from "@components/presentation/Presentation.svelte";
+import MainTitle from "./_hero-landing/MainTitle.astro";
+import Who from "./_presentation/Who.svelte";
+import How from "./_presentation/How.svelte";
+import Where from "./_presentation/Where.svelte";
+import Projects from "./_presentation/Projects.svelte";
 
 import { languages } from "@i18n/ui";
 import { useTranslations } from "@i18n/utils";
@@ -27,19 +26,11 @@ const t = useTranslations(lang);
 <Layout title="Nicolas De gheselle">
   <MainTitle />
 
-  <FilAriane client:idle />
   <main class="container fil-ariane-tracking">
-    <Presentation {me} {lang}/>
-
-    <h2 class="giant-title is-overlapping fil-ariane-balise" id="title-where">
-      {t("title.where")}
-    </h2>
-    <Jobs {jobs} {lang} client:idle />
-
-    <h2 class="giant-title is-overlapping fil-ariane-balise" id="title-projects">
-      {t("title.projects")}
-    </h2>
-    <Projects {projects} />
-    <Me />
+    <Who {me} {lang}/>
+    <How guidelines={me.guidelines} {lang}/>
+    <Where {jobs} {lang} client:idle/>
+    <Projects {projects} {lang} />
   </main>
+
 </Layout>

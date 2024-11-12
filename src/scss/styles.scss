@@ -5,12 +5,10 @@
 @import "gracile/_utils.scss";
 @import "gracile/_grid.scss";
 @import "gracile/_forms.scss";
+@import "gracile/_loading";
 
-@import "gracile/loading";
-
-@import "light-theme.scss";
-@import "dark-theme.scss";
-
+@import "theme-light.scss";
+@import "theme-dark.scss";
 
 @import "title.scss";
 @import "library.scss";

@@ -3,6 +3,7 @@
     import { formatDates } from "@base/utils.js";
     import { SVG } from "@svgdotjs/svg.js";
     import { onMount } from "svelte";
+    import { useTranslations } from "@i18n/utils";
 
     function selectJob(_job) {
         if (_job == null) return;
@@ -62,8 +63,12 @@
     $: selectedJob = jobs[jobs.length - 1];
     export let jobs = [];
     export let lang = "";
-    
+    const t = useTranslations(lang);
 </script>
+
+<h2 class="giant-title is-overlapping fil-ariane-balise" id="title-where">
+    {t("title.where")}
+</h2>
 
 <div class="grid">
     <div class="col is-6 on-sm-is-12">
@@ -84,7 +89,7 @@
                         {formatDates(
                             selectedJob.startingDate,
                             selectedJob.endingDate,
-                            lang
+                            lang,
                         )}
                     </p>
                 </div>

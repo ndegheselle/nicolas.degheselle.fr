@@ -1,6 +1,5 @@
 <script>
   import Card from "@components/Card.svelte";
-  import Guidelines from "./Guidlines.svelte";
   import { useTranslations } from "@i18n/utils";
 
   export let me = {};
@@ -28,8 +27,3 @@
     </Card>
   </div>
 </div>
-
-<h2 class="giant-title is-overlapping fil-ariane-balise" id="title-how">
-  {t("title.how")}
-</h2>
-<Guidelines guidelines={me.guidelines} />

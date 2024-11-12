@@ -1,7 +1,15 @@
 <script>
     import Card from "@components/Card.svelte";
+    import { useTranslations } from "@i18n/utils";
+    
     export let projects = [];
+    export let lang = "";
+    const t = useTranslations(lang);
 </script>
+
+<h2 class="giant-title is-overlapping fil-ariane-balise" id="title-projects">
+    {t("title.projects")}
+  </h2>
 <div class="grid with-gutter">
     {#each projects as project}
         <div class="col is-3 on-sm-is-12">

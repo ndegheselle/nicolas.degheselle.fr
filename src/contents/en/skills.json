@@ -415,26 +415,25 @@
             ]
         ]
     },
-    "others": {
-        "books": {
-            "title": "Books",
-            "description": "I like to read here and there, mostly fantasy and sci-fi."
+    "certifications": [
+        {
+            "name": "TOEIC",
+            "date": "2021-01-01",
+            "description": "With a score of 990"
         },
-        "outdoor": {
-            "title": "Going outdoor",
-            "description": "I like to do some trekking, with a bike or on foot. Lastly I have tried some electric motocross, wich is the most fun vehicle I ever used :)"
-        },
-        "network": {
-            "title": "Network",
-            "description": "Aside from programming I also studied networtking and security, from deployment to supervision."
-        },
-        "software-blender": {
-            "title": "Blender",
-            "description": "I do some 3d design occasionally, I used a lot Blender game engine then that was a thing."
-        },
-        "software-unreal": {
-            "title": "Unreal engine",
-            "description": "I am starting to look more and more into this game engine (mostly to do some C++)."
+        {
+            "name": "CCNA",
+            "date": "2020-09-01",
+            "description": "CCNA 2 : Switching, Routing, and Wireless Essentials"
         }
-    }
+    ],
+    "educations": [
+        {
+            "name": "Master's degree in Computer Science",
+            "location": "CESI - Strasbourg (67)",
+            "startingDate": "2017-09-01",
+            "endingDate": "2022-09-01",
+            "description": "Major in Software Engineering specialized in cybersecurity"
+        }
+    ]
 }
