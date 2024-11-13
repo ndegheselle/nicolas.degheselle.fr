@@ -2,14 +2,12 @@
   {
     "startingDate": "2019-04-01",
     "endingDate": "2019-06-01",
-    "isInternship": true,
     "company": "INSA, laboratoire ICube",
     "location": "Strasbourg (67)",
     "title": "IT developer <span class='subtitle'>- internship</span>",
     "description": "Creation of tools to help the laboratory's researchers. Development of an Electron.js interface to simplify the scrapping of scientific article abstracts from multiple sources. Used Keras, Tensorflow and Scikit-Learn to train an AI model for accurate classification of articles and propose potential solutions using TRIZ methodology."
   },
   {
-    "isInternship": true,
     "startingDate": "2020-01-01",
     "endingDate": "2020-04-01",
     "company": "ITS Future",
@@ -18,7 +16,6 @@
     "description": "Maintenance and enhancement of a web and mobile application, applying Agile methodologies. Use of Angular.ts for the frontend, Spring (Java EE) for the backend, and Ionic for the mobile application. Creation of an API using Nest.js and Puppeteer."
   },
   {
-    "isInternship": true,
     "startingDate": "2020-09-01",
     "endingDate": "2021-04-01",
     "company": "AnyDesk",

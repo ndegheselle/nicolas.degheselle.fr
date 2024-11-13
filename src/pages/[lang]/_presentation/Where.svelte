@@ -5,12 +5,10 @@
     import { useTranslations } from "@i18n/utils";
 
     function selectJob(_job) {
-        if (_job == null) return;
         selectedJob = _job;
     }
 
-    function jobsToTimeline(_jobs)
-    {
+    function jobsToTimeline(_jobs) {
         let totalDuration = 0;
         for (let i = 0; i < _jobs.length; i++) {
             const job = _jobs[i];
@@ -45,15 +43,18 @@
     <div class="col is-6 on-sm-is-12 stretch-container timeline">
         {#each timeline as job, index}
             <span
+                class:is-visible={job == selectedJob}
                 role="button"
                 tabindex={index}
                 on:mouseenter={() => selectJob(job)}
                 href="#"
                 class="timeline-bar sheen"
-                class:is-job={!job.isInternship}
-                class:is-internship={job.isInternship}
                 style="width:{job.width}%"
-            />
+            >
+                <svg width="20" height="20" class="triangle">
+                    <polygon points="0, 0, 20, 0, 10, 20" />
+                </svg>
+            </span>
             {#if job != jobs[jobs.length - 1]}
                 <span class="is-background" />
             {/if}
@@ -85,50 +86,42 @@
 </div>
 
 <style>
+    .triangle {
+        transition: 0.3s;
+        opacity: 0;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        z-index: -100;
+        fill: var(--color-primary);
+    }
+
+    .is-visible .triangle{
+        opacity: 1;
+        transform: translate(-50%, 100%);
+    }
+
     .timeline {
         margin: 0.6rem 0;
     }
     .timeline-bar {
+        position: relative;
         height: 1.4rem;
         border-radius: 0.8rem;
         cursor: pointer;
-    }
-    .timeline-bar.is-internship {
+        min-width: 1.8rem;
         background: var(--color-primary-less);
+        transition: 0.3s;
     }
-    .timeline-bar.is-job {
+    .timeline-bar.is-visible {
         background: var(--color-primary);
     }
+
     .is-background {
         border-radius: 50%;
         background-color: var(--color-background-more-2);
         height: 1rem;
         width: 1rem;
         margin: auto 0.4rem;
-    }
-    .sheen {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .sheen:before {
-        content: "";
-        position: absolute;
-        opacity: 0.2;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            100deg,
-            transparent,
-            var(--color-foreground),
-            transparent
-        );
-        transition: all 650ms;
-    }
-
-    .sheen:hover:before {
-        left: 100%;
     }
 </style>

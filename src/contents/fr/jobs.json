@@ -2,14 +2,12 @@
   {
     "startingDate": "2019-04-01",
     "endingDate": "2019-06-01",
-    "isInternship": true,
     "company": "INSA, laboratoire ICube",
     "location": "Strasbourg (67)",
     "title": "Stage de développement informatique",
     "description": "Création d'outils pour aider les chercheurs du laboratoire. Développement d'une interface Electron.js pour simplifier le scraping des résumés d'articles scientifiques provenant de sources multiples. Utilisation de Keras, Tensorflow et Scikit-Learn pour entraîner un modèle d'IA pour la classification précise des articles et proposer des solutions potentielles en utilisant la méthodologie TRIZ."
   },
   {
-    "isInternship": true,
     "startingDate": "2020-01-01",
     "endingDate": "2020-04-01",
     "company": "ITS Future",
@@ -18,7 +16,6 @@
     "description": "Maintenance et amélioration d'une application web et mobile, en appliquant les méthodologies Agile et SCRUM. Utilisation d'Angular.ts pour le frontend, Spring (Java EE) pour le backend et Ionic pour l'application mobile. Création d'une API en utilisant Nest.js et Puppeteer."
   },
   {
-    "isInternship": true,
     "startingDate": "2020-09-01",
     "endingDate": "2021-04-01",
     "company": "AnyDesk",
