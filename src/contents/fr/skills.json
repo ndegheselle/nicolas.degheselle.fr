@@ -185,8 +185,7 @@
                         }
                     ]
                 }
-            ]
-            ,
+            ],
             [
                 {
                     "tag": "Multiplateforme",
@@ -353,67 +352,72 @@
         "title": "Expérimentations",
         "description": "Liste des technologies sur lesquelles j'ai expérimenté, mais sans réaliser un projet complet.",
         "contents": [
-            [
-                {
-                    "title": "rust",
-                    "description": "Paradigme différent de ce que je connais. Syntaxe particulière, besoin de temps pour s'y habituer."
-                },
-                {
-                    "title": "Kotlin",
-                    "description": "J'aime ce qu'ils ont fait avec le langage, cela prend du temps pour s'y habituer mais je vois comment cela peut faire gagner beaucoup de temps (encore plus par rapport à Java)."
-                },
-                {
-                    "title": "Swift",
-                    "description": "Beau langage, beaucoup de fonctionnalités intéressantes, j'aime beaucoup le concept de storyboard. Le seul inconvénient est qu'il est uniquement pour Apple."
-                }
-            ],
-            [
-                {
-                    "title": "Tauri",
-                    "description": "Belle alternative à Electron, mais encore en développement précoce (la documentation est insuffisante et certaines options manquent)."
-                },
-                {
-                    "title": "Flutter",
-                    "description": "Concept intéressant, API / fonctionnalités complètes et de nombreux plugins. Je ne suis pas vraiment fan du fait qu'il soit très facile de mélanger la logique et l'interface utilisateur."
-                },
-                {
-                    "title": "Avalonia UI",
-                    "description": "Semble être ce que MAUI devrait être."
-                },
-                {
-                    "title": "Cordova",
-                    "description": "C'est pénible à utiliser, mais c'est le seul moyen de créer une application multiplateforme (y compris mobile) avec des technologies web.",
-                    "level": 1
-                },
-                {
-                    "title": "Ionic",
-                    "description": "Cordova sans les inconvénients de Cordova. Beaucoup de composants pré-construits intéressants."
-                }
-            ],
-            [
-                {
-                    "title": "React",
-                    "description": "Je ne comprends pas pourquoi il est autant utilisé. Il y a 5 façons différentes de faire n'importe quoi et autant de façons de le faire de travers. La syntaxe est lourde (Dieu nous préserve de JSX et des états)."
-                },
-                {
-                    "title": "Nuxt",
-                    "description": "Je l'ai essayé juste après la sortie de la version 3, donc pas beaucoup de documentation. Sinon, j'aime bien le concept (ça vaut vraiment la peine) !"
-                },
-                {
-                    "title": "Redis",
-                    "description": "Base de données clés valeurs haute performance. Facile à mettre en place, à utiliser, que demande le peuple."
-                }
-            ],
-            [
-                {
-                    "title": "Ultralight.cpp",
-                    "description": "Belle alternative à Webkit, mais rend compliqué le bebugging et la mise en place de l'interop."
-                },
-                {
-                    "title": "AppWrite",
-                    "description": "Backend platform, simplifie le développement web et mobile. Similaire à supabase et firebase, possibilité de self-host, projet gratuit pour tester et développer. Noice."
-                }
-            ]
+            {
+                "group": "language",
+                "title": "rust",
+                "description": "Paradigme différent de ce que je connais. Syntaxe particulière, besoin de temps pour s'y habituer."
+            },
+            {
+                "group": "language",
+                "title": "Kotlin",
+                "description": "J'aime ce qu'ils ont fait avec le langage, cela prend du temps pour s'y habituer mais je vois comment cela peut faire gagner beaucoup de temps (encore plus par rapport à Java)."
+            },
+            {
+                "group": "language",
+                "title": "Swift",
+                "description": "Beau langage, beaucoup de fonctionnalités intéressantes, j'aime beaucoup le concept de storyboard. Le seul inconvénient est qu'il est uniquement pour Apple."
+            },
+            {
+                "group": "multi-platform",
+                "title": "Tauri",
+                "description": "Belle alternative à Electron, mais encore en développement précoce (la documentation est insuffisante et certaines options manquent)."
+            },
+            {
+                "group": "multi-platform",
+                "title": "Flutter",
+                "description": "Concept intéressant, API / fonctionnalités complètes et de nombreux plugins. Je ne suis pas vraiment fan du fait qu'il soit très facile de mélanger la logique et l'interface utilisateur."
+            },
+            {
+                "group": "multi-platform",
+                "title": "Avalonia UI",
+                "description": "Semble être ce que MAUI devrait être."
+            },
+            {
+                "group": "multi-platform",
+                "title": "Cordova",
+                "description": "C'est pénible à utiliser, mais c'est le seul moyen de créer une application multiplateforme (y compris mobile) avec des technologies web.",
+                "level": 1
+            },
+            {
+                "group": "multi-platform",
+                "title": "Ionic",
+                "description": "Cordova sans les inconvénients de Cordova. Beaucoup de composants pré-construits intéressants."
+            },
+            {
+                "group": "web",
+                "title": "React",
+                "description": "Je ne comprends pas pourquoi il est autant utilisé. Il y a 5 façons différentes de faire n'importe quoi et autant de façons de le faire de travers. La syntaxe est lourde (Dieu nous préserve de JSX et des états)."
+            },
+            {
+                "group": "web",
+                "title": "Nuxt",
+                "description": "Je l'ai essayé juste après la sortie de la version 3, donc pas beaucoup de documentation. Sinon, j'aime bien le concept (ça vaut vraiment la peine) !"
+            },
+            {
+                "group": "desktop",
+                "title": "Ultralight.cpp",
+                "description": "Belle alternative à Webkit, mais rend compliqué le bebugging et la mise en place de l'interop."
+            },
+            {
+                "group": "backend",
+                "title": "AppWrite",
+                "description": "Backend platform, simplifie le développement web et mobile. Similaire à supabase et firebase, possibilité de self-host, projet gratuit pour tester et développer. Noice."
+            },
+            {
+                "group": "backend",
+                "title": "Redis",
+                "description": "Base de données clés valeurs haute performance. Facile à mettre en place, à utiliser, que demande le peuple."
+            }
         ]
     },
     "others": {

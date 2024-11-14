@@ -3,20 +3,28 @@
     import { onMount } from "svelte";
     import { selectedStore } from "../MeStore.js";
     import clickOutside from "@base/clickOutside.js";
-    import svg from  "../svgs/experimentations.svg?raw";
-    import svgBackground from  "../svgs/experimentations-background.svg?raw";
+    import svg from "../svgs/experimentations.svg?raw";
+    import svgBackground from "../svgs/experimentations-background.svg?raw";
 
     onMount(() => {
-        const draw = SVG(svgContainer.querySelector('svg'));
+        const draw = SVG(svgContainer.querySelector("svg"));
+
+        let grouped = experimentations.contents.reduce(function (groups, item) {
+            (groups[item.group] = groups[item.group] || []).push(item);
+            return groups;
+        }, {});
 
         let numberOfPaper = 0;
-        for (let i = 0; i < experimentations.contents.length; i++) {
-            for (let j = 0; j < experimentations.contents[i].length; j++) {
-                const experimentation = experimentations.contents[i][j];
+        let numberOfGroup = 0;
+        for (const group in grouped) {
+            for (const experimentation of grouped[group]) {
                 const paperGroup = draw
                     .group()
                     .translate(
-                        (numberOfPaper * PAPER_SPACING + EXTERIOR_SPACING /2 + i * CATEGORIES_SPACING) % MAX_WIDTH,
+                        (numberOfPaper * PAPER_SPACING +
+                            EXTERIOR_SPACING / 2 +
+                            numberOfGroup * CATEGORIES_SPACING) %
+                            MAX_WIDTH,
                         ROW_HEIGHT * Math.floor(numberOfPaper / PAPER_PER_ROW) +
                             EXTERIOR_SPACING,
                     );
@@ -58,9 +66,9 @@
                             isLocked: true,
                         });
                     });
-
                 numberOfPaper++;
             }
+            numberOfGroup++;
         }
     });
 
@@ -119,8 +127,6 @@
     {@html svg}
 </div>
 
-
-
 <div
     class="selectable-display container"
     class:preview={canPreview($selectedStore)}
@@ -133,12 +139,11 @@
 
     <div class="content-container">
         <div class="content">
-
             {#if canPreview($selectedStore)}
-            <h1>{$selectedStore.data.title}</h1>
-            <hr />
-            <p>{$selectedStore.data.description}</p>
-        {/if}
+                <h1>{$selectedStore.data.title}</h1>
+                <hr />
+                <p>{$selectedStore.data.description}</p>
+            {/if}
         </div>
     </div>
 </div>

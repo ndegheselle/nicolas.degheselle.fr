@@ -7,6 +7,7 @@ import Who from "./_presentation/Who.svelte";
 import How from "./_presentation/How.svelte";
 import Where from "./_presentation/Where.svelte";
 import Projects from "./_presentation/Projects.svelte";
+import Me from "./_skills/Me.astro";
 
 import { languages } from "@i18n/ui";
 import { useTranslations } from "@i18n/utils";
@@ -19,6 +20,7 @@ const { lang } = Astro.params;
 const jobs = (await import(`../../contents/${lang}/jobs.json`)).default;
 const projects = (await import(`../../contents/${lang}/projects.json`)).default;
 const me = await import(`../../contents/${lang}/me.json`);
+const skills = await import(`../../contents/${lang}/skills.json`);
 
 const t = useTranslations(lang);
 ---
@@ -31,6 +33,7 @@ const t = useTranslations(lang);
     <How guidelines={me.guidelines} {lang}/>
     <Where {jobs} {lang} client:idle/>
     <Projects {projects} {lang} />
+    <Me {skills}/>
   </main>
 
 </Layout>

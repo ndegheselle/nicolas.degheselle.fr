@@ -10,7 +10,7 @@ import HobbiesSvg from "./svgs/hobbies.svg?raw";
 import { useTranslations } from "@i18n/utils";
 
 const { lang } = Astro.params;
-const skills = await import(`../../contents/${lang}/skills.json`);
+const { skills } = Astro.props;
 const t = useTranslations(lang);
 ---
 

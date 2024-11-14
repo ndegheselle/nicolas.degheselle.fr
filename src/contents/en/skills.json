@@ -352,67 +352,72 @@
         "title": "Experimentations",
         "description": "List of the things I experimented with, but didn't made a full project with.",
         "contents": [
-            [
-                {
-                    "title": "rust",
-                    "description": "Different paradigm from what I am familiar with. Peculiar syntax, need some time to be used to."
-                },
-                {
-                    "title": "Kotlin",
-                    "description": "I do like what they did with the language, take some time to accostum to it but I see how it can save a lot of time (even more compared to Java)."
-                },
-                {
-                    "title": "Swift",
-                    "description": "Nice language, a lot of nice features, I like a lot the storyboard concept. The only downside is that it's only for Apple."
-                }
-            ],
-            [
-                {
-                    "title": "Tauri",
-                    "description": "Nice alternative to Electron, but still in early development (documentation is lacking and some options are missing)."
-                },
-                {
-                    "title": "Flutter",
-                    "description": "Interesting concept, complete API / functionnalites and a lot of plugins. Not realy fan of the fact that it's really easy to mix logic and UI."
-                },
-                {
-                    "title": "Avalonia UI",
-                    "description": "Seems to be what MAUI should be."
-                },
-                {
-                    "title": "Cordova",
-                    "description": "It's a pain to use, but it's the only way to create a multiplatform (including mobile) app with web technologies.",
-                    "level": 1
-                },
-                {
-                    "title": "Ionic",
-                    "description": "Corodva without the pain of Cordova. A lot of nice prebuilt components."
-                }
-            ],
-            [
-                {
-                    "title": "React",
-                    "description": "I don't understand why it's used that much. There is 5 different way to do aynthing and as much way to do it wrong. The syntax is heavy (God forbid JSX and states)."
-                },
-                {
-                    "title": "Nuxt",
-                    "description": "Tried it just after v3 have been released so there was not much documentation. Otherwise like everything about it (it's realy worth the assle) !"
-                },
-                {
-                    "title": "AppWrite",
-                    "description": "Backend platform, simplify web and mobile development. Similar to supabase and firebase, possibility to self-host, free project to test and develop. Nice."
-                }
-            ],
-            [
-                {
-                    "title": "Ultralight.cpp",
-                    "description": "Good alternative to Webkit, but make debugging and interop harder."
-                },
-                {
-                    "title": "Redis",
-                    "description": "High performance realtime key-value database. Easy to setup, easy to use, fast, what more should we want."
-                }
-            ]
+            {
+                "group": "language",
+                "title": "rust",
+                "description": "Different paradigm from what I am familiar with. Peculiar syntax, need some time to be used to."
+            },
+            {
+                "group": "language",
+                "title": "Kotlin",
+                "description": "I do like what they did with the language, take some time to accostum to it but I see how it can save a lot of time (even more compared to Java)."
+            },
+            {
+                "group": "language",
+                "title": "Swift",
+                "description": "Nice language, a lot of nice features, I like a lot the storyboard concept. The only downside is that it's only for Apple."
+            },
+            {
+                "group": "multi-platform",
+                "title": "Tauri",
+                "description": "Nice alternative to Electron, but still in early development (documentation is lacking and some options are missing)."
+            },
+            {
+                "group": "multi-platform",
+                "title": "Flutter",
+                "description": "Interesting concept, complete API / functionnalites and a lot of plugins. Not realy fan of the fact that it's really easy to mix logic and UI."
+            },
+            {
+                "group": "multi-platform",
+                "title": "Avalonia UI",
+                "description": "Seems to be what MAUI should be."
+            },
+            {
+                "group": "multi-platform",
+                "title": "Cordova",
+                "description": "It's a pain to use, but it's the only way to create a multiplatform (including mobile) app with web technologies.",
+                "level": 1
+            },
+            {
+                "group": "multi-platform",
+                "title": "Ionic",
+                "description": "Corodva without the pain of Cordova. A lot of nice prebuilt components."
+            },
+            {
+                "group": "web",
+                "title": "React",
+                "description": "I don't understand why it's used that much. There is 5 different way to do aynthing and as much way to do it wrong. The syntax is heavy (God forbid JSX and states)."
+            },
+            {
+                "group": "web",
+                "title": "Nuxt",
+                "description": "Tried it just after v3 have been released so there was not much documentation. Otherwise like everything about it (it's realy worth the assle) !"
+            },
+            {
+                "group": "desktop",
+                "title": "Ultralight.cpp",
+                "description": "Good alternative to Webkit, but make debugging and interop harder."
+            },
+            {
+                "group": "backend",
+                "title": "Redis",
+                "description": "High performance realtime key-value database. Easy to setup, easy to use, fast, what more should we want."
+            },
+            {
+                "group": "backend",
+                "title": "AppWrite",
+                "description": "Backend platform, simplify web and mobile development. Similar to supabase and firebase, possibility to self-host, free project to test and develop. Nice."
+            }
         ]
     },
     "certifications": [
