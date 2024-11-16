@@ -5,7 +5,6 @@ function createStore() {
         data: null,
         options: {
             target: null,
-            childIndex: 0,
             isLocked: false,
         }
     });
@@ -39,14 +38,13 @@ function createStore() {
                 data: null,
                 options: {
                     target: null,
-                    childIndex: 0,
                     isLocked: false,
                 }
             }
         });
     }
 
-    function select(data, doms, options = { childIndex: -1, target: "book", isLocked: true }) {
+    function select(data, doms, options = { target: "book", isLocked: true }) {
         resetClass('is-active');
         if (options.isLocked)
             resetClass('is-selected');

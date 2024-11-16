@@ -1,7 +1,7 @@
 <script>
     import { SVG } from "@svgdotjs/svg.js";
     import { onMount } from "svelte";
-    import { selectedStore } from "../MeStore.js";
+    import { selectedStore } from "../store.js";
 
     function randomIntFromInterval(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
@@ -26,45 +26,44 @@
             .addClass("color-back-low")
             .addClass("selectable is-background");
 
-        createCols(draw);
+        createShelf(draw);
     });
 
-    function createCols(parent) {
+    function createShelf(parent) {
         // Sum of bookshelf books
         let totalNumberOfVolumes = 0;
-        for (let i = 0; i < bookshelf.length; i++) {
-            totalNumberOfVolumes += bookshelf[i].books.reduce(
-                (acc, book) => acc + book.volumes.length,
+        for (const group of bookshelf) {
+            totalNumberOfVolumes += group.reduce(
+                (acc, book) => acc + (book.level || 1),
                 0,
             );
         }
 
         let offsetX = 0;
-        for (let i = 0; i < bookshelf.length; i++) {
-            const col = bookshelf[i];
-            const numberOfVolumes = col.books.reduce(
-                (acc, book) => acc + book.volumes.length,
+        for (const group of bookshelf) {
+            const numberOfVolumes = group.reduce(
+                (acc, book) => acc + (book.level || 1),
                 0,
             );
-            const colGroup = parent.group().translate(offsetX, 0);
+            const groupElement = parent.group().translate(offsetX, 0);
 
             // Horizontal supports
-            colGroup
+            groupElement
                 .rect(SUPPORT_SIZE, BOOKSHELF_HEIGHT)
                 .move(SUPPORT_SPACING, 0)
                 .addClass("color-back-low")
                 .addClass("selectable is-background");
 
-            createBooks(col, colGroup);
+            createBooks(group, groupElement);
             offsetX += numberOfVolumes / totalNumberOfVolumes * (BOOKSHELF_WIDTH - SUPPORT_SIZE - SUPPORT_SPACING);
         }
     }
 
-    function createBooks(col, parent) {
+    function createBooks(group, parent) {
         let currentBookNumber = 0;
 
-        for (let i = 0; i < col.books.length; i++) {
-            const book = col.books[i];
+        for (let i = 0; i < group.length; i++) {
+            const book = group[i];
             const bookGroup = parent
                 .group()
                 .translate(
@@ -77,7 +76,7 @@
 
             for (
                 let volumeIndex = 0;
-                volumeIndex < book.volumes.length;
+                volumeIndex < (book.level || 1);
                 volumeIndex++
             ) {
                 const randHeight =
@@ -101,7 +100,7 @@
                         selectedStore.select(
                             book,
                             [bookGroup.node, volumeVisual.node],
-                            { target: "book", childIndex: volumeIndex },
+                            { target: "book" },
                         );
                     })
                     .on("mouseleave", () => {
@@ -114,7 +113,6 @@
                             [bookGroup.node, volumeVisual.node],
                             {
                                 target: "book",
-                                childIndex: volumeIndex,
                                 isLocked: true,
                             },
                         );
@@ -124,7 +122,7 @@
             bookGroup
                 .text(book.title)
                 .move(
-                    (BOOK_WIDTH * (book.volumes.length + 1)) / 2,
+                    (BOOK_WIDTH * ((book.level || 1) + 1)) / 2,
                     (i % 2) * 15,
                 )
                 .font({
@@ -132,7 +130,7 @@
                 })
                 .addClass("search-text");
 
-            currentBookNumber += book.volumes.length;
+            currentBookNumber += (book.level || 1);
         }
     }
 

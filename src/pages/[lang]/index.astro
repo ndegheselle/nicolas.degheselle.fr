@@ -7,7 +7,7 @@ import Who from "./_presentation/Who.svelte";
 import How from "./_presentation/How.svelte";
 import Where from "./_presentation/Where.svelte";
 import Projects from "./_presentation/Projects.svelte";
-import Me from "./_skills/Me.astro";
+import Skills from "./_skills/Skills.astro";
 
 import { languages } from "@i18n/ui";
 import { useTranslations } from "@i18n/utils";
@@ -33,7 +33,7 @@ const t = useTranslations(lang);
     <How guidelines={me.guidelines} {lang}/>
     <Where {jobs} {lang} client:idle/>
     <Projects {projects} {lang} />
-    <Me {skills}/>
+    <Skills {skills}/>
   </main>
 
 </Layout>

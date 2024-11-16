@@ -3,26 +3,30 @@
         "title": "Knowledges",
         "description": "List of the things I know and have experience with.",
         "contents": [
+            {
+                "group": "language",
+                "title": "C++",
+                "description": "High-performance, general-purpose programming language with object-oriented features. Like a lot the precise control over resources.",
+                "level": 3
+            },
+            {
+                "group": "language",
+                "title": "Java",
+                "description": "Platform-independent, object-oriented programming language. A little bit too verbose for me.",
+                "level": 1
+            },
+            {
+                "group": "Web apps",
+                "title": "Astro.js",
+                "description": "Modern static site builder focused on performance and simplicity. Totally onboard with the UI-agnostic and the flexibility.",
+                "level": 2
+            }
+        ],
+        "old": [
             [
                 {
                     "tag": "Languages",
                     "books": [
-                        {
-                            "title": "C++",
-                            "description": "Like it a lot. Large control on ressources, you can't do something wrong without knowing it. Can be hard to compile and debug at times.",
-                            "volumes": [
-                                "Memory management",
-                                "Templates",
-                                "Win32"
-                            ]
-                        },
-                        {
-                            "title": "Java",
-                            "description": "Usefull. Do like the fact that you can have methods and property on enums. A little bit too verbose for me.",
-                            "volumes": [
-                                "OOP"
-                            ]
-                        },
                         {
                             "title": "C#",
                             "description": "My go to language. Less heavy than Java, but still multiplatform, clear syntax, easy to use, easy to debug, easy to compile, easy to deploy.",
@@ -62,14 +66,6 @@
                 {
                     "tag": "Web apps",
                     "books": [
-                        {
-                            "title": "Astro.js",
-                            "description": "Make it possible to use multiple techs in one project. Totally onboard with making the site as light as possible and separating what is static and dymanic.",
-                            "volumes": [
-                                "Flexibility & UI-agnostic",
-                                "MPA"
-                            ]
-                        },
                         {
                             "title": "Webpack",
                             "description": "Nice to cleany bundle and nicely separate everything. Should be used on every medium and big project.",

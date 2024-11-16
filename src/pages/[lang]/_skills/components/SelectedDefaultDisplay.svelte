@@ -1,6 +1,6 @@
 <script>
     import Card from "@components/Card.svelte";
-    import { selectedStore } from "./MeStore";
+    import { selectedStore } from "../store.js";
     import { onMount } from "svelte";
 
     function canPreview(store) {

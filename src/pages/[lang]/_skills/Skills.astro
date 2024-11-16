@@ -1,9 +1,9 @@
 ---
-import Search from "./Search.svelte";
-import SelectedDefaultDisplay from "./SelectedDefaultDisplay.svelte";
+import Search from "./components/Search.svelte";
+import SelectedDefaultDisplay from "./components/SelectedDefaultDisplay.svelte";
 import Card from "@components/Card.svelte";
 
-import Library from "./components/Library.svelte";
+import Bookcase from "./components/Bookcase.svelte";
 import Experimentations from "./components/Experimentations.svelte";
 import DesktopSvg from "./svgs/desktop.svg?raw";
 import HobbiesSvg from "./svgs/hobbies.svg?raw";
@@ -31,7 +31,7 @@ const t = useTranslations(lang);
 
 <SelectedDefaultDisplay otherSkills={skills.others} client:idle />
 <div id="me-container">
-    <Library knowledges={skills.knowledges} client:idle client:only />
+    <Bookcase knowledges={skills.knowledges} client:idle client:only />
     <div class="svg-container">
         <div class="experimental-container">
             <Experimentations

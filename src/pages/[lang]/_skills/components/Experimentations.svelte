@@ -1,7 +1,7 @@
 <script>
     import { SVG } from "@svgdotjs/svg.js";
     import { onMount } from "svelte";
-    import { selectedStore } from "../MeStore.js";
+    import { selectedStore } from "../store.js";
     import clickOutside from "@base/clickOutside.js";
     import svg from "../svgs/experimentations.svg?raw";
     import svgBackground from "../svgs/experimentations-background.svg?raw";
