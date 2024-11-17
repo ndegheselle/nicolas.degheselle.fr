@@ -52,11 +52,12 @@
             // Add new group
             currentBookshelf.push([]);
             for (const book of _grouped[group]) {
-                currentBooksNumber += _grouped[group].level || 1;
+                currentBooksNumber += book.level || 1;
                 // Create new bookshelf
                 if (currentBooksNumber > MAX_BOOKS_PER_BOOKSHELF)
                 {
                     createBookShelf();
+                    currentBookshelf.push([]);
                 }
                 // Add book to group
                 currentBookshelf[currentBookshelf.length -1].push(book);
@@ -66,7 +67,7 @@
         return separatedByBookshelf;
     }
 
-    const MAX_BOOKS_PER_BOOKSHELF = 25;
+    const MAX_BOOKS_PER_BOOKSHELF = 20;
     $: grouped = groupKnowledges(knowledges?.contents);
     export let knowledges = {};
 </script>
