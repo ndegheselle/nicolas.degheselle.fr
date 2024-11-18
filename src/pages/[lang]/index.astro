@@ -28,12 +28,13 @@ const t = useTranslations(lang);
 <Layout title="Nicolas De gheselle">
   <MainTitle />
 
+  <FilAriane client:idle />
   <main class="container fil-ariane-tracking">
     <Who {me} {lang}/>
     <How guidelines={me.guidelines} {lang}/>
     <Where {jobs} {lang} client:idle/>
     <Projects {projects} {lang} />
-    <Skills {skills}/>
+    <Skills {skills} hobbies={me.hobbies}/>
   </main>
 
 </Layout>

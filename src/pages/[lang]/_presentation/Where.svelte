@@ -119,8 +119,8 @@
 
     .is-background {
         border-radius: 50%;
-        background-color: var(--color-background-more-2);
-        height: 1rem;
+        background-color: var(--color-background-more-3);
+        height: 0.7rem;
         width: 1rem;
         margin: auto 0.4rem;
     }

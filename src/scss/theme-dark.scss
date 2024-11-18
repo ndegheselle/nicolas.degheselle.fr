@@ -3,7 +3,7 @@ body[data-theme="dark"] {
     $primary-color: #F7418F !default;
     $secondary-color: #FF8E8F !default;
 
-    $foreground-color: #FEFCF3 !default;
+    $foreground-color: #FEFEFE !default;
     $background-color: #222831 !default;
     $midground-color: lighten($background-color, 25%) !default;
 
@@ -17,7 +17,7 @@ body[data-theme="dark"] {
     --color-secondary-more: #{darken($secondary-color, 5%)};
 
     --color-foreground: #{$foreground-color};
-    --color-foreground-less: #{lighten($foreground-color, 10%)};
+    --color-foreground-less: #{darken($foreground-color, 20%)};
 
     --color-midground: #{$midground-color};
     --color-midground-less: #{lighten($midground-color, 10%)};
@@ -25,5 +25,6 @@ body[data-theme="dark"] {
 
     --color-background: #{$background-color};
     --color-background-more-1: #{lighten($background-color, 2%)};
-    --color-background-more-2: #{darken($background-color, 5%)};
+    --color-background-more-2: #{lighten($background-color, 5%)};
+    --color-background-more-3: #{lighten($background-color, 8%)};
 }

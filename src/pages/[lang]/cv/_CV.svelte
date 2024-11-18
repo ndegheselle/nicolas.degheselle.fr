@@ -131,7 +131,7 @@
 </main>
 
 <style lang="scss">
-    @import "../../scss/gracile/variables.scss";
+    @import "../../../scss/gracile/variables.scss";
 
     @media screen and (max-width: $breakpoint-md) {
         header {
@@ -159,7 +159,7 @@
     }
 
     header {
-        background: var(--color-background-more-1);
+        background: var(--color-background-more-3);
         padding: 3rem 3rem 1rem 3rem;
     }
 
@@ -218,7 +218,7 @@
     }
 
     .is-content {
-        border-left: 0.1rem solid var(--color-background-more-1);
+        border-left: 0.1rem solid var(--color-background-more-3);
         margin-left: 0.2rem;
         padding-left: 0.6rem;
         padding-bottom: 0.6rem;
@@ -229,7 +229,7 @@
     }
 
     .is-separator {
-        border-top: 0.1rem solid var(--color-background-more-1);
+        border-top: 0.1rem solid var(--color-background-more-3);
         margin: 0 0.8rem;
     }
 </style>

@@ -278,26 +278,5 @@
                 "description": "Open-source backend server that provides developers with a set of easy-to-use APIs for managing authentication, databases, storage, and more, enabling rapid development of modern web and mobile applications."
             }
         ]
-    },
-    "certifications": [
-        {
-            "name": "TOEIC",
-            "date": "2021-01-01",
-            "description": "With a score of 990"
-        },
-        {
-            "name": "CCNA",
-            "date": "2020-09-01",
-            "description": "CCNA 2 : Switching, Routing, and Wireless Essentials"
-        }
-    ],
-    "educations": [
-        {
-            "name": "Master's degree in Computer Science",
-            "location": "CESI - Strasbourg (67)",
-            "startingDate": "2017-09-01",
-            "endingDate": "2022-09-01",
-            "description": "Major in Software Engineering specialized in cybersecurity"
-        }
-    ]
+    }
 }

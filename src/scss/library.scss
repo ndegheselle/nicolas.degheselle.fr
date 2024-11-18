@@ -1,7 +1,7 @@
 /*#region svg colors*/
 svg {
-    --color-back-low: var(--color-background-more-1);
-    --color-back: var(--color-background-more-2);
+    --color-back-low: var(--color-background-more-3);
+    --color-back: var(--color-background-more-3);
     --color-front-low: var(--color-midground-less);
     --color-front: var(--color-midground);
 
@@ -115,17 +115,6 @@ svg .selectable.is-selected {
 
 .is-searching .search-text {
     opacity: 1;
-}
-
-.me-tag {
-    margin-top: 0.4rem;
-    margin-bottom: 0.2rem;
-    display: inline-block;
-    padding: 0 0.4rem;
-    text-align: center;
-    border: 1px solid var(--color-midground);
-    border-radius: 0.2rem;
-    background-color: var(--color-background-more-1);
 }
 
 /*#endregion*/

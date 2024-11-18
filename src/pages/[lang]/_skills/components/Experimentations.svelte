@@ -113,7 +113,7 @@
 </script>
 
 <div class="grid">
-    <span class="me-tag">
+    <span class="tag">
         <a
             href="javascript:void(0)"
             on:click|stopPropagation={selectExplanation}

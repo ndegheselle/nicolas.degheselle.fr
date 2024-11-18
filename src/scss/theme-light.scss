@@ -5,7 +5,7 @@ body {
  
      $foreground-color: #222831 !default;
      $background-color: #FFF!default;
-     $midground-color: #B4B4B8 !default;
+     $midground-color: #a1a1a6 !default;
  
      // Create a css variable for each color
      --color-primary: #{$primary-color};
@@ -17,13 +17,14 @@ body {
      --color-secondary-more: #{darken($secondary-color, 5%)};
  
      --color-foreground: #{$foreground-color};
-     --color-foreground-less: #{lighten($foreground-color, 10%)};
+     --color-foreground-less: #{lighten($foreground-color, 20%)};
  
      --color-midground: #{$midground-color};
      --color-midground-less: #{lighten($midground-color, 10%)};
      --color-midground-more: #{darken($midground-color, 10%)};
  
      --color-background: #{$background-color};
-     --color-background-more-1: #{darken($background-color, 5%)};
-     --color-background-more-2: #{darken($background-color, 8%)};
+     --color-background-more-1: #{darken($background-color, 3%)};
+     --color-background-more-2: #{darken($background-color, 5%)};
+     --color-background-more-3: #{darken($background-color, 8%)};
 }
