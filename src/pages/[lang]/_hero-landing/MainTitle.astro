@@ -6,13 +6,15 @@ import Colors from "@components/Colors.astro";
 <section class="main-title-container">
     <DynamicBuildBackground />
 
-    <Colors style="position:absolute;"/>
     <div class="main-title">
         <h2 class="background">NDG</h2>
         <h1 class="first-name">Nicolas</h1>
         <h1 class="last-name">De Gheselle</h1>
     </div>
 
+    <div class="color-palette">
+        <Colors />
+    </div>
     <span class="build-in-progress">Coding ...<span class="loader"></span></span>
 </section>
 
@@ -47,6 +49,12 @@ import Colors from "@components/Colors.astro";
 
     .main-title-container.finished .build-in-progress {
         opacity: 0;
+    }
+
+    .color-palette {
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
 
     .build-in-progress {

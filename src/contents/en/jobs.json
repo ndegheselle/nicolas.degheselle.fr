@@ -20,7 +20,7 @@
     "endingDate": "2021-04-01",
     "company": "AnyDesk",
     "location": "Stuttgart (Germany)",
-    "title": "Analyst Developer <span class='subtitle'>- internship</span>",
+    "title": "C++ Analyst Developer",
     "description": "AnyDesk develops a high-performance, cross-platform remote desktop application used worldwide. As a Software Developer, I created tools to improve debugging and simplify future developments, enhancing the efficiency and effectiveness of the development team.",
     "bullets": [
       "Designed and created a highly performant desktop application using C++, significantly improving log handling and enhancing overall system reliability.",
@@ -33,7 +33,7 @@
     "startingDate": "2022-02-01",
     "company": "3MA Group",
     "location": "Rouffach (68)",
-    "title": "Software Engineer",
+    "title": ".NET Software Engineer",
     "description": "3ma Group is an industrial company specializing in marketing, production, and logistics. I develop and maintain mobile and desktop applications to meet client needs and streamline internal processes.",
     "bullets": [
       "Developed and launched a new WPF desktop application consolidating multiple existing tools, enhancing user efficiency and scalability.",

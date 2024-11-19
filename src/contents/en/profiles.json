@@ -3,70 +3,27 @@
         "description": "Innovative and dedicated software engineer with a Master's degree in Computer Science and three years of experience in developing desktop and mobile applications. Passionate about low-level code and optimization, with a proven track record of delivering efficient and maintainable solutions. Skilled in C++, C#, and multi-threading techniques, and committed to exceeding customer expectations through continuous learning and innovative problem-solving.",
         "skills": [
             {
-                "title": "Developpement",
-                "items": ["C#", "C++", "Python", "WPF", "Maui", "SDL2", "OpenGL"]
+                "title": "Desktop",
+                "primary": ["C#", "C++", "WPF"],
+                "secondary": ["Python", "Maui", "SDL2", "OpenGL"]
             },
             {
                 "title": "Web",
-                "items": ["HTML5 / CSS3 / ECMAScript6", "Vue.js", "SveltKit", "Swagger", "Express.js"]
+                "primary": ["Vue.js", "SveltKit", ".NET Asp"],
+                "secondary": ["Swagger", "Node.js", "Express.js"]
             },
             {
                 "title": "DB & Servers",
-                "items": ["SQL Server", "MySQL", "MongoDB", ".NET Asp", "Node.js", "Nginx", "Docker"]
+                "primary": ["SQL Server", "MySQL", "Docker"],
+                "secondary": ["MongoDB", "Nginx"]
             },
             {
                 "title": "Practices",
-                "items": ["Scrum & Agile", "Git", "Cybersecurity", "REST"]
+                "primary": ["Scrum & Agile", "Git", "Cybersecurity", "REST"]
             },
             {
                 "title": "Soft Skills",
-                "items": ["Problem Solving","Teamwork","Troubleshooting","Adaptability"]
-            }
-        ]
-    },
-    "desktop": {
-        "description": "Innovative and dedicated software engineer with a Master's degree in Computer Science and three years of experience in developing desktop and mobile applications. Passionate about low-level code and optimization, with a proven track record of delivering efficient and maintainable solutions. Skilled in C++, C#, and multi-threading techniques, and committed to exceeding customer expectations through continuous learning and innovative problem-solving.",
-        "skills": [
-            {
-                "title": "Developpement",
-                "items": ["C#", "C++", "Python", "WPF", "Maui", "SDL2", "OpenGL"]
-            },
-            {
-                "title": "Database",
-                "items": ["SQL Server", "MySQL", "SQLite", "MongoDB"]
-            },
-            {
-                "title": "Practices",
-                "items": ["Scrum & Agile", "Git", "Cybersecurity", "REST"]
-            },
-            {
-                "title": "Soft Skills",
-                "items": ["Problem Solving","Teamwork","Troubleshooting","Adaptability"]
-            }
-        ]
-    },
-    "web": {
-        "description": "Innovative and dedicated software engineer with a Master's degree in Computer Science and three years of experience in developing desktop and mobile applications. Passionate about low-level code and optimization, with a proven track record of delivering efficient and maintainable solutions. Skilled in C++, C#, and multi-threading techniques, and committed to exceeding customer expectations through continuous learning and innovative problem-solving.",
-        "skills": [
-            {
-                "title": "Languages",
-                "items": ["Java", "C#", "C++", "HTML5 / CSS3 / ECMAScript6"]
-            },
-            {
-                "title": "Web",
-                "items": ["Spring", "Vue.js", "SveltKit", "Swagger", "Express.js"]
-            },
-            {
-                "title": "DB & Servers",
-                "items": ["SQL Server", "MySQL", "MongoDB", ".NET Asp", "Node.js", "Nginx", "Docker"]
-            },
-            {
-                "title": "Practices",
-                "items": ["Scrum & Agile", "Git", "Cybersecurity", "REST"]
-            },
-            {
-                "title": "Soft Skills",
-                "items": ["Problem Solving","Teamwork","Troubleshooting","Adaptability"]
+                "primary": ["Problem Solving","Teamwork","Troubleshooting","Adaptability"]
             }
         ]
     }

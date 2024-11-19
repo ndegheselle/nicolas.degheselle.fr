@@ -1,5 +1,5 @@
 <script>
-    import { formatDate, formatDates } from "@base/utils.js";
+    import { formatDate} from "@base/utils.js";
     import { useTranslations } from "@i18n/utils";
 
     function isDifferenceMoreThanFiveMonths(date1, date2) {
@@ -46,9 +46,16 @@
         {#each [...jobs].reverse() as job}
             {#if isDifferenceMoreThanFiveMonths(job.startingDate, job.endingDate)}
                 <div class="grid is-auto">
-                    <div class="col is-sub on-md-is-12">
+                    <div class="col is-sub is-date-col on-md-is-12">
                         <span class="subtitle">
-                            {formatDates(job.startingDate, job.endingDate, lang)}
+                            {formatDate(job.startingDate)} -
+                        </span>
+                        <span class="subtitle">
+                            {#if job.endingDate}
+                            {formatDate(job.endingDate)}
+                            {:else}
+                            {t("time.present")}
+                            {/if}
                         </span>
                     </div>
                     <div class="col is-content">
@@ -76,9 +83,16 @@
 
     {#each me.educations as education}
         <div class="grid is-auto">
-            <div class="col is-sub on-md-is-12">
+            <div class="col is-sub is-date-col on-md-is-12">
                 <span class="subtitle">
-                    {formatDates(education.startingDate, education.endingDate, lang)}
+                    {formatDate(education.startingDate)} -
+                </span>
+                <span class="subtitle">
+                    {#if education.endingDate}
+                    {formatDate(education.endingDate)}
+                    {:else}
+                    {t("time.present")}
+                    {/if}
                 </span>
             </div>
             <div class="col is-content">
@@ -103,9 +117,8 @@
             </div>
             <div class="col is-content is-small">
                 <div class="tags">
-                    {#each skill.items as tag}
-                        <span class="tag">{tag}</span>
-                    {/each}
+                    {#each skill.primary as tag}<span class="tag">{tag}</span>{/each}
+                    {#if skill.secondary}{#each skill.secondary as tag}<span class="tag-secondary">{tag}</span>{/each}{/if}
                 </div>
             </div>
         </div>
@@ -131,7 +144,7 @@
 </main>
 
 <style lang="scss">
-    @import "../../../scss/gracile/variables.scss";
+    @use "../../../scss/gracile/variables.scss" as *;
 
     @media screen and (max-width: $breakpoint-md) {
         header {
@@ -146,7 +159,7 @@
     @media print {
         :global(html) {
             // font-size: 13.75px;
-            font-size: 14px;
+            font-size: 14.5px;
         }
         :global(.side-menu) {
             display: none;
@@ -214,7 +227,12 @@
     }
 
     .is-sub {
-        flex: 0 0 6rem;
+        flex: 0 0 5rem;
+    }
+
+    .is-date-col {
+        display: flex;
+        flex-direction: column;
     }
 
     .is-content {
