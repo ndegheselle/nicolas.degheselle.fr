@@ -13,7 +13,7 @@
                 "secondary": ["Swagger", "Node.js", "Express.js"]
             },
             {
-                "title": "DB & Servers",
+                "title": "DB & Server",
                 "primary": ["SQL Server", "MySQL", "Docker"],
                 "secondary": ["MongoDB", "Nginx"]
             },

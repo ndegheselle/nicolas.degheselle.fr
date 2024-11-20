@@ -3,70 +3,27 @@
         "description": "Ingénieur logiciel passionné et investi, titulaire d'une maîtrise en informatique avec trois ans d'expérience en développement d'applications bureau et mobiles. Expert en C#, .NET, et C++, spécialisé dans le développement de code bas niveau et l'optimisation des performances. Je cherche à mettre à profit mes compétences pour fournir des solutions créatives et innovantes.",
         "skills": [
             {
-                "title": "Développement",
-                "items": ["C#", "C++", "Python", "ARM MCUs", "WPF", "SDL2", "OpenGL"]
+                "title": "Bureau",
+                "primary": ["C#", "C++", "WPF"],
+                "secondary": ["Python", "Maui", "SDL2", "OpenGL"]
             },
             {
                 "title": "Web",
-                "items": ["HTML5 / CSS3 / ECMAScript6", "VueJS", "SveltKit", "Swagger", "Express.js"]
+                "primary": ["Vue.js", "SveltKit", ".NET Asp"],
+                "secondary": ["Swagger", "Node.js", "Express.js"]
             },
             {
-                "title": "DB & Servers",
-                "items": ["SQL Server", "MySQL", "MongoDB", ".NET Asp", "Node.js", "Nginx", "Docker"]
-            },
-            {
-                "title": "Pratiques",
-                "items": ["Scrum & Agile", "Git", "Cybersécurité", "REST"]
-            },
-            {
-                "title": "Soft Skills",
-                "items": ["Problem Solving","Teamwork","Troubleshooting","Adaptabilité"]
-            }
-        ]
-    },
-    "desktop": {
-        "description": "Ingénieur logiciel passionné et investi, titulaire d'une maîtrise en informatique avec trois ans d'expérience en développement d'applications bureau et mobiles. Expert en C#, .NET, et C++, spécialisé dans le développement de code bas niveau et l'optimisation des performances. Je cherche à mettre à profit mes compétences pour fournir des solutions créatives et innovantes.",
-        "skills": [
-            {
-                "title": "Développement",
-                "items": ["C#", "C/C++", "Python", "WPF", "ARM MCUs", "SDL2", "OpenGL"]
-            },
-            {
-                "title": "BDD",
-                "items": ["SQL Server", "MySQL", "SQLite", "MongoDB"]
+                "title": "BDD & Serveur",
+                "primary": ["SQL Server", "MySQL", "Docker"],
+                "secondary": ["MongoDB", "Nginx"]
             },
             {
                 "title": "Pratiques",
-                "items": ["Scrum & Agile", "Git", "Cybersécurité", "REST"]
+                "primary": ["Scrum & Agile", "Git", "Cybersécurité", "REST"]
             },
             {
                 "title": "Soft Skills",
-                "items": ["Problem Solving","Teamwork","Troubleshooting","Adaptabilité"]
-            }
-        ]
-    },
-    "web": {
-        "description": "Ingénieur logiciel passionné et investi, titulaire d'une maîtrise en informatique avec trois ans d'expérience en développement d'applications bureau et mobiles. Expert en C#, .NET, et C++, spécialisé dans le développement de code bas niveau et l'optimisation des performances. Je cherche à mettre à profit mes compétences pour fournir des solutions créatives et innovantes.",
-        "skills": [
-            {
-                "title": "Languages",
-                "items": ["C#", "C++", "Python", "HTML5 / CSS3 / ECMAScript6"]
-            },
-            {
-                "title": "Web",
-                "items": ["Vue.js", "SveltKit", "Swagger", "Express.js"]
-            },
-            {
-                "title": "DB & Servers",
-                "items": ["SQL Server", "MySQL", "MongoDB", ".NET Asp", "Node.js", "Nginx", "Docker"]
-            },
-            {
-                "title": "Practices",
-                "items": ["Scrum & Agile", "Git", "Cybersecurity", "REST"]
-            },
-            {
-                "title": "Soft Skills",
-                "items": ["Problem Solving","Teamwork","Troubleshooting","Adaptabilité"]
+                "primary": ["Problem Solving","Teamwork","Troubleshooting","Adaptabilité"]
             }
         ]
     }
