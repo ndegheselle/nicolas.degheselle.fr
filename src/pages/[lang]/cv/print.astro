@@ -14,7 +14,7 @@ const jobs = (await import(`../../../contents/${lang}/jobs.json`)).default;
 const profiles = await import(`../../../contents/${lang}/profiles.json`);
 ---
 
-<BlankLayout title="CV - Nicolas De gheselle">
+<BlankLayout title="Nicolas De Gheselle - CV">
     <CV client:idle profile={profiles.main} {jobs} {me} {lang} />
 </BlankLayout>
 

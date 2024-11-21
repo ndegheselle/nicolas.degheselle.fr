@@ -16,11 +16,11 @@
     "description": "Maintenance and enhancement of a web and mobile application, applying Agile methodologies. Use of Angular.ts for the frontend, Spring (Java EE) for the backend, and Ionic for the mobile application. Creation of an API using Nest.js and Puppeteer."
   },
   {
-    "startingDate": "2020-09-01",
+    "startingDate": "2020-04-01",
     "endingDate": "2021-04-01",
     "company": "AnyDesk",
     "location": "Stuttgart (Germany)",
-    "title": "C++ Analyst Developer",
+    "title": "C++ Analyst Developer <span class='subtitle'>- Internship</span>",
     "description": "AnyDesk develops a high-performance, cross-platform remote desktop application used worldwide. As a Software Developer, I created tools to improve debugging and simplify future developments, enhancing the efficiency and effectiveness of the development team.",
     "bullets": [
       "Designed and created a highly performant desktop application using C++, significantly improving log handling and enhancing overall system reliability.",

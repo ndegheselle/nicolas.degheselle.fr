@@ -227,7 +227,7 @@
     }
 
     .is-sub {
-        flex: 0 0 5rem;
+        flex: 0 0 5.5rem;
     }
 
     .is-date-col {

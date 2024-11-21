@@ -1,0 +1,98 @@
+---
+import BlankLayout from "@layouts/BlankLayout.astro";
+import { formatDate} from "@base/utils.js";
+import { useTranslations } from "@i18n/utils";
+import CV from "./_CV.svelte";
+
+import { languages } from "@i18n/ui";
+import { date } from "astro/zod";
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+function customStringify(obj, indent = 2) {
+    const space = ' '.repeat(indent);
+
+    function stringifyValue(value, currentIndent) {
+        if (Array.isArray(value)) {
+            if (value.every(item => typeof item === 'object' && item !== null)) {
+                // Array contains objects
+                return `[\n${value.map(item => `${space.repeat(currentIndent + 1)}${stringifyValue(item, currentIndent + 1)}`).join(`, \n`)}\n${space.repeat(currentIndent)}]`;
+            } else {
+                // Array contains strings or other types
+                const inlineString = `[${value.map(item => stringifyValue(item, currentIndent)).join(', ')}]`;
+                if (inlineString.length < 80) {
+                    return inlineString;
+                } else {
+                    return `[\n${value.map(item => `${space.repeat(currentIndent + 1)}${stringifyValue(item, currentIndent + 1)}`).join(`, \n`)}\n${space.repeat(currentIndent)}]`;
+                }
+            }
+        } else if (typeof value === 'object' && value !== null) {
+            // Object
+            return `{\n${Object.entries(value).map(([key, val]) => `${space.repeat(currentIndent + 1)}"${key}": ${stringifyValue(val, currentIndent + 1)}`).join(`, \n`)}\n${space.repeat(currentIndent)}}`;
+        } else {
+            // Primitive value
+            return JSON.stringify(value);
+        }
+    }
+
+    return stringifyValue(obj, 0);
+}
+
+const { lang } = Astro.params;
+const me = await import(`../../../contents/${lang}/me.json`);
+const jobs = (await import(`../../../contents/${lang}/jobs.json`)).default;
+const profiles = await import(`../../../contents/${lang}/profiles.json`);
+const t = useTranslations(lang);
+const json = customStringify({
+    me: {
+        name: "Nicolas DE GHESELLE",
+        description: profiles.main.description
+    },
+    contact: {
+        email: "nicolas@degheselle.fr",
+        website: "nicolas.degheselle.fr",
+        linkedin: "https://www.linkedin.com/in/nicolas-de-gheselle-1437a1167/",
+        phone : "+33 7 68 18 51 80"
+    },
+    experiences: jobs.slice(Math.max(jobs.length - 2 )).map(x => {return {
+        title: x.title,
+        location: x.location,
+        date: formatDate(x.startingDate) +(x.endingDate ? ` - ${formatDate(x.endingDate)}` : ` - ${t("time.present")}`),
+        points: x.bullets
+    }}).reverse(),
+    educations: me.educations.map(x => { return {
+        title: x.name,
+        location: x.location,
+        date: `${formatDate(x.startingDate)} - ${formatDate(x.endingDate)}`,
+        description: x.description
+    }}),
+    skills: profiles.main.skills.reduce((acc, skill) => {
+        acc[skill.title] = [...(skill.primary || []), ...(skill.secondary || [])];
+        return acc;
+    }, {}),
+    certifications: me.certifications.map(x => {return {
+        date: formatDate(x.date),
+        name: `${x.name} - ${x.description}`
+    }}),
+});
+---
+
+<BlankLayout title="Nicolas De Gheselle - CV">
+    <div class="container page">
+        <code>{json}</code>
+      </div>
+</BlankLayout>
+
+<style>
+    .page {
+        padding: 0.4rem;
+        overflow-x: auto;
+    }
+
+    code {
+    	white-space: pre;
+        word-wrap: break-word;  /* Ensures long words are broken */
+    }
+</style>

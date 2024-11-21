@@ -248,3 +248,13 @@ svg .selectable.is-selected {
     pointer-events: none;
 }
 /*#endregion*/
+
+.page {
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+    padding: 0;
+    max-width: 50rem;
+    border-radius: 0.6rem;
+    border: 1px solid var(--color-midground);
+    overflow: hidden;
+  }
