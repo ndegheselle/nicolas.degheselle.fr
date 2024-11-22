@@ -20,7 +20,7 @@
     "endingDate": "2021-04-01",
     "company": "AnyDesk",
     "location": "Stuttgart (Allemagne)",
-    "title": "Analyse développeur <span class='subtitle'>- stage</span>",
+    "title": "Analyse développeur",
     "description": "AnyDesk développe une application de bureau à distance performante et multiplateforme utilisée dans le monde entier. En tant que développeur de logiciels, j'ai créé des outils pour améliorer le débogage et simplifier les développements futurs, améliorant ainsi l'efficacité de l'équipe de développement.",
     "bullets": [
       "Conception et création d'une application C++ haute performance, augmentant la fiabilité du système et améliorant la gestion des journaux.",
@@ -37,6 +37,7 @@
     "description": "3ma Group est une entreprise industrielle spécialisée dans le marketing, la production et la logistique. Je développe et maintiens des applications mobiles et bureau pour répondre aux besoins des clients et rationaliser les processus internes.",
     "bullets": [
       "Développement et lancement d'une application de bureau WPF consolidant plusieurs outils existants, augmentant l'efficacité des utilisateurs et améliorant l'évolutivité.",
+      "Création d'API ASP.NET et de services SignalR pour découpler et séparer la logique métier en plusieurs microservices.",
       "Réorganisation de la base de code en C# et .NET, créant des frameworks optimisés et réduisant la dette technique.",
       "Résolution proactive des défauts logiciels signalés, assurant une qualité logicielle élevée et augmentant la satisfaction des utilisateurs.",
       "Participation active aux cérémonies Agile pour améliorer les processus de développement, réduisant les cycles de développement.",

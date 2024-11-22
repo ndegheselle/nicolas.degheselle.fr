@@ -1,0 +1,96 @@
+---
+import BlankLayout from "@layouts/BlankLayout.astro";
+import { formatDate} from "@base/utils.js";
+import { useTranslations } from "@i18n/utils";
+
+import { languages } from "@i18n/ui";
+import { ClipPath } from "@svgdotjs/svg.js";
+
+export async function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+function separate(str, maxLineLength = characterPerLine) {
+    const wsLookup = 15; // Look backwards n characters for a whitespace
+    const regex = new RegExp(String.raw`\s*(?:(\S{${maxLineLength}})|([\s\S]{${maxLineLength - wsLookup},${maxLineLength}})(?!\S))`, 'g');
+
+    const text = str.replace(regex, (_, x, y) => x ? `${x}-\n` : `${y}\n`);
+    return text.split('\n').filter(i => i);
+}
+
+function formatBulletPoints(bullets)
+{
+    let listStr = "";
+    for (let bullet of bullets)
+    {
+        let bulletStr = "";
+        const lines = separate(bullet, characterPerLine - 6);
+        for (let i=0; i < lines.length; i++)
+        {
+            if (i == 0)
+                bulletStr += Array(4).join(' ') + "- " + lines[i];
+            else
+                bulletStr += Array(6).join(' ') + lines[i];
+            bulletStr += "\n";
+        }
+        listStr += bulletStr;
+    }
+    return listStr;
+}
+
+const characterPerLine = 80;
+const { lang } = Astro.params;
+const me = await import(`../../../contents/${lang}/me.json`);
+const jobs = (await import(`../../../contents/${lang}/jobs.json`)).default;
+const profiles = await import(`../../../contents/${lang}/profiles.json`);
+const t = useTranslations(lang);
+
+const text = `Nicolas DE GHESELLE
+--
+${separate(profiles.main.description).join('\n')}
+--
+${"nicolas@degheselle.fr".padStart(characterPerLine)}
+${"nicolas.degheselle.fr".padStart(characterPerLine)}
+${"+33 7 68 18 51 80".padStart(characterPerLine)}
+
+${(`# ${t("cv.experience")} `).padEnd(characterPerLine, '-')}
+${jobs.slice(Math.max(jobs.length - 2 )).reverse().map(job => `
+${job.title}
+${job.location} - ${formatDate(job.startingDate) +(job.endingDate ? ` - ${formatDate(job.endingDate)}` : ` - ${t("time.present")}`)}
+
+${formatBulletPoints(job.bullets)}`).join('')}
+${(`# ${t("cv.education")} `).padEnd(characterPerLine, '-')}
+${me.educations.map(eductation => `
+${eductation.name}
+${eductation.location} - ${formatDate(eductation.startingDate)} - ${formatDate(eductation.endingDate)}
+${eductation.description}`).join('')}
+
+${(`# ${t("cv.skills")} `).padEnd(characterPerLine, '-')}
+${profiles.main.skills.map(skill => `
+${skill.title.padEnd(17)} ${skill.primary.join(", ")}${skill.secondary ? ", "+ skill.secondary.join(", ") : ""}`).join('')}
+
+${(`# ${t("cv.certifications")} `).padEnd(characterPerLine, '-')}
+${me.certifications.map(certification => `
+${certification.name} - ${formatDate(certification.date)}
+${certification.description}
+`).join('')}`;
+---
+
+<BlankLayout title="Nicolas De Gheselle - CV">
+    <div class="container page">
+        <code>{text}</code>
+    </div>
+</BlankLayout>
+
+<style>
+    .page {
+        padding: 0.4rem;
+        overflow-x: auto;
+        max-width: 39.5rem;
+
+    }
+    code {
+    	white-space: pre;
+        word-wrap: break-word;  /* Ensures long words are broken */
+    }
+</style>

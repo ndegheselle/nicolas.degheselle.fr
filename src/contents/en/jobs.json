@@ -20,7 +20,7 @@
     "endingDate": "2021-04-01",
     "company": "AnyDesk",
     "location": "Stuttgart (Germany)",
-    "title": "C++ Analyst Developer <span class='subtitle'>- Internship</span>",
+    "title": "C++ Analyst Developer",
     "description": "AnyDesk develops a high-performance, cross-platform remote desktop application used worldwide. As a Software Developer, I created tools to improve debugging and simplify future developments, enhancing the efficiency and effectiveness of the development team.",
     "bullets": [
       "Designed and created a highly performant desktop application using C++, significantly improving log handling and enhancing overall system reliability.",
@@ -37,6 +37,7 @@
     "description": "3ma Group is an industrial company specializing in marketing, production, and logistics. I develop and maintain mobile and desktop applications to meet client needs and streamline internal processes.",
     "bullets": [
       "Developed and launched a new WPF desktop application consolidating multiple existing tools, enhancing user efficiency and scalability.",
+      "Created ASP.NET APIs and SignalR services to uncouple and separate business logic in multiple microservices.",
       "Refactored legacy codebase in C# and .NET, creating frameworks and improving code maintainability, significantly reducing technical debt.",
       "Debugged and resolved software defects reported by QA and end-users, maintaining high standards of software quality and boosting user satisfaction.",
       "Collaborated with cross-functional teams in Agile ceremonies to drive continuous improvement in development processes.",

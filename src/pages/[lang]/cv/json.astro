@@ -2,10 +2,8 @@
 import BlankLayout from "@layouts/BlankLayout.astro";
 import { formatDate} from "@base/utils.js";
 import { useTranslations } from "@i18n/utils";
-import CV from "./_CV.svelte";
 
 import { languages } from "@i18n/ui";
-import { date } from "astro/zod";
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({ params: { lang } }));
