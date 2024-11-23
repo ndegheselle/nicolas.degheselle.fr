@@ -18,6 +18,12 @@ const profiles = await import(`../../../contents/${lang}/profiles.json`);
   <a slot="side-menu" href="print">
     <i class="fa-solid fa-print"></i>
   </a>
+  <a slot="side-menu" href="json">
+    <i class="fa-solid fa-code"></i>
+  </a>
+  <a slot="side-menu" href="text">
+    <i class="fa-regular fa-file-lines"></i>
+  </a>
   <div class="container page">
     <CV client:idle profile={profiles.main} {jobs} {me} {lang}/>
   </div>

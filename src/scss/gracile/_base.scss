@@ -1,3 +1,5 @@
+@use "variables";
+
 // Base
 *,
 *::before,
@@ -7,16 +9,16 @@
 
 html {
   box-sizing: border-box;
-  font-size: $html-font-size;
-  line-height: $html-line-height;
+  font-size: variables.$html-font-size;
+  line-height: variables.$html-line-height;
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: $body-font-family;
-  font-size: $font-size;
+  font-family: variables.$body-font-family;
+  font-size: variables.$font-size;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
 }

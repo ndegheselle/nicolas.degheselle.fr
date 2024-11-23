@@ -1,4 +1,4 @@
-@import "gracile/variables.scss";
+@use "../gracile/variables.scss";
 
 h1,
 h2,
@@ -19,12 +19,22 @@ h6 {
     margin: 2rem 0 0 0;
 }
 
-@media screen and (max-width: $breakpoint-md) {
-    .giant-title  {
+@media screen and (max-width: variables.$breakpoint-md) {
+    .giant-title {
         font-size: 4rem;
     }
 }
 
 .giant-title.is-overlapping {
     transform: translateY(40%);
+}
+
+.page {
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+    padding: 0;
+    max-width: 50rem;
+    border-radius: 0.6rem;
+    border: 1px solid var(--color-midground);
+    overflow: hidden;
 }

@@ -1,14 +1,14 @@
-@import "gracile/variables.scss";
-@import "gracile/_normalize.scss";
-@import "gracile/_base.scss";
-@import "gracile/_typography.scss";
-@import "gracile/_utils.scss";
-@import "gracile/_grid.scss";
-@import "gracile/_forms.scss";
-@import "gracile/_loading";
+@use "gracile/variables.scss";
+@use "gracile/_normalize.scss";
+@use "gracile/_base.scss";
+@use "gracile/_typography.scss";
+@use "gracile/_utils.scss";
+@use "gracile/_grid.scss";
+@use "gracile/_forms.scss";
+@use "gracile/_loading";
 
-@import "theme-light.scss";
-@import "theme-dark.scss";
+@use "themes/light.scss";
+@use "themes/dark.scss";
 
-@import "title.scss";
-@import "library.scss";
+@use "custom/library.scss";
+@use "custom/typography.scss" as custom-typo;

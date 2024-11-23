@@ -1,0 +1,32 @@
+@use "sass:color";
+
+body {
+     // Core colors
+     $primary-color: #FC819E !default;
+     $secondary-color: #FF8E8F !default;
+ 
+     $foreground-color: #222831 !default;
+     $background-color: #FFF!default;
+     $midground-color: #a1a1a6 !default;
+ 
+     // Create a css variable for each color
+     --color-primary: #{$primary-color};
+     --color-primary-less: #{color.adjust($primary-color, $lightness: 10%)};
+     --color-primary-more: #{color.adjust($primary-color, $lightness: -10%)};
+ 
+     --color-secondary: #{$secondary-color};
+     --color-secondary-less: #{color.adjust($secondary-color, $lightness: 5%)};
+     --color-secondary-more: #{color.adjust($secondary-color, $lightness: -5%)};
+ 
+     --color-foreground: #{$foreground-color};
+     --color-foreground-less: #{color.adjust($foreground-color, $lightness: 20%)};
+ 
+     --color-midground: #{$midground-color};
+     --color-midground-less: #{color.adjust($midground-color, $lightness: 10%)};
+     --color-midground-more: #{color.adjust($midground-color, $lightness: -10%)};
+ 
+     --color-background: #{$background-color};
+     --color-background-more-1: #{color.adjust($background-color, $lightness: -3%)};
+     --color-background-more-2: #{color.adjust($background-color, $lightness: -5%)};
+     --color-background-more-3: #{color.adjust($background-color, $lightness: -8%)};
+}
