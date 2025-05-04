@@ -10,7 +10,7 @@ import HobbiesSvg from "./svgs/hobbies.svg?raw";
 import { useTranslations } from "@i18n/utils";
 
 const { lang } = Astro.params;
-const { skills, hobbies } = Astro.props;
+const { skills, experimentations, hobbies } = Astro.props;
 const t = useTranslations(lang);
 ---
 
@@ -31,12 +31,12 @@ const t = useTranslations(lang);
 
 <SelectedDefaultDisplay otherSkills={hobbies} client:idle />
 <div id="me-container">
-    <Bookcase knowledges={skills.knowledges} client:idle client:only />
+    <Bookcase knowledges={skills} client:idle client:only />
     <div class="svg-container">
         <div class="experimental-container">
             <Experimentations
                 client:idle
-                experimentations={skills.experimentations}
+                {experimentations}
             />
         </div>
         <div class="desktop-container">

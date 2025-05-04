@@ -67,19 +67,19 @@
         {#if selectedJob}
             <Card>
                 <div slot="title">
-                    <h3>{@html selectedJob.title}</h3>
+                    <h3>{@html selectedJob.data.title}</h3>
                     <span class="subtitle">
-                        {selectedJob.company} - {selectedJob.location}
+                        {selectedJob.data.company} - {selectedJob.data.location}
                     </span>
                     <p class="date">
                         {formatDates(
-                            selectedJob.startingDate,
-                            selectedJob.endingDate,
+                            selectedJob.data.startingDate,
+                            selectedJob.data.endingDate,
                             lang,
                         )}
                     </p>
                 </div>
-                <p class="job-description">{@html selectedJob.description}</p>
+                <p class="job-description">{@html selectedJob.rendered.html}</p>
             </Card>
         {/if}
     </div>
@@ -123,5 +123,9 @@
         height: 0.7rem;
         width: 1rem;
         margin: auto 0.4rem;
+    }
+
+    .job-description {
+        text-align: left;
     }
 </style>

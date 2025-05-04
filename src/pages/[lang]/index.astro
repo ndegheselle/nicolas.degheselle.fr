@@ -11,30 +11,30 @@ import Skills from "./_skills/Skills.astro";
 
 import { languages } from "@i18n/ui";
 import { useTranslations } from "@i18n/utils";
+import { getCollection } from "astro:content";
+const { lang } = Astro.params;
 
+const t = useTranslations(lang);
+const me = await import(`../../data/${lang}/me.json`);
+const jobs = await getCollection("jobs");
+const projects = await getCollection("projects");
+const skills = await getCollection("skills");
+const experimentations = await getCollection("experimentations");
+
+console.log("jobs", projects);
 export async function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({ params: { lang } }));
 }
-
-const { lang } = Astro.params;
-const jobs = (await import(`../../contents/${lang}/jobs.json`)).default;
-const projects = (await import(`../../contents/${lang}/projects.json`)).default;
-const me = await import(`../../contents/${lang}/me.json`);
-const skills = await import(`../../contents/${lang}/skills.json`);
-
-const t = useTranslations(lang);
 ---
 
 <Layout title="Nicolas De gheselle">
   <MainTitle />
-
   <FilAriane client:idle />
   <main class="container fil-ariane-tracking">
     <Who {me} {lang}/>
     <How guidelines={me.guidelines} {lang}/>
     <Where {jobs} {lang} client:idle/>
     <Projects {projects} {lang} />
-    <Skills {skills} hobbies={me.hobbies}/>
+    <Skills {skills} {experimentations} hobbies={me.hobbies}/>
   </main>
-
 </Layout>

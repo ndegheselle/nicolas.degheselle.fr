@@ -16,19 +16,19 @@
             <Card>
                 <div slot="title">
                     <h3>
-                        {project.name}
-                        <a href={project.url} class="ml-2 project-link">
+                        {project.data.name}
+                        <a href={project.data.url} class="ml-2 project-link" aria-label="Project link">
                             <i class="fa-solid fa-link"></i>
                         </a>
                     </h3>
                 </div>
                 <img
                     class="project-preview"
-                    src={project.pictureUrl}
-                    alt="Project {project.name} preview."
+                    src={project.data.pictureUrl}
+                    alt="Project preview"
                 />
                 <p>
-                    {@html project.description}
+                    {@html project.rendered.html}
                 </p>
             </Card>
         </div>

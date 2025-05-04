@@ -10,11 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/svelte": "^3.1.0",
-    "@svgdotjs/svg.js": "^3.2.0",
-    "astro": "^2.9.6",
+    "@astrojs/svelte": "^7.0.13",
+    "@svgdotjs/svg.js": "^3.2.4",
+    "astro": "^5.7.10",
     "normalize.css": "^8.0.1",
-    "sass": "^1.64.2",
-    "svelte": "^4.1.2"
+    "sass": "^1.87.0",
+    "svelte": "^5.28.2"
   }
 }

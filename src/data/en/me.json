@@ -1,6 +1,10 @@
 {
     "description": "I am a French software engineer with a passion for low-level coding and have a tight grasp on the underlying process to achieve efficient code. I also love to look at every aspect of a problem and finally solve it with an elegant solution.<br/> On my spare time, I enjoy doing personal projects on my own and explore interesting technologies.<br/><br/>But above all I aim at <b>simplicity</b>.",
-    "tags": ["Fast learner", "Autonomous", "Curious"],
+    "tags": [
+        "Fast learner",
+        "Autonomous",
+        "Curious"
+    ],
     "guidelines": [
         {
             "title": "Simplicity and Elegance",
@@ -15,28 +19,28 @@
             "description": "Maximizing efficiency by utilizing existing tools and knowledge, promoting a global perspective during development."
         }
     ],
-    "hobbies": {
-        "books": {
+    "hobbies": [
+        {
             "title": "Books",
             "description": "I like to read here and there, mostly fantasy and sci-fi."
         },
-        "outdoor": {
+        {
             "title": "Going outdoor",
             "description": "I like to do some trekking, with a bike or on foot. Lastly I have tried some electric motocross, wich is the most fun vehicle I ever used :)"
         },
-        "network": {
+        {
             "title": "Network",
             "description": "Aside from programming I also studied networtking and security, from deployment to supervision."
         },
-        "software-blender": {
+        {
             "title": "Blender",
             "description": "I do some 3d design occasionally, I used a lot Blender game engine then that was a thing."
         },
-        "software-unreal": {
+        {
             "title": "Unreal engine",
             "description": "I am starting to look more and more into this game engine (mostly to do some C++)."
         }
-    },
+    ],
     "certifications": [
         {
             "name": "TOEIC",
@@ -57,5 +61,67 @@
             "endingDate": "2022-09-01",
             "description": "Major in Software Engineering specialized in cybersecurity"
         }
-    ]
+    ],
+    "CV": {
+        "description": "Driven Software Engineer with a Master's degree in Computer Science and 3+ years of experience building full-stack systems. Specializes in low-level programming and performance optimization, delivering efficient, scalable, and maintainable solutions. Proficient in both desktop and web development, with a track record of exceeding customer expectations through innovation and continuous learning.",
+        "skills": [
+            {
+                "title": "Desktop",
+                "primary": [
+                    "C#",
+                    "C++",
+                    "WPF"
+                ],
+                "secondary": [
+                    "Python",
+                    "Maui",
+                    "SDL2",
+                    "OpenGL"
+                ]
+            },
+            {
+                "title": "Web",
+                "primary": [
+                    "Vue.js",
+                    "SveltKit",
+                    ".NET Asp"
+                ],
+                "secondary": [
+                    "Swagger",
+                    "Node.js",
+                    "Express.js"
+                ]
+            },
+            {
+                "title": "DB & Server",
+                "primary": [
+                    "SQL Server",
+                    "MySQL",
+                    "Docker"
+                ],
+                "secondary": [
+                    "MongoDB",
+                    "Nginx"
+                ]
+            },
+            {
+                "title": "Practices",
+                "primary": [
+                    "Scrum & Agile",
+                    "Git",
+                    "Cybersecurity",
+                    "REST"
+                ]
+            },
+            {
+                "title": "Soft Skills",
+                "primary": [
+                    "Problem Solving",
+                    "Teamwork",
+                    "Troubleshooting",
+                    "Adaptability"
+                ]
+            }
+        ]
+    }
 }
