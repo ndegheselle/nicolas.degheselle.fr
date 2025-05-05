@@ -31,11 +31,12 @@ const t = useTranslations(lang);
 
 <SelectedDefaultDisplay otherSkills={hobbies} client:idle />
 <div id="me-container">
-    <Bookcase knowledges={skills} client:idle client:only />
+    <Bookcase knowledges={skills} {lang} client:idle client:only />
     <div class="svg-container">
         <div class="experimental-container">
             <Experimentations
                 client:idle
+                {lang}
                 {experimentations}
             />
         </div>

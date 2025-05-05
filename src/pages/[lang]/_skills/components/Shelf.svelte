@@ -34,7 +34,7 @@
         let totalNumberOfVolumes = 0;
         for (const group of bookshelf) {
             totalNumberOfVolumes += group.reduce(
-                (acc, book) => acc + (book.level || 1),
+                (acc, book) => acc + (book.data.level || 1),
                 0,
             );
         }
@@ -42,7 +42,7 @@
         let offsetX = 0;
         for (const group of bookshelf) {
             const numberOfVolumes = group.reduce(
-                (acc, book) => acc + (book.level || 1),
+                (acc, book) => acc + (book.data.level || 1),
                 0,
             );
             const groupElement = parent.group().translate(offsetX, 0);
@@ -72,11 +72,11 @@
                 )
                 .addClass("book-group")
                 .addClass("selectable")
-                .data("search", book.title);
+                .data("search", book.data.title);
 
             for (
                 let volumeIndex = 0;
-                volumeIndex < (book.level || 1);
+                volumeIndex < (book.data.level || 1);
                 volumeIndex++
             ) {
                 const randHeight =
@@ -120,9 +120,9 @@
             }
 
             bookGroup
-                .text(book.title)
+                .text(book.data.title)
                 .move(
-                    (BOOK_WIDTH * ((book.level || 1) + 1)) / 2,
+                    (BOOK_WIDTH * ((book.data.level || 1) + 1)) / 2,
                     (i % 2) * 15,
                 )
                 .font({
@@ -130,7 +130,7 @@
                 })
                 .addClass("search-text");
 
-            currentBookNumber += (book.level || 1);
+            currentBookNumber += (book.data.level || 1);
         }
     }
 

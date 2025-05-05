@@ -4,6 +4,7 @@
     import clickOutside from "@base/clickOutside.js";
     import booksSvg from "../svgs/books.svg?raw";
     import bookBackgroundSvg from "../svgs/book-background.svg?raw";
+    import { useTranslations } from "@i18n/utils";
 
     function canPreview(store) {
         return store.options.target == "book" && store.data;
@@ -12,8 +13,8 @@
     function selectExplanation() {
         selectedStore.select(
             {
-                title: knowledges.title,
-                description: knowledges.description,
+                title: t("knowledge.title"),
+                description: t("knowledge.description"),
             },
             Array.from(
                 document.querySelectorAll(
@@ -39,7 +40,7 @@
         }
 
         let _grouped = _contents.reduce(function (groups, item) {
-            (groups[item.group] = groups[item.group] || []).push(item);
+            (groups[item.data.group] = groups[item.data.group] || []).push(item);
             return groups;
         }, {});
 
@@ -52,7 +53,7 @@
             // Add new group
             currentBookshelf.push([]);
             for (const book of _grouped[group]) {
-                currentBooksNumber += book.level || 1;
+                currentBooksNumber += book.data.level || 1;
                 // Create new bookshelf
                 if (currentBooksNumber > MAX_BOOKS_PER_BOOKSHELF)
                 {
@@ -68,8 +69,10 @@
     }
 
     const MAX_BOOKS_PER_BOOKSHELF = 20;
-    $: grouped = groupKnowledges(knowledges?.contents);
+    $: grouped = groupKnowledges(knowledges);
     export let knowledges = {};
+    export let lang = "";
+    const t = useTranslations(lang);
 </script>
 
 <!-- Books elements defs -->
@@ -81,7 +84,7 @@
             href="javascript:void(0)"
             on:click|stopPropagation={selectExplanation}
         >
-            {knowledges.title}
+        {t("knowledge.title")}
         </a>
     </span>
 </div>
@@ -108,9 +111,9 @@
     <div class="content-container">
         <div class="content">
             {#if canPreview($selectedStore)}
-                <h1>{$selectedStore.data.title}</h1>
+                <h1>{$selectedStore.data.data.title}</h1>
                 <hr />
-                <p>{$selectedStore.data.description}</p>
+                <p>{$selectedStore.data.rendered.html}</p>
             {/if}
         </div>
     </div>

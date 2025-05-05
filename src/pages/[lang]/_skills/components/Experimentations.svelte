@@ -5,12 +5,13 @@
     import clickOutside from "@base/clickOutside.js";
     import svg from "../svgs/experimentations.svg?raw";
     import svgBackground from "../svgs/experimentations-background.svg?raw";
+    import { useTranslations } from "@i18n/utils";
 
     onMount(() => {
         const draw = SVG(svgContainer.querySelector("svg"));
 
-        let grouped = experimentations.contents.reduce(function (groups, item) {
-            (groups[item.group] = groups[item.group] || []).push(item);
+        let grouped = experimentations.reduce(function (groups, item) {
+            (groups[item.data.group] = groups[item.data.group] || []).push(item);
             return groups;
         }, {});
 
@@ -39,10 +40,10 @@
                     )
                     .addClass("selectable")
                     .addClass("experimentation-result")
-                    .data("search", experimentation.title);
+                    .data("search", experimentation.data.title);
 
                 paperGroup
-                    .text(experimentation.title)
+                    .text(experimentation.data.title)
                     .move(PAPER_WIDTH / 2, -20 + (numberOfPaper % 2) * 5)
                     .font({
                         anchor: "middle",
@@ -83,8 +84,8 @@
     function selectExplanation() {
         selectedStore.select(
             {
-                title: experimentations.title,
-                description: experimentations.description,
+                title: t("experiments.title"),
+                description: t("experiments.description"),
             },
             Array.from(
                 document.querySelectorAll(
@@ -109,7 +110,9 @@
     const MAX_WIDTH = PAPER_PER_ROW * PAPER_WIDTH - 10;
 
     let svgContainer;
-    export let experimentations = {};
+    export let experimentations = [];
+    export let lang = "";
+    const t = useTranslations(lang);
 </script>
 
 <div class="grid">
@@ -118,7 +121,7 @@
             href="javascript:void(0)"
             on:click|stopPropagation={selectExplanation}
         >
-            {experimentations.title}
+        {t("experiments.title")}
         </a>
     </span>
 </div>
@@ -140,9 +143,9 @@
     <div class="content-container">
         <div class="content">
             {#if canPreview($selectedStore)}
-                <h1>{$selectedStore.data.title}</h1>
+                <h1>{$selectedStore.data.data.title}</h1>
                 <hr />
-                <p>{$selectedStore.data.description}</p>
+                {@html $selectedStore.data.rendered.html}
             {/if}
         </div>
     </div>
