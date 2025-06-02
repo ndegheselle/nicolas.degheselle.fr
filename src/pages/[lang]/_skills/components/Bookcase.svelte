@@ -113,7 +113,7 @@
             {#if canPreview($selectedStore)}
                 <h1>{$selectedStore.data.data.title}</h1>
                 <hr />
-                <p>{$selectedStore.data.rendered.html}</p>
+                {@html $selectedStore.data.rendered.html}
             {/if}
         </div>
     </div>

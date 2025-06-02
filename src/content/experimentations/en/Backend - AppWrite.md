@@ -1,6 +1,6 @@
 ---
 title: "AppWrite"
-group: "backend"
+group: "Web backend"
 ---
 
 ## Summary

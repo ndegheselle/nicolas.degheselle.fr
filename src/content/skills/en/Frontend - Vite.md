@@ -1,6 +1,6 @@
 ---
 title: "Vite"
-group: "Web apps"
+group: "Web frontend"
 level: 2
 ---
 

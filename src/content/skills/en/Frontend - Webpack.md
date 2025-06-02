@@ -1,6 +1,6 @@
 ---
 title: "Webpack"
-group: "Web apps"
+group: "Web frontend"
 level: 3
 ---
 

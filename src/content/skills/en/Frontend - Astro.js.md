@@ -1,6 +1,6 @@
 ---
 title: "Astro.js"
-group: "Web apps"
+group: "Web frontend"
 level: 2
 ---
 

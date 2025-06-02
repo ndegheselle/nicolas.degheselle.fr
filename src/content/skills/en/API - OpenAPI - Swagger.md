@@ -1,6 +1,6 @@
 ---
 title: "OpenAPI / Swagger"
-group: "Unknown"
+group: "Web API"
 level: 2
 ---
 
