@@ -18,7 +18,7 @@ export const ui = {
         'experiments.description': "List of the things I experimented with, but didn't made a full project with.",
         'me.explanation': 'What I do, what technologies I uses and so on. You can search something specific there or just hover and select at your will !',
         'footer.text': 'Made with love by myself',
-        'cv.experience': 'Work Experience',
+        'cv.experience': 'Experience',
         'cv.education': 'Education',
         'cv.skills': 'Skills',
         'cv.certifications': 'Certifications and Licenses',

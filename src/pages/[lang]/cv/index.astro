@@ -9,26 +9,21 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
-const me = await import(`../../../contents/${lang}/me.json`);
-const jobs = (await import(`../../../contents/${lang}/jobs.json`)).default;
-const profiles = await import(`../../../contents/${lang}/profiles.json`);
+const cv = await import(`../../../data/${lang}/cv.json`);
+console.log(cv);
 ---
 
 <BlankLayout title="CV - Nicolas De gheselle">
-  <a slot="side-menu" href="print">
+  <a slot="side-menu" href="./cv/print">
     <i class="fa-solid fa-print"></i>
   </a>
-  <a slot="side-menu" href="json">
+  <a slot="side-menu" href="./cv/json">
     <i class="fa-solid fa-code"></i>
   </a>
-  <a slot="side-menu" href="text">
+  <a slot="side-menu" href="./cv/text">
     <i class="fa-regular fa-file-lines"></i>
   </a>
   <div class="container page">
-    <CV client:idle profile={profiles.main} {jobs} {me} {lang}/>
+    <CV client:idle {cv} {lang}/>
   </div>
 </BlankLayout>
-
-<style>
-
-</style>

@@ -1,5 +1,5 @@
 <script>
-    import { formatDate} from "@base/utils.js";
+    import { formatDate } from "@base/utils.js";
     import { useTranslations } from "@i18n/utils";
 
     function isDifferenceMoreThanFiveMonths(date1, date2) {
@@ -12,9 +12,13 @@
         return differenceInMonths > 5;
     }
 
-    export let jobs = [];
-    export let profile = {};
-    export let me = {};
+    function formatLink(link) {
+        link = link.replace("http://", "");
+        link = link.replace("https://", "");
+        return link;
+    }
+
+    export let cv = {};
     export let lang = "";
     const t = useTranslations(lang);
 </script>
@@ -22,16 +26,14 @@
 <header>
     <div class="grid is-auto">
         <div class="col main-header is-9 is-content">
-            <h1>Nicolas DE GHESELLE</h1>
-            <p>{profile.description || me.description}</p>
+            <h1>{cv.name}</h1>
+            <p>{cv.description}</p>
         </div>
         <span class="col contacts">
-            <a href="mailto:nicolas@degheselle.fr">nicolas@degheselle.fr</a>
-            <a href="http://nicolas.degheselle.fr/">nicolas.degheselle.fr</a>
-            <a href="https://www.linkedin.com/in/nicolas-de-gheselle-1437a1167/"
-                >linkedin</a
-            >
-            <span>+33 7 68 18 51 80</span>
+            <a href="mailto:{cv.contact.email}">{cv.contact.email}</a>
+            <a href={cv.contact.website}>{formatLink(cv.contact.website)}</a>
+            <a href={cv.contact.linkedin}>linkedin</a>
+            <span>{cv.contact.phone}</span>
         </span>
     </div>
 </header>
@@ -43,30 +45,30 @@
     </div>
 
     <section class="part">
-        {#each [...jobs].reverse() as job}
-            {#if isDifferenceMoreThanFiveMonths(job.startingDate, job.endingDate)}
+        {#each cv.experiences as experience}
+            {#if isDifferenceMoreThanFiveMonths(experience.from, experience.to)}
                 <div class="grid is-auto">
                     <div class="col is-sub is-date-col on-md-is-12">
                         <span class="subtitle">
-                            {formatDate(job.startingDate)} -
+                            {formatDate(experience.from)} -
                         </span>
                         <span class="subtitle">
-                            {#if job.endingDate}
-                            {formatDate(job.endingDate)}
+                            {#if experience.to}
+                                {formatDate(experience.to)}
                             {:else}
-                            {t("time.present")}
+                                {t("time.present")}
                             {/if}
                         </span>
                     </div>
                     <div class="col is-content">
-                        <h3>{@html job.title}</h3>
+                        <h3>{@html experience.position}</h3>
                         <span class="subtitle">
-                            {job.company} - {job.location}
+                            {experience.company} - {experience.location}
                         </span>
-                        {#if job.bullets}
+                        {#if experience.responsibilities}
                             <ul>
-                                {#each job.bullets as bullet}
-                                    <li>{@html bullet}</li>
+                                {#each experience.responsibilities as responsibility}
+                                    <li>{@html responsibility}</li>
                                 {/each}
                             </ul>
                         {/if}
@@ -81,17 +83,17 @@
         <span class="col is-separator"></span>
     </div>
 
-    {#each me.educations as education}
+    {#each cv.educations as education}
         <div class="grid is-auto">
             <div class="col is-sub is-date-col on-md-is-12">
                 <span class="subtitle">
-                    {formatDate(education.startingDate)} -
+                    {formatDate(education.from)} -
                 </span>
                 <span class="subtitle">
-                    {#if education.endingDate}
-                    {formatDate(education.endingDate)}
+                    {#if education.to}
+                        {formatDate(education.to)}
                     {:else}
-                    {t("time.present")}
+                        {t("time.present")}
                     {/if}
                 </span>
             </div>
@@ -108,17 +110,19 @@
         <span class="col is-separator"></span>
     </div>
 
-    {#each profile.skills as skill}
+    {#each Object.entries(cv.skills) as [name, skill]}
         <div class="grid is-auto">
             <div class="col is-sub on-md-is-12">
                 <span class="subtitle">
-                    {skill.title}
+                    {name}
                 </span>
             </div>
             <div class="col is-content is-small">
                 <div class="tags">
-                    {#each skill.primary as tag}<span class="tag">{tag}</span>{/each}
-                    {#if skill.secondary}{#each skill.secondary as tag}<span class="tag-secondary">{tag}</span>{/each}{/if}
+                    {#each skill[0] as tag}<span class="tag">{tag}</span>{/each}
+                    {#if skill[1]}{#each skill[1] as tag}<span
+                                class="tag-secondary">{tag}</span
+                            >{/each}{/if}
                 </div>
             </div>
         </div>
@@ -128,7 +132,7 @@
         <h2 class="col is-auto">{t("cv.certifications")}</h2>
         <span class="col is-separator"></span>
     </div>
-    {#each me.certifications as certification}
+    {#each cv.certifications as certification}
         <div class="grid is-auto">
             <div class="col is-sub on-md-is-12">
                 <span class="subtitle">
