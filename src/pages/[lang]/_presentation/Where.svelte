@@ -1,10 +1,10 @@
 <script>
-    import Card from "@components/Card.svelte";
     import { formatDates } from "@base/utils.js";
-    import { onMount } from "svelte";
+    import Card from "@components/Card.svelte";
     import { useTranslations } from "@i18n/utils";
 
     function selectJob(_job) {
+        console.log("selectJob", _job);
         selectedJob = _job;
     }
 

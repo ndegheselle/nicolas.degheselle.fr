@@ -66,18 +66,18 @@
     </div>
 
     {#each balises as balise}
-        <a
+        <button
             on:click|preventDefault={smoothScrollTo}
             class="balise"
             class:active={balise.percent < scrollPercent}
             style="top: {balise.percent}%"
             href={balise.link}
-        ></a>
+        ></button>
     {/each}
 </div>
 
 <style lang="scss">
-    @import "../scss/gracile/variables.scss";
+    @use "../scss/gracile/variables.scss" as vars;
 
     .fil-ariane-container {
         position: fixed;
@@ -86,7 +86,7 @@
         z-index: 10;
     }
 
-    @media screen and (max-width: $breakpoint-md) {
+    @media screen and (max-width: vars.$breakpoint-md) {
         .fil-ariane-container {
             left: -0.1rem;
         }

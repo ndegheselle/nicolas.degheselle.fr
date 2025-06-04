@@ -1,11 +1,11 @@
 <script>
+    import clickOutside from "@base/clickOutside.js";
+    import { useTranslations } from "@i18n/utils";
     import { SVG } from "@svgdotjs/svg.js";
     import { onMount } from "svelte";
     import { selectedStore } from "../store.js";
-    import clickOutside from "@base/clickOutside.js";
-    import svg from "../svgs/experimentations.svg?raw";
     import svgBackground from "../svgs/experimentations-background.svg?raw";
-    import { useTranslations } from "@i18n/utils";
+    import svg from "../svgs/experimentations.svg?raw";
 
     onMount(() => {
         const draw = SVG(svgContainer.querySelector("svg"));
