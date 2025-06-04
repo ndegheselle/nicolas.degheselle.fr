@@ -10,7 +10,6 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 const cv = await import(`../../../data/${lang}/cv.json`);
-console.log(cv);
 ---
 
 <BlankLayout title="CV - Nicolas De gheselle">

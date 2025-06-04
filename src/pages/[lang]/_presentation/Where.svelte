@@ -4,7 +4,6 @@
     import { useTranslations } from "@i18n/utils";
 
     function selectJob(_job) {
-        console.log("selectJob", _job);
         selectedJob = _job;
     }
 
