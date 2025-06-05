@@ -5,24 +5,27 @@ import CV from "./_CV.svelte";
 import { languages } from "@i18n/ui";
 
 export async function getStaticPaths() {
-  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+    return Object.keys(languages).map((lang) => ({ params: { lang } }));
 }
 
 const { lang } = Astro.params;
 const cv = await import(`../../../data/${lang}/cv.json`);
 ---
 
-<BlankLayout title="CV - Nicolas De gheselle">
-  <a slot="side-menu" href="print">
-    <i class="fa-solid fa-print"></i>
-  </a>
-  <a slot="side-menu" href="json">
-    <i class="fa-solid fa-code"></i>
-  </a>
-  <a slot="side-menu" href="text">
-    <i class="fa-regular fa-file-lines"></i>
-  </a>
-  <div class="container page">
-    <CV client:idle {cv} {lang}/>
-  </div>
+<BlankLayout title="Nicolas De gheselle - CV">
+    <a slot="side-menu" href={`/${lang}/cv`}>
+        <i class="fa-solid fa-file"></i>
+    </a>
+    <a slot="side-menu" href={`/${lang}/cv/json`}>
+        <i class="fa-solid fa-code"></i>
+    </a>
+    <a slot="side-menu" href={`/${lang}/cv/text`}>
+        <i class="fa-regular fa-file-lines"></i>
+    </a>
+    <a slot="side-menu" href={`/${lang}/cv/print`}>
+        <i class="fa-solid fa-print"></i>
+    </a>
+    <div class="container page">
+        <CV client:idle {cv} {lang} />
+    </div>
 </BlankLayout>
