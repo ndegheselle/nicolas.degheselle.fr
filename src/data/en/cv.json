@@ -48,7 +48,7 @@
     "skills": {
         "Desktop": [
             ["C#", "C++", "WPF"],
-            ["Python", "Maui", "SDL2", "OpenGL"]
+            ["Python", "Qt", "SDL2", "OpenGL"]
         ],
         "Web": [
             ["Vue.js", "SvelteKit", ".NET Asp"],

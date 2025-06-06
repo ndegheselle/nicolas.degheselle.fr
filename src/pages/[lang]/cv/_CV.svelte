@@ -163,10 +163,10 @@
     @media print {
         :global(html) {
             // font-size: 13.75px;
-            font-size: 14.5px;
+            font-size: 15px;
         }
         :global(.side-menu) {
-            display: none;
+            display: none !important;
         }
     }
 
@@ -243,7 +243,6 @@
         border-left: 0.1rem solid var(--color-background-more-3);
         margin-left: 0.2rem;
         padding-left: 0.6rem;
-        padding-bottom: 0.6rem;
     }
 
     .is-content.is-small {
@@ -253,5 +252,9 @@
     .is-separator {
         border-top: 0.1rem solid var(--color-background-more-3);
         margin: 0 0.8rem;
+    }
+
+    .is-start {
+        align-items: start;
     }
 </style>
