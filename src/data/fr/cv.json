@@ -1,0 +1,80 @@
+{
+    "name": "Nicolas DE GHESELLE",
+    "description": "Driven Software Engineer with a Master's degree in Computer Science and 3+ years of experience building full-stack systems. Specializes in low-level programming and performance optimization, delivering efficient, scalable, and maintainable solutions. Proficient in both desktop and web development, with a track record of exceeding customer expectations through innovation and continuous learning.",
+    "contact": {
+        "email": "nicolas@degheselle.fr",
+        "website": "http://nicolas.degheselle.fr",
+        "linkedin": "https://www.linkedin.com/in/nicolas-de-gheselle/",
+        "phone": "+33 7 68 18 51 80"
+    },
+    "experiences": [
+        {
+            "from": "2022-02-01",
+            "position": ".NET Software Engineer",
+            "company": "3MA Group",
+            "location": "Rouffach (68)",
+            "responsibilities": [
+                "Developed and launched a new WPF desktop application consolidating multiple existing tools, enhancing user efficiency and scalability.",
+                "Created ASP.NET APIs and SignalR services to uncouple and separate business logic in multiple microservices.",
+                "Refactored legacy codebase in C# and .NET, creating frameworks and improving code maintainability, significantly reducing technical debt.",
+                "Debugged and resolved software defects reported by QA and end-users, maintaining high standards of software quality and boosting user satisfaction.",
+                "Collaborated with cross-functional teams in Agile ceremonies to drive continuous improvement in development processes.",
+                "Authored technical specifications and created user manuals, facilitating smooth onboarding for new team members and end-users."
+            ]
+        },
+        {
+            "from": "2020-04-01",
+            "to": "2021-04-01",
+            "position": "C++ Analyst Developer",
+            "company": "AnyDesk",
+            "location": "Stuttgart (Germany)",
+            "responsibilities": [
+                "Designed and created a highly performant desktop application using C++, significantly improving log handling and enhancing overall system reliability.",
+                "Implemented multi-threading techniques to enhance application performance, resulting in noticeably smoother user experiences and reduced processing times.",
+                "Troubleshot and resolved software defects in libraries, enhancing the application's stability and usability for end-users.",
+                "Developed and maintained comprehensive software documentation, ensuring all code changes were well-documented and easily understood by the development team."
+            ]
+        }
+    ],
+    "educations": [
+        {
+            "name": "Master's degree in Computer Science",
+            "location": "CESI - Strasbourg (67)",
+            "from": "2017-09-01",
+            "to": "2022-09-01",
+            "description": "Major in Software Engineering specialized in cybersecurity"
+        }
+    ],
+    "skills": {
+        "Desktop": [
+            ["C#", "C++", "WPF"],
+            ["Python", "Maui", "SDL2", "OpenGL"]
+        ],
+        "Web": [
+            ["Vue.js", "SvelteKit", ".NET Asp"],
+            ["Swagger", "Node.js", "Express.js"]
+        ],
+        "DB & Server": [
+            ["SQL Server", "MySQL", "Docker"],
+            ["MongoDB", "Nginx"]
+        ],
+        "Practices": [
+            ["Scrum & Agile", "Git", "Cybersecurity", "REST"]
+        ],
+        "Soft Skills": [
+            ["Problem Solving", "Teamwork", "Troubleshooting", "Adaptability"]
+        ]
+   },
+    "certifications": [
+        {
+            "name": "TOEIC",
+            "date": "2021-01-01",
+            "description": "With a score of 990"
+        },
+        {
+            "name": "CCNA",
+            "date": "2020-09-01",
+            "description": "CCNA 2 : Switching, Routing, and Wireless Essentials"
+        } 
+    ]
+}

@@ -1,10 +1,10 @@
 <script>
-    import Bookshelf from "./Shelf.svelte";
-    import { selectedStore } from "../store.js";
     import clickOutside from "@base/clickOutside.js";
-    import booksSvg from "../svgs/books.svg?raw";
-    import bookBackgroundSvg from "../svgs/book-background.svg?raw";
     import { useTranslations } from "@i18n/utils";
+    import { selectedStore } from "../store.js";
+    import bookBackgroundSvg from "../svgs/book-background.svg?raw";
+    import booksSvg from "../svgs/books.svg?raw";
+    import Bookshelf from "./Shelf.svelte";
 
     function canPreview(store) {
         return store.options.target == "book" && store.data;

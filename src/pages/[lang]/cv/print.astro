@@ -12,7 +12,7 @@ const { lang } = Astro.params;
 const cv = await import(`../../../data/${lang}/cv.json`);
 ---
 
-<BlankLayout title="CV - Nicolas De Gheselle">
+<BlankLayout title="Nicolas De gheselle - CV">
     <CV client:idle {cv} {lang} />
 </BlankLayout>
 

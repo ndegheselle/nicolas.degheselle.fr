@@ -1,7 +1,6 @@
 ---
-import BlankLayout from "@layouts/BlankLayout.astro";
-import { formatDate } from "@base/utils.js";
 import { useTranslations } from "@i18n/utils";
+import BlankLayout from "@layouts/BlankLayout.astro";
 
 import { languages } from "@i18n/ui";
 
@@ -51,15 +50,18 @@ const t = useTranslations(lang);
 const json = customStringify(cv);
 ---
 
-<BlankLayout title="CV - Nicolas De Gheselle">
-    <a slot="side-menu" href="./cv/print">
-        <i class="fa-solid fa-print"></i>
+<BlankLayout title="Nicolas De gheselle - CV">
+    <a slot="side-menu" href={`/${lang}/cv`}>
+        <i class="fa-solid fa-file"></i>
     </a>
-    <a slot="side-menu" href="./cv/json">
+    <a slot="side-menu" href={`/${lang}/cv/json`}>
         <i class="fa-solid fa-code"></i>
     </a>
-    <a slot="side-menu" href="./cv/text">
+    <a slot="side-menu" href={`/${lang}/cv/text`}>
         <i class="fa-regular fa-file-lines"></i>
+    </a>
+    <a slot="side-menu" href={`/${lang}/cv/print`}>
+        <i class="fa-solid fa-print"></i>
     </a>
     <div class="container page">
         <code>{json}</code>
