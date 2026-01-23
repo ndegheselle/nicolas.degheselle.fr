@@ -70,7 +70,7 @@ svg .selectable.is-selected {
 }
 
 .selectable-display.full {
-    transform: translate(-50%, 30%);
+    transform: translate(-50%, 10%);
 }
 
 .selectable-display .background {
@@ -86,13 +86,13 @@ svg .selectable.is-selected {
 }
 
 .selectable-display .content-container .content {
-    margin: 4rem;
-    text-align: center;
+    margin: 2.5rem;
+    text-align: left;
 }
 
 @media screen and (max-width: variables.$breakpoint-md) {
     .selectable-display .content-container .content {
-        margin: 4rem 2rem;
+        margin: 2rem;
     }
 }
 

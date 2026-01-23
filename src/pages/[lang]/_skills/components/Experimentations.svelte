@@ -143,7 +143,7 @@
     <div class="content-container">
         <div class="content">
             {#if canPreview($selectedStore)}
-                <h1>{$selectedStore.data.data.title}</h1>
+                <h1 style="text-align: center;">{$selectedStore.data.data.title}</h1>
                 <hr />
                 {@html $selectedStore.data.rendered.html}
             {/if}
