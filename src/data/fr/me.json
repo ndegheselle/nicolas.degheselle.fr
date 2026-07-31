@@ -1,44 +1,44 @@
 {
-    "description": "I am a French software engineer with a passion for low-level coding and have a tight grasp on the underlying process to achieve efficient code. I also love to look at every aspect of a problem and finally solve it with an elegant solution.<br/> On my spare time, I enjoy doing personal projects on my own and explore interesting technologies.<br/><br/>But above all I aim at <b>simplicity</b>.",
+    "description": "Je suis un ingénieur logiciel français passionné par la programmation bas niveau, avec une bonne maîtrise des mécanismes sous-jacents nécessaires pour écrire du code efficace. J'aime aussi examiner un problème sous tous ses angles pour finalement le résoudre avec une solution élégante.<br/> Sur mon temps libre, je mène des projets personnels et j'explore des technologies qui m'intriguent.<br/><br/>Mais avant tout, je vise la <b>simplicité</b>.",
     "tags": [
-        "Fast learner",
-        "Autonomous",
-        "Curious"
+        "Apprentissage rapide",
+        "Autonome",
+        "Curieux"
     ],
     "guidelines": [
         {
-            "title": "Simplicity and Elegance",
-            "description": "Creating clear and elegant code, implementing complex features in a straightforward manner for maintainability."
+            "title": "Simplicité et élégance",
+            "description": "Écrire un code clair et élégant, en implémentant des fonctionnalités complexes de manière directe pour rester maintenable."
         },
         {
-            "title": "Iterative and Agile Approach",
-            "description": "Embracing an iterative and Agile development process to arrive at lasting solutions while meeting client needs effectively."
+            "title": "Approche itérative et Agile",
+            "description": "Adopter un développement itératif et Agile pour aboutir à des solutions durables tout en répondant efficacement aux besoins du client."
         },
         {
-            "title": "Leveraging Existing Resources",
-            "description": "Maximizing efficiency by utilizing existing tools and knowledge, promoting a global perspective during development."
+            "title": "S'appuyer sur l'existant",
+            "description": "Gagner en efficacité en tirant parti des outils et des connaissances déjà disponibles, en gardant une vision globale pendant le développement."
         }
     ],
     "hobbies": [
         {
-            "title": "Books",
-            "description": "I like to read here and there, mostly fantasy and sci-fi."
+            "title": "Livres",
+            "description": "Je lis un peu de tout, surtout de la fantasy et de la science-fiction."
         },
         {
-            "title": "Going outdoor",
-            "description": "I like to do some trekking, with a bike or on foot. Lastly I have tried some electric motocross, wich is the most fun vehicle I ever used :)"
+            "title": "Sorties en plein air",
+            "description": "J'aime faire de la randonnée, à vélo ou à pied. Dernièrement j'ai essayé le motocross électrique, le véhicule le plus amusant que j'aie jamais utilisé :)"
         },
         {
-            "title": "Network",
-            "description": "Aside from programming I also studied networtking and security, from deployment to supervision."
+            "title": "Réseau",
+            "description": "En dehors de la programmation, j'ai aussi étudié le réseau et la sécurité, du déploiement à la supervision."
         },
         {
             "title": "Blender",
-            "description": "I do some 3d design occasionally, I used a lot Blender game engine then that was a thing."
+            "description": "Je fais occasionnellement de la 3D, j'ai beaucoup utilisé le moteur de jeu de Blender à l'époque où il existait."
         },
         {
             "title": "Unreal engine",
-            "description": "I am starting to look more and more into this game engine (mostly to do some C++)."
+            "description": "Je m'intéresse de plus en plus à ce moteur de jeu (surtout pour faire du C++)."
         }
     ]
 }

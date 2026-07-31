@@ -1,6 +1,6 @@
 {
     "name": "Nicolas DE GHESELLE",
-    "description": "Driven Software Engineer with a Master's degree in Computer Science and 3+ years of experience building full-stack systems. Specializes in low-level programming and performance optimization, delivering efficient, scalable, and maintainable solutions. Proficient in both desktop and web development, with a track record of exceeding customer expectations through innovation and continuous learning.",
+    "description": "Ingénieur logiciel motivé, titulaire d'un diplôme d'ingénieur en informatique et fort de plus de 3 ans d'expérience dans la conception de systèmes full-stack. Spécialisé dans la programmation bas niveau et l'optimisation des performances, je livre des solutions efficaces, évolutives et maintenables. À l'aise autant en développement desktop que web, avec un historique de projets qui ont dépassé les attentes des clients grâce à l'innovation et à l'apprentissage continu.",
     "contact": {
         "email": "nicolas@degheselle.fr",
         "website": "http://nicolas.degheselle.fr",
@@ -10,39 +10,39 @@
     "experiences": [
         {
             "from": "2022-02-01",
-            "position": ".NET Software Engineer",
-            "company": "3MA Group",
+            "position": "Ingénieur logiciel .NET",
+            "company": "3ma group",
             "location": "Rouffach (68)",
             "responsibilities": [
-                "Developed and launched a new WPF desktop application consolidating multiple existing tools, enhancing user efficiency and scalability.",
-                "Created ASP.NET APIs and SignalR services to uncouple and separate business logic in multiple microservices.",
-                "Refactored legacy codebase in C# and .NET, creating frameworks and improving code maintainability, significantly reducing technical debt.",
-                "Debugged and resolved software defects reported by QA and end-users, maintaining high standards of software quality and boosting user satisfaction.",
-                "Collaborated with cross-functional teams in Agile ceremonies to drive continuous improvement in development processes.",
-                "Authored technical specifications and created user manuals, facilitating smooth onboarding for new team members and end-users."
+                "Développement et mise en production d'une nouvelle application desktop WPF regroupant plusieurs outils existants, améliorant l'efficacité des utilisateurs et la scalabilité.",
+                "Création d'APIs ASP.NET et de services SignalR pour découpler et séparer la logique métier dans plusieurs microservices.",
+                "Refonte d'un code legacy en C# et .NET, création de frameworks et amélioration de la maintenabilité du code, réduisant fortement la dette technique.",
+                "Analyse et correction des défauts logiciels remontés par la QA et les utilisateurs finaux, en maintenant un haut niveau de qualité logicielle et en améliorant la satisfaction des utilisateurs.",
+                "Collaboration avec des équipes pluridisciplinaires lors des cérémonies Agile pour améliorer en continu les processus de développement.",
+                "Rédaction de spécifications techniques et de manuels utilisateurs, facilitant l'intégration des nouveaux membres de l'équipe et des utilisateurs finaux."
             ]
         },
         {
             "from": "2020-04-01",
             "to": "2021-04-01",
-            "position": "C++ Analyst Developer",
+            "position": "Développeur analyste C++",
             "company": "AnyDesk",
-            "location": "Stuttgart (Germany)",
+            "location": "Stuttgart (Allemagne)",
             "responsibilities": [
-                "Designed and created a highly performant desktop application using C++, significantly improving log handling and enhancing overall system reliability.",
-                "Implemented multi-threading techniques to enhance application performance, resulting in noticeably smoother user experiences and reduced processing times.",
-                "Troubleshot and resolved software defects in libraries, enhancing the application's stability and usability for end-users.",
-                "Developed and maintained comprehensive software documentation, ensuring all code changes were well-documented and easily understood by the development team."
+                "Conception et création d'une application desktop très performante en C++, améliorant nettement le traitement des logs et la fiabilité globale du système.",
+                "Mise en place de techniques de multi-threading pour améliorer les performances de l'application, avec une expérience utilisateur plus fluide et des temps de traitement réduits.",
+                "Diagnostic et correction de défauts logiciels dans des bibliothèques, améliorant la stabilité et l'ergonomie de l'application pour les utilisateurs finaux.",
+                "Rédaction et maintenance d'une documentation logicielle complète, garantissant que chaque modification du code soit documentée et facilement compréhensible par l'équipe de développement."
             ]
         }
     ],
     "educations": [
         {
-            "name": "Master's degree in Computer Science",
+            "name": "Diplôme d'ingénieur en informatique",
             "location": "CESI - Strasbourg (67)",
             "from": "2017-09-01",
             "to": "2022-09-01",
-            "description": "Major in Software Engineering specialized in cybersecurity"
+            "description": "Spécialité génie logiciel, option cybersécurité"
         }
     ],
     "skills": {
@@ -54,27 +54,27 @@
             ["Vue.js", "SvelteKit", ".NET Asp"],
             ["Swagger", "Node.js", "Express.js"]
         ],
-        "DB & Server": [
+        "BDD & Serveur": [
             ["SQL Server", "MySQL", "Docker"],
             ["MongoDB", "Nginx"]
         ],
-        "Practices": [
-            ["Scrum & Agile", "Git", "Cybersecurity", "REST"]
+        "Pratiques": [
+            ["Scrum & Agile", "Git", "Cybersécurité", "REST"]
         ],
-        "Soft Skills": [
-            ["Problem Solving", "Teamwork", "Troubleshooting", "Adaptability"]
+        "Savoir-être": [
+            ["Résolution de problèmes", "Travail en équipe", "Diagnostic", "Adaptabilité"]
         ]
    },
     "certifications": [
         {
             "name": "TOEIC",
             "date": "2021-01-01",
-            "description": "With a score of 990"
+            "description": "Avec un score de 990"
         },
         {
             "name": "CCNA",
             "date": "2020-09-01",
             "description": "CCNA 2 : Switching, Routing, and Wireless Essentials"
-        } 
+        }
     ]
 }

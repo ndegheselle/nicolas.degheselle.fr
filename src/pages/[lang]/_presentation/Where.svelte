@@ -8,6 +8,12 @@
     }
 
     function jobsToTimeline(_jobs) {
+        // Oldest job first so the timeline reads chronologically
+        _jobs = [..._jobs].sort(
+            (a, b) =>
+                new Date(a.data.startingDate) - new Date(b.data.startingDate),
+        );
+
         let totalDuration = 0;
         for (let i = 0; i < _jobs.length; i++) {
             const job = _jobs[i];
@@ -66,7 +72,14 @@
         {#if selectedJob}
             <Card>
                 <div slot="title">
-                    <h3>{@html selectedJob.data.title}</h3>
+                    <h3>
+                        {@html selectedJob.data.title}
+                        <span class="subtitle">
+                            {#if selectedJob.data.isInternship}
+                                - {t("jobs.internship")}
+                            {/if}
+                        </span>
+                    </h3>
                     <span class="subtitle">
                         {selectedJob.data.company} - {selectedJob.data.location}
                     </span>
@@ -95,7 +108,7 @@
         fill: var(--color-primary);
     }
 
-    .is-visible .triangle{
+    .is-visible .triangle {
         opacity: 1;
         transform: translate(-50%, 100%);
     }

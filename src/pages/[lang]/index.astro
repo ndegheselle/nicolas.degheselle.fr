@@ -16,10 +16,12 @@ const { lang } = Astro.params;
 
 const t = useTranslations(lang);
 const me = await import(`../../data/${lang}/me.json`);
-const jobs = await getCollection("jobs");
-const projects = await getCollection("projects");
-const skills = await getCollection("skills");
-const experimentations = await getCollection("experimentations");
+// Content is organized in one folder per language, only keep the current one
+const byLang = ({ id }) => id.startsWith(`${lang}/`);
+const jobs = await getCollection("jobs", byLang);
+const projects = await getCollection("projects", byLang);
+const skills = await getCollection("skills", byLang);
+const experimentations = await getCollection("experimentations", byLang);
 
 export async function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({ params: { lang } }));
