@@ -27,7 +27,7 @@ export const ui = {
     fr: {
         'time.present': 'Présent',
         'title.who': 'Qui?',
-        'title.how': 'Quoi?',
+        'title.how': 'Comment?',
         'title.where': 'Où?',
         'title.projects': 'Projets!',
         'title.me': 'Moi?',

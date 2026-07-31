@@ -163,7 +163,7 @@
     @media print {
         :global(html) {
             // font-size: 13.75px;
-            font-size: 15px;
+            font-size: 16px;
         }
         :global(.side-menu) {
             display: none !important;
@@ -184,6 +184,7 @@
         border-bottom: 0.2rem var(--color-primary-less) solid;
         border-top: 0.2rem var(--color-primary-less) solid;
         padding-right: 1rem;
+        padding: 0.4rem 0;
     }
 
     .main-header p {

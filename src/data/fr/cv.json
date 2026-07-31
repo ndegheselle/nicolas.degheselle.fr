@@ -1,6 +1,6 @@
 {
     "name": "Nicolas DE GHESELLE",
-    "description": "Ingénieur logiciel motivé, titulaire d'un diplôme d'ingénieur en informatique et fort de plus de 3 ans d'expérience dans la conception de systèmes full-stack. Spécialisé dans la programmation bas niveau et l'optimisation des performances, je livre des solutions efficaces, évolutives et maintenables. À l'aise autant en développement desktop que web, avec un historique de projets qui ont dépassé les attentes des clients grâce à l'innovation et à l'apprentissage continu.",
+    "description": "Ingénieur logiciel motivé et passioné, titulaire d'un diplôme d'ingénieur en informatique et fort de plus de 4 ans d'expérience dans la conception de logiciels bureau.",
     "contact": {
         "email": "nicolas@degheselle.fr",
         "website": "http://nicolas.degheselle.fr",
@@ -15,24 +15,24 @@
             "location": "Rouffach (68)",
             "responsibilities": [
                 "Développement et mise en production d'une nouvelle application desktop WPF regroupant plusieurs outils existants, améliorant l'efficacité des utilisateurs et la scalabilité.",
-                "Création d'APIs ASP.NET et de services SignalR pour découpler et séparer la logique métier dans plusieurs microservices.",
-                "Refonte d'un code legacy en C# et .NET, création de frameworks et amélioration de la maintenabilité du code, réduisant fortement la dette technique.",
-                "Analyse et correction des défauts logiciels remontés par la QA et les utilisateurs finaux, en maintenant un haut niveau de qualité logicielle et en améliorant la satisfaction des utilisateurs.",
+                "Création d'API ASP.NET et de services SignalR pour découpler et séparer la logique métier dans plusieurs microservices.",
+                "Refonte de projets C# et .NET legacy, création de frameworks et amélioration de la maintenabilité du code, réduisant fortement la dette technique.",
+                "Analyse et correction de défauts logiciels remontés par les utilisateurs finaux, afin d'améliorer la satisfaction des utilisateurs.",
                 "Collaboration avec des équipes pluridisciplinaires lors des cérémonies Agile pour améliorer en continu les processus de développement.",
-                "Rédaction de spécifications techniques et de manuels utilisateurs, facilitant l'intégration des nouveaux membres de l'équipe et des utilisateurs finaux."
+                "Rédaction de spécifications techniques et de manuels utilisateur, facilitant l'intégration des nouveaux membres de l'équipe et des utilisateurs finaux."
             ]
         },
         {
             "from": "2020-04-01",
-            "to": "2021-04-01",
-            "position": "Développeur analyste C++",
+            "to": "2020-11-01",
+            "position": "Développeur analyste C++ - Stage",
             "company": "AnyDesk",
             "location": "Stuttgart (Allemagne)",
             "responsibilities": [
-                "Conception et création d'une application desktop très performante en C++, améliorant nettement le traitement des logs et la fiabilité globale du système.",
-                "Mise en place de techniques de multi-threading pour améliorer les performances de l'application, avec une expérience utilisateur plus fluide et des temps de traitement réduits.",
-                "Diagnostic et correction de défauts logiciels dans des bibliothèques, améliorant la stabilité et l'ergonomie de l'application pour les utilisateurs finaux.",
-                "Rédaction et maintenance d'une documentation logicielle complète, garantissant que chaque modification du code soit documentée et facilement compréhensible par l'équipe de développement."
+                "Conception et création d'une application desktop performante en C++ afin d'améliorer le traitement des logs et la fiabilité globale du système.",
+                "Mise en place de techniques de multi-threading pour améliorer les performances de l'application.",
+                "Diagnostic et correction de défauts logiciels dans des bibliothèques.",
+                "Rédaction et maintenance d'une documentation logicielle technique et fonctionnel complète."
             ]
         }
     ],
@@ -47,22 +47,18 @@
     ],
     "skills": {
         "Desktop": [
-            ["C#", "C++", "WPF"],
-            ["Python", "Maui", "SDL2", "OpenGL"]
-        ],
-        "Web": [
-            ["Vue.js", "SvelteKit", ".NET Asp"],
-            ["Swagger", "Node.js", "Express.js"]
+            ["C#", "WPF"],
+            ["Maui", "C++"]
         ],
         "BDD & Serveur": [
             ["SQL Server", "MySQL", "Docker"],
-            ["MongoDB", "Nginx"]
+            ["MongoDB"]
         ],
         "Pratiques": [
-            ["Scrum & Agile", "Git", "Cybersécurité", "REST"]
+            ["Scrum & Agile", "Git", "Cybersécurité"]
         ],
         "Savoir-être": [
-            ["Résolution de problèmes", "Travail en équipe", "Diagnostic", "Adaptabilité"]
+            ["Travail en équipe", "Diagnostic", "Adaptabilité"]
         ]
    },
     "certifications": [

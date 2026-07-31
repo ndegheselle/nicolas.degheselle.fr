@@ -9,31 +9,34 @@
 
     function jobsToTimeline(_jobs) {
         // Oldest job first so the timeline reads chronologically
-        _jobs = [..._jobs].sort(
+        const sorted = [..._jobs].sort(
             (a, b) =>
                 new Date(a.data.startingDate) - new Date(b.data.startingDate),
         );
 
-        let totalDuration = 0;
-        for (let i = 0; i < _jobs.length; i++) {
-            const job = _jobs[i];
-            job.startingDate = new Date(job.startingDate).getTime();
-            job.endingDate =
-                new Date(job.endingDate).getTime() || new Date().getTime();
-            job.duration = job.endingDate - job.startingDate;
-            totalDuration += job.duration;
-        }
+        const now = new Date().getTime();
+        const durations = sorted.map((job) => {
+            const startingDate = new Date(job.data.startingDate).getTime();
+            // A job without an ending date is the current one
+            const endingDate = job.data.endingDate
+                ? new Date(job.data.endingDate).getTime()
+                : now;
+            return endingDate - startingDate;
+        });
+        const totalDuration = durations.reduce(
+            (total, duration) => total + duration,
+            0,
+        );
 
-        let x = 0;
-        for (let i = 0; i < _jobs.length; i++) {
-            const job = _jobs[i];
-            job.width = (job.duration / totalDuration) * 100;
-        }
-        return _jobs;
+        return sorted.map((job, index) => ({
+            job,
+            width: (durations[index] / totalDuration) * 100,
+        }));
     }
 
-    $: selectedJob = jobs[jobs.length - 1];
     $: timeline = jobsToTimeline(jobs);
+    // Show the most recent job by default
+    $: selectedJob = timeline[timeline.length - 1]?.job;
 
     export let jobs = [];
     export let lang = "";
@@ -46,7 +49,7 @@
 
 <div class="grid">
     <div class="col is-6 on-sm-is-12 stretch-container timeline">
-        {#each timeline as job, index}
+        {#each timeline as { job, width }, index}
             <span
                 class:is-visible={job == selectedJob}
                 role="button"
@@ -54,14 +57,14 @@
                 on:mouseenter={() => selectJob(job)}
                 href="#"
                 class="timeline-bar sheen"
-                style="width:{job.width}%"
+                style="width:{width}%"
             >
                 <svg width="20" height="20" class="triangle">
                     <polygon points="0, 0, 20, 0, 10, 20" />
                 </svg>
             </span>
-            {#if job != jobs[jobs.length - 1]}
-                <span class="is-background" />
+            {#if index != timeline.length - 1}
+                <span class="is-background"></span>
             {/if}
         {/each}
     </div>

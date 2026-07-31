@@ -1,5 +1,5 @@
 {
-    "description": "Je suis un ingénieur logiciel français passionné par la programmation bas niveau, avec une bonne maîtrise des mécanismes sous-jacents nécessaires pour écrire du code efficace. J'aime aussi examiner un problème sous tous ses angles pour finalement le résoudre avec une solution élégante.<br/> Sur mon temps libre, je mène des projets personnels et j'explore des technologies qui m'intriguent.<br/><br/>Mais avant tout, je vise la <b>simplicité</b>.",
+    "description": "Développeur informatique, passionné par la résolution de problèmes. Caractérisé par les points suivants : <br />J'aime faire le pont entre les différentes disciplines pour en tirer les meilleurs aspects de chacune. Comprendre les mécanismes de fonctionnement des choses me permet d'être efficace dans leur utilisation. J'apprécie explorer et tester différentes alternatives pour avoir la satisfaction d'avoir fait le \"meilleur\" choix. Enfin, je mène des projets personnels sur des technologies diverses et variées pour continuer à découvrir de nouvelles manières de faire.",
     "tags": [
         "Apprentissage rapide",
         "Autonome",
@@ -7,16 +7,16 @@
     ],
     "guidelines": [
         {
-            "title": "Simplicité et élégance",
-            "description": "Écrire un code clair et élégant, en implémentant des fonctionnalités complexes de manière directe pour rester maintenable."
+            "title": "Simplicité et efficacité",
+            "description": "Écrire du code simple pour des fonctionnalités complexes, chercher l'efficacité sans en faire la finalité."
         },
         {
-            "title": "Approche itérative et Agile",
-            "description": "Adopter un développement itératif et Agile pour aboutir à des solutions durables tout en répondant efficacement aux besoins du client."
+            "title": "Réutiliser et améliorer",
+            "description": "Utiliser l'existant, ne pas tout réinventer sans raisons valides. Favoriser la maturité et l'open source."
         },
         {
-            "title": "S'appuyer sur l'existant",
-            "description": "Gagner en efficacité en tirant parti des outils et des connaissances déjà disponibles, en gardant une vision globale pendant le développement."
+            "title": "Communiquer et documenter",
+            "description": "Échanger, proposer, dialoguer et cibler le pourquoi plutôt que la cause. Garder une trace des décisions et actions."
         }
     ],
     "hobbies": [
