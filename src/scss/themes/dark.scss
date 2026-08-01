@@ -2,8 +2,7 @@
 
 body[data-theme="dark"] {
     // Core colors
-    $primary-color: #F7418F !default;
-    $secondary-color: #FF8E8F !default;
+    $primary-color: #f66b5d!default;
 
     $foreground-color: #FEFEFE !default;
     $background-color: #222831 !default;
@@ -11,12 +10,8 @@ body[data-theme="dark"] {
 
     // Create a css variable for each color
     --color-primary: #{$primary-color};
-    --color-primary-less: #{color.adjust($primary-color, $lightness: 10%)};
-    --color-primary-more: #{color.adjust($primary-color, $lightness: -10%)};
-
-    --color-secondary: #{$secondary-color};
-    --color-secondary-less: #{color.adjust($secondary-color, $lightness: 5%)};
-    --color-secondary-more: #{color.adjust($secondary-color, $lightness: -5%)};
+    --color-primary-less: #{color.adjust($primary-color, $lightness: 5%)};
+    --color-primary-more: #{color.adjust($primary-color, $lightness: -5%)};
 
     --color-foreground: #{$foreground-color};
     --color-foreground-less: #{color.adjust($foreground-color, $lightness: -20%)};

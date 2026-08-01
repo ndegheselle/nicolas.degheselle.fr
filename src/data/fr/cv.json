@@ -1,11 +1,13 @@
 {
     "name": "Nicolas DE GHESELLE",
-    "description": "Ingénieur logiciel motivé et passioné, titulaire d'un diplôme d'ingénieur en informatique et fort de plus de 4 ans d'expérience dans la conception de logiciels bureau.",
+    "title": "Ingénieur logiciel .NET / C# - WPF",
+    "description": "4 ans de développement d'applications desktop C#/WPF en production, du legacy à moderniser aux nouvelles architectures. Attiré par les problèmes techniques exigeants et le code durable.",
     "contact": {
         "email": "nicolas@degheselle.fr",
         "website": "http://nicolas.degheselle.fr",
         "linkedin": "https://www.linkedin.com/in/nicolas-de-gheselle/",
-        "phone": "+33 7 68 18 51 80"
+        "phone": "+33 7 68 18 51 80",
+        "city": "Wintzenheim - 68420"
     },
     "experiences": [
         {
@@ -14,11 +16,11 @@
             "company": "3ma group",
             "location": "Rouffach (68)",
             "responsibilities": [
-                "Développement et mise en production d'une nouvelle application desktop WPF regroupant plusieurs outils existants, améliorant l'efficacité des utilisateurs et la scalabilité.",
+                "Conception et mise en production d'une application desktop WPF unifiant 4 outils métier existants, déployée et maintenue en production depuis 3 ans.",
                 "Création d'API ASP.NET et de services SignalR pour découpler et séparer la logique métier dans plusieurs microservices.",
                 "Refonte de projets C# et .NET legacy, création de frameworks et amélioration de la maintenabilité du code, réduisant fortement la dette technique.",
                 "Analyse et correction de défauts logiciels remontés par les utilisateurs finaux, afin d'améliorer la satisfaction des utilisateurs.",
-                "Collaboration avec des équipes pluridisciplinaires lors des cérémonies Agile pour améliorer en continu les processus de développement.",
+                "Mise en place de tests unitaires et fonctionnels, création de cahiers de tests et d'une documentation rigoureuse.",
                 "Rédaction de spécifications techniques et de manuels utilisateur, facilitant l'intégration des nouveaux membres de l'équipe et des utilisateurs finaux."
             ]
         },
@@ -32,7 +34,7 @@
                 "Conception et création d'une application desktop performante en C++ afin d'améliorer le traitement des logs et la fiabilité globale du système.",
                 "Mise en place de techniques de multi-threading pour améliorer les performances de l'application.",
                 "Diagnostic et correction de défauts logiciels dans des bibliothèques.",
-                "Rédaction et maintenance d'une documentation logicielle technique et fonctionnel complète."
+                "Rédaction et maintenance d'une documentation logicielle technique et fonctionnelle complète."
             ]
         }
     ],
@@ -45,20 +47,22 @@
             "description": "Spécialité génie logiciel, option cybersécurité"
         }
     ],
+    "projects": [
+        {
+            "name": "Joufflu - Bibliothèque de composants UI WPF",
+            "url": "https://github.com/ndegheselle/Joufflu",
+            "description": "Composants personnalisés, thèmes dynamiques et personnalisables."
+        }
+    ],
     "skills": {
         "Desktop": [
-            ["C#", "WPF"],
-            ["Maui", "C++"]
+            ["C#", "C++", "WPF", "Maui"]
         ],
         "BDD & Serveur": [
-            ["SQL Server", "MySQL", "Docker"],
-            ["MongoDB"]
+            ["SQL Server", "MySQL", "ASP.NET", "Docker"]
         ],
         "Pratiques": [
             ["Scrum & Agile", "Git", "Cybersécurité"]
-        ],
-        "Savoir-être": [
-            ["Travail en équipe", "Diagnostic", "Adaptabilité"]
         ]
    },
     "certifications": [
@@ -66,11 +70,9 @@
             "name": "TOEIC",
             "date": "2021-01-01",
             "description": "Avec un score de 990"
-        },
-        {
-            "name": "CCNA",
-            "date": "2020-09-01",
-            "description": "CCNA 2 : Switching, Routing, and Wireless Essentials"
         }
+    ],
+    "interests": [
+        "3D temps réel (OpenGL, Blender, Unreal Engine), simulation de particules en C++"
     ]
 }

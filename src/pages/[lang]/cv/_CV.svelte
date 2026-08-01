@@ -27,6 +27,7 @@
     <div class="grid is-auto">
         <div class="col main-header is-9 is-content">
             <h1>{cv.name}</h1>
+            <span class="subtitle">{cv.title}</span>
             <p>{cv.description}</p>
         </div>
         <span class="col contacts">
@@ -34,6 +35,7 @@
             <a href={cv.contact.website}>{formatLink(cv.contact.website)}</a>
             <a href={cv.contact.linkedin}>linkedin</a>
             <span>{cv.contact.phone}</span>
+            <span class="subtitle">{cv.contact.city}</span>
         </span>
     </div>
 </header>
@@ -106,6 +108,22 @@
     {/each}
 
     <div class="grid is-auto">
+        <h2 class="col is-auto">{t("cv.projects")}</h2>
+        <span class="col is-separator"></span>
+    </div>
+
+    {#each cv.projects as project}
+        <div class="grid is-auto">
+            <div class="col is-sub on-md-is-12"></div>
+            <div class="col is-content">
+                <h3>{project.name}</h3>
+                <a class="subtitle" href={project.url}>{project.url}</a>
+                <p>{project.description}</p>
+            </div>
+        </div>
+    {/each}
+
+    <div class="grid is-auto">
         <h2 class="col is-auto">{t("cv.skills")}</h2>
         <span class="col is-separator"></span>
     </div>
@@ -145,6 +163,15 @@
             </div>
         </div>
     {/each}
+
+    <div class="grid mt-2">
+        <div class="col is-sub on-md-is-12">
+            <span class="text-small subtitle">{t("cv.interests")} </span>
+        </div>
+        <div class="col is-content">
+            {#each cv.interests as interest}<span>{interest}</span>{/each}
+        </div>
+    </div>
 </main>
 
 <style lang="scss">
@@ -163,7 +190,10 @@
     @media print {
         :global(html) {
             // font-size: 13.75px;
-            font-size: 16px;
+            font-size: 15px;
+        }
+        :global(.text-small) {
+            font-size: 10px !important;
         }
         :global(.side-menu) {
             display: none !important;
@@ -238,6 +268,7 @@
     .is-date-col {
         display: flex;
         flex-direction: column;
+        align-self: start;
     }
 
     .is-content {
@@ -257,5 +288,13 @@
 
     .is-start {
         align-items: start;
+    }
+
+    .mt-2 {
+        margin-top: 2rem;
+    }
+    .text-small
+    {
+        font-size: 14px;
     }
 </style>

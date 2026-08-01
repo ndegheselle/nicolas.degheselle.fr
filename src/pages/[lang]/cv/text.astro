@@ -47,6 +47,7 @@ ${separate(cv.description).join("\n")}
 ${cv.contact.email.padStart(characterPerLine)}
 ${cv.contact.website.padStart(characterPerLine)}
 ${cv.contact.phone.padStart(characterPerLine)}
+${cv.contact.city.padStart(characterPerLine)}
 
 ${`# ${t("cv.experience")} `.padEnd(characterPerLine, "-")}
 ${cv.experiences
@@ -70,6 +71,13 @@ ${eductation.description}`,
     )
     .join("")}
 
+${`# ${t("cv.projects")} `.padEnd(characterPerLine, "-")}
+${cv.projects
+    .map(
+        (project) => `
+${project.name}
+${project.description}`).join("")}
+
 ${`# ${t("cv.skills")} `.padEnd(characterPerLine, "-")}
 ${Object.keys(cv.skills)
     .map(
@@ -84,9 +92,11 @@ ${cv.certifications
         (certification) => `
 ${certification.name} - ${formatDate(certification.date)}
 ${certification.description}
-`,
-    )
-    .join("")}`;
+`).join("")}
+
+${t("cv.interests")}
+${cv.interests.join(", ")}
+`;
 ---
 
 <BlankLayout title="Nicolas De gheselle - CV">

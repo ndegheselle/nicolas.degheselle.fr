@@ -22,7 +22,9 @@ export const ui = {
         'cv.experience': 'Experience',
         'cv.education': 'Education',
         'cv.skills': 'Skills',
+        'cv.projects': 'Personal projects',
         'cv.certifications': 'Certifications and Licenses',
+        'cv.interests': 'Interests',
     },
     fr: {
         'time.present': 'Présent',
@@ -41,6 +43,8 @@ export const ui = {
         'cv.experience': 'Expérience professionnelle',
         'cv.education': 'Formation',
         'cv.skills': 'Compétences',
+        'cv.projects': 'Projets personnels',
         'cv.certifications': 'Diplômes et attestations',
+        'cv.interests': 'Centres d\'intérêt',
     },
 };
